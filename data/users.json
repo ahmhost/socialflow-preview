@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "id": "usr_superadmin_01",
+      "email": "rizwani@socialflow.com",
+      "password_hash": "$2y$10$U4o48q9YwQf4812N6Q.x0O.X1M4R8s8E4B9C2D3E4F5G6H7I8J9K0",
+      "password_plain": "Rizwani@123",
+      "name": "جمشید رضوانی (Super Admin)",
+      "english_name": "Jamshed Rizwani",
+      "role": "superadmin",
+      "role_title": "Super Administrator / Platform Owner",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani",
+      "status": "active",
+      "created_at": "2026-11-03T10:00:00Z",
+      "last_login": null,
+      "permissions": [
+        "system_settings",
+        "manage_users",
+        "api_keys",
+        "cluster_nodes",
+        "billing",
+        "video_studio",
+        "urdu_typography",
+        "multi_channel_publish",
+        "manage_channels",
+        "approve_content"
+      ]
+    },
+    {
+      "id": "usr_admin_02",
+      "email": "admin@socialflow.com",
+      "password_hash": "$2y$10$U4o48q9YwQf4812N6Q.x0O.X1M4R8s8E4B9C2D3E4F5G6H7I8J9K1",
+      "password_plain": "admin",
+      "alternate_password": "Admin@123",
+      "name": "نیوز روم ایڈمنسٹریٹر",
+      "english_name": "Newsroom Administrator",
+      "role": "admin",
+      "role_title": "Newsroom Editorial Lead",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=AdminFlow",
+      "status": "active",
+      "created_at": "2026-11-03T10:05:00Z",
+      "last_login": null,
+      "permissions": [
+        "manage_channels",
+        "approve_content",
+        "multi_channel_publish",
+        "video_studio",
+        "urdu_typography",
+        "team_monitoring",
+        "publishing_queue"
+      ]
+    },
+    {
+      "id": "usr_user_03",
+      "email": "sajid@socialflow.com",
+      "password_hash": "$2y$10$U4o48q9YwQf4812N6Q.x0O.X1M4R8s8E4B9C2D3E4F5G6H7I8J9K2",
+      "password_plain": "sajid@123",
+      "name": "ساجد (Content Creator)",
+      "english_name": "Sajid Media Specialist",
+      "role": "user",
+      "role_title": "Digital Journalist & Video Editor",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=Sajid",
+      "status": "active",
+      "created_at": "2026-11-03T10:10:00Z",
+      "last_login": null,
+      "permissions": [
+        "video_studio",
+        "urdu_typography",
+        "create_drafts",
+        "render_timeline",
+        "poster_designer"
+      ]
+    }
+  ],
+  "platform_info": {
+    "name": "SocialFlow",
+    "version": "Enterprise v4.2",
+    "cluster_status": "99.99% Uptime",
+    "nodes_active": 12,
+    "renders_completed": 14280,
+    "last_sync": "2026-11-03T10:30:00Z"
+  }
+}

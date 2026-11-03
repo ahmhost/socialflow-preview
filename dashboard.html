@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>SocialFlow Studio - Enterprise Dashboard</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#faf8ff",
+            "surface-dim": "#d2d9f4",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "surface-container": "#eaedff",
+            "surface-container-high": "#e2e7ff",
+            "surface-container-highest": "#dae2fd",
+            "on-surface": "#131b2e",
+            "on-surface-variant": "#464555",
+            "primary": "#3525cd",
+            "primary-container": "#4f46e5",
+            "on-primary": "#ffffff",
+            "secondary": "#0058be",
+            "tertiary": "#005338"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"],
+            nastaliq: ["Noto Nastaliq Urdu", "serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .waveform-bar {
+      animation: pulseHeight 1.4s ease-in-out infinite alternate;
+    }
+    @keyframes pulseHeight {
+      0% { height: 25%; }
+      100% { height: 95%; }
+    }
+  </style>
+</head>
+<body class="bg-[#f8faff] text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Top Enterprise Navigation Bar -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Version -->
+      <div class="flex items-center space-x-3">
+        <a href="dashboard.html" class="flex items-center space-x-2.5">
+          <div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-white shadow-md shadow-indigo-500/20">
+            <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">movie_filter</span>
+          </div>
+          <span class="font-bold text-xl tracking-tight text-slate-900">SocialFlow</span>
+        </a>
+        <span class="hidden md:inline-flex px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-[11px] font-bold">
+          Enterprise v4.2
+        </span>
+        <div class="hidden lg:flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-medium border border-emerald-200/60">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>99.99% Cluster Uptime (12 Nodes)</span>
+        </div>
+      </div>
+
+      <!-- Quick Role Switcher Chips for Demo -->
+      <div class="hidden md:flex items-center space-x-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+        <span class="text-[11px] font-bold text-slate-500 px-2 uppercase font-mono">کردار منتخب کریں:</span>
+        <button onclick="switchRole('superadmin')" id="tabBtn-superadmin" class="px-2.5 py-1 rounded-lg text-xs font-semibold transition bg-primary text-white shadow-sm">
+          👑 سپر ایڈمن
+        </button>
+        <button onclick="switchRole('admin')" id="tabBtn-admin" class="px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900">
+          🛡️ نیوز روم ایڈمن
+        </button>
+        <button onclick="switchRole('user')" id="tabBtn-user" class="px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900">
+          🎬 ساجد (ویڈیو اسٹوڈیو)
+        </button>
+      </div>
+
+      <!-- User Profile & Actions -->
+      <div class="flex items-center space-x-3">
+        <!-- External Quick Links -->
+        <a href="https://ahmhost.github.io/poster-preview/" target="_blank" title="اوپن ساؤتھ ٹوڈے پوسٹر اسٹوڈیو" class="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-xs font-bold text-slate-700 transition shadow-xs">
+          <span class="material-symbols-outlined text-amber-500 text-base">palette</span>
+          <span>پوسٹر جنریٹر</span>
+        </a>
+
+        <!-- User Dropdown & Logout -->
+        <div class="flex items-center space-x-3 pl-2 border-l border-slate-200">
+          <img id="userAvatar" src="https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani" alt="Avatar" class="w-8 h-8 rounded-full border border-indigo-200 bg-slate-100 shadow-xs"/>
+          <div class="hidden sm:block text-left">
+            <p id="userName" class="text-xs font-bold text-slate-900 leading-tight">جمشید رضوانی (Super Admin)</p>
+            <p id="userEmail" class="text-[10px] text-slate-500 font-mono">rizwani@socialflow.com</p>
+          </div>
+          <a href="index.html" title="لاگ آؤٹ کریں" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 hover:text-red-600 hover:bg-red-50 transition border border-transparent hover:border-red-200">
+            <span class="material-symbols-outlined text-lg">logout</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Subheader Banner with Dynamic Role Context -->
+  <section class="bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 text-white py-6 px-4 sm:px-6 lg:px-8 shadow-inner">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <div class="flex items-center space-x-2">
+          <span id="roleBadge" class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-amber-400 text-amber-950">
+            SUPERADMIN WORKSPACE
+          </span>
+          <span class="text-xs text-indigo-200 font-mono">Live Node: #01-Multan-Master</span>
+        </div>
+        <h1 id="workspaceTitle" class="text-2xl font-bold mt-1 tracking-tight">
+          سپر ایڈمن کنٹرول پینل - پلیٹ فارم انفراسٹرکچر و کلسٹر مینجمنٹ
+        </h1>
+        <p id="workspaceSub" class="text-sm text-indigo-200/90 mt-0.5">
+          Super Administrator / Platform Owner &bull; سیشن محفوظ اور فعال ہے
+        </p>
+      </div>
+
+      <!-- Action Chips in Subheader -->
+      <div class="flex items-center space-x-2">
+        <button onclick="triggerClusterSync()" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold backdrop-blur border border-white/20 transition flex items-center space-x-1.5 cursor-pointer">
+          <span class="material-symbols-outlined text-sm">sync</span>
+          <span>کلسٹر سنک</span>
+        </button>
+        <button onclick="showBroadcastModal()" class="px-3.5 py-2 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white text-xs font-bold shadow-md shadow-indigo-900/40 transition flex items-center space-x-1.5 cursor-pointer">
+          <span class="material-symbols-outlined text-sm">podcasts</span>
+          <span>نئی بریکنگ براڈکاسٹ</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Role Switcher (Visible on Small Screens) -->
+  <div class="md:hidden bg-slate-100 p-2 border-b border-slate-200 flex items-center justify-around text-xs font-bold">
+    <button onclick="switchRole('superadmin')" class="text-primary underline">👑 سپر ایڈمن</button>
+    <button onclick="switchRole('admin')" class="text-slate-600">🛡️ ایڈمن</button>
+    <button onclick="switchRole('user')" class="text-slate-600">🎬 ساجد اسٹوڈیو</button>
+  </div>
+
+  <!-- Main Content Area with 3 Role Views -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-8">
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- VIEW 1: SUPER ADMIN                                                -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <div id="view-superadmin" class="space-y-8">
+      
+      <!-- Top Metrics Strip -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between">
+          <div>
+            <p class="text-xs font-semibold text-slate-500 uppercase font-mono">فعال نوڈز (Nodes)</p>
+            <h3 class="text-2xl font-black text-slate-900 mt-1">12 / 12</h3>
+            <p class="text-xs text-emerald-600 font-semibold mt-0.5">● تمام رینڈرنگ ورکرز آن لائن ہیں</p>
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+            <span class="material-symbols-outlined text-2xl">dns</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between">
+          <div>
+            <p class="text-xs font-semibold text-slate-500 uppercase font-mono">مکمل رینڈرز (Completed)</p>
+            <h3 class="text-2xl font-black text-slate-900 mt-1">14,280</h3>
+            <p class="text-xs text-indigo-600 font-semibold mt-0.5">↑ آج +342 ویڈیوز و پوسٹرز</p>
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+            <span class="material-symbols-outlined text-2xl">movie_filter</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between">
+          <div>
+            <p class="text-xs font-semibold text-slate-500 uppercase font-mono">سوشل چینلز (Connected)</p>
+            <h3 class="text-2xl font-black text-slate-900 mt-1">6 پلیٹ فارمز</h3>
+            <p class="text-xs text-blue-600 font-semibold mt-0.5">FB, IG, WP, X, TikTok, YT</p>
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+            <span class="material-symbols-outlined text-2xl">share</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between">
+          <div>
+            <p class="text-xs font-semibold text-slate-500 uppercase font-mono">کلسٹر لوڈ (Cluster Load)</p>
+            <h3 class="text-2xl font-black text-slate-900 mt-1">18.4%</h3>
+            <p class="text-xs text-emerald-600 font-semibold mt-0.5">CPU 2.4GHz / RAM 64GB</p>
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
+            <span class="material-symbols-outlined text-2xl">speed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Infrastructure & User Controls Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: User Management Table (Cols 1-8) -->
+        <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden">
+          <div class="p-5 border-b border-slate-100 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="material-symbols-outlined text-primary text-xl">manage_accounts</span>
+              <h2 class="font-bold text-slate-900">یوزرز اور پرمیشن مینجمنٹ (User Access Control)</h2>
+            </div>
+            <button onclick="alert('نیا یوزر شامل کرنے کا ماڈل جلد شامل کیا جائے گا')" class="px-3 py-1.5 rounded-lg bg-primary hover:bg-indigo-700 text-white text-xs font-bold transition flex items-center space-x-1 cursor-pointer">
+              <span class="material-symbols-outlined text-sm">add</span>
+              <span>نیا یوزر شامل کریں</span>
+            </button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-slate-600">
+              <thead class="bg-slate-50 text-slate-700 font-bold uppercase tracking-wider text-[11px] border-b border-slate-200">
+                <tr>
+                  <th class="py-3 px-4">صارف / یوزر</th>
+                  <th class="py-3 px-4">کردار (Role)</th>
+                  <th class="py-3 px-4">سٹیٹس</th>
+                  <th class="py-3 px-4">اختیارات (Permissions)</th>
+                  <th class="py-3 px-4 text-right">ایکشن</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                <tr class="hover:bg-slate-50/80 transition">
+                  <td class="py-3.5 px-4">
+                    <div class="flex items-center space-x-3">
+                      <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani" class="w-8 h-8 rounded-full border border-slate-200 bg-slate-100"/>
+                      <div>
+                        <p class="font-bold text-slate-900">جمشید رضوانی (Super Admin)</p>
+                        <p class="text-[11px] text-slate-500 font-mono">rizwani@socialflow.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <span class="px-2 py-1 rounded-md text-[10px] font-bold font-mono uppercase bg-amber-100 text-amber-800">superadmin</span>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>فعال (Active)
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <div class="flex flex-wrap gap-1 max-w-xs">
+                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">system_settings</span>
+                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">manage_users</span>
+                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">cluster_nodes</span>
+                      <span class="px-1.5 py-0.5 bg-slate-200 text-slate-700 rounded text-[9px] font-mono">+7 more</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 text-right">
+                    <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition cursor-pointer">ترمیم</button>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-slate-50/80 transition">
+                  <td class="py-3.5 px-4">
+                    <div class="flex items-center space-x-3">
+                      <img src="https://api.dicebear.com/7.x/bottts/svg?seed=AdminFlow" class="w-8 h-8 rounded-full border border-slate-200 bg-slate-100"/>
+                      <div>
+                        <p class="font-bold text-slate-900">نیوز روم ایڈمنسٹریٹر</p>
+                        <p class="text-[11px] text-slate-500 font-mono">admin@socialflow.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <span class="px-2 py-1 rounded-md text-[10px] font-bold font-mono uppercase bg-blue-100 text-blue-800">admin</span>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>فعال (Active)
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <div class="flex flex-wrap gap-1 max-w-xs">
+                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">manage_channels</span>
+                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">approve_content</span>
+                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">multi_channel_publish</span>
+                      <span class="px-1.5 py-0.5 bg-slate-200 text-slate-700 rounded text-[9px] font-mono">+4 more</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 text-right">
+                    <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition cursor-pointer">ترمیم</button>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-slate-50/80 transition">
+                  <td class="py-3.5 px-4">
+                    <div class="flex items-center space-x-3">
+                      <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Sajid" class="w-8 h-8 rounded-full border border-slate-200 bg-slate-100"/>
+                      <div>
+                        <p class="font-bold text-slate-900">ساجد (Content Creator)</p>
+                        <p class="text-[11px] text-slate-500 font-mono">sajid@socialflow.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <span class="px-2 py-1 rounded-md text-[10px] font-bold font-mono uppercase bg-emerald-100 text-emerald-800">user</span>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>فعال (Active)
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <div class="flex flex-wrap gap-1 max-w-xs">
+                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">video_studio</span>
+                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">urdu_typography</span>
+                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">create_drafts</span>
+                    </div>
+                  </td>
+                  <td class="py-3.5 px-4 text-right">
+                    <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition cursor-pointer">ترمیم</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Right: Cluster Nodes & API Keys (Cols 9-12) -->
+        <div class="lg:col-span-4 space-y-6">
+          
+          <!-- Cluster Server Nodes -->
+          <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
+                <span class="material-symbols-outlined text-emerald-600 text-lg">cloud_done</span>
+                <span>کلسٹر سرور نوڈز (VPS 2.25.110.249)</span>
+              </h3>
+              <span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded font-mono text-slate-600">PM2 Active</span>
+            </div>
+            
+            <div class="space-y-2 text-xs">
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+                <div class="flex items-center space-x-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span class="font-bold text-slate-800">Node #01 (Poster API Puppeteer)</span>
+                </div>
+                <span class="font-mono text-[11px] text-slate-500">Port 3333 [Online]</span>
+              </div>
+
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+                <div class="flex items-center space-x-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span class="font-bold text-slate-800">Node #02 (Video NLE Render Core)</span>
+                </div>
+                <span class="font-mono text-[11px] text-slate-500">Port 4000 [Standby]</span>
+              </div>
+
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+                <div class="flex items-center space-x-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span class="font-bold text-slate-800">Node #03 (Urdu Nastaliq Font Engine)</span>
+                </div>
+                <span class="font-mono text-[11px] text-slate-500">Port 5050 [Online]</span>
+              </div>
+
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+                <div class="flex items-center space-x-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span class="font-bold text-slate-800">Node #04 (Multi-Post Sync Worker)</span>
+                </div>
+                <span class="font-mono text-[11px] text-slate-500">Daemon [Active]</span>
+              </div>
+            </div>
+
+            <button onclick="restartCluster()" class="w-full py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition flex items-center justify-center space-x-1.5 cursor-pointer">
+              <span class="material-symbols-outlined text-sm">restart_alt</span>
+              <span>کلسٹر سروسز ری سٹارٹ کریں</span>
+            </button>
+          </div>
+
+          <!-- Global API Keys & Tokens -->
+          <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs space-y-4">
+            <h3 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
+              <span class="material-symbols-outlined text-indigo-600 text-lg">key</span>
+              <span>گلوبل API کیز اور ٹوکنز</span>
+            </h3>
+
+            <div class="space-y-2 text-xs">
+              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50">
+                <span class="font-medium text-slate-700">Meta Graph API v19.0:</span>
+                <span class="font-mono text-emerald-600 font-bold">EAAG...Connected</span>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50">
+                <span class="font-medium text-slate-700">YouTube Data API v3:</span>
+                <span class="font-mono text-emerald-600 font-bold">AIza...Valid</span>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50">
+                <span class="font-medium text-slate-700">WordPress REST Key:</span>
+                <span class="font-mono text-emerald-600 font-bold">wp_...Synced</span>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50">
+                <span class="font-medium text-slate-700">GitHub Auto-Sync:</span>
+                <span class="font-mono text-emerald-600 font-bold">ahmhost/socialflow</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- VIEW 2: EDITORIAL ADMIN                                            -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <div id="view-admin" class="hidden space-y-8">
+      
+      <!-- Multi-Channel Publishing Hub -->
+      <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs space-y-5">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <h2 class="text-lg font-bold text-slate-900 flex items-center space-x-2">
+              <span class="material-symbols-outlined text-primary text-xl">hub</span>
+              <span>ملٹی چینل پبلشنگ حب (6 منسلک نیٹ ورکس)</span>
+            </h2>
+            <p class="text-xs text-slate-500 mt-0.5">ایک کلک سے تمام سوشل میڈیا چینلز پر فوری اور شیڈول پوسٹنگ</p>
+          </div>
+          <button onclick="publishToAllChannels()" class="px-4 py-2 rounded-xl bg-primary hover:bg-indigo-700 text-white font-bold text-xs shadow-sm transition flex items-center space-x-2 self-start cursor-pointer">
+            <span class="material-symbols-outlined text-sm">send</span>
+            <span>تمام چینلز پر بیک وقت پوسٹ کریں</span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          
+          <div class="p-3.5 rounded-xl border border-blue-200 bg-blue-50/50 flex flex-col items-center text-center">
+            <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow-xs">FB</div>
+            <p class="text-xs font-bold text-slate-900 mt-2">South Today</p>
+            <span class="text-[10px] text-blue-700 font-semibold">240K فالوورز</span>
+            <span class="mt-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">منسلک (Active)</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl border border-pink-200 bg-pink-50/50 flex flex-col items-center text-center">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-pink-600 to-purple-600 text-white flex items-center justify-center font-bold text-sm shadow-xs">IG</div>
+            <p class="text-xs font-bold text-slate-900 mt-2">@southtodaypk</p>
+            <span class="text-[10px] text-pink-700 font-semibold">85K فالوورز</span>
+            <span class="mt-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">منسلک (Active)</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl border border-slate-300 bg-slate-50 flex flex-col items-center text-center">
+            <div class="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center font-bold text-sm shadow-xs">TT</div>
+            <p class="text-xs font-bold text-slate-900 mt-2">@southtoday</p>
+            <span class="text-[10px] text-slate-700 font-semibold">120K فالوورز</span>
+            <span class="mt-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">منسلک (Active)</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl border border-red-200 bg-red-50/50 flex flex-col items-center text-center">
+            <div class="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center font-bold text-sm shadow-xs">YT</div>
+            <p class="text-xs font-bold text-slate-900 mt-2">South Today TV</p>
+            <span class="text-[10px] text-red-700 font-semibold">1080p Live</span>
+            <span class="mt-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">منسلک (Active)</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl border border-sky-200 bg-sky-50/50 flex flex-col items-center text-center">
+            <div class="w-10 h-10 rounded-xl bg-sky-500 text-white flex items-center justify-center font-bold text-sm shadow-xs">WP</div>
+            <p class="text-xs font-bold text-slate-900 mt-2">southtoday.com</p>
+            <span class="text-[10px] text-sky-700 font-semibold">Wordpress CMS</span>
+            <span class="mt-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">منسلک (Active)</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl border border-slate-300 bg-slate-50 flex flex-col items-center text-center">
+            <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-sm shadow-xs">X</div>
+            <p class="text-xs font-bold text-slate-900 mt-2">@SouthTodayNews</p>
+            <span class="text-[10px] text-slate-700 font-semibold">Verified Media</span>
+            <span class="mt-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">منسلک (Active)</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Editorial Approval Queue & Publishing Timeline -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Editorial Approvals (Cols 1-8) -->
+        <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden">
+          <div class="p-5 border-b border-slate-100 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="material-symbols-outlined text-amber-500 text-xl">fact_check</span>
+              <h2 class="font-bold text-slate-900">ایڈیٹوریل اپروول کیو (Pending Editorial Approvals)</h2>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold font-mono">3 خبریں منتظر ہیں</span>
+          </div>
+
+          <div class="divide-y divide-slate-100 text-xs">
+            
+            <!-- Item 1 -->
+            <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-50/70 transition">
+              <div class="flex items-start space-x-3.5">
+                <div class="w-12 h-12 rounded-xl bg-indigo-100 flex-shrink-0 flex items-center justify-center text-primary font-bold">
+                  <span class="material-symbols-outlined text-2xl">breaking_news</span>
+                </div>
+                <div>
+                  <div class="flex items-center space-x-2">
+                    <span class="px-2 py-0.5 rounded bg-red-100 text-red-700 font-bold text-[10px]">بریکنگ نیوز</span>
+                    <span class="text-slate-400 font-mono text-[11px]">10 منٹ پہلے بذریعہ ساجد</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm mt-1 font-nastaliq leading-relaxed">
+                    28 ویں آئینی ترمیم پر حکومت اور اتحادیوں کے درمیان حتمی مشاورت
+                  </h4>
+                  <p class="text-slate-500 text-[11px] mt-0.5">ٹیمپلیٹ 2 (ملتان یلو ہیڈر) + 4K ویڈیو رینڈر تیار ہے</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2 self-end sm:self-center">
+                <button onclick="approveStory(1)" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition flex items-center space-x-1 cursor-pointer">
+                  <span class="material-symbols-outlined text-sm">done</span>
+                  <span>منظور کریں</span>
+                </button>
+                <button onclick="rejectStory(1)" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-red-50 hover:text-red-600 text-slate-700 font-bold transition flex items-center space-x-1 cursor-pointer">
+                  <span class="material-symbols-outlined text-sm">close</span>
+                  <span>مسترد</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-50/70 transition">
+              <div class="flex items-start space-x-3.5">
+                <div class="w-12 h-12 rounded-xl bg-blue-100 flex-shrink-0 flex items-center justify-center text-blue-700 font-bold">
+                  <span class="material-symbols-outlined text-2xl">newspaper</span>
+                </div>
+                <div>
+                  <div class="flex items-center space-x-2">
+                    <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 font-bold text-[10px]">ملتان بلیٹن</span>
+                    <span class="text-slate-400 font-mono text-[11px]">25 منٹ پہلے</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm mt-1 font-nastaliq leading-relaxed">
+                    ملتان میں میٹرو بس روٹ کی توسیع کے منصوبے کی اصولی منظوری
+                  </h4>
+                  <p class="text-slate-500 text-[11px] mt-0.5">سوشل پوسٹ + فیس بک ریل فارمیٹ</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2 self-end sm:self-center">
+                <button onclick="approveStory(2)" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition flex items-center space-x-1 cursor-pointer">
+                  <span class="material-symbols-outlined text-sm">done</span>
+                  <span>منظور کریں</span>
+                </button>
+                <button onclick="rejectStory(2)" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-red-50 hover:text-red-600 text-slate-700 font-bold transition flex items-center space-x-1 cursor-pointer">
+                  <span class="material-symbols-outlined text-sm">close</span>
+                  <span>مسترد</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Publishing Schedule (Cols 9-12) -->
+        <div class="lg:col-span-4 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
+              <span class="material-symbols-outlined text-indigo-600 text-lg">calendar_clock</span>
+              <span>شیڈولڈ پبلشنگ (Today's Queue)</span>
+            </h3>
+            <span class="text-[10px] text-slate-500 font-mono">PKT +05:00</span>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/60 flex items-center justify-between">
+              <div>
+                <p class="font-bold text-slate-800">12:00 PM - ڈیلی نیوز بلیٹن</p>
+                <p class="text-[11px] text-slate-500">FB, YT, WP پر خودکار ریلیز</p>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 font-mono font-bold text-[10px]">قطار میں</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/60 flex items-center justify-between">
+              <div>
+                <p class="font-bold text-slate-800">03:30 PM - جنوبی پنجاب ڈویلپمنٹ رپورٹ</p>
+                <p class="text-[11px] text-slate-500">TikTok + IG Reels</p>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 font-mono font-bold text-[10px]">قطار میں</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/60 flex items-center justify-between">
+              <div>
+                <p class="font-bold text-slate-800">09:00 PM - پرائم ٹائم خصوصی لائیو ٹاک</p>
+                <p class="text-[11px] text-slate-500">YouTube 4K Broadcast</p>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-mono font-bold text-[10px]">پینڈنگ</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- VIEW 3: CONTENT CREATOR (SAJID)                                    -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <div id="view-user" class="hidden space-y-8">
+      
+      <!-- CapCut-Style NLE Video Studio Simulator -->
+      <div class="bg-slate-900 text-white rounded-2xl border border-slate-800 shadow-xl overflow-hidden">
+        
+        <!-- Top Studio Toolbar -->
+        <div class="p-4 bg-slate-950/80 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center shadow-xs">
+              <span class="material-symbols-outlined text-base">video_library</span>
+            </div>
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="font-mono text-xs font-bold text-indigo-300">PROJECT: BREAKING_URDU_04.nle</span>
+                <span class="px-1.5 py-0.2 rounded bg-red-950 text-red-400 border border-red-800 text-[10px] font-mono font-bold animate-pulse">● REC LIVE</span>
+              </div>
+              <p class="text-[11px] text-slate-400">4K UHD &bull; 60 FPS &bull; ProRes 422 HQ &bull; Nastaliq Auto-Subtitle</p>
+            </div>
+          </div>
+
+          <!-- Controls & Render Button -->
+          <div class="flex items-center space-x-2">
+            <button onclick="toggleVideoPlayback()" id="playPauseBtn" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold transition flex items-center space-x-1 cursor-pointer">
+              <span class="material-symbols-outlined text-sm" id="playIcon">play_arrow</span>
+              <span id="playText">چلائیں (Play)</span>
+            </button>
+            <button onclick="renderFinalVideo()" id="renderBtn" class="px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold shadow-md shadow-indigo-900/60 transition flex items-center space-x-1.5 cursor-pointer">
+              <span class="material-symbols-outlined text-sm">auto_videocam</span>
+              <span>4K رینڈر ایکسپورٹ</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Studio Preview Canvas + Timeline -->
+        <div class="p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          
+          <!-- Live Preview Screen (Cols 1-7) -->
+          <div class="lg:col-span-7 bg-black rounded-xl overflow-hidden border border-slate-800 flex flex-col justify-between relative aspect-video shadow-inner">
+            <div class="p-3 flex items-center justify-between bg-gradient-to-b from-black/80 to-transparent z-10">
+              <span class="text-xs font-mono text-white/80 bg-black/60 px-2 py-0.5 rounded">00:04:12:18</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono text-[10px] font-bold border border-emerald-500/30">Auto-Fit 100%</span>
+            </div>
+
+            <!-- News Studio Visual -->
+            <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
+              <img id="studioPreviewImg" src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=1200&auto=format&fit=crop" class="w-full h-full object-cover opacity-80 transition duration-500" alt="News Studio"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-black/40"></div>
+            </div>
+
+            <!-- Lower Third Overlay (Auto Nastaliq) -->
+            <div class="relative z-10 p-4 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
+              <div class="bg-amber-400 text-black px-3 py-0.5 inline-block font-bold text-xs rounded-sm mb-1 uppercase tracking-wider">
+                ساؤتھ ٹوڈے بریکنگ نیوز
+              </div>
+              <div class="bg-indigo-950/95 border-l-4 border-amber-400 p-2.5 rounded-r shadow-xl">
+                <p id="previewHeadline" class="text-white font-bold text-base md:text-lg font-nastaliq leading-relaxed">
+                  28 ویں آئینی ترمیم پر حمایت بھی ناقابل قبول ہے: اینکر غریدہ فاروقی کی خبر
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video Timeline & Audio Waveform (Cols 8-12) -->
+          <div class="lg:col-span-5 flex flex-col justify-between space-y-3 bg-slate-950 p-4 rounded-xl border border-slate-800">
+            <div>
+              <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 flex items-center justify-between">
+                <span>ٹائم لائن ٹریکس (CapCut Style NLE)</span>
+                <span class="text-[10px] text-indigo-400 font-mono">Zoom: 100%</span>
+              </h4>
+
+              <!-- Track V2: Overlay Subtitle -->
+              <div class="space-y-1.5">
+                <div class="flex items-center space-x-2 text-[10px] text-slate-400 font-mono">
+                  <span class="w-5 text-right font-bold text-indigo-400">V2</span>
+                  <div class="flex-1 bg-indigo-900/60 border border-indigo-500/40 rounded px-2 py-1 flex items-center justify-between text-indigo-200">
+                    <span class="truncate">Urdu Lower-Third (Auto-Nastaliq)</span>
+                    <span class="material-symbols-outlined text-xs">subtitles</span>
+                  </div>
+                </div>
+
+                <!-- Track V1: Video Master -->
+                <div class="flex items-center space-x-2 text-[10px] text-slate-400 font-mono">
+                  <span class="w-5 text-right font-bold text-blue-400">V1</span>
+                  <div class="flex-1 bg-blue-900/60 border border-blue-500/40 rounded px-2 py-1 flex items-center justify-between text-blue-200">
+                    <span class="truncate">Master_Feed_Studio_A.mp4 (4K)</span>
+                    <span class="material-symbols-outlined text-xs">videocam</span>
+                  </div>
+                </div>
+
+                <!-- Track A1: Audio Waveform -->
+                <div class="flex items-center space-x-2 text-[10px] text-slate-400 font-mono">
+                  <span class="w-5 text-right font-bold text-emerald-400">A1</span>
+                  <div class="flex-1 bg-emerald-950/60 border border-emerald-500/40 rounded px-2 py-1 flex items-center justify-between text-emerald-200">
+                    <span class="truncate">News_Voiceover_Urdu.wav</span>
+                    <!-- Animated Waveform -->
+                    <div class="flex items-center space-x-0.5 h-4 w-20 justify-end">
+                      <span class="w-0.5 bg-emerald-400 rounded waveform-bar" style="animation-delay: 0.1s;"></span>
+                      <span class="w-0.5 bg-emerald-400 rounded waveform-bar" style="animation-delay: 0.3s;"></span>
+                      <span class="w-0.5 bg-emerald-400 rounded waveform-bar" style="animation-delay: 0.5s;"></span>
+                      <span class="w-0.5 bg-emerald-400 rounded waveform-bar" style="animation-delay: 0.2s;"></span>
+                      <span class="w-0.5 bg-emerald-400 rounded waveform-bar" style="animation-delay: 0.4s;"></span>
+                      <span class="w-0.5 bg-emerald-400 rounded waveform-bar" style="animation-delay: 0.6s;"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Text Input to Update Lower-Third -->
+            <div class="pt-3 border-t border-slate-800 space-y-2">
+              <label class="block text-[11px] font-bold text-slate-300 font-nastaliq">لوئر تھرڈ ہیڈ لائن تبدیل کریں:</label>
+              <div class="flex items-center space-x-2">
+                <input type="text" id="headlineInput" value="28 ویں آئینی ترمیم پر حمایت بھی ناقابل قبول ہے: اینکر غریدہ فاروقی کی خبر" class="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500 font-nastaliq"/>
+                <button onclick="updateHeadlineText()" class="px-2.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition cursor-pointer">
+                  اپڈیٹ
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Render Progress Bar (Hidden by default) -->
+        <div id="renderProgressContainer" class="hidden p-4 bg-slate-950 border-t border-slate-800">
+          <div class="flex items-center justify-between text-xs font-mono text-indigo-300 mb-1.5">
+            <span id="renderStatusText">رینڈرنگ ہو رہی ہے... (Rendering 4K 60FPS)</span>
+            <span id="renderPercent">0%</span>
+          </div>
+          <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+            <div id="renderProgressBar" class="bg-indigo-500 h-2 rounded-full transition-all duration-200" style="width: 0%"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Launch: South Today Poster Editor Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        
+        <!-- Card 1: Template 2 (Multan Yellow Ribbon) -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-bold text-[10px]">ٹیمپلیٹ 2 (ملتان یلو ہیڈر)</span>
+              <span class="text-xs text-slate-400 font-mono">1400 x 1080 HD</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mt-2 font-nastaliq">
+              ملتان یلو ہیڈر پوسٹر ایڈیٹر (نیا ورژن)
+            </h3>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+              سفید اور پیلی سرخی، فوٹوشاپ ڈراپ شیڈو، خودکار کلپنگ ماسک، ایرس آئی ٹی سی بولڈ ربن اور فلپنگ کنٹرولز کے ساتھ۔
+            </p>
+          </div>
+          <a href="https://ahmhost.github.io/poster-preview/" target="_blank" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs transition flex items-center justify-center space-x-2 shadow-xs">
+            <span class="material-symbols-outlined text-base">brush</span>
+            <span>ٹیمپلیٹ 2 پوسٹر ایڈیٹر کھولیں</span>
+          </a>
+        </div>
+
+        <!-- Card 2: Template 1 (South Today Classic Broadcast) -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold text-[10px]">ٹیمپلیٹ 1 (کلاسک براڈکاسٹ)</span>
+              <span class="text-xs text-slate-400 font-mono">1080 x 1350 HD 4:5</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mt-2 font-nastaliq">
+              ساؤتھ ٹوڈے براڈکاسٹ پوسٹر جنریٹر
+            </h3>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+              ریڈ کارنر ربن، بریکنگ نیوز بار، سنگل و ملٹی لائن آٹو فٹ، فوٹو اپ لوڈ اور این 8 این اٹومیشن سپورٹ۔
+            </p>
+          </div>
+          <a href="https://ahmhost.github.io/poster-preview/" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-black text-white font-bold text-xs transition flex items-center justify-center space-x-2 shadow-xs">
+            <span class="material-symbols-outlined text-base">auto_fix_high</span>
+            <span>کلاسک براڈکاسٹ ایڈیٹر کھولیں</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Notification Toast Container -->
+  <div id="toast" class="fixed bottom-6 right-6 hidden bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl border border-slate-700 text-xs font-semibold flex items-center space-x-2 z-50">
+    <span class="material-symbols-outlined text-emerald-400 text-base" id="toastIcon">check_circle</span>
+    <span id="toastMsg">عملیہ مکمل ہوا</span>
+  </div>
+
+  <script>
+    const userProfiles = {
+      superadmin: {
+        name: "جمشید رضوانی (Super Admin)",
+        email: "rizwani@socialflow.com",
+        title: "سپر ایڈمن کنٹرول پینل - پلیٹ فارم انفراسٹرکچر و کلسٹر مینجمنٹ",
+        subtitle: "Super Administrator / Platform Owner • سیشن محفوظ اور فعال ہے",
+        badge: "SUPERADMIN WORKSPACE",
+        badgeClass: "bg-amber-400 text-amber-950",
+        avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani"
+      },
+      admin: {
+        name: "نیوز روم ایڈمنسٹریٹر",
+        email: "admin@socialflow.com",
+        title: "نیوز روم ایڈیٹوریل ایڈمن - ملٹی پوسٹنگ، شیڈولنگ اور ٹیم مانیٹرنگ",
+        subtitle: "Newsroom Editorial Lead • سیشن محفوظ اور فعال ہے",
+        badge: "ADMIN WORKSPACE",
+        badgeClass: "bg-blue-400 text-blue-950",
+        avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=AdminFlow"
+      },
+      user: {
+        name: "ساجد (Content Creator)",
+        email: "sajid@socialflow.com",
+        title: "ساجد ویڈیو و گرافکس اسٹوڈیو - AI ملٹی میڈیا اور اردو ٹائم لائن",
+        subtitle: "Digital Journalist & Video Editor • سیشن محفوظ اور فعال ہے",
+        badge: "CREATOR WORKSPACE",
+        badgeClass: "bg-emerald-400 text-emerald-950",
+        avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Sajid"
+      }
+    };
+
+    function switchRole(role) {
+      if (!userProfiles[role]) role = 'superadmin';
+
+      // Hide all views
+      document.getElementById('view-superadmin').classList.add('hidden');
+      document.getElementById('view-admin').classList.add('hidden');
+      document.getElementById('view-user').classList.add('hidden');
+
+      // Show selected view
+      document.getElementById(`view-${role}`).classList.remove('hidden');
+
+      // Update Header Profile
+      const p = userProfiles[role];
+      document.getElementById('userName').textContent = p.name;
+      document.getElementById('userEmail').textContent = p.email;
+      document.getElementById('userAvatar').src = p.avatar;
+
+      // Update Subheader Banner
+      document.getElementById('workspaceTitle').textContent = p.title;
+      document.getElementById('workspaceSub').textContent = p.subtitle;
+      const b = document.getElementById('roleBadge');
+      b.textContent = p.badge;
+      b.className = `px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider ${p.badgeClass}`;
+
+      // Update tab buttons
+      ['superadmin', 'admin', 'user'].forEach(r => {
+        const btn = document.getElementById(`tabBtn-${r}`);
+        if (btn) {
+          if (r === role) {
+            btn.className = "px-2.5 py-1 rounded-lg text-xs font-semibold transition bg-primary text-white shadow-sm";
+          } else {
+            btn.className = "px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900";
+          }
+        }
+      });
+
+      // Update URL hash without reload
+      if (history.pushState) {
+        history.pushState(null, null, `?role=${role}`);
+      }
+    }
+
+    // Auto-initialize from query param
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const role = urlParams.get('role') || 'superadmin';
+      switchRole(role);
+    });
+
+    function showToast(msg, icon = 'check_circle') {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      const toastIcon = document.getElementById('toastIcon');
+      toastMsg.textContent = msg;
+      toastIcon.textContent = icon;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 3500);
+    }
+
+    function triggerClusterSync() {
+      showToast('کلسٹر نوڈز کامیابی سے سنک ہو گئے (12 Nodes in sync)', 'sync');
+    }
+
+    function showBroadcastModal() {
+      const title = prompt('براہ کرم بریکنگ نیوز کا عنوان درج کریں:');
+      if (title) {
+        showToast(`نئی براڈکاسٹ شیڈول ہو گئی: "${title}"`, 'podcasts');
+      }
+    }
+
+    function restartCluster() {
+      if (confirm('کیا آپ تمام 12 کلسٹر ورکرز ری سٹارٹ کرنا چاہتے ہیں؟')) {
+        showToast('کلسٹر ورکرز ری سٹارٹ ہو رہے ہیں...', 'restart_alt');
+        setTimeout(() => showToast('تمام سروسز کامیابی سے ری سٹارٹ ہو گئیں!', 'check_circle'), 2000);
+      }
+    }
+
+    function approveStory(id) {
+      showToast(`خبر نمبر ${id} منظور ہو کر اشاعت کے لیے تیار ہو گئی!`, 'done');
+    }
+
+    function rejectStory(id) {
+      showToast(`خبر نمبر ${id} ایڈیٹنگ کے لیے واپس بھیج دی گئی`, 'info');
+    }
+
+    function publishToAllChannels() {
+      showToast('تمام 6 منسلک نیٹ ورکس (FB, IG, WP, X, TT, YT) پر پوسٹنگ شروع ہو گئی!', 'send');
+    }
+
+    let isPlaying = false;
+    function toggleVideoPlayback() {
+      isPlaying = !isPlaying;
+      const playIcon = document.getElementById('playIcon');
+      const playText = document.getElementById('playText');
+      if (isPlaying) {
+        playIcon.textContent = 'pause';
+        playText.textContent = 'روکیں (Pause)';
+        showToast('ٹائم لائن پلے بیک شروع ہو گیا', 'play_arrow');
+      } else {
+        playIcon.textContent = 'play_arrow';
+        playText.textContent = 'چلائیں (Play)';
+      }
+    }
+
+    function updateHeadlineText() {
+      const val = document.getElementById('headlineInput').value;
+      const target = document.getElementById('previewHeadline');
+      if (target && val) {
+        target.textContent = val;
+        showToast('لوئر تھرڈ ہیڈ لائن اپڈیٹ ہو گئی!', 'edit');
+      }
+    }
+
+    function renderFinalVideo() {
+      const container = document.getElementById('renderProgressContainer');
+      const bar = document.getElementById('renderProgressBar');
+      const percent = document.getElementById('renderPercent');
+      const statusText = document.getElementById('renderStatusText');
+      
+      container.classList.remove('hidden');
+      bar.style.width = '0%';
+      percent.textContent = '0%';
+      statusText.textContent = 'ویڈیو این ایل ای رینڈرنگ شروع ہو رہی ہے...';
+
+      let progress = 0;
+      const timer = setInterval(() => {
+        progress += 10;
+        bar.style.width = progress + '%';
+        percent.textContent = progress + '%';
+
+        if (progress === 40) {
+          statusText.textContent = 'اردو نستعلیق لوئر تھرڈ کمپوزنگ...';
+        } else if (progress === 80) {
+          statusText.textContent = 'ProRes 422 4K فریمز انکوڈنگ...';
+        } else if (progress >= 100) {
+          clearInterval(timer);
+          statusText.textContent = 'رینڈر مکمل ہو گیا! ڈاؤن لوڈنگ شروع...';
+          showToast('4K 60FPS ویڈیو کامیابی سے رینڈر ہو گئی!', 'movie');
+          setTimeout(() => {
+            container.classList.add('hidden');
+          }, 3000);
+        }
+      }, 250);
+    }
+  </script>
+
+</body>
+</html>
