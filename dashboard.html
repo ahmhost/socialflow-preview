@@ -109,6 +109,24 @@
       }
     };
   </script>
+
+  <!-- JR Editorial Studio Fonts & HTML2Canvas -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    @font-face {
+      font-family: 'Jameel Noori Nastaleeq';
+      src: url('https://cdn.jsdelivr.net/gh/urdutype/jameel-noori-nastaleeq@master/Jameel%20Noori%20Nastaleeq.woff2') format('woff2'),
+           url('https://cdn.jsdelivr.net/gh/urdutype/jameel-noori-nastaleeq@master/Jameel%20Noori%20Nastaleeq.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    .font-jameel {
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+    }
+  </style>
+
 </head>
 <body class="bg-background font-body-md text-on-surface antialiased">
 
@@ -285,52 +303,58 @@
     </header>
 
     <!-- HEADER 2: COMPOSER HEADER (Visible on Creative Post Composer) -->
-    <header id="header-composer" class="hidden fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl">
-      <div class="flex items-center gap-space-xl">
-        <div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-lg cursor-pointer">
-          <span class="material-symbols-outlined text-on-surface-variant text-[18px]">workspaces</span>
-          <span class="font-label-md text-label-md text-on-surface font-semibold">Global Marketing EMEA</span>
-          <span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span>
+        <!-- HEADER 2: JR EDITORIAL STUDIO COMMAND BAR (Visible on Design Studio: Posts) -->
+    <header id="header-composer" class="hidden fixed top-0 left-72 right-0 h-16 bg-[#070e1b] border-b border-[#232a38] z-40 flex items-center justify-between px-6">
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded bg-[#d99b26] text-[#070e1b] flex items-center justify-center font-bold text-xs tracking-wider shadow-sm">JR</div>
+          <span class="font-bold text-sm text-[#ffc664] tracking-wide hidden sm:inline">JR EDITORIAL STUDIO</span>
+          <span class="text-xs px-2.5 py-0.5 rounded-full bg-[#d99b26]/15 text-[#fabc48] border border-[#d99b26]/30 hidden md:inline font-mono">API v1.0 Live</span>
         </div>
-        <div class="flex items-center bg-surface-container-low px-space-md py-space-sm rounded-lg w-72">
-          <span class="material-symbols-outlined text-on-surface-variant text-[18px] mr-space-sm">search</span>
-          <input class="bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none w-full" placeholder="Search campaigns, clips, media..." type="text"/>
+        <div class="h-4 w-px bg-[#232a38] hidden md:block"></div>
+        <div class="hidden lg:flex items-center gap-1.5 text-xs text-[#d4c4af] font-mono">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Puppeteer Engine Active (Port 3333)</span>
         </div>
       </div>
 
-      <div class="flex items-center gap-space-xl">
-        <div class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-low rounded-lg" title="Connected Platform Statuses">
-          <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="Facebook: Connected">
-            <span class="material-symbols-outlined text-[16px] text-secondary">public</span><span class="font-label-sm text-label-sm font-bold">FB</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
-          </div>
-          <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="Instagram: Connected">
-            <span class="material-symbols-outlined text-[16px] text-primary">photo_camera</span><span class="font-label-sm text-label-sm font-bold">IG</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
-          </div>
-          <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="WordPress: Connected">
-            <span class="material-symbols-outlined text-[16px] text-secondary">article</span><span class="font-label-sm text-label-sm font-bold">WP</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
-          </div>
-          <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="X: Connected">
-            <span class="material-symbols-outlined text-[16px] text-on-surface">tag</span><span class="font-label-sm text-label-sm font-bold">X</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
-          </div>
-          <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="YouTube: Connected">
-            <span class="material-symbols-outlined text-[16px] text-error">play_circle</span><span class="font-label-sm text-label-sm font-bold">YT</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
-          </div>
-          <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="TikTok: Synced">
-            <span class="material-symbols-outlined text-[16px] text-on-surface">music_note</span><span class="font-label-sm text-label-sm font-bold">TT</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
-          </div>
+      <!-- Ratio Pills & Actions -->
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-1 bg-[#0c1321] p-1 rounded-lg border border-[#232a38]">
+          <button id="btn-ratio-45" class="px-3 py-1 rounded bg-[#232a38] text-[#ffc664] font-semibold flex items-center gap-1 shadow-sm border border-[#d99b26]/30 text-xs">
+            <span class="material-symbols-outlined text-[15px]">crop_portrait</span>
+            <span>4:5 Feed</span>
+          </button>
+          <button id="btn-ratio-11" class="px-3 py-1 rounded bg-[#141c29] hover:bg-[#232a38] text-[#d4c4af] font-semibold flex items-center gap-1 transition-colors text-xs">
+            <span class="material-symbols-outlined text-[15px]">crop_square</span>
+            <span>1:1 Square</span>
+          </button>
+          <button id="btn-ratio-916" class="px-3 py-1 rounded bg-[#141c29] hover:bg-[#232a38] text-[#d4c4af] font-semibold flex items-center gap-1 transition-colors text-xs">
+            <span class="material-symbols-outlined text-[15px]">smartphone</span>
+            <span>9:16 Story</span>
+          </button>
         </div>
 
-        <!-- USER PROFILE INJECTION POINT 2 -->
-        <div class="flex items-center gap-space-sm pl-space-sm">
-  <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani" alt="Avatar" class="w-8 h-8 rounded-full border border-primary/30 bg-surface-container-low shadow-xs"/>
-  <div class="hidden xl:flex flex-col">
-    <span class="font-label-md text-label-md text-on-surface font-semibold leading-none">Jamshed Rizwani</span>
-    <span class="font-label-sm text-label-sm text-primary font-mono-code">Super Administrator</span>
-  </div>
-  <a href="index.html" title="Sign Out" class="ml-2 w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors">
-    <span class="material-symbols-outlined text-[18px]">logout</span>
-  </a>
-</div>
+        <button onclick="handleQuickCopy()" class="px-3 py-1.5 rounded bg-[#141c29] hover:bg-[#d99b26]/20 text-[#ffc664] border border-[#d99b26]/30 font-semibold flex items-center gap-1 transition-colors text-xs">
+          <span class="material-symbols-outlined text-[15px]">content_copy</span>
+          <span class="hidden sm:inline">Copy Text</span>
+        </button>
+
+        <button onclick="openApiModal()" class="px-3 py-1.5 rounded bg-[#141c29] hover:bg-[#d99b26]/20 text-[#fabc48] border border-[#d99b26]/30 font-semibold flex items-center gap-1 transition-colors text-xs">
+          <span class="material-symbols-outlined text-[15px]">code</span>
+          <span class="hidden sm:inline">API Docs</span>
+        </button>
+
+        <div class="h-4 w-px bg-[#232a38] hidden sm:block"></div>
+
+        <!-- User profile -->
+        <div class="flex items-center gap-2 pl-2">
+          <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani" alt="Avatar" class="w-8 h-8 rounded-full border border-[#d99b26]/40 bg-[#141c29] shadow-xs"/>
+          <div class="hidden xl:flex flex-col text-left">
+            <span class="text-xs text-[#dce2f5] font-semibold leading-none">Jamshed Rizwani</span>
+            <span class="text-[10px] text-[#ffc664] font-mono leading-none mt-1">Super Admin</span>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -3514,814 +3538,719 @@
     <!-- ═════════════════════════════════════════════════════════════════ -->
     <!-- VIEW CONTAINER 2: CREATIVE POST COMPOSER                         -->
     <!-- ═════════════════════════════════════════════════════════════════ -->
-    <main id="view-composer" class="studio-view hidden w-full pt-16 bg-background min-h-screen">
-      <div class="flex flex-col w-full">
-<!-- Studio Header Context Bar -->
-<div class="bg-surface-container-lowest shadow-sm px-space-xl py-space-md mb-space-md">
-<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
-<!-- Left: Title & Quick Metadata -->
-<div class="flex items-center gap-space-lg">
-<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
-<span class="material-symbols-outlined text-[22px]">photo_spark</span>
-</div>
-<div class="flex flex-col">
-<div class="flex items-center gap-space-sm">
-<span class="font-headline-sm text-headline-sm text-on-surface">Creative Post Composer</span>
-<span class="px-space-sm py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-mono-code text-mono-code">v4.2 Live Engine</span>
-<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-mono-code text-mono-code">Global Studio Engine</span>
-</div>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Omnichannel asset generation, dynamic typography &amp; platform-optimized distributions</span>
-</div>
-</div>
-<!-- Center & Right: Channel Selector Pills & Action Pipeline -->
-<div class="flex flex-wrap items-center gap-space-md">
-<!-- Social Channel Selection Strip -->
-<div class="flex items-center bg-surface-container-low p-1 rounded-xl shadow-inner gap-1">
-<button class="channel-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all" type="button">
-<span class="material-symbols-outlined text-secondary text-[16px]">public</span>
-<span>FB Page</span>
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
-</button>
-<button class="channel-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all" type="button">
-<span class="material-symbols-outlined text-primary text-[16px]">photo_camera</span>
-<span>IG Business</span>
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
-</button>
-<button class="channel-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all" type="button">
-<span class="material-symbols-outlined text-secondary text-[16px]">article</span>
-<span>WordPress</span>
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
-</button>
-<button class="channel-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all" type="button">
-<span class="material-symbols-outlined text-on-surface text-[16px]">tag</span>
-<span>X Feed</span>
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
-</button>
-<button class="channel-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all" type="button">
-<span class="material-symbols-outlined text-error text-[16px]">play_circle</span>
-<span>YT Community</span>
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
-</button>
-<button class="channel-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all" type="button">
-<span class="material-symbols-outlined text-on-surface text-[16px]">music_note</span>
-<span>TikTok</span>
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
-</button>
-</div>
-<!-- Schedule / Multi-Publish CTA -->
-<div class="flex items-center gap-space-sm">
-<button class="flex items-center gap-space-xs px-3 py-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" type="button">
-<span class="material-symbols-outlined text-[18px]">schedule</span>
-<span>Schedule</span>
-</button>
-<button class="flex items-center gap-space-xs px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-lg text-label-lg shadow-sm transition-all transform active:scale-95" id="publishAllBtn" type="button">
-<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
-<span>Publish 6 Channels</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Secondary Row: Aspect Ratio Matrix & Preset Triggers -->
-<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-md mt-space-md bg-surface-container-low px-space-md py-space-sm rounded-xl">
-<div class="flex items-center gap-space-sm">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider flex items-center gap-1">
-<span class="material-symbols-outlined text-[16px]">aspect_ratio</span> Framing:
-        </span>
-<div class="flex items-center gap-space-xs" id="aspectRatioGroup">
-<button class="ratio-btn px-2.5 py-1 rounded-md bg-primary-container text-on-primary font-mono-code text-mono-code shadow-xs" data-ratio="1:1" type="button">1:1 Square (IG/FB)</button>
-<button class="ratio-btn px-2.5 py-1 rounded-md bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-mono-code text-mono-code" data-ratio="4:5" type="button">4:5 Feed Portrait</button>
-<button class="ratio-btn px-2.5 py-1 rounded-md bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-mono-code text-mono-code" data-ratio="16:9" type="button">16:9 Landscape (YT/X)</button>
-<button class="ratio-btn px-2.5 py-1 rounded-md bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-mono-code text-mono-code" data-ratio="9:16" type="button">9:16 Story/Reel/TikTok</button>
-<button class="ratio-btn px-2.5 py-1 rounded-md bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-mono-code text-mono-code" data-ratio="1200:630" type="button">1200×630 WP Hero</button>
-</div>
-</div>
-<div class="flex items-center gap-space-md">
-<div class="flex items-center gap-space-xs font-mono-code text-mono-code text-on-surface-variant">
-<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
-<span>GPU Render Core: Online (Tensor RT 9)</span>
-</div>
-<div class="h-4 w-px bg-surface-container-high"></div>
-<button class="text-primary font-label-sm text-label-sm hover:underline flex items-center gap-1" type="button">
-<span class="material-symbols-outlined text-[16px]">tune</span> Canvas Presets
-        </button>
-</div>
-</div>
-</div>
-<!-- Studio Workspace: 3 Column NLE Architecture -->
-<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md px-space-md pb-space-xl">
-<!-- LEFT PANEL: AI Studio, Multilingual Text Engine & Brand Kits (Col 3.5) -->
-<div class="xl:col-span-4 flex flex-col gap-space-md">
-<!-- AI Image Prompt Matrix -->
-<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
-<div class="flex items-center justify-between mb-space-md">
-<div class="flex items-center gap-space-sm">
-<span class="w-7 h-7 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
-</span>
-<span class="font-headline-sm text-headline-sm text-on-surface">AI Visual Generator</span>
-</div>
-<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-mono-code text-mono-code">SDXL Turbo Pro</span>
-</div>
-<!-- Bilingual Prompt Input Area -->
-<div class="space-y-space-sm">
-<div>
-<div class="flex justify-between items-center mb-1">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Primary Prompt (EN)</label>
-<button class="text-primary font-label-sm text-label-sm flex items-center gap-0.5 hover:underline" id="magicPromptBtn" type="button">
-<span class="material-symbols-outlined text-[14px]">magic_button</span> AI Magic Expand
+        <!-- VIEW CONTAINER 2: JR EDITORIAL STUDIO (Posts)                 -->
+    <main id="view-composer" class="studio-view hidden w-full pt-16 bg-[#0c1321] text-[#dce2f5] min-h-screen">
+      <div class="w-full flex-1 flex flex-col lg:flex-row overflow-hidden min-h-[calc(100vh-4rem)]">
+
+        <!-- LEFT PANEL: Editorial Content Controls -->
+        <div class="w-full lg:w-[480px] xl:w-[520px] bg-[#070e1b] border-r border-[#232a38] p-4 md:p-6 overflow-y-auto flex flex-col gap-5">
+          
+          <!-- Panel 1: Editorial Headline & Facts -->
+          <div class="bg-[#141c29] border border-[#232a38] rounded-xl p-4 shadow-lg flex flex-col gap-4">
+            <div class="flex items-center justify-between pb-2 border-b border-[#232a38]/80">
+              <div class="flex items-center gap-2 text-[#dce2f5]">
+                <span class="material-symbols-outlined text-[#d99b26] text-[20px]">edit_note</span>
+                <span class="font-bold text-base">Editorial Content Controls</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-[#d99b26]/15 border border-[#d99b26]/30 text-[#ffc664] text-xs font-semibold">Live Text Sync</span>
+            </div>
+
+            <!-- Headline Input -->
+            <div class="flex flex-col gap-1 text-left">
+              <div class="flex items-center justify-between">
+                <label class="text-xs font-semibold text-[#ffc664]">Urdu Main Headline (Headline)</label>
+                <span id="headline-char-count" class="text-[11px] text-[#d4c4af] font-mono">51 / 90</span>
+              </div>
+              <textarea id="input-headline" dir="rtl" rows="2" class="w-full bg-[#232a38] border border-[#2e3543] rounded p-2.5 text-[#dce2f5] font-jameel text-[19px] leading-relaxed focus:outline-none focus:ring-1 focus:ring-[#d99b26] text-right" placeholder="اردو سرخی یہاں درج کریں...">حکومت نے پی ٹی آئی سے انتخابی اصلاحات سے متعلق پارلیمانی کمیٹی کا حصہ بننے کی درخواست کردی</textarea>
+            </div>
+
+            <!-- Key Facts / Sub-banner -->
+            <div class="flex flex-col gap-1 text-left">
+              <label class="text-xs font-semibold text-[#fabc48] flex items-center justify-between">
+                <span>Key Facts / Casualties (Bullet Points)</span>
+                <span class="text-[10px] text-[#d4c4af]">highlighted numbers</span>
+              </label>
+              <input id="input-facts" type="text" dir="rtl" class="w-full bg-[#232a38] border border-[#2e3543] rounded px-3 py-2 text-[#dce2f5] font-jameel text-[16px] focus:outline-none focus:ring-1 focus:ring-[#d99b26] text-right" value="اپوزیشن اسپیکر کوپارلیمانی کمیٹی میں شمولیت کے لیے نام جلد بھجوائے، طارق فضل">
+            </div>
+
+            <!-- Detailed Context Note -->
+            <div class="flex flex-col gap-1 text-left">
+              <label class="text-xs font-semibold text-[#d4c4af]">Detailed Context Note (Context)</label>
+              <textarea id="input-subnotes" dir="rtl" rows="3" class="w-full bg-[#232a38] border border-[#2e3543] rounded p-2.5 text-[#dce2f5] font-jameel text-[15px] leading-relaxed focus:outline-none focus:ring-1 focus:ring-[#d99b26] text-right" placeholder="تفصیلی سیاق و سباق...">وفاقی وزیرپارلیمانی امورطارق فضل چوہدری نے پی ٹی آئی کےچیف وہپ عامرڈوگر کو ٹیلی فون کیا جس میں انتخابی اصلاحات کمیٹی سے متعلق امور پر تفصیلی گفتگو  کی گئی جب کہ طارق فضل نے عامر ڈوگر سے پارلیمانی کمیٹی کا حصہ بننے کی درخواست بھی کی۔</textarea>
+            </div>
+
+            <!-- 2-Col Quick Meta Tags -->
+            <div class="grid grid-cols-2 gap-3 text-left">
+              <div class="flex flex-col gap-1">
+                <label class="text-[11px] font-semibold text-[#d4c4af]">Location / Tag</label>
+                <input id="input-location" type="text" dir="rtl" class="w-full bg-[#232a38] border border-[#2e3543] rounded px-2.5 py-1.5 text-[#dce2f5] font-jameel text-sm text-right focus:outline-none focus:ring-1 focus:ring-[#d99b26]" value="وفاقی وزیرپارلیمانی امورطارق فضل چوہدری">
+              </div>
+              <div class="flex flex-col gap-1">
+                <label class="text-[11px] font-semibold text-[#d4c4af]">Date &amp; Time</label>
+                <input id="input-date" type="text" dir="rtl" class="w-full bg-[#232a38] border border-[#2e3543] rounded px-2.5 py-1.5 text-[#dce2f5] font-jameel text-sm text-right focus:outline-none focus:ring-1 focus:ring-[#d99b26]" value="13 اکتوبر 2026">
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2: City & Category Badges -->
+          <div class="bg-[#141c29] border border-[#232a38] rounded-xl p-4 shadow-lg flex flex-col gap-4">
+            <div class="flex items-center justify-between pb-2 border-b border-[#232a38]/80">
+              <div class="flex items-center gap-2 text-[#dce2f5]">
+                <span class="material-symbols-outlined text-[#d99b26] text-[20px]">badge</span>
+                <span class="font-bold text-base">City &amp; Category Badges</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 text-left">
+              <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-[#ffc664]">City / Sub-tag</label>
+                <input id="input-city-tag" type="text" dir="rtl" class="w-full bg-[#232a38] border border-[#2e3543] rounded px-2.5 py-1.5 text-[#dce2f5] font-jameel text-sm text-right focus:outline-none focus:ring-1 focus:ring-[#d99b26]" value="اسلام آباد">
+              </div>
+              <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-[#fabc48]">Category / Headline Badge</label>
+                <input id="input-category-badge" type="text" dir="rtl" class="w-full bg-[#232a38] border border-[#2e3543] rounded px-2.5 py-1.5 text-[#dce2f5] font-jameel text-sm text-right focus:outline-none focus:ring-1 focus:ring-[#d99b26]" value="بریکنگ نیوز">
+              </div>
+            </div>
+
+            <!-- Photo Uploader -->
+            <div class="flex flex-col gap-2 pt-2 border-t border-[#232a38]/80">
+              <label class="text-xs font-semibold text-[#d4c4af] flex items-center justify-between">
+                <span class="text-[#ffc664]">News Background Image</span>
+                <span class="text-[10px] text-[#d4c4af]">URL or Local PC Upload</span>
+              </label>
+              <div class="flex items-center gap-2">
+                <input id="input-img-url" type="text" placeholder="Paste image URL..." class="flex-1 bg-[#232a38] border border-[#2e3543] rounded px-2.5 py-1.5 text-[#dce2f5] text-xs focus:outline-none focus:ring-1 focus:ring-[#d99b26]" value="assets/tariq_fazal_news.jpg">
+                <label class="px-3 py-1.5 rounded bg-[#232a38] hover:bg-[#323948] text-[#ffc664] border border-[#d99b26]/30 font-semibold text-xs cursor-pointer flex items-center gap-1 shrink-0 transition-colors">
+                  <span class="material-symbols-outlined text-[15px]">upload_file</span>
+                  <span>Upload</span>
+                  <input id="input-file-upload" type="file" accept="image/*" class="hidden">
+                </label>
+              </div>
+            </div>
+
+            <!-- Banner Accent Toggles -->
+            <div class="flex items-center justify-between pt-2">
+              <span class="text-xs text-[#d4c4af] font-medium">Gold Highlight Theme: Midnight Gold</span>
+              <button id="toggle-pulse" class="w-11 h-6 rounded-full bg-[#d99b26] flex items-center px-1 transition-colors">
+                <span class="w-4 h-4 rounded-full bg-[#0c1321] transform translate-x-5 transition-transform"></span>
               </button>
-</div>
-<textarea class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-0 focus:bg-surface-container resize-none" id="promptEnglish" placeholder="Cyberpunk fintech startup launching automated global remittances, clean architectural studio lighting, isometric high-detail render..." rows="2"></textarea>
-</div>
-<div>
-<div class="flex justify-between items-center mb-1">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Headline &amp; Banner Context</label>
-<span class="font-mono-code text-mono-code text-secondary font-semibold">Headline Subtitle</span>
-</div>
-<textarea class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-0 focus:bg-surface-container resize-none " id="promptHeadline" placeholder="Autonomous cross-border financial rails — Next-gen institutional liquidity protocol." rows="2"></textarea>
-</div>
-</div>
-<!-- Style Archetypes Picker -->
-<div class="mt-space-md">
-<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-space-xs">Artistic Direction Style</label>
-<div class="grid grid-cols-2 gap-space-xs">
-<button class="style-card flex items-center gap-space-xs p-2 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm text-left transition-all" type="button">
-<span class="material-symbols-outlined text-[16px]">camera</span>
-<div class="truncate">
-<div class="font-semibold">Photorealistic</div>
-<div class="text-on-surface-variant text-[9px] truncate">Hasselblad 8K Studio</div>
-</div>
-</button>
-<button class="style-card flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm text-left transition-all" type="button">
-<span class="material-symbols-outlined text-[16px]">newspaper</span>
-<div class="truncate">
-<div class="font-semibold">Broadcast News Banner</div>
-<div class="text-on-surface-variant text-[9px] truncate">3D Broadcast Lower-Third</div>
-</div>
-</button>
-<button class="style-card flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm text-left transition-all" type="button">
-<span class="material-symbols-outlined text-[16px]">corporate_fare</span>
-<div class="truncate">
-<div class="font-semibold">Corporate Minimal</div>
-<div class="text-on-surface-variant text-[9px] truncate">Gradient &amp; Swiss Typo</div>
-</div>
-</button>
-<button class="style-card flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm text-left transition-all" type="button">
-<span class="material-symbols-outlined text-[16px]">auto_stories</span>
-<div class="truncate">
-<div class="font-semibold">Editorial Luxe</div>
-<div class="text-on-surface-variant text-[9px] truncate">High-Contrast Magazine</div>
-</div>
-</button>
-</div>
-</div>
-<div class="mt-space-md flex gap-space-sm">
-<button class="flex-1 flex items-center justify-center gap-space-xs py-2.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:opacity-95 transition-all" id="generateVisualBtn" type="button">
-<span class="material-symbols-outlined text-[18px]">brush</span>
-<span>Synthesize New Visual</span>
-</button>
-<button class="px-3 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface" title="Seed Lock" type="button">
-<span class="material-symbols-outlined text-[18px]">lock_open</span>
-</button>
-</div>
-</div>
-<!-- Text & AI Copy Engine -->
-<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
-<div class="flex items-center justify-between mb-space-md">
-<div class="flex items-center gap-space-sm">
-<span class="w-7 h-7 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">edit_note</span>
-</span>
-<span class="font-headline-sm text-headline-sm text-on-surface">AI Multi-Channel Writer</span>
-</div>
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-tertiary-container text-[16px]">bolt</span>
-<span class="font-mono-code text-mono-code text-on-surface-variant">GPT-4o Stream</span>
-</div>
-</div>
-<!-- Tone selector -->
-<div class="mb-space-sm">
-<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Tone &amp; Perspective</label>
-<div class="flex flex-wrap gap-1">
-<button class="tone-pill px-2.5 py-1 rounded-md bg-primary-container text-on-primary font-label-sm text-label-sm" type="button">Breaking News</button>
-<button class="tone-pill px-2.5 py-1 rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm" type="button">Viral Hook (TikTok)</button>
-<button class="tone-pill px-2.5 py-1 rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm" type="button">Promotional B2B</button>
-<button class="tone-pill px-2.5 py-1 rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm" type="button">Editorial Analysis</button>
-</div>
-</div>
-<!-- Master Content Draft -->
-<div class="space-y-space-sm">
-<div>
-<div class="flex justify-between items-center mb-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant">Universal English Caption</span>
-<button class="text-primary font-label-sm text-label-sm hover:underline" type="button">Regenerate</button>
-</div>
-<textarea class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface resize-none focus:outline-none" id="captionEnglish" rows="3">Excited to unveil our next-generation cross-border payment gateway! Seamless transaction speeds, zero gas overhead, and banking-grade security built for high-velocity global growth. Tap below to see live benchmarks. 🚀🌐</textarea>
-</div>
-<div>
-<div class="flex justify-between items-center mb-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant">Secondary Multi-Channel Hook</span>
-<span class="font-mono-code text-mono-code text-on-surface-variant">Smart Context Sync</span>
-</div>
-<textarea class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface resize-none focus:outline-none" id="captionHeadline" rows="2">Next-generation global financial network unveiled! High-velocity institutional settlements with zero-gas overhead and bank-grade security.</textarea>
-</div>
-</div>
-<!-- Hashtags & SEO Auto-generator -->
-<div class="mt-space-md pt-space-md bg-surface-container-low p-space-sm rounded-lg">
-<div class="flex items-center justify-between mb-1.5">
-<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
-<span class="material-symbols-outlined text-[16px] text-primary">tag</span> Suggested Viral Tags
+            </div>
+          </div>
+
+          <!-- Panel 3: Action Buttons (API Render & Instant Download) -->
+          <div class="flex flex-col gap-2 pt-2">
+            <button id="btn-api-generate" onclick="generateViaApi()" class="w-full py-3.5 px-4 rounded-lg bg-gradient-to-r from-[#d99b26] to-[#fabc48] hover:from-[#e5a93b] hover:to-[#ffd57a] text-[#070e1b] font-black text-sm flex items-center justify-center gap-2 shadow-xl transition-all active:scale-[0.98]">
+              <span id="api-btn-spinner" class="material-symbols-outlined text-[20px]">download</span>
+              <span id="api-btn-text">Export HD Poster (300 DPI)</span>
+            </button>
+
+            <div class="flex items-center gap-2">
+              <button onclick="generateViaApi()" class="flex-1 py-2 px-3 rounded bg-[#232a38] hover:bg-[#323948] text-[#dce2f5] border border-[#2e3543] text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors">
+                <span class="material-symbols-outlined text-[16px]">bolt</span>
+                <span>Fast API Render</span>
+              </button>
+              <button onclick="openApiModal()" class="py-2 px-3 rounded bg-[#232a38] hover:bg-[#323948] text-[#fabc48] border border-[#d99b26]/30 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors">
+                <span class="material-symbols-outlined text-[16px]">code</span>
+                <span>JSON &amp; PHP API</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Generation Result Notification -->
+          <div id="export-result-box" class="hidden bg-emerald-950/60 border border-emerald-500/40 rounded-lg p-3 text-left flex flex-col gap-2">
+            <div class="flex items-center justify-between text-xs text-emerald-300 font-bold">
+              <span class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                <span>HD Poster Rendered Successfully!</span>
+              </span>
+              <span id="result-time" class="font-mono text-[10px] text-emerald-400">1080x1350 PNG</span>
+            </div>
+            <div class="flex items-center gap-2 pt-1">
+              <a id="result-download-btn" href="#" target="_blank" download="jr_poster.png" class="flex-1 py-1.5 px-3 rounded bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center">
+                Download HD Poster
+              </a>
+              <button onclick="copyResultUrl()" class="py-1.5 px-3 rounded bg-[#232a38] hover:bg-[#323948] text-emerald-300 text-xs font-semibold">
+                Copy URL
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT PANEL: Live High-Resolution Canvas Preview -->
+        <div class="flex-1 bg-[#0c1321]/90 p-4 md:p-8 overflow-y-auto flex flex-col items-center justify-center">
+          
+          <!-- Top Canvas Status Bar -->
+          <div class="w-full max-w-[540px] flex items-center justify-between pb-3 text-xs text-[#d4c4af] font-mono">
+            <span id="canvas-dim-badge">1080 x 1350 PX @ 300 DPI (4:5 Feed)</span>
+            <span class="flex items-center gap-1 text-[#ffc664]">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#ffc664] animate-ping"></span>
+              <span>Live High-Res Canvas Preview</span>
             </span>
-<span class="font-mono-code text-mono-code text-tertiary-container font-semibold">+84% Reach Est.</span>
-</div>
-<div class="flex flex-wrap gap-1">
-<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono-code text-mono-code cursor-pointer">#FinTech2025</span>
-<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono-code text-mono-code cursor-pointer">#GlobalPayments</span>
-<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono-code text-mono-code cursor-pointer">#NextGenBanking</span>
-<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono-code text-mono-code cursor-pointer">#GlobalFinTech</span>
-<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono-code text-mono-code cursor-pointer">#Innovate</span>
-</div>
-</div>
-</div>
-<!-- Brand Assets & Library Drawer Quick Strip -->
-<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
-<div class="flex items-center justify-between mb-space-sm">
-<span class="font-headline-sm text-headline-sm text-on-surface">Brand Asset Presets</span>
-<span class="font-label-sm text-label-sm text-primary hover:underline cursor-pointer">Open Kit</span>
-</div>
-<div class="grid grid-cols-4 gap-space-sm">
-<div class="p-2 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors">
-<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs mb-1">SF</div>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate w-full">Primary Logo</span>
-</div>
-<div class="p-2 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors">
-<div class="w-8 h-8 rounded-md bg-surface-container-high text-primary flex items-center justify-center font-bold text-xs mb-1">
-<span class="material-symbols-outlined text-[16px]">water_drop</span>
-</div>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate w-full">Watermark</span>
-</div>
-<div class="p-2 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors">
-<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-secondary mb-1"></div>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate w-full">Brand Duo</span>
-</div>
-<div class="p-2 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors">
-<div class="w-8 h-8 rounded-md bg-surface-container-highest text-primary flex items-center justify-center font-mono-code font-bold text-xs mb-1">SF</div>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate w-full">Brand Typo</span>
-</div>
-</div>
-</div>
-</div>
-<!-- CENTER PANEL: Interactive Poster Canvas & Live Platform Simulation (Col 5) -->
-<div class="xl:col-span-5 flex flex-col gap-space-md">
-<!-- Poster Visual Design Canvas Container -->
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
-<!-- Canvas Top Bar Controls -->
-<div class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg">
-<div class="flex items-center gap-space-md">
-<div class="flex items-center gap-1 font-mono-code text-mono-code text-on-surface">
-<span class="material-symbols-outlined text-[16px] text-primary">straighten</span>
-<span id="canvasDimLabel">1080 × 1080 px</span>
-</div>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Zoom: 85%</span>
-</div>
-<div class="flex items-center gap-space-xs">
-<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface" title="Snap to grid" type="button">
-<span class="material-symbols-outlined text-[16px]">grid_4x4</span>
-</button>
-<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface" title="Guide lines" type="button">
-<span class="material-symbols-outlined text-[16px]">straighten</span>
-</button>
-<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface" title="Undo" type="button">
-<span class="material-symbols-outlined text-[16px]">undo</span>
-</button>
-<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface" title="Redo" type="button">
-<span class="material-symbols-outlined text-[16px]">redo</span>
-</button>
-</div>
-</div>
-<!-- THE LIVE EDITABLE POSTER CANVAS -->
-<div class="w-full flex items-center justify-center py-space-sm bg-surface-container-low rounded-xl relative overflow-hidden">
-<!-- Poster Body Mockup -->
-<div class="relative w-full max-w-[440px] aspect-square rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300" id="editablePosterCanvas">
-<!-- Background AI Image Placeholder -->
-<img class="absolute inset-0 w-full h-full object-cover" data-alt="High quality dynamic digital artwork of glowing holographic financial chart elements intertwining with clean architectural columns against a deep indigo and silver gradient backdrop, ultra-detailed 8k resolution studio quality" id="posterBgImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvGMTtwo7ZI5BWA9DB8qW0U6FXTHL1zrQV_TWIIOLudxEwDgH2C1KWmI3tutE_w-Ku36onTxuKpCqBxaJ5v0WberRhKALC0LBtkGv_ahQBsmH6CZYhQkiRegYAXKRQ-BSr4xapxK1whMlSZ3oaG6MYorgIDl7blGTgMBwP4QreckE-sXu16YnfZix8c1XB5Ef2HV0UAnU3ufKfU92xH3h8QgrE5Ng6y6thHAglGaw"/>
-<!-- Gradient Scrim for readable Typography -->
-<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/40 to-transparent"></div>
-<!-- Top Canvas Ribbon: Breaking Alert & Brand Badge -->
-<div class="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-error text-on-error font-label-sm text-label-sm shadow-sm animate-pulse">
-<span class="w-2 h-2 rounded-full bg-surface-container-lowest"></span>
-<span>EXCLUSIVE LAUNCH</span>
-</div>
-<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
-<div class="w-4 h-4 rounded-full bg-primary flex items-center justify-center text-[9px] text-on-primary font-bold">S</div>
-<span class="font-mono-code text-mono-code text-on-surface font-semibold tracking-wider">SOCIALFLOW</span>
-</div>
-</div>
-<!-- Floating Interactive Layer 1: Headline Typography (Draggable) -->
-<div class="absolute top-20 left-4 right-4 z-20 cursor-move" id="layerHeadline">
-<div class="inline-block p-2 rounded-lg bg-surface-container-lowest/80 backdrop-blur-md shadow-md">
-<span class="font-mono-code text-mono-code text-primary font-bold block mb-0.5">EXCLUSIVE FINANCIAL REPORT</span>
-<h2 class="font-headline-md text-headline-md text-on-surface font-bold leading-snug">
-                  Next-Gen Banking Protocol
-                </h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant font-medium mt-0.5">
-                  Instant institutional fund transfers and automated cross-border settlement rails at your fingertips.
+          </div>
+
+          <!-- THE LIVE POSTER CONTAINER -->
+          <div id="poster-root" class="relative w-full max-w-[540px] aspect-[4/5] bg-[#070e1b] border border-[#232a38] rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col select-none transition-all duration-300">
+            
+            <!-- Ambient Radial Glow -->
+            <div class="absolute inset-0 pointer-events-none opacity-25 bg-gradient-to-t from-[#050912] via-[#0c1426] to-[#070e1b]"></div>
+            <div class="absolute -top-24 right-0 w-80 h-80 rounded-full bg-[#d99b26]/10 blur-3xl pointer-events-none"></div>
+
+            <!-- 1. Top Channel & Reporter Header Ribbon: Bureau on LEFT, Reporter on RIGHT -->
+            <div class="relative z-10 w-full px-5 pt-3.5 pb-2.5 bg-[#080f1e] border-b border-[#1b263b] flex items-center justify-between shadow-sm flex-row-reverse">
+              <!-- LEFT: Bureau / Monogram Emblem -->
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1.5 bg-[#141c29] border border-[#d99b26]/30 px-2.5 py-0.5 rounded">
+                  <span class="font-label-sm text-xs text-[#d99b26] font-extrabold tracking-widest uppercase">JR</span>
+                  <span class="text-[#9d8f7c] text-xs">|</span>
+                  <span id="poster-desk-city" class="font-label-sm text-xs text-[#dce2f5] font-semibold font-jameel">ملتان بیورو</span>
+                </div>
+                <span class="font-label-sm text-[9px] text-[#ffc664] mt-0.5 tracking-wider font-bold">EXCLUSIVE DESK</span>
+              </div>
+
+              <!-- RIGHT: Reporter & Avatar -->
+              <div class="flex items-center gap-3 flex-row-reverse">
+                <div class="flex flex-col text-right" dir="rtl">
+                  <div class="flex items-center gap-1.5 justify-end">
+                    <span id="poster-reporter-name" class="font-label-lg text-[16px] font-black tracking-wider text-[#d99b26] uppercase drop-shadow">JAMSHED RIZWANI</span>
+                    <span class="material-symbols-outlined text-[#d99b26] text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                  </div>
+                  <span id="poster-channel-sub" class="font-label-sm text-[11px] text-[#b9c8de]/85 font-jameel">سینئر صحافی و اینکر پرسن | خصوصی رپورٹنگ</span>
+                </div>
+                <div class="relative shrink-0">
+                  <div class="w-11 h-11 rounded-full p-[2px] bg-[#d99b26] shadow-sm">
+                    <img id="poster-avatar-img" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQFqCbCj0gB1Lt2-N6bNhukLe6RpU-sy_cjD6coWVf_FT1NxdZNwmnPTWFp50Nb0Bd4Vjj-IFbr9s-tXf2jgHkw9AdnfqeMEJV5tS0UUSlaBGo6-K7JO6behtZuD9w4wS8BhYv60t0td4KB9CF-sYt-SbfvR7yVgOWDRr4gvQxoWieP6giQWTZK7zV5inAhW7naBXdN8ChDe50Ywns2nG2YOvtq-2PPGktmJiWHWWehtbV3Gzhxt6zuXnR52VA30VVtw" alt="Jamshed Rizwani">
+                  </div>
+                  <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#d99b26] border-2 border-[#080f1e]"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Dramatic Visual Hero Section -->
+            <div id="poster-hero-frame" class="relative w-full h-[45%] overflow-hidden bg-[#070e1b] border-y border-[#1c273c]">
+              <img id="poster-main-image" class="w-full h-full object-cover" src="assets/tariq_fazal_news.jpg" alt="News Image">
+              <!-- Midnight Overlay Gradient -->
+              <div class="absolute inset-0 bg-gradient-to-b from-[#080f1e]/30 via-transparent to-[#070e1b]/90 pointer-events-none"></div>
+
+              <!-- Location / Ticker Stamp Over Picture -->
+              <div class="absolute top-3 right-3 flex items-center gap-1.5 z-10">
+                <div class="bg-[#d99b26] text-[#0c1321] px-2.5 py-1 rounded font-label-sm font-bold flex items-center gap-1 shadow-md text-xs">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#0c1321] animate-ping"></span>
+                  <span id="poster-loc-tag" class="font-jameel">وفاقی وزیرپارلیمانی امورطارق فضل چوہدری</span>
+                </div>
+                <div class="bg-[#070e1b]/85 backdrop-blur text-[#ffc664] border border-[#d99b26]/30 font-label-sm px-2 py-1 rounded shadow-sm text-xs font-jameel">
+                  <span id="poster-time-tag">تازہ ترین اپڈیٹ</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Breaking News Typographic Body Section -->
+            <div class="relative z-10 flex-1 px-5 py-3 flex flex-col justify-between bg-gradient-to-b from-[#0a1324] to-[#060b16] text-right">
+              <!-- Top Category Badge & Timestamp: Category on RIGHT, Date on LEFT -->
+              <div class="flex items-center justify-between gap-2 pt-0.5 pb-1 flex-row-reverse border-b border-[#1b263b]/60">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-[#d99b26] animate-pulse"></span>
+                  <span id="poster-sub-badge" class="font-jameel text-sm font-bold text-[#ffc664] tracking-wide">اسلام آباد | بریکنگ نیوز</span>
+                </div>
+                <div class="flex items-center gap-1 text-[#b9c8de]/70 text-[11px] font-sans">
+                  <span class="material-symbols-outlined text-[13px] text-[#d99b26]">schedule</span>
+                  <span id="poster-display-date" class="font-jameel">13 اکتوبر 2026</span>
+                </div>
+              </div>
+
+              <!-- Big Bold Urdu Headline with Nastaliq Font -->
+              <div class="my-auto py-1">
+                <h1 id="poster-urdu-headline" dir="rtl" class="font-jameel text-[25px] leading-[1.65] font-bold text-[#f0f4ff] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] tracking-normal">
+                  حکومت نے پی ٹی آئی سے انتخابی اصلاحات سے متعلق پارلیمانی کمیٹی کا حصہ بننے کی درخواست کردی
+                </h1>
+              </div>
+
+              <!-- High-Contrast Facts / Sub-banner Container -->
+              <div class="bg-[#0e1726]/90 border border-[#d99b26]/30 rounded-lg p-2.5 shadow-md flex flex-col gap-1.5" dir="rtl">
+                <!-- Bullet Point 1: Key Fact -->
+                <div class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#d99b26] mt-1.5 shrink-0"></span>
+                  <p id="poster-key-facts" class="font-jameel text-sm font-semibold text-[#ffdeaa] leading-relaxed">
+                    اپوزیشن اسپیکر کوپارلیمانی کمیٹی میں شمولیت کے لیے نام جلد بھجوائے، طارق فضل
+                  </p>
+                </div>
+                <!-- Bullet Point 2: Context / Background -->
+                <p id="poster-sub-notes" class="font-jameel text-[12.5px] text-[#c1d0e7] leading-relaxed pr-3 border-r-2 border-[#d99b26]/40">
+                  وفاقی وزیرپارلیمانی امورطارق فضل چوہدری نے پی ٹی آئی کےچیف وہپ عامرڈوگر کو ٹیلی فون کیا جس میں انتخابی اصلاحات کمیٹی سے متعلق امور پر تفصیلی گفتگو  کی گئی جب کہ طارق فضل نے عامر ڈوگر سے پارلیمانی کمیٹی کا حصہ بننے کی درخواست بھی کی۔
                 </p>
-</div>
-</div>
-<!-- Floating Interactive Layer 2: Center Feature Highlight Badge -->
-<div class="absolute center inset-x-8 top-1/2 -translate-y-4 z-20 cursor-move" id="layerStats">
-<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest/95 shadow-lg backdrop-blur-xl">
-<div class="flex items-center gap-2">
-<div class="w-9 h-9 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
-<span class="material-symbols-outlined text-[20px]">bolt</span>
-</div>
-<div class="flex flex-col">
-<span class="font-headline-sm text-headline-sm text-on-surface leading-none font-bold">0.04s</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Global Clearance Latency</span>
-</div>
-</div>
-<div class="h-6 w-px bg-surface-container-high"></div>
-<div class="flex flex-col text-right">
-<span class="font-headline-sm text-headline-sm text-primary leading-none font-bold">$0 Gas</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Zero Network Penalty</span>
-</div>
-</div>
-</div>
-<!-- Floating Interactive Layer 3: English Call To Action Footer -->
-<div class="absolute bottom-4 left-4 right-4 z-20 cursor-move" id="layerEnglish">
-<div class="p-3 rounded-xl bg-on-surface/90 text-on-primary shadow-xl backdrop-blur-md flex items-center justify-between">
-<div class="flex flex-col">
-<span class="font-headline-sm text-headline-sm font-bold tracking-tight">SocialFlow Studio Pro</span>
-<span class="font-body-sm text-body-sm opacity-80">Instant Multi-Engine Syndication</span>
-</div>
-<div class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm">
-<span>Explore Now</span>
-<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</div>
-</div>
-</div>
-<!-- Hover Layer Helper Overlays -->
-<div class="absolute bottom-1 right-1 z-30 pointer-events-none">
-<span class="px-1.5 py-0.5 rounded bg-black/60 text-white font-mono-code text-[9px]">Layer Stack: 3 active</span>
-</div>
-</div>
-</div>
-<!-- Canvas Quick Modification Strip -->
-<div class="flex items-center justify-between mt-space-md pt-space-xs">
-<div class="flex items-center gap-space-xs">
-<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1" type="button">
-<span class="material-symbols-outlined text-[14px]">auto_fix_high</span> Inpaint AI
-            </button>
-<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1" type="button">
-<span class="material-symbols-outlined text-[14px]">unfold_more</span> Outpaint 16:9
-            </button>
-<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1" type="button">
-<span class="material-symbols-outlined text-[14px]">high_quality</span> 4K Upscale
-            </button>
-</div>
-<button class="text-primary font-label-sm text-label-sm flex items-center gap-1 hover:underline" type="button">
-<span class="material-symbols-outlined text-[16px]">download</span> Export Single PNG
-          </button>
-</div>
-</div>
-<!-- Live Multi-Platform Tabbed Mockup Simulator -->
-<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
-<div class="flex items-center justify-between mb-space-md">
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-[20px] text-primary">devices</span>
-<span class="font-headline-sm text-headline-sm text-on-surface">Channel Live Mockup Preview</span>
-</div>
-<span class="font-mono-code text-mono-code text-on-surface-variant">Real-Time Sync</span>
-</div>
-<!-- Platform Mockup Selector Tabs -->
-<div class="flex gap-space-xs bg-surface-container-low p-1 rounded-lg mb-space-md">
-<button class="mockup-tab flex-1 py-1.5 rounded-md bg-surface-container-lowest shadow-xs text-primary font-label-sm text-label-sm flex items-center justify-center gap-1" data-preview="fb" type="button">
-<span class="material-symbols-outlined text-secondary text-[14px]">public</span> Facebook
-          </button>
-<button class="mockup-tab flex-1 py-1.5 rounded-md hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center gap-1" data-preview="ig" type="button">
-<span class="material-symbols-outlined text-primary text-[14px]">photo_camera</span> Instagram
-          </button>
-<button class="mockup-tab flex-1 py-1.5 rounded-md hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center gap-1" data-preview="x" type="button">
-<span class="material-symbols-outlined text-[14px]">tag</span> X / Twitter
-          </button>
-<button class="mockup-tab flex-1 py-1.5 rounded-md hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center gap-1" data-preview="wp" type="button">
-<span class="material-symbols-outlined text-secondary text-[14px]">article</span> WordPress
-          </button>
-</div>
-<!-- Mockup Display Screen Area -->
-<div class="bg-surface-container-low p-space-md rounded-xl" id="mockupContainer">
-<!-- FACEBOOK PREVIEW VIEW -->
-<div class="mockup-view bg-surface-container-lowest rounded-xl p-space-md shadow-sm" id="mockupFb">
-<div class="flex items-center gap-space-sm mb-space-sm">
-<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold">S</div>
-<div class="flex flex-col">
-<span class="font-label-lg text-label-lg text-on-surface leading-tight font-bold">SocialFlow Enterprise Official</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">Just now · <span class="material-symbols-outlined text-[14px]">public</span></span>
-</div>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface mb-space-sm">
-              Excited to unveil our next-generation cross-border payment gateway! Seamless transaction speeds, zero gas overhead, and banking-grade security built for high-velocity global growth.
-            </p>
-<div class="rounded-lg overflow-hidden bg-surface-container-high h-48 relative">
-<img class="w-full h-full object-cover" data-alt="Rendered preview of the social media marketing banner displaying bold typography and financial visuals for facebook feed layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxU8Ji1W5-juCFJeDXQ__-ITr6SOGVzmgAv_wyAJYEN0PGjWZMU7WRSnzgBFYH-vGtDg7NuADO5GpDQO4IhI7aFLE9gK0QDfo7mhEgSto_IIAqdVyF4ZW-WiGpzYWQRZu25tUDND9myejTEr8XhOpf3VIIaHdb9BtFWB4qD25rp9uA7emU2NJda8sPvHvc6ymDcjcM5AjC62uK9aTAns53PEsB6FpLtj7sne-ULcI"/>
-<div class="absolute bottom-2 left-2 bg-black/60 px-2 py-0.5 rounded text-white font-mono-code text-[10px]">1080×1080 Square</div>
-</div>
-<div class="flex items-center justify-between pt-space-sm mt-space-sm text-on-surface-variant font-body-sm text-body-sm">
-<div class="flex items-center gap-1">
-<span class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center text-white text-[10px]">👍</span>
-<span class="w-5 h-5 rounded-full bg-error flex items-center justify-center text-white text-[10px]">❤️</span>
-<span class="text-xs ml-1">1.2K</span>
-</div>
-<div class="flex gap-space-md text-xs">
-<span>142 Comments</span>
-<span>88 Shares</span>
-</div>
-</div>
-</div>
-<!-- INSTAGRAM PREVIEW VIEW (Hidden by default) -->
-<div class="mockup-view hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm" id="mockupIg">
-<div class="flex items-center justify-between mb-space-sm">
-<div class="flex items-center gap-2">
-<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-primary p-0.5">
-<div class="w-full h-full rounded-full bg-surface-container-lowest flex items-center justify-center font-bold text-xs text-primary">SF</div>
-</div>
-<span class="font-label-md text-label-md text-on-surface font-bold">socialflow_hq</span>
-</div>
-<span class="material-symbols-outlined text-[18px]">more_horiz</span>
-</div>
-<div class="rounded-lg overflow-hidden bg-surface-container-high h-56 relative mb-space-sm">
-<img class="w-full h-full object-cover" data-alt="Square instagram preview of promotional visual asset showing glowing modern tech gradient background with arabic nastaliq and english badges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATKyMHEgrEj3K_ZWNc3364g2P5fEAGg_WeU_d_QhWqYuyXXm0FPmcqUePDnb7u5nkEAfu9Uy-jM9ujo8atZhq_w_wmVoDgDczcvdRsXuc5TFdXEv4M6r36beSzx2DackLcKps-KwIXyie1QtsK46mDYCtJZBYKh8-tlRNOxcCGPI4S4dXHNQ78l1DPYMGgbX8ETGcs-_PjePnKPiNWGZS2WSIzKeV6f0HKVdwS4Gk"/>
-</div>
-<div class="flex items-center justify-between mb-1">
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-[20px] text-error">favorite</span>
-<span class="material-symbols-outlined text-[20px]">mode_comment</span>
-<span class="material-symbols-outlined text-[20px]">send</span>
-</div>
-<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface"><span class="font-bold">socialflow_hq</span> Excited to unveil our next-generation cross-border payment gateway! #FinTech2025 #GlobalPayments</p>
-</div>
-<!-- X / TWITTER PREVIEW VIEW (Hidden) -->
-<div class="mockup-view hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm" id="mockupX">
-<div class="flex gap-space-sm">
-<div class="w-10 h-10 rounded-full bg-on-surface text-on-primary flex items-center justify-center font-bold">X</div>
-<div class="flex-1">
-<div class="flex items-center gap-1">
-<span class="font-label-lg text-label-lg text-on-surface font-bold">SocialFlow</span>
-<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
-<span class="font-mono-code text-mono-code text-on-surface-variant">@SocialFlow · 4m</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface mt-1 mb-2">
-                  Unveiling next-gen cross-border settlement rails. Zero gas friction. 0.04s global latency. 🌐⚡
-                </p>
-<div class="rounded-xl overflow-hidden bg-surface-container-high h-44 relative">
-<img class="w-full h-full object-cover" data-alt="Twitter post card preview showing high-contrast fintech visual with bilingual badges and clean tech art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeeadL-uwVM6VDwNz60QueJeZimZUWMKe6IHNfHUgg95YjRjhWzeuzQZpNnEPbpTWvE6KypLSo1pbsDabprzP0BWnzoMds37X-FevmNKfSvgdHqBMvuwBvAviP6JRm6xJcELAqm50CAFXUdQONj3cr5k3CFcn76bi3p1nNV2lDMrJ2E5ZwMPgu80jUGyY9lhxauyqT-yizKjhl9FC9QuMeYqaWe8cigwQOuPF1p8I"/>
-</div>
-</div>
-</div>
-</div>
-<!-- WORDPRESS PREVIEW VIEW (Hidden) -->
-<div class="mockup-view hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm" id="mockupWp">
-<div class="flex items-center gap-2 mb-2 pb-2 bg-surface-container-low px-2 py-1 rounded">
-<span class="material-symbols-outlined text-[16px] text-secondary">feed</span>
-<span class="font-mono-code text-mono-code text-on-surface-variant">https://socialflow.org/blog/cross-border-settlement-rails</span>
-</div>
-<div class="h-32 rounded-lg overflow-hidden relative mb-2">
-<img class="w-full h-full object-cover" data-alt="Hero blog banner formatted at 1200 by 630 pixels featuring editorial design and fintech typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrqQwokDGEyTzaCpv4biz-ZxR_tGIi7xB4ERFLK9do0YgrWKscXJOJwauZqYLkJVIM4ihqpkD3HQkbopjfwhEXGqTWEeykL42ptAYPb3aGSsAqnQalzfD-NxKN5uyKpjjNQx4INA-7mECjqGSplgYmeUROpB6vY-0qQs47VO74mQQSrGU94ggdR8SuUprgF9xEN6Hh341oxG5AZ6vmGDAZNhp8Ro7sPrWHLF_cXt8"/>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Architecting High-Speed Cross-Border Settlements: A 2025 Retrospective</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">By Sarah Jenkins in Enterprise Technology · 6 min read</p>
-</div>
-</div>
-</div>
-</div>
-<!-- RIGHT PANEL: Inspector, Typography, RTL Nastaliq, & Overrides (Col 3.5) -->
-<div class="xl:col-span-3 flex flex-col gap-space-md">
-<!-- Active Layer Inspector -->
-<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
-<div class="flex items-center justify-between mb-space-md">
-<div class="flex items-center gap-space-sm">
-<span class="w-7 h-7 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">layers</span>
-</span>
-<span class="font-headline-sm text-headline-sm text-on-surface">Layer Inspector</span>
-</div>
-<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono-code text-mono-code">Layer: Headline Typography</span>
-</div>
-<!-- Typography & Language Controls -->
-<div class="space-y-space-md">
-<div>
-<div class="flex items-center justify-between mb-1">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Font Family Preset</label>
-<span class="font-label-sm text-label-sm text-secondary font-semibold">Precision Typography</span>
-</div>
-<select class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface focus:outline-none"><option selected="">Inter Display SemiBold (Primary Latin)</option><option>JetBrains Mono Bold (SMPTE Code)</option><option>Helvetica Neue / Swiss Clean</option><option>Cinzel Decorative Serif</option></select>
-</div>
-<!-- RTL Switcher & Text Align -->
-<div class="flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
-<span class="font-label-sm text-label-sm text-on-surface font-semibold">Text Alignment / Direction</span>
-<div class="flex items-center gap-1">
-<button class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-mono-code text-mono-code" type="button">LTR</button>
-<button class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-mono-code text-mono-code" type="button">RTL</button>
-</div>
-</div>
-<!-- Numerical Scrubbers: Scale, Letter Space, Leading -->
-<div class="grid grid-cols-2 gap-space-sm">
-<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
-<span class="font-label-sm text-label-sm text-on-surface-variant cursor-col-resize">Font Size</span>
-<div class="flex items-center justify-between mt-1">
-<span class="font-mono-code text-mono-code text-on-surface font-bold">24 px</span>
-<div class="flex gap-0.5">
-<button class="w-5 h-5 rounded bg-surface-container-lowest text-on-surface flex items-center justify-center text-xs" type="button">-</button>
-<button class="w-5 h-5 rounded bg-surface-container-lowest text-on-surface flex items-center justify-center text-xs" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
-<span class="font-label-sm text-label-sm text-on-surface-variant cursor-col-resize">Tracking &amp; Kerning</span>
-<div class="flex items-center justify-between mt-1">
-<span class="font-mono-code text-mono-code text-on-surface font-bold">120%</span>
-<div class="flex gap-0.5">
-<button class="w-5 h-5 rounded bg-surface-container-lowest text-on-surface flex items-center justify-center text-xs" type="button">-</button>
-<button class="w-5 h-5 rounded bg-surface-container-lowest text-on-surface flex items-center justify-center text-xs" type="button">+</button>
-</div>
-</div>
-</div>
-</div>
-<!-- Color & Shadow Parameters -->
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Color Fill &amp; Backdrop Scrim</label>
-<div class="flex items-center gap-space-sm">
-<div class="w-8 h-8 rounded-lg bg-surface-container-highest shadow-inner cursor-pointer" title="White Overlay"></div>
-<div class="w-8 h-8 rounded-lg bg-primary-container shadow-inner cursor-pointer" title="Brand Indigo"></div>
-<div class="w-8 h-8 rounded-lg bg-tertiary-container shadow-inner cursor-pointer" title="Emerald Accent"></div>
-<div class="w-8 h-8 rounded-lg bg-on-surface shadow-inner cursor-pointer" title="Dark Slate"></div>
-<div class="flex-1 flex items-center bg-surface-container-low px-2 py-1.5 rounded-lg">
-<span class="font-mono-code text-mono-code text-on-surface">#131B2E (90%)</span>
-</div>
-</div>
-</div>
-<!-- Layer Positioning Z-Index -->
-<div class="flex items-center justify-between pt-space-xs">
-<span class="font-label-sm text-label-sm text-on-surface-variant">Layer Arrangement</span>
-<div class="flex items-center gap-1">
-<button class="p-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface" title="Bring to Front" type="button">
-<span class="material-symbols-outlined text-[16px]">flip_to_front</span>
-</button>
-<button class="p-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface" title="Send to Back" type="button">
-<span class="material-symbols-outlined text-[16px]">flip_to_back</span>
-</button>
-<button class="p-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface" title="Duplicate Layer" type="button">
-<span class="material-symbols-outlined text-[16px]">content_copy</span>
-</button>
-<button class="p-1 rounded bg-surface-container-low hover:bg-surface-container text-error" title="Delete Layer" type="button">
-<span class="material-symbols-outlined text-[16px]">delete</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-<!-- Platform-Specific Publishing Overrides -->
-<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
-<div class="flex items-center justify-between mb-space-md">
-<div class="flex items-center gap-space-sm">
-<span class="w-7 h-7 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">tune</span>
-</span>
-<span class="font-headline-sm text-headline-sm text-on-surface">Platform Overrides</span>
-</div>
-<span class="font-mono-code text-mono-code text-tertiary-container font-semibold">Active Matrix</span>
-</div>
-<div class="space-y-space-md">
-<!-- X / Twitter 280 Character Counter Box -->
-<div class="p-space-sm bg-surface-container-low rounded-lg">
-<div class="flex items-center justify-between mb-1">
-<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">tag</span> X/Twitter Tailored Copy
-              </span>
-<span class="font-mono-code text-mono-code text-primary font-bold" id="xCharCounter">114 / 280</span>
-</div>
-<textarea class="w-full bg-surface-container-lowest rounded p-space-xs font-body-sm text-body-sm text-on-surface resize-none focus:outline-none" id="xCustomInput" placeholder="Tailored tweet content..." rows="2">Unveiling next-gen cross-border settlement rails. Zero gas friction. 0.04s global latency. 🌐⚡ #FinTech</textarea>
-</div>
-<!-- Instagram First Comment / Tag Box -->
-<div class="p-space-sm bg-surface-container-low rounded-lg">
-<div class="flex items-center justify-between mb-1">
-<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px] text-primary">add_comment</span> IG First Comment
-              </span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Auto-pin</span>
-</div>
-<input class="w-full bg-surface-container-lowest rounded px-space-sm py-1 font-body-sm text-body-sm text-on-surface focus:outline-none" type="text" value="#FinTech #FinTechNews #GlobalBanking #NextGenPayments"/>
-</div>
-<!-- WordPress Categories & Metadata -->
-<div class="p-space-sm bg-surface-container-low rounded-lg">
-<span class="font-label-sm text-label-sm text-on-surface font-semibold block mb-1">WordPress Publishing Taxonomies</span>
-<div class="grid grid-cols-2 gap-space-xs mb-space-xs">
-<select class="bg-surface-container-lowest rounded p-1 font-mono-code text-mono-code text-on-surface focus:outline-none">
-<option>Fintech Insights</option>
-<option>Company News</option>
-<option>Product Updates</option>
-</select>
-<select class="bg-surface-container-lowest rounded p-1 font-mono-code text-mono-code text-on-surface focus:outline-none">
-<option>Featured Image Set</option>
-<option>Article Banner Only</option>
-</select>
-</div>
-<input class="w-full bg-surface-container-lowest rounded px-space-sm py-1 font-body-sm text-body-sm text-on-surface focus:outline-none" placeholder="Target Focus Keyphrase..." type="text" value="cross-border payments 2025"/>
-</div>
-<!-- Facebook Call to Action Override -->
-<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg">
-<span class="font-label-sm text-label-sm text-on-surface font-semibold">FB Button CTA</span>
-<select class="bg-surface-container-lowest rounded px-2 py-1 font-label-sm text-label-sm text-on-surface focus:outline-none">
-<option>Learn More</option>
-<option>Sign Up</option>
-<option>Book Demo</option>
-<option>Contact Us</option>
-</select>
-</div>
-</div>
-</div>
-<!-- Quick Delivery Diagnostics & Metric Ring -->
-<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
-<div class="flex items-center justify-between mb-space-sm">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Estimated Audience Reach</span>
-<span class="material-symbols-outlined text-tertiary-container text-[18px]">trending_up</span>
-</div>
-<div class="flex items-center gap-space-md">
-<!-- Circular Progress SVG Chart -->
-<div class="relative w-14 h-14 flex items-center justify-center">
-<svg class="w-14 h-14 transform -rotate-90" viewbox="0 0 36 36">
-<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
-<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="88, 100" stroke-linecap="round" stroke-width="3.5"></path>
-</svg>
-<span class="absolute font-mono-code text-mono-code text-on-surface font-bold">88%</span>
-</div>
-<div class="flex flex-col">
-<span class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">482,000</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Combined multi-channel followers targeted across 6 networks</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Multi-Publish Toast Confirmation Banner (Hidden by default, triggered by Publish button) -->
-<div class="fixed bottom-6 right-6 max-w-md bg-surface-container-lowest rounded-xl shadow-2xl p-space-md transition-all duration-300 transform translate-y-32 opacity-0 pointer-events-none z-50" id="publishModalNotification">
-<div class="flex items-start gap-space-md">
-<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[20px]">done_all</span>
-</div>
-<div class="flex flex-col flex-1">
-<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Omnichannel Dispatch Complete</span>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
-          Assets deployed to Facebook Page, Instagram Business, WordPress Blog, Twitter/X, YouTube, and TikTok simultaneously.
-        </p>
-<div class="flex items-center gap-space-sm mt-space-sm">
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-mono-code text-mono-code">Job ID: #SF-9841</span>
-<button class="text-primary font-label-sm text-label-sm hover:underline ml-auto" id="closeNotificationBtn" type="button">Dismiss</button>
-</div>
-</div>
-</div>
-</div>
-<!-- Inline Client-side Script for Micro-interactions -->
-<script>
-    (function initStudioEngine() {
-      // 1. Channel Selector Pills Toggling
-      const channelPills = document.querySelectorAll('.channel-pill');
-      channelPills.forEach(pill => {
-        pill.addEventListener('click', () => {
-          pill.classList.toggle('opacity-50');
-          pill.classList.toggle('grayscale');
-        });
-      });
+              </div>
 
-      // 2. Aspect Ratio Matrix Switching
-      const ratioButtons = document.querySelectorAll('.ratio-btn');
-      const canvasEl = document.getElementById('editablePosterCanvas');
-      const dimLabel = document.getElementById('canvasDimLabel');
+              <!-- 4. Footer Identity Ribbon with Crisp Vector SVGs -->
+              <div class="pt-2 pb-1 mt-1 flex items-center justify-between border-t border-[#1b263b]" dir="ltr">
+                <div class="flex items-center gap-1.5 text-[#d99b26]">
+                  <span id="poster-social-handle" class="font-label-md text-xs font-semibold tracking-wider text-[#d99b26]">@jamshaidrizwani</span>
+                </div>
+                <div class="flex items-center gap-2 text-[#b9c8de]/75 text-xs">
+                  <div class="flex items-center gap-1.5">
+                    <!-- Facebook -->
+                    <div class="w-6 h-6 rounded bg-[#141c29] border border-[#d99b26]/25 flex items-center justify-center" title="Facebook">
+                      <svg class="w-3.5 h-3.5 fill-[#fabc48]" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </div>
+                    <!-- YouTube -->
+                    <div class="w-6 h-6 rounded bg-[#141c29] border border-[#d99b26]/25 flex items-center justify-center" title="YouTube">
+                      <svg class="w-3.5 h-3.5 fill-[#fabc48]" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </div>
+                    <!-- Instagram -->
+                    <div class="w-6 h-6 rounded bg-[#141c29] border border-[#d99b26]/25 flex items-center justify-center" title="Instagram">
+                      <svg class="w-3.5 h-3.5 fill-[#fabc48]" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </div>
+                    <!-- X -->
+                    <div class="w-6 h-6 rounded bg-[#141c29] border border-[#d99b26]/25 flex items-center justify-center" title="X">
+                      <svg class="w-3.5 h-3.5 fill-[#fabc48]" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </div>
+                  </div>
+                  <span class="text-[#504535] text-xs">|</span>
+                  <span class="font-label-sm text-[11px] text-[#fabc48]">www.jamshedrizwani.com</span>
+                </div>
+              </div>
 
-      ratioButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          ratioButtons.forEach(b => {
-            b.classList.remove('bg-primary-container', 'text-on-primary');
-            b.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
-          });
-          btn.classList.add('bg-primary-container', 'text-on-primary');
-          btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+            </div>
+          </div>
 
-          const ratio = btn.getAttribute('data-ratio');
-          if (ratio === '1:1') {
-            canvasEl.className = 'relative w-full max-w-[440px] aspect-square rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
-            dimLabel.textContent = '1080 × 1080 px';
-          } else if (ratio === '4:5') {
-            canvasEl.className = 'relative w-full max-w-[380px] aspect-[4/5] rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
-            dimLabel.textContent = '1080 × 1350 px';
-          } else if (ratio === '16:9') {
-            canvasEl.className = 'relative w-full max-w-[500px] aspect-video rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
-            dimLabel.textContent = '1920 × 1080 px';
-          } else if (ratio === '9:16') {
-            canvasEl.className = 'relative w-full max-w-[280px] aspect-[9/16] rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
-            dimLabel.textContent = '1080 × 1920 px';
-          } else if (ratio === '1200:630') {
-            canvasEl.className = 'relative w-full max-w-[500px] aspect-[1200/630] rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
-            dimLabel.textContent = '1200 × 630 px';
+          <!-- Dimension Guidance Under Canvas -->
+          <div class="mt-4 flex flex-wrap items-center justify-center gap-4 text-[#d4c4af] font-label-sm text-xs">
+            <span class="flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-[#d99b26]"></span> Safe Text Zone: 96%
+            </span>
+            <span class="flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-[#ffc664]"></span> Exposé / Breaking Mode: Active
+            </span>
+            <span class="flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-[#504535]"></span> 8-Point Editorial Grid
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Editorial Production Metrics Strip -->
+      <div class="w-full px-4 py-2 bg-[#070e1b] border-t border-[#232a38] flex flex-wrap items-center justify-around gap-4 text-xs">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded bg-[#141c29] border border-[#d99b26]/30 flex items-center justify-center text-[#ffc664]">
+            <span class="material-symbols-outlined text-[15px]">speed</span>
+          </div>
+          <div>
+            <div class="text-[10px] text-[#d4c4af]">Render Speed</div>
+            <div class="font-bold text-[#ffc664]">0.12s (Realtime)</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded bg-[#141c29] border border-[#d99b26]/30 flex items-center justify-center text-[#fabc48]">
+            <span class="material-symbols-outlined text-[15px]">font_download</span>
+          </div>
+          <div>
+            <div class="text-[10px] text-[#d4c4af]">Nastaliq Optimization</div>
+            <div class="font-bold text-[#fabc48]">100% Anti-Aliased</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded bg-[#141c29] border border-[#d99b26]/30 flex items-center justify-center text-[#d99b26]">
+            <span class="material-symbols-outlined text-[15px]">verified_user</span>
+          </div>
+          <div>
+            <div class="text-[10px] text-[#d4c4af]">Copyright Watermark</div>
+            <div class="font-bold text-[#d99b26]">Auto-Active</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- API Documentation & JSON Modal -->
+      <div id="api-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-[#141c29] border border-[#d99b26]/40 rounded-xl max-w-2xl w-full p-6 shadow-2xl flex flex-col gap-4 max-h-[90vh] overflow-y-auto text-[#dce2f5]">
+          <div class="flex items-center justify-between pb-3 border-b border-[#232a38]">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[#d99b26]">terminal</span>
+              <h3 class="font-bold text-lg text-[#ffc664]">JR Poster API &amp; JSON Payload Spec</h3>
+            </div>
+            <button onclick="closeApiModal()" class="text-[#d4c4af] hover:text-white">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+
+          <p class="text-xs text-[#d4c4af]">
+            Call this API endpoint from your PHP projects, mobile apps, or automation workflows to generate 1080x1350 HD Posters instantly.
+          </p>
+
+          <div class="flex flex-col gap-1 text-left">
+            <label class="text-xs font-semibold text-[#ffc664]">Endpoint URL (POST):</label>
+            <div class="flex items-center gap-2 bg-[#070e1b] p-2 rounded border border-[#232a38] font-mono text-xs">
+              <span class="text-emerald-400 font-bold">POST</span>
+              <span class="text-[#dce2f5]">https://editor.jamshedrizwani.com/flow/api/generate.php</span>
+            </div>
+            <span class="text-[10px] text-[#d4c4af]">Direct Microservice: <code>http://127.0.0.1:3333/api/generate</code></span>
+          </div>
+
+          <div class="flex flex-col gap-1 text-left">
+            <label class="text-xs font-semibold text-[#fabc48]">Live JSON Payload (matches current form values):</label>
+            <pre id="modal-json-payload" class="bg-[#070e1b] p-3 rounded border border-[#232a38] font-mono text-[11px] text-emerald-300 overflow-x-auto max-h-48"></pre>
+          </div>
+
+          <div class="flex flex-col gap-1 text-left">
+            <label class="text-xs font-semibold text-[#fabc48]">PHP cURL Code Snippet:</label>
+            <pre class="bg-[#070e1b] p-3 rounded border border-[#232a38] font-mono text-[11px] text-amber-200 overflow-x-auto max-h-36">$ch = curl_init('https://editor.jamshedrizwani.com/flow/api/generate.php');
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$res = json_decode(curl_exec($ch), true);
+// $res['url'] contains the HD poster image URL!</pre>
+          </div>
+
+          <div class="flex items-center justify-end gap-2 pt-2 border-t border-[#232a38]">
+            <button onclick="copyJsonPayload()" class="px-3 py-1.5 rounded bg-[#d99b26] text-[#070e1b] font-bold text-xs flex items-center gap-1 hover:brightness-110">
+              <span class="material-symbols-outlined text-[15px]">content_copy</span>
+              <span>Copy JSON Payload</span>
+            </button>
+            <button onclick="closeApiModal()" class="px-3 py-1.5 rounded bg-[#232a38] text-[#dce2f5] text-xs font-semibold hover:bg-[#323948]">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Notification -->
+      <div id="toast-notify" class="fixed bottom-12 right-6 bg-[#141c29] border border-[#d99b26] text-[#ffc664] px-4 py-2.5 rounded-lg shadow-xl text-xs font-semibold flex items-center gap-2 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 z-50">
+        <span class="material-symbols-outlined text-[18px]">info</span>
+        <span id="toast-msg">Notification</span>
+      </div>
+
+      <!-- JR Studio Interactive Engine -->
+      <script>
+        (function() {
+          const inputHeadline = document.getElementById('input-headline');
+          const posterHeadline = document.getElementById('poster-urdu-headline');
+          const headlineCount = document.getElementById('headline-char-count');
+
+          const inputFacts = document.getElementById('input-facts');
+          const posterFacts = document.getElementById('poster-key-facts');
+
+          const inputSubnotes = document.getElementById('input-subnotes');
+          const posterSubnotes = document.getElementById('poster-sub-notes');
+
+          const inputLocation = document.getElementById('input-location');
+          const posterLocTag = document.getElementById('poster-loc-tag');
+
+          const inputDate = document.getElementById('input-date');
+          const posterDisplayDate = document.getElementById('poster-display-date');
+
+          const inputCityTag = document.getElementById('input-city-tag');
+          const inputCategoryBadge = document.getElementById('input-category-badge');
+          const posterSubBadge = document.getElementById('poster-sub-badge');
+
+          const inputImgUrl = document.getElementById('input-img-url');
+          const inputFileUpload = document.getElementById('input-file-upload');
+          const posterMainImage = document.getElementById('poster-main-image');
+
+          const posterRoot = document.getElementById('poster-root');
+          const btnRatio45 = document.getElementById('btn-ratio-45');
+          const btnRatio11 = document.getElementById('btn-ratio-11');
+          const btnRatio916 = document.getElementById('btn-ratio-916');
+          const dimBadge = document.getElementById('canvas-dim-badge');
+
+          let currentRatio = '4:5';
+
+          // Real-time synchronization
+          if (inputHeadline && posterHeadline) {
+            inputHeadline.addEventListener('input', (e) => {
+              const text = e.target.value || 'اردو سرخی یہاں درج کریں...';
+              posterHeadline.textContent = text;
+              if (headlineCount) {
+                headlineCount.textContent = `${text.length} / 90`;
+              }
+            });
           }
-        });
-      });
 
-      // 3. Platform Live Mockup Tab Switching
-      const mockupTabs = document.querySelectorAll('.mockup-tab');
-      const mockupViews = {
-        fb: document.getElementById('mockupFb'),
-        ig: document.getElementById('mockupIg'),
-        x: document.getElementById('mockupX'),
-        wp: document.getElementById('mockupWp')
-      };
+          if (inputFacts && posterFacts) {
+            inputFacts.addEventListener('input', (e) => {
+              posterFacts.textContent = e.target.value || '';
+            });
+          }
 
-      mockupTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          mockupTabs.forEach(t => {
-            t.classList.remove('bg-surface-container-lowest', 'shadow-xs', 'text-primary');
-            t.classList.add('text-on-surface-variant');
-          });
-          tab.classList.add('bg-surface-container-lowest', 'shadow-xs', 'text-primary');
-          tab.classList.remove('text-on-surface-variant');
+          if (inputSubnotes && posterSubnotes) {
+            inputSubnotes.addEventListener('input', (e) => {
+              posterSubnotes.textContent = e.target.value || '';
+            });
+          }
 
-          const target = tab.getAttribute('data-preview');
-          Object.keys(mockupViews).forEach(key => {
-            if (key === target) {
-              mockupViews[key].classList.remove('hidden');
-            } else {
-              mockupViews[key].classList.add('hidden');
+          if (inputLocation && posterLocTag) {
+            inputLocation.addEventListener('input', (e) => {
+              posterLocTag.textContent = e.target.value || 'وفاقی وزیرپارلیمانی امورطارق فضل چوہدری';
+            });
+          }
+
+          if (inputDate && posterDisplayDate) {
+            inputDate.addEventListener('input', (e) => {
+              posterDisplayDate.textContent = e.target.value || '';
+            });
+          }
+
+          function updateCategorySlug() {
+            if (!inputCityTag || !inputCategoryBadge || !posterSubBadge) return;
+            const city = inputCityTag.value.trim() || 'اسلام آباد';
+            const cat = inputCategoryBadge.value.trim() || 'بریکنگ نیوز';
+            posterSubBadge.textContent = `${city} | ${cat}`;
+          }
+
+          if (inputCityTag) inputCityTag.addEventListener('input', updateCategorySlug);
+          if (inputCategoryBadge) inputCategoryBadge.addEventListener('input', updateCategorySlug);
+
+          // Image URL & File upload handling
+          if (inputImgUrl && posterMainImage) {
+            inputImgUrl.addEventListener('input', (e) => {
+              if (e.target.value) {
+                posterMainImage.src = e.target.value;
+              }
+            });
+          }
+
+          if (inputFileUpload && posterMainImage) {
+            inputFileUpload.addEventListener('change', function(e) {
+              const file = this.files[0];
+              if (file) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                  posterMainImage.src = evt.target.result;
+                  if (inputImgUrl) inputImgUrl.value = '(Local uploaded file)';
+                  showToast('Local photo loaded onto poster canvas!');
+                };
+                reader.readAsDataURL(file);
+              }
+            });
+          }
+
+          // Ratio Switchers
+          function clearActiveRatios() {
+            [btnRatio45, btnRatio11, btnRatio916].forEach(btn => {
+              if (btn) btn.className = "px-3 py-1 rounded bg-[#141c29] hover:bg-[#232a38] text-[#d4c4af] font-semibold flex items-center gap-1 transition-colors text-xs";
+            });
+          }
+
+          const activeRatioClass = "px-3 py-1 rounded bg-[#232a38] text-[#ffc664] font-semibold flex items-center gap-1 shadow-sm border border-[#d99b26]/30 text-xs";
+
+          if (btnRatio45 && posterRoot) {
+            btnRatio45.addEventListener('click', () => {
+              clearActiveRatios();
+              btnRatio45.className = activeRatioClass;
+              currentRatio = '4:5';
+              posterRoot.className = "relative w-full max-w-[540px] aspect-[4/5] bg-[#070e1b] border border-[#232a38] rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col select-none transition-all duration-300";
+              if (dimBadge) dimBadge.textContent = "1080 x 1350 PX @ 300 DPI (4:5 Feed)";
+            });
+          }
+
+          if (btnRatio11 && posterRoot) {
+            btnRatio11.addEventListener('click', () => {
+              clearActiveRatios();
+              btnRatio11.className = activeRatioClass;
+              currentRatio = '1:1';
+              posterRoot.className = "relative w-full max-w-[500px] aspect-square bg-[#070e1b] border border-[#232a38] rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col select-none transition-all duration-300";
+              if (dimBadge) dimBadge.textContent = "1080 x 1080 PX @ 300 DPI (1:1 Square)";
+            });
+          }
+
+          if (btnRatio916 && posterRoot) {
+            btnRatio916.addEventListener('click', () => {
+              clearActiveRatios();
+              btnRatio916.className = activeRatioClass;
+              currentRatio = '9:16';
+              posterRoot.className = "relative w-full max-w-[420px] aspect-[9/16] bg-[#070e1b] border border-[#232a38] rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col select-none transition-all duration-300";
+              if (dimBadge) dimBadge.textContent = "1080 x 1920 PX @ 300 DPI (9:16 Story)";
+            });
+          }
+
+          // Toast utility
+          window.showToast = function(msg) {
+            const toast = document.getElementById('toast-notify');
+            const toastMsg = document.getElementById('toast-msg');
+            if (!toast || !toastMsg) return;
+            toastMsg.textContent = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+              toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+              toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 4000);
+          };
+
+          // Quick Copy
+          window.handleQuickCopy = function() {
+            const text = (posterHeadline ? posterHeadline.textContent.trim() : '') + "\n" + 
+                         (posterFacts ? posterFacts.textContent.trim() : '') + "\n" + 
+                         (posterSubnotes ? posterSubnotes.textContent.trim() : '');
+            navigator.clipboard.writeText(text).then(() => {
+              showToast('Urdu news text copied to clipboard!');
+            });
+          };
+
+          // Client-side HD Export Fallback
+          window.exportClientPng = function() {
+            showToast('Rendering high-resolution canvas...');
+            if (typeof html2canvas === 'undefined') {
+              showToast('html2canvas library loading, please try again in a second.');
+              return;
             }
-          });
-        });
-      });
+            html2canvas(posterRoot, {
+              scale: 2.5,
+              useCORS: true,
+              allowTaint: true,
+              backgroundColor: '#070e1b'
+            }).then(canvas => {
+              const link = document.createElement('a');
+              link.download = `jr_poster_${Date.now()}.png`;
+              link.href = canvas.toDataURL('image/png');
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
 
-      // 4. Tone Pill Selection
-      const tonePills = document.querySelectorAll('.tone-pill');
-      tonePills.forEach(pill => {
-        pill.addEventListener('click', () => {
-          tonePills.forEach(p => {
-            p.classList.remove('bg-primary-container', 'text-on-primary');
-            p.classList.add('bg-surface-container-low', 'text-on-surface');
-          });
-          pill.classList.add('bg-primary-container', 'text-on-primary');
-          pill.classList.remove('bg-surface-container-low', 'text-on-surface');
-        });
-      });
+              const resultBox = document.getElementById('export-result-box');
+              const downloadBtn = document.getElementById('result-download-btn');
+              if (resultBox && downloadBtn) {
+                activePosterUrl = link.href;
+                downloadBtn.href = link.href;
+                resultBox.classList.remove('hidden');
+              }
+              showToast('HD Poster rendered and downloaded successfully!');
+            }).catch(err => {
+              console.error('Client render error:', err);
+              showToast('Client render failed: ' + err.message);
+            });
+          };
 
-      // 5. X / Twitter Character Counter
-      const xInput = document.getElementById('xCustomInput');
-      const xCounter = document.getElementById('xCharCounter');
-      if (xInput && xCounter) {
-        xInput.addEventListener('input', () => {
-          const len = xInput.value.length;
-          xCounter.textContent = `${len} / 280`;
-          if (len > 280) {
-            xCounter.className = 'font-mono-code text-mono-code text-error font-bold';
-          } else {
-            xCounter.className = 'font-mono-code text-mono-code text-primary font-bold';
-          }
-        });
-      }
+          // Build Current JSON Payload
+          window.getCurrentPayload = function() {
+            return {
+              template: 'jr',
+              format: currentRatio,
+              headline: inputHeadline ? inputHeadline.value.trim() : '',
+              keyFacts: inputFacts ? inputFacts.value.trim() : '',
+              contextNotes: inputSubnotes ? inputSubnotes.value.trim() : '',
+              locationTag: inputLocation ? inputLocation.value.trim() : '',
+              updateTag: 'تازہ ترین اپڈیٹ',
+              categorySlug: `${inputCityTag ? inputCityTag.value.trim() : ''} | ${inputCategoryBadge ? inputCategoryBadge.value.trim() : ''}`,
+              date: inputDate ? inputDate.value.trim() : '',
+              imageUrl: posterMainImage ? posterMainImage.src : '',
+              reporterName: 'JAMSHED RIZWANI',
+              reporterTitle: 'سینئر صحافی و اینکر پرسن | خصوصی رپورٹنگ',
+              deskTag: 'JR | ملتان بیورو',
+              deskSub: 'EXCLUSIVE DESK',
+              socialHandle: '@jamshaidrizwani',
+              website: 'www.jamshedrizwani.com'
+            };
+          };
 
-      // 6. Multi-Publish Confirmation Toast Notification
-      const publishBtn = document.getElementById('publishAllBtn');
-      const toast = document.getElementById('publishModalNotification');
-      const dismissBtn = document.getElementById('closeNotificationBtn');
+          // Live API Poster Generation & Direct Download
+          let activePosterUrl = '';
+          window.generateViaApi = async function() {
+            const btn = document.getElementById('btn-api-generate');
+            const btnText = document.getElementById('api-btn-text');
+            const spinner = document.getElementById('api-btn-spinner');
+            const resultBox = document.getElementById('export-result-box');
+            const downloadBtn = document.getElementById('result-download-btn');
 
-      if (publishBtn && toast) {
-        publishBtn.addEventListener('click', () => {
-          toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
-          toast.classList.add('translate-y-0', 'opacity-100');
-          setTimeout(() => {
-            toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
-            toast.classList.remove('translate-y-0', 'opacity-100');
-          }, 5000);
-        });
-      }
+            if (btn && btnText && spinner) {
+              btn.disabled = true;
+              btnText.textContent = 'Rendering High-Res Poster...';
+              spinner.classList.add('animate-spin');
+            }
 
-      if (dismissBtn && toast) {
-        dismissBtn.addEventListener('click', () => {
-          toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
-          toast.classList.remove('translate-y-0', 'opacity-100');
-        });
-      }
+            const payload = getCurrentPayload();
 
-      // 7. AI Magic Prompt Expansion simulation
-      const magicBtn = document.getElementById('magicPromptBtn');
-      const promptEn = document.getElementById('promptEnglish');
-      if (magicBtn && promptEn) {
-        magicBtn.addEventListener('click', () => {
-          promptEn.value = "Cinematic 8K render of a futuristic Islamic fintech pavilion in Dubai, volumetric lighting, photorealistic gold & indigo calligraphy particles floating in air, Hasselblad color profile, Unreal Engine 5 aesthetic, flawless symmetry.";
-        });
-      }
-    })();
-  </script>
-</div>
+            // Relative and absolute endpoints
+            const endpoints = [
+              'api/generate.php',
+              '/flow/api/generate.php',
+              '/jr/api/generate.php',
+              '/api/generate-jr',
+              '/api/generate',
+              'https://editor.jamshedrizwani.com/flow/api/generate.php'
+            ];
+
+            let successRes = null;
+
+            for (let ep of endpoints) {
+              try {
+                const resp = await fetch(ep, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(payload)
+                });
+                if (resp.ok) {
+                  const data = await resp.json();
+                  const url = data.imageUrl || data.downloadUrl || data.url || (data.data && (data.data.imageUrl || data.data.url));
+                  if (data && (data.success || url)) {
+                    successRes = { ...data, resolvedUrl: url };
+                    break;
+                  }
+                }
+              } catch (e) {
+                // endpoint not reachable, try next
+              }
+            }
+
+            if (btn && btnText && spinner) {
+              btn.disabled = false;
+              btnText.textContent = 'Export HD Poster (300 DPI)';
+              spinner.classList.remove('animate-spin');
+            }
+
+            if (successRes && successRes.resolvedUrl) {
+              activePosterUrl = successRes.resolvedUrl;
+              if (downloadBtn) downloadBtn.href = successRes.resolvedUrl;
+              if (resultBox) resultBox.classList.remove('hidden');
+              showToast('Poster rendered perfectly via API! Downloading now...');
+
+              const link = document.createElement('a');
+              link.href = successRes.resolvedUrl;
+              link.target = '_blank';
+              link.download = `jr_poster_${Date.now()}.png`;
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            } else {
+              // Automatic client-side canvas render fallback so export ALWAYS works!
+              exportClientPng();
+            }
+          };
+
+          window.copyResultUrl = function() {
+            if (activePosterUrl) {
+              navigator.clipboard.writeText(activePosterUrl).then(() => {
+                showToast('Image URL copied to clipboard!');
+              });
+            }
+          };
+
+          // Modal Handlers
+          window.openApiModal = function() {
+            const payload = getCurrentPayload();
+            const jsonEl = document.getElementById('modal-json-payload');
+            if (jsonEl) {
+              jsonEl.textContent = JSON.stringify(payload, null, 2);
+            }
+            const modal = document.getElementById('api-modal');
+            if (modal) modal.classList.remove('hidden');
+          };
+
+          window.closeApiModal = function() {
+            const modal = document.getElementById('api-modal');
+            if (modal) modal.classList.add('hidden');
+          };
+
+          window.copyJsonPayload = function() {
+            const jsonEl = document.getElementById('modal-json-payload');
+            if (jsonEl) {
+              navigator.clipboard.writeText(jsonEl.textContent).then(() => {
+                showToast('JSON payload copied to clipboard!');
+              });
+            }
+          };
+        })();
+      </script>
     </main>
 
   </div>
@@ -4754,139 +4683,6 @@
       }
     });
 
-    (function initStudioEngine() {
-      // 1. Channel Selector Pills Toggling
-      const channelPills = document.querySelectorAll('.channel-pill');
-      channelPills.forEach(pill => {
-        pill.addEventListener('click', () => {
-          pill.classList.toggle('opacity-50');
-          pill.classList.toggle('grayscale');
-        });
-      });
-
-      // 2. Aspect Ratio Matrix Switching
-      const ratioButtons = document.querySelectorAll('.ratio-btn');
-      const canvasEl = document.getElementById('editablePosterCanvas');
-      const dimLabel = document.getElementById('canvasDimLabel');
-
-      ratioButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          ratioButtons.forEach(b => {
-            b.classList.remove('bg-primary-container', 'text-on-primary');
-            b.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
-          });
-          btn.classList.add('bg-primary-container', 'text-on-primary');
-          btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
-
-          const ratio = btn.getAttribute('data-ratio');
-          if (ratio === '1:1') {
-            canvasEl.className = 'relative w-full max-w-[440px] aspect-square rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
-            dimLabel.textContent = '1080 × 1080 px';
-          } else if (ratio === '4:5') {
-            canvasEl.className = 'relative w-full max-w-[380px] aspect-[4/5] rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
-            dimLabel.textContent = '1080 × 1350 px';
-          } else if (ratio === '16:9') {
-            canvasEl.className = 'relative w-full max-w-[500px] aspect-video rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
-            dimLabel.textContent = '1920 × 1080 px';
-          } else if (ratio === '9:16') {
-            canvasEl.className = 'relative w-full max-w-[280px] aspect-[9/16] rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
-            dimLabel.textContent = '1080 × 1920 px';
-          } else if (ratio === '1200:630') {
-            canvasEl.className = 'relative w-full max-w-[500px] aspect-[1200/630] rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
-            dimLabel.textContent = '1200 × 630 px';
-          }
-        });
-      });
-
-      // 3. Platform Live Mockup Tab Switching
-      const mockupTabs = document.querySelectorAll('.mockup-tab');
-      const mockupViews = {
-        fb: document.getElementById('mockupFb'),
-        ig: document.getElementById('mockupIg'),
-        x: document.getElementById('mockupX'),
-        wp: document.getElementById('mockupWp')
-      };
-
-      mockupTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          mockupTabs.forEach(t => {
-            t.classList.remove('bg-surface-container-lowest', 'shadow-xs', 'text-primary');
-            t.classList.add('text-on-surface-variant');
-          });
-          tab.classList.add('bg-surface-container-lowest', 'shadow-xs', 'text-primary');
-          tab.classList.remove('text-on-surface-variant');
-
-          const target = tab.getAttribute('data-preview');
-          Object.keys(mockupViews).forEach(key => {
-            if (key === target) {
-              mockupViews[key].classList.remove('hidden');
-            } else {
-              mockupViews[key].classList.add('hidden');
-            }
-          });
-        });
-      });
-
-      // 4. Tone Pill Selection
-      const tonePills = document.querySelectorAll('.tone-pill');
-      tonePills.forEach(pill => {
-        pill.addEventListener('click', () => {
-          tonePills.forEach(p => {
-            p.classList.remove('bg-primary-container', 'text-on-primary');
-            p.classList.add('bg-surface-container-low', 'text-on-surface');
-          });
-          pill.classList.add('bg-primary-container', 'text-on-primary');
-          pill.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
-        });
-      });
-
-      // 5. X / Twitter Character Counter
-      const xInput = document.getElementById('xCustomInput');
-      const xCounter = document.getElementById('xCharCounter');
-      if (xInput && xCounter) {
-        xInput.addEventListener('input', () => {
-          const len = xInput.value.length;
-          xCounter.textContent = `${len} / 280`;
-          if (len > 280) {
-            xCounter.className = 'font-mono-code text-mono-code text-error font-bold';
-          } else {
-            xCounter.className = 'font-mono-code text-mono-code text-primary font-bold';
-          }
-        });
-      }
-
-      // 6. Multi-Publish Confirmation Toast Notification
-      const publishBtn = document.getElementById('publishAllBtn');
-      const toast = document.getElementById('publishModalNotification');
-      const dismissBtn = document.getElementById('closeNotificationBtn');
-
-      if (publishBtn && toast) {
-        publishBtn.addEventListener('click', () => {
-          toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
-          toast.classList.add('translate-y-0', 'opacity-100');
-          setTimeout(() => {
-            toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
-            toast.classList.remove('translate-y-0', 'opacity-100');
-          }, 5000);
-        });
-      }
-
-      if (dismissBtn && toast) {
-        dismissBtn.addEventListener('click', () => {
-          toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
-          toast.classList.remove('translate-y-0', 'opacity-100');
-        });
-      }
-
-      // 7. AI Magic Prompt Expansion simulation
-      const magicBtn = document.getElementById('magicPromptBtn');
-      const promptEn = document.getElementById('promptEnglish');
-      if (magicBtn && promptEn) {
-        magicBtn.addEventListener('click', () => {
-          promptEn.value = "Cinematic 8K render of a futuristic Islamic fintech pavilion in Dubai, volumetric lighting, photorealistic gold & indigo calligraphy particles floating in air, Hasselblad color profile, Unreal Engine 5 aesthetic, flawless symmetry.";
-        });
-      }
-    })();
-  </script>
+    </script>
 </body>
 </html>
