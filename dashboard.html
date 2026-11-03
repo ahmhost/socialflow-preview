@@ -1,984 +1,1018 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>SocialFlow Studio - Enterprise Dashboard</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "surface": "#faf8ff",
-            "surface-dim": "#d2d9f4",
-            "surface-container-lowest": "#ffffff",
-            "surface-container-low": "#f2f3ff",
-            "surface-container": "#eaedff",
-            "surface-container-high": "#e2e7ff",
-            "surface-container-highest": "#dae2fd",
-            "on-surface": "#131b2e",
-            "on-surface-variant": "#464555",
-            "primary": "#3525cd",
-            "primary-container": "#4f46e5",
-            "on-primary": "#ffffff",
-            "secondary": "#0058be",
-            "tertiary": "#005338"
-          },
-          fontFamily: {
-            sans: ["Inter", "sans-serif"],
-            mono: ["JetBrains Mono", "monospace"],
-            nastaliq: ["Noto Nastaliq Urdu", "serif"]
-          }
+<html lang="en"><head><title>SocialFlow Studio Enterprise - Creative Post Composer</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-high": "#e2e7ff",
+          "inverse-on-surface": "#eef0ff",
+          "inverse-primary": "#c3c0ff",
+          "secondary-fixed-dim": "#adc6ff",
+          "surface-container-low": "#f2f3ff",
+          "outline-variant": "#c7c4d8",
+          "surface-container": "#eaedff",
+          "on-surface": "#131b2e",
+          "primary-fixed-dim": "#c3c0ff",
+          "on-secondary-fixed-variant": "#004395",
+          "on-background": "#131b2e",
+          "on-surface-variant": "#464555",
+          "tertiary-fixed-dim": "#4edea3",
+          "on-tertiary-fixed-variant": "#005236",
+          "tertiary-fixed": "#6ffbbe",
+          "on-secondary-container": "#fefcff",
+          "on-secondary-fixed": "#001a42",
+          "tertiary": "#005338",
+          "surface-tint": "#4d44e3",
+          "tertiary-container": "#006e4b",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary-container": "#67f4b7",
+          "on-primary": "#ffffff",
+          "on-primary-fixed-variant": "#3323cc",
+          "error-container": "#ffdad6",
+          "on-primary-container": "#dad7ff",
+          "surface-variant": "#dae2fd",
+          "secondary-fixed": "#d8e2ff",
+          "secondary-container": "#2170e4",
+          "on-tertiary": "#ffffff",
+          "surface-container-highest": "#dae2fd",
+          "on-primary-fixed": "#0f0069",
+          "background": "#faf8ff",
+          "surface": "#faf8ff",
+          "surface-dim": "#d2d9f4",
+          "on-error-container": "#93000a",
+          "secondary": "#0058be",
+          "primary": "#3525cd",
+          "on-tertiary-fixed": "#002113",
+          "outline": "#777587",
+          "inverse-surface": "#283044",
+          "error": "#ba1a1a",
+          "surface-bright": "#faf8ff",
+          "primary-container": "#4f46e5",
+          "primary-fixed": "#e2dfff",
+          "on-error": "#ffffff",
+          "on-secondary": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-sm": "0.25rem",
+          "space-xl": "1rem",
+          "gutter-loose": "1rem",
+          "margin": "0.75rem",
+          "space-xs": "0.125rem",
+          "space-md": "0.5rem",
+          "gutter": "0.5rem",
+          "space-lg": "0.75rem",
+          "margin-mobile": "0.5rem"
+        },
+        "fontFamily": {
+          "label-sm": [
+            "Inter"
+          ],
+          "mono-code": [
+            "JetBrains Mono"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "headline-lg-mobile": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "label-lg": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "label-sm": [
+            "10px",
+            {
+              "lineHeight": "12px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "mono-code": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg-mobile": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-md": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-lg": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ]
         }
-      }
-    };
-  </script>
-  <style>
-    @layer base {
-      html, body { margin: 0; padding: 0; }
-    }
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background-color: #cbd5e1;
-      border-radius: 9999px;
-    }
-    .waveform-bar {
-      animation: pulseHeight 1.4s ease-in-out infinite alternate;
-    }
-    @keyframes pulseHeight {
-      0% { height: 25%; }
-      100% { height: 95%; }
-    }
-  </style>
-</head>
-<body class="bg-[#f8faff] text-slate-800 font-sans antialiased min-h-screen flex flex-col">
-
-  <!-- Top Enterprise Navigation Bar -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      
-      <!-- Brand & Version -->
-      <div class="flex items-center space-x-3">
-        <a href="dashboard.html" class="flex items-center space-x-2.5">
-          <div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-white shadow-md shadow-indigo-500/20">
-            <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">movie_filter</span>
-          </div>
-          <span class="font-bold text-xl tracking-tight text-slate-900">SocialFlow</span>
-        </a>
-        <span class="hidden md:inline-flex px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 font-mono text-[11px] font-bold">
-          Enterprise v4.2
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-xl flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-md"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">S</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-none">SocialFlow</span><span class="font-label-sm text-label-sm text-primary tracking-wider uppercase mt-space-xs">Studio Enterprise</span></div></div></div><div class="px-space-md py-space-sm"><div class="px-space-md py-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Core Suite</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="publishing" href="#"><span class="material-symbols-outlined text-[18px]">send</span><span>Publishing</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="multi-platform-scheduler" href="#"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span>Multi-Platform Scheduler</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="analytics" href="#"><span class="material-symbols-outlined text-[18px]">monitoring</span><span>Analytics</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="multi-account" href="#"><span class="material-symbols-outlined text-[18px]">supervisor_account</span><span>Multi-Account</span></a></nav></div><div class="px-space-md py-space-sm"><div class="px-space-md py-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Creative Suite</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="video-studio" href="#"><span class="material-symbols-outlined text-[18px]">movie_edit</span><span>Video Studio</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ai-image-and-graphic-studio" href="#"><span class="material-symbols-outlined text-[18px]">photo_spark</span><span>AI Image &amp; Graphic</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="text-and-ai-writer" href="#"><span class="material-symbols-outlined text-[18px]">edit_note</span><span>Text &amp; AI Writer</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="brand-assets" href="#"><span class="material-symbols-outlined text-[18px]">folder_special</span><span>Brand Assets</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="poster-studio" href="../poster-editor/index.html" target="_blank"><span class="material-symbols-outlined text-[18px] text-amber-500">palette</span><span>Poster Studio</span></a></nav></div></div><div class="p-space-md bg-surface-container-low"><div class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Render Queue</span><span class="font-mono-code text-mono-code text-on-surface">2 Jobs Active</span></div><span class="material-symbols-outlined text-tertiary-container text-[18px]">sync</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-lg cursor-pointer"><span class="material-symbols-outlined text-on-surface-variant text-[18px]">workspaces</span><span class="font-label-md text-label-md text-on-surface font-semibold">Global Marketing EMEA</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span></div><div class="flex items-center bg-surface-container-low px-space-md py-space-sm rounded-lg w-72"><span class="material-symbols-outlined text-on-surface-variant text-[18px] mr-space-sm">search</span><input class="bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none w-full" placeholder="Search campaigns, clips, media..." type="text"/></div></div><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-low rounded-lg" title="Connected Platform Statuses"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="Facebook: Connected"><span class="material-symbols-outlined text-[16px] text-secondary">public</span><span class="font-label-sm text-label-sm">FB</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="Instagram: Connected"><span class="material-symbols-outlined text-[16px] text-primary">photo_camera</span><span class="font-label-sm text-label-sm">IG</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="WordPress: Connected"><span class="material-symbols-outlined text-[16px] text-secondary">article</span><span class="font-label-sm text-label-sm">WP</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="X: Connected"><span class="material-symbols-outlined text-[16px] text-on-surface">tag</span><span class="font-label-sm text-label-sm">X</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="YouTube: Connected"><span class="material-symbols-outlined text-[16px] text-error">play_circle</span><span class="font-label-sm text-label-sm">YT</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="TikTok: Synced"><span class="material-symbols-outlined text-[16px] text-on-surface">music_note</span><span class="font-label-sm text-label-sm">TT</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span></div></div><div class="flex items-center gap-space-md"><button class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span></button><div class="flex items-center gap-space-sm pl-space-sm">
+  <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani" alt="Avatar" class="w-8 h-8 rounded-full border border-primary/30 bg-surface-container-low shadow-xs"/>
+  <div class="hidden xl:flex flex-col">
+    <span class="font-label-md text-label-md text-on-surface font-semibold leading-none">Jamshed Rizwani</span>
+    <span class="font-label-sm text-label-sm text-primary font-mono-code">Super Administrator</span>
+  </div>
+  <a href="index.html" title="Sign Out" class="ml-2 w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors">
+    <span class="material-symbols-outlined text-[18px]">logout</span>
+  </a>
+</div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Studio Header Context Bar -->
+<div class="bg-surface-container-lowest shadow-sm px-space-xl py-space-md mb-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Left: Title & Quick Metadata -->
+<div class="flex items-center gap-space-lg">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]">photo_spark</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Creative Post Composer</span>
+<span class="px-space-sm py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-mono-code text-mono-code">v4.2 Live Engine</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-mono-code text-mono-code">Global Studio Engine</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Omnichannel AI asset generation, dynamic typography &amp; multi-platform distribution</span>
+</div>
+</div>
+<!-- Center & Right: Channel Selector Pills & Action Pipeline -->
+<div class="flex flex-wrap items-center gap-space-md">
+<!-- Social Channel Selection Strip -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-xl shadow-inner gap-1">
+<button class="channel-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-secondary text-[16px]">public</span>
+<span>FB Page</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+</button>
+<button class="channel-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-primary text-[16px]">photo_camera</span>
+<span>IG Business</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+</button>
+<button class="channel-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-secondary text-[16px]">article</span>
+<span>WordPress</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+</button>
+<button class="channel-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-on-surface text-[16px]">tag</span>
+<span>X Feed</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+</button>
+<button class="channel-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-error text-[16px]">play_circle</span>
+<span>YT Community</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+</button>
+<button class="channel-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-on-surface text-[16px]">music_note</span>
+<span>TikTok</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+</button>
+</div>
+<!-- Schedule / Multi-Publish CTA -->
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-3 py-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>Schedule</span>
+</button>
+<button class="flex items-center gap-space-xs px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-lg text-label-lg shadow-sm transition-all transform active:scale-95" id="publishAllBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+<span>Publish 6 Channels</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Row: Aspect Ratio Matrix & Preset Triggers -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-md mt-space-md bg-surface-container-low px-space-md py-space-sm rounded-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">aspect_ratio</span> Framing:
         </span>
-        <div class="hidden lg:flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-medium border border-emerald-200/60">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>99.99% Cluster Uptime (12 Nodes)</span>
-        </div>
-      </div>
-
-      <!-- Quick Role Switcher Chips for Demo -->
-      <div class="hidden md:flex items-center space-x-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
-        <span class="text-[11px] font-bold text-slate-500 px-2 uppercase font-mono">کردار منتخب کریں:</span>
-        <button onclick="switchRole('superadmin')" id="tabBtn-superadmin" class="px-2.5 py-1 rounded-lg text-xs font-semibold transition bg-primary text-white shadow-sm">
-          👑 سپر ایڈمن
+<div class="flex items-center gap-space-xs" id="aspectRatioGroup">
+<button class="ratio-btn px-2.5 py-1 rounded-md bg-primary-container text-on-primary font-mono-code text-mono-code shadow-xs" data-ratio="1:1" type="button">1:1 Square (IG/FB)</button>
+<button class="ratio-btn px-2.5 py-1 rounded-md bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-mono-code text-mono-code" data-ratio="4:5" type="button">4:5 Feed Portrait</button>
+<button class="ratio-btn px-2.5 py-1 rounded-md bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-mono-code text-mono-code" data-ratio="16:9" type="button">16:9 Landscape (YT/X)</button>
+<button class="ratio-btn px-2.5 py-1 rounded-md bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-mono-code text-mono-code" data-ratio="9:16" type="button">9:16 Story/Reel/TikTok</button>
+<button class="ratio-btn px-2.5 py-1 rounded-md bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-mono-code text-mono-code" data-ratio="1200:630" type="button">1200×630 WP Hero</button>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs font-mono-code text-mono-code text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+<span>GPU Render Core: Online (Tensor RT 9)</span>
+</div>
+<div class="h-4 w-px bg-surface-container-high"></div>
+<button class="text-primary font-label-sm text-label-sm hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span> Canvas Presets
         </button>
-        <button onclick="switchRole('admin')" id="tabBtn-admin" class="px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900">
-          🛡️ نیوز روم ایڈمن
-        </button>
-        <button onclick="switchRole('user')" id="tabBtn-user" class="px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900">
-          🎬 ساجد (ویڈیو اسٹوڈیو)
-        </button>
-      </div>
-
-      <!-- User Profile & Actions -->
-      <div class="flex items-center space-x-3">
-        <!-- External Quick Links -->
-        <a href="https://ahmhost.github.io/poster-preview/" target="_blank" title="اوپن ساؤتھ ٹوڈے پوسٹر اسٹوڈیو" class="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-xs font-bold text-slate-700 transition shadow-xs">
-          <span class="material-symbols-outlined text-amber-500 text-base">palette</span>
-          <span>پوسٹر جنریٹر</span>
-        </a>
-
-        <!-- User Dropdown & Logout -->
-        <div class="flex items-center space-x-3 pl-2 border-l border-slate-200">
-          <img id="userAvatar" src="https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani" alt="Avatar" class="w-8 h-8 rounded-full border border-indigo-200 bg-slate-100 shadow-xs"/>
-          <div class="hidden sm:block text-left">
-            <p id="userName" class="text-xs font-bold text-slate-900 leading-tight">جمشید رضوانی (Super Admin)</p>
-            <p id="userEmail" class="text-[10px] text-slate-500 font-mono">rizwani@socialflow.com</p>
-          </div>
-          <a href="index.html" title="لاگ آؤٹ کریں" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 hover:text-red-600 hover:bg-red-50 transition border border-transparent hover:border-red-200">
-            <span class="material-symbols-outlined text-lg">logout</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Subheader Banner with Dynamic Role Context -->
-  <section class="bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 text-white py-6 px-4 sm:px-6 lg:px-8 shadow-inner">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-      <div>
-        <div class="flex items-center space-x-2">
-          <span id="roleBadge" class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-amber-400 text-amber-950">
-            SUPERADMIN WORKSPACE
-          </span>
-          <span class="text-xs text-indigo-200 font-mono">Live Node: #01-Multan-Master</span>
-        </div>
-        <h1 id="workspaceTitle" class="text-2xl font-bold mt-1 tracking-tight">
-          سپر ایڈمن کنٹرول پینل - پلیٹ فارم انفراسٹرکچر و کلسٹر مینجمنٹ
-        </h1>
-        <p id="workspaceSub" class="text-sm text-indigo-200/90 mt-0.5">
-          Super Administrator / Platform Owner &bull; سیشن محفوظ اور فعال ہے
-        </p>
-      </div>
-
-      <!-- Action Chips in Subheader -->
-      <div class="flex items-center space-x-2">
-        <button onclick="triggerClusterSync()" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold backdrop-blur border border-white/20 transition flex items-center space-x-1.5 cursor-pointer">
-          <span class="material-symbols-outlined text-sm">sync</span>
-          <span>کلسٹر سنک</span>
-        </button>
-        <button onclick="showBroadcastModal()" class="px-3.5 py-2 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white text-xs font-bold shadow-md shadow-indigo-900/40 transition flex items-center space-x-1.5 cursor-pointer">
-          <span class="material-symbols-outlined text-sm">podcasts</span>
-          <span>نئی بریکنگ براڈکاسٹ</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mobile Role Switcher (Visible on Small Screens) -->
-  <div class="md:hidden bg-slate-100 p-2 border-b border-slate-200 flex items-center justify-around text-xs font-bold">
-    <button onclick="switchRole('superadmin')" class="text-primary underline">👑 سپر ایڈمن</button>
-    <button onclick="switchRole('admin')" class="text-slate-600">🛡️ ایڈمن</button>
-    <button onclick="switchRole('user')" class="text-slate-600">🎬 ساجد اسٹوڈیو</button>
-  </div>
-
-  <!-- Main Content Area with 3 Role Views -->
-  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-8">
-
-    <!-- ═══════════════════════════════════════════════════════════════════ -->
-    <!-- VIEW 1: SUPER ADMIN                                                -->
-    <!-- ═══════════════════════════════════════════════════════════════════ -->
-    <div id="view-superadmin" class="space-y-8">
-      
-      <!-- Top Metrics Strip -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between">
-          <div>
-            <p class="text-xs font-semibold text-slate-500 uppercase font-mono">فعال نوڈز (Nodes)</p>
-            <h3 class="text-2xl font-black text-slate-900 mt-1">12 / 12</h3>
-            <p class="text-xs text-emerald-600 font-semibold mt-0.5">● تمام رینڈرنگ ورکرز آن لائن ہیں</p>
-          </div>
-          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
-            <span class="material-symbols-outlined text-2xl">dns</span>
-          </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between">
-          <div>
-            <p class="text-xs font-semibold text-slate-500 uppercase font-mono">مکمل رینڈرز (Completed)</p>
-            <h3 class="text-2xl font-black text-slate-900 mt-1">14,280</h3>
-            <p class="text-xs text-indigo-600 font-semibold mt-0.5">↑ آج +342 ویڈیوز و پوسٹرز</p>
-          </div>
-          <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
-            <span class="material-symbols-outlined text-2xl">movie_filter</span>
-          </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between">
-          <div>
-            <p class="text-xs font-semibold text-slate-500 uppercase font-mono">سوشل چینلز (Connected)</p>
-            <h3 class="text-2xl font-black text-slate-900 mt-1">6 پلیٹ فارمز</h3>
-            <p class="text-xs text-blue-600 font-semibold mt-0.5">FB, IG, WP, X, TikTok, YT</p>
-          </div>
-          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-            <span class="material-symbols-outlined text-2xl">share</span>
-          </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between">
-          <div>
-            <p class="text-xs font-semibold text-slate-500 uppercase font-mono">کلسٹر لوڈ (Cluster Load)</p>
-            <h3 class="text-2xl font-black text-slate-900 mt-1">18.4%</h3>
-            <p class="text-xs text-emerald-600 font-semibold mt-0.5">CPU 2.4GHz / RAM 64GB</p>
-          </div>
-          <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
-            <span class="material-symbols-outlined text-2xl">speed</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Infrastructure & User Controls Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        <!-- Left: User Management Table (Cols 1-8) -->
-        <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden">
-          <div class="p-5 border-b border-slate-100 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-              <span class="material-symbols-outlined text-primary text-xl">manage_accounts</span>
-              <h2 class="font-bold text-slate-900">یوزرز اور پرمیشن مینجمنٹ (User Access Control)</h2>
-            </div>
-            <button onclick="alert('نیا یوزر شامل کرنے کا ماڈل جلد شامل کیا جائے گا')" class="px-3 py-1.5 rounded-lg bg-primary hover:bg-indigo-700 text-white text-xs font-bold transition flex items-center space-x-1 cursor-pointer">
-              <span class="material-symbols-outlined text-sm">add</span>
-              <span>نیا یوزر شامل کریں</span>
-            </button>
-          </div>
-
-          <div class="overflow-x-auto">
-            <table class="w-full text-left text-xs text-slate-600">
-              <thead class="bg-slate-50 text-slate-700 font-bold uppercase tracking-wider text-[11px] border-b border-slate-200">
-                <tr>
-                  <th class="py-3 px-4">صارف / یوزر</th>
-                  <th class="py-3 px-4">کردار (Role)</th>
-                  <th class="py-3 px-4">سٹیٹس</th>
-                  <th class="py-3 px-4">اختیارات (Permissions)</th>
-                  <th class="py-3 px-4 text-right">ایکشن</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-100">
-                <tr class="hover:bg-slate-50/80 transition">
-                  <td class="py-3.5 px-4">
-                    <div class="flex items-center space-x-3">
-                      <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani" class="w-8 h-8 rounded-full border border-slate-200 bg-slate-100"/>
-                      <div>
-                        <p class="font-bold text-slate-900">جمشید رضوانی (Super Admin)</p>
-                        <p class="text-[11px] text-slate-500 font-mono">rizwani@socialflow.com</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-3.5 px-4">
-                    <span class="px-2 py-1 rounded-md text-[10px] font-bold font-mono uppercase bg-amber-100 text-amber-800">superadmin</span>
-                  </td>
-                  <td class="py-3.5 px-4">
-                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800">
-                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>فعال (Active)
-                    </span>
-                  </td>
-                  <td class="py-3.5 px-4">
-                    <div class="flex flex-wrap gap-1 max-w-xs">
-                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">system_settings</span>
-                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">manage_users</span>
-                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">cluster_nodes</span>
-                      <span class="px-1.5 py-0.5 bg-slate-200 text-slate-700 rounded text-[9px] font-mono">+7 more</span>
-                    </div>
-                  </td>
-                  <td class="py-3.5 px-4 text-right">
-                    <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition cursor-pointer">ترمیم</button>
-                  </td>
-                </tr>
-
-                <tr class="hover:bg-slate-50/80 transition">
-                  <td class="py-3.5 px-4">
-                    <div class="flex items-center space-x-3">
-                      <img src="https://api.dicebear.com/7.x/bottts/svg?seed=AdminFlow" class="w-8 h-8 rounded-full border border-slate-200 bg-slate-100"/>
-                      <div>
-                        <p class="font-bold text-slate-900">نیوز روم ایڈمنسٹریٹر</p>
-                        <p class="text-[11px] text-slate-500 font-mono">admin@socialflow.com</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-3.5 px-4">
-                    <span class="px-2 py-1 rounded-md text-[10px] font-bold font-mono uppercase bg-blue-100 text-blue-800">admin</span>
-                  </td>
-                  <td class="py-3.5 px-4">
-                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800">
-                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>فعال (Active)
-                    </span>
-                  </td>
-                  <td class="py-3.5 px-4">
-                    <div class="flex flex-wrap gap-1 max-w-xs">
-                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">manage_channels</span>
-                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">approve_content</span>
-                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">multi_channel_publish</span>
-                      <span class="px-1.5 py-0.5 bg-slate-200 text-slate-700 rounded text-[9px] font-mono">+4 more</span>
-                    </div>
-                  </td>
-                  <td class="py-3.5 px-4 text-right">
-                    <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition cursor-pointer">ترمیم</button>
-                  </td>
-                </tr>
-
-                <tr class="hover:bg-slate-50/80 transition">
-                  <td class="py-3.5 px-4">
-                    <div class="flex items-center space-x-3">
-                      <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Sajid" class="w-8 h-8 rounded-full border border-slate-200 bg-slate-100"/>
-                      <div>
-                        <p class="font-bold text-slate-900">ساجد (Content Creator)</p>
-                        <p class="text-[11px] text-slate-500 font-mono">sajid@socialflow.com</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-3.5 px-4">
-                    <span class="px-2 py-1 rounded-md text-[10px] font-bold font-mono uppercase bg-emerald-100 text-emerald-800">user</span>
-                  </td>
-                  <td class="py-3.5 px-4">
-                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800">
-                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>فعال (Active)
-                    </span>
-                  </td>
-                  <td class="py-3.5 px-4">
-                    <div class="flex flex-wrap gap-1 max-w-xs">
-                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">video_studio</span>
-                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">urdu_typography</span>
-                      <span class="px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded text-[9px] font-mono">create_drafts</span>
-                    </div>
-                  </td>
-                  <td class="py-3.5 px-4 text-right">
-                    <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition cursor-pointer">ترمیم</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Right: Cluster Nodes & API Keys (Cols 9-12) -->
-        <div class="lg:col-span-4 space-y-6">
-          
-          <!-- Cluster Server Nodes -->
-          <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs space-y-4">
-            <div class="flex items-center justify-between">
-              <h3 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
-                <span class="material-symbols-outlined text-emerald-600 text-lg">cloud_done</span>
-                <span>کلسٹر سرور نوڈز (VPS 2.25.110.249)</span>
-              </h3>
-              <span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded font-mono text-slate-600">PM2 Active</span>
-            </div>
-            
-            <div class="space-y-2 text-xs">
-              <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                <div class="flex items-center space-x-2">
-                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                  <span class="font-bold text-slate-800">Node #01 (Poster API Puppeteer)</span>
-                </div>
-                <span class="font-mono text-[11px] text-slate-500">Port 3333 [Online]</span>
-              </div>
-
-              <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                <div class="flex items-center space-x-2">
-                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                  <span class="font-bold text-slate-800">Node #02 (Video NLE Render Core)</span>
-                </div>
-                <span class="font-mono text-[11px] text-slate-500">Port 4000 [Standby]</span>
-              </div>
-
-              <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                <div class="flex items-center space-x-2">
-                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                  <span class="font-bold text-slate-800">Node #03 (Urdu Nastaliq Font Engine)</span>
-                </div>
-                <span class="font-mono text-[11px] text-slate-500">Port 5050 [Online]</span>
-              </div>
-
-              <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                <div class="flex items-center space-x-2">
-                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                  <span class="font-bold text-slate-800">Node #04 (Multi-Post Sync Worker)</span>
-                </div>
-                <span class="font-mono text-[11px] text-slate-500">Daemon [Active]</span>
-              </div>
-            </div>
-
-            <button onclick="restartCluster()" class="w-full py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition flex items-center justify-center space-x-1.5 cursor-pointer">
-              <span class="material-symbols-outlined text-sm">restart_alt</span>
-              <span>کلسٹر سروسز ری سٹارٹ کریں</span>
-            </button>
-          </div>
-
-          <!-- Global API Keys & Tokens -->
-          <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs space-y-4">
-            <h3 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
-              <span class="material-symbols-outlined text-indigo-600 text-lg">key</span>
-              <span>گلوبل API کیز اور ٹوکنز</span>
-            </h3>
-
-            <div class="space-y-2 text-xs">
-              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50">
-                <span class="font-medium text-slate-700">Meta Graph API v19.0:</span>
-                <span class="font-mono text-emerald-600 font-bold">EAAG...Connected</span>
-              </div>
-              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50">
-                <span class="font-medium text-slate-700">YouTube Data API v3:</span>
-                <span class="font-mono text-emerald-600 font-bold">AIza...Valid</span>
-              </div>
-              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50">
-                <span class="font-medium text-slate-700">WordPress REST Key:</span>
-                <span class="font-mono text-emerald-600 font-bold">wp_...Synced</span>
-              </div>
-              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50">
-                <span class="font-medium text-slate-700">GitHub Auto-Sync:</span>
-                <span class="font-mono text-emerald-600 font-bold">ahmhost/socialflow</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ═══════════════════════════════════════════════════════════════════ -->
-    <!-- VIEW 2: EDITORIAL ADMIN                                            -->
-    <!-- ═══════════════════════════════════════════════════════════════════ -->
-    <div id="view-admin" class="hidden space-y-8">
-      
-      <!-- Multi-Channel Publishing Hub -->
-      <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs space-y-5">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <div>
-            <h2 class="text-lg font-bold text-slate-900 flex items-center space-x-2">
-              <span class="material-symbols-outlined text-primary text-xl">hub</span>
-              <span>ملٹی چینل پبلشنگ حب (6 منسلک نیٹ ورکس)</span>
-            </h2>
-            <p class="text-xs text-slate-500 mt-0.5">ایک کلک سے تمام سوشل میڈیا چینلز پر فوری اور شیڈول پوسٹنگ</p>
-          </div>
-          <button onclick="publishToAllChannels()" class="px-4 py-2 rounded-xl bg-primary hover:bg-indigo-700 text-white font-bold text-xs shadow-sm transition flex items-center space-x-2 self-start cursor-pointer">
-            <span class="material-symbols-outlined text-sm">send</span>
-            <span>تمام چینلز پر بیک وقت پوسٹ کریں</span>
-          </button>
-        </div>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-          
-          <div class="p-3.5 rounded-xl border border-blue-200 bg-blue-50/50 flex flex-col items-center text-center">
-            <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow-xs">FB</div>
-            <p class="text-xs font-bold text-slate-900 mt-2">South Today</p>
-            <span class="text-[10px] text-blue-700 font-semibold">240K فالوورز</span>
-            <span class="mt-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">منسلک (Active)</span>
-          </div>
-
-          <div class="p-3.5 rounded-xl border border-pink-200 bg-pink-50/50 flex flex-col items-center text-center">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-pink-600 to-purple-600 text-white flex items-center justify-center font-bold text-sm shadow-xs">IG</div>
-            <p class="text-xs font-bold text-slate-900 mt-2">@southtodaypk</p>
-            <span class="text-[10px] text-pink-700 font-semibold">85K فالوورز</span>
-            <span class="mt-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">منسلک (Active)</span>
-          </div>
-
-          <div class="p-3.5 rounded-xl border border-slate-300 bg-slate-50 flex flex-col items-center text-center">
-            <div class="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center font-bold text-sm shadow-xs">TT</div>
-            <p class="text-xs font-bold text-slate-900 mt-2">@southtoday</p>
-            <span class="text-[10px] text-slate-700 font-semibold">120K فالوورز</span>
-            <span class="mt-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">منسلک (Active)</span>
-          </div>
-
-          <div class="p-3.5 rounded-xl border border-red-200 bg-red-50/50 flex flex-col items-center text-center">
-            <div class="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center font-bold text-sm shadow-xs">YT</div>
-            <p class="text-xs font-bold text-slate-900 mt-2">South Today TV</p>
-            <span class="text-[10px] text-red-700 font-semibold">1080p Live</span>
-            <span class="mt-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">منسلک (Active)</span>
-          </div>
-
-          <div class="p-3.5 rounded-xl border border-sky-200 bg-sky-50/50 flex flex-col items-center text-center">
-            <div class="w-10 h-10 rounded-xl bg-sky-500 text-white flex items-center justify-center font-bold text-sm shadow-xs">WP</div>
-            <p class="text-xs font-bold text-slate-900 mt-2">southtoday.com</p>
-            <span class="text-[10px] text-sky-700 font-semibold">Wordpress CMS</span>
-            <span class="mt-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">منسلک (Active)</span>
-          </div>
-
-          <div class="p-3.5 rounded-xl border border-slate-300 bg-slate-50 flex flex-col items-center text-center">
-            <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-sm shadow-xs">X</div>
-            <p class="text-xs font-bold text-slate-900 mt-2">@SouthTodayNews</p>
-            <span class="text-[10px] text-slate-700 font-semibold">Verified Media</span>
-            <span class="mt-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">منسلک (Active)</span>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Editorial Approval Queue & Publishing Timeline -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        <!-- Editorial Approvals (Cols 1-8) -->
-        <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden">
-          <div class="p-5 border-b border-slate-100 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-              <span class="material-symbols-outlined text-amber-500 text-xl">fact_check</span>
-              <h2 class="font-bold text-slate-900">ایڈیٹوریل اپروول کیو (Pending Editorial Approvals)</h2>
-            </div>
-            <span class="px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold font-mono">3 خبریں منتظر ہیں</span>
-          </div>
-
-          <div class="divide-y divide-slate-100 text-xs">
-            
-            <!-- Item 1 -->
-            <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-50/70 transition">
-              <div class="flex items-start space-x-3.5">
-                <div class="w-12 h-12 rounded-xl bg-indigo-100 flex-shrink-0 flex items-center justify-center text-primary font-bold">
-                  <span class="material-symbols-outlined text-2xl">breaking_news</span>
-                </div>
-                <div>
-                  <div class="flex items-center space-x-2">
-                    <span class="px-2 py-0.5 rounded bg-red-100 text-red-700 font-bold text-[10px]">بریکنگ نیوز</span>
-                    <span class="text-slate-400 font-mono text-[11px]">10 منٹ پہلے بذریعہ ساجد</span>
-                  </div>
-                  <h4 class="font-bold text-slate-900 text-sm mt-1 font-nastaliq leading-relaxed">
-                    28 ویں آئینی ترمیم پر حکومت اور اتحادیوں کے درمیان حتمی مشاورت
-                  </h4>
-                  <p class="text-slate-500 text-[11px] mt-0.5">ٹیمپلیٹ 2 (ملتان یلو ہیڈر) + 4K ویڈیو رینڈر تیار ہے</p>
-                </div>
-              </div>
-              <div class="flex items-center space-x-2 self-end sm:self-center">
-                <button onclick="approveStory(1)" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition flex items-center space-x-1 cursor-pointer">
-                  <span class="material-symbols-outlined text-sm">done</span>
-                  <span>منظور کریں</span>
-                </button>
-                <button onclick="rejectStory(1)" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-red-50 hover:text-red-600 text-slate-700 font-bold transition flex items-center space-x-1 cursor-pointer">
-                  <span class="material-symbols-outlined text-sm">close</span>
-                  <span>مسترد</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-50/70 transition">
-              <div class="flex items-start space-x-3.5">
-                <div class="w-12 h-12 rounded-xl bg-blue-100 flex-shrink-0 flex items-center justify-center text-blue-700 font-bold">
-                  <span class="material-symbols-outlined text-2xl">newspaper</span>
-                </div>
-                <div>
-                  <div class="flex items-center space-x-2">
-                    <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 font-bold text-[10px]">ملتان بلیٹن</span>
-                    <span class="text-slate-400 font-mono text-[11px]">25 منٹ پہلے</span>
-                  </div>
-                  <h4 class="font-bold text-slate-900 text-sm mt-1 font-nastaliq leading-relaxed">
-                    ملتان میں میٹرو بس روٹ کی توسیع کے منصوبے کی اصولی منظوری
-                  </h4>
-                  <p class="text-slate-500 text-[11px] mt-0.5">سوشل پوسٹ + فیس بک ریل فارمیٹ</p>
-                </div>
-              </div>
-              <div class="flex items-center space-x-2 self-end sm:self-center">
-                <button onclick="approveStory(2)" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition flex items-center space-x-1 cursor-pointer">
-                  <span class="material-symbols-outlined text-sm">done</span>
-                  <span>منظور کریں</span>
-                </button>
-                <button onclick="rejectStory(2)" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-red-50 hover:text-red-600 text-slate-700 font-bold transition flex items-center space-x-1 cursor-pointer">
-                  <span class="material-symbols-outlined text-sm">close</span>
-                  <span>مسترد</span>
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Publishing Schedule (Cols 9-12) -->
-        <div class="lg:col-span-4 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs space-y-4">
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
-              <span class="material-symbols-outlined text-indigo-600 text-lg">calendar_clock</span>
-              <span>شیڈولڈ پبلشنگ (Today's Queue)</span>
-            </h3>
-            <span class="text-[10px] text-slate-500 font-mono">PKT +05:00</span>
-          </div>
-
-          <div class="space-y-3 text-xs">
-            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/60 flex items-center justify-between">
-              <div>
-                <p class="font-bold text-slate-800">12:00 PM - ڈیلی نیوز بلیٹن</p>
-                <p class="text-[11px] text-slate-500">FB, YT, WP پر خودکار ریلیز</p>
-              </div>
-              <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 font-mono font-bold text-[10px]">قطار میں</span>
-            </div>
-
-            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/60 flex items-center justify-between">
-              <div>
-                <p class="font-bold text-slate-800">03:30 PM - جنوبی پنجاب ڈویلپمنٹ رپورٹ</p>
-                <p class="text-[11px] text-slate-500">TikTok + IG Reels</p>
-              </div>
-              <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 font-mono font-bold text-[10px]">قطار میں</span>
-            </div>
-
-            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/60 flex items-center justify-between">
-              <div>
-                <p class="font-bold text-slate-800">09:00 PM - پرائم ٹائم خصوصی لائیو ٹاک</p>
-                <p class="text-[11px] text-slate-500">YouTube 4K Broadcast</p>
-              </div>
-              <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-mono font-bold text-[10px]">پینڈنگ</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- ═══════════════════════════════════════════════════════════════════ -->
-    <!-- VIEW 3: CONTENT CREATOR (SAJID)                                    -->
-    <!-- ═══════════════════════════════════════════════════════════════════ -->
-    <div id="view-user" class="hidden space-y-8">
-      
-      <!-- CapCut-Style NLE Video Studio Simulator -->
-      <div class="bg-slate-900 text-white rounded-2xl border border-slate-800 shadow-xl overflow-hidden">
-        
-        <!-- Top Studio Toolbar -->
-        <div class="p-4 bg-slate-950/80 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3">
-          <div class="flex items-center space-x-3">
-            <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center shadow-xs">
-              <span class="material-symbols-outlined text-base">video_library</span>
-            </div>
-            <div>
-              <div class="flex items-center space-x-2">
-                <span class="font-mono text-xs font-bold text-indigo-300">PROJECT: BREAKING_URDU_04.nle</span>
-                <span class="px-1.5 py-0.2 rounded bg-red-950 text-red-400 border border-red-800 text-[10px] font-mono font-bold animate-pulse">● REC LIVE</span>
-              </div>
-              <p class="text-[11px] text-slate-400">4K UHD &bull; 60 FPS &bull; ProRes 422 HQ &bull; Nastaliq Auto-Subtitle</p>
-            </div>
-          </div>
-
-          <!-- Controls & Render Button -->
-          <div class="flex items-center space-x-2">
-            <button onclick="toggleVideoPlayback()" id="playPauseBtn" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold transition flex items-center space-x-1 cursor-pointer">
-              <span class="material-symbols-outlined text-sm" id="playIcon">play_arrow</span>
-              <span id="playText">چلائیں (Play)</span>
-            </button>
-            <button onclick="renderFinalVideo()" id="renderBtn" class="px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold shadow-md shadow-indigo-900/60 transition flex items-center space-x-1.5 cursor-pointer">
-              <span class="material-symbols-outlined text-sm">auto_videocam</span>
-              <span>4K رینڈر ایکسپورٹ</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Studio Preview Canvas + Timeline -->
-        <div class="p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-          
-          <!-- Live Preview Screen (Cols 1-7) -->
-          <div class="lg:col-span-7 bg-black rounded-xl overflow-hidden border border-slate-800 flex flex-col justify-between relative aspect-video shadow-inner">
-            <div class="p-3 flex items-center justify-between bg-gradient-to-b from-black/80 to-transparent z-10">
-              <span class="text-xs font-mono text-white/80 bg-black/60 px-2 py-0.5 rounded">00:04:12:18</span>
-              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono text-[10px] font-bold border border-emerald-500/30">Auto-Fit 100%</span>
-            </div>
-
-            <!-- News Studio Visual -->
-            <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
-              <img id="studioPreviewImg" src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=1200&auto=format&fit=crop" class="w-full h-full object-cover opacity-80 transition duration-500" alt="News Studio"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-black/40"></div>
-            </div>
-
-            <!-- Lower Third Overlay (Auto Nastaliq) -->
-            <div class="relative z-10 p-4 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
-              <div class="bg-amber-400 text-black px-3 py-0.5 inline-block font-bold text-xs rounded-sm mb-1 uppercase tracking-wider">
-                ساؤتھ ٹوڈے بریکنگ نیوز
-              </div>
-              <div class="bg-indigo-950/95 border-l-4 border-amber-400 p-2.5 rounded-r shadow-xl">
-                <p id="previewHeadline" class="text-white font-bold text-base md:text-lg font-nastaliq leading-relaxed">
-                  28 ویں آئینی ترمیم پر حمایت بھی ناقابل قبول ہے: اینکر غریدہ فاروقی کی خبر
+</div>
+</div>
+</div>
+<!-- Studio Workspace: 3 Column NLE Architecture -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md px-space-md pb-space-xl">
+<!-- LEFT PANEL: AI Studio, Multilingual Text Engine & Brand Kits (Col 3.5) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- AI Image Prompt Matrix -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">AI Visual Generator</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-mono-code text-mono-code">SDXL Turbo Pro</span>
+</div>
+<!-- Bilingual Prompt Input Area -->
+<div class="space-y-space-sm">
+<div>
+<div class="flex justify-between items-center mb-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Primary Prompt (EN)</label>
+<button class="text-primary font-label-sm text-label-sm flex items-center gap-0.5 hover:underline" id="magicPromptBtn" type="button">
+<span class="material-symbols-outlined text-[14px]">magic_button</span> AI Magic Expand
+              </button>
+</div>
+<textarea class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-0 focus:bg-surface-container resize-none" id="promptEnglish" placeholder="Cyberpunk fintech startup launching automated global remittances, clean architectural studio lighting, isometric high-detail render..." rows="2"></textarea>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Headline &amp; Banner Context</label>
+<span class="font-mono-code text-mono-code text-secondary font-semibold">Headline Subtitle</span>
+</div>
+<textarea class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-0 focus:bg-surface-container resize-none " id="promptEnglish" placeholder="Autonomous cross-border financial rails — Next-gen institutional liquidity protocol." rows="2"></textarea>
+</div>
+</div>
+<!-- Style Archetypes Picker -->
+<div class="mt-space-md">
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-space-xs">Artistic Direction Style</label>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="style-card flex items-center gap-space-xs p-2 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm text-left transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">camera</span>
+<div class="truncate">
+<div class="font-semibold">Photorealistic</div>
+<div class="text-on-surface-variant text-[9px] truncate">Hasselblad 8K Studio</div>
+</div>
+</button>
+<button class="style-card flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm text-left transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">newspaper</span>
+<div class="truncate">
+<div class="font-semibold">Broadcast News Banner</div>
+<div class="text-on-surface-variant text-[9px] truncate">3D Broadcast Lower-Third</div>
+</div>
+</button>
+<button class="style-card flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm text-left transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">corporate_fare</span>
+<div class="truncate">
+<div class="font-semibold">Corporate Minimal</div>
+<div class="text-on-surface-variant text-[9px] truncate">Gradient &amp; Swiss Typo</div>
+</div>
+</button>
+<button class="style-card flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm text-left transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">auto_stories</span>
+<div class="truncate">
+<div class="font-semibold">Editorial Luxe</div>
+<div class="text-on-surface-variant text-[9px] truncate">High-Contrast Magazine</div>
+</div>
+</button>
+</div>
+</div>
+<div class="mt-space-md flex gap-space-sm">
+<button class="flex-1 flex items-center justify-center gap-space-xs py-2.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:opacity-95 transition-all" id="generateVisualBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">brush</span>
+<span>Synthesize New Visual</span>
+</button>
+<button class="px-3 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface" title="Seed Lock" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+</button>
+</div>
+</div>
+<!-- Text & AI Copy Engine -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">AI Multi-Channel Writer</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary-container text-[16px]">bolt</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant">GPT-4o Stream</span>
+</div>
+</div>
+<!-- Tone selector -->
+<div class="mb-space-sm">
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Tone &amp; Perspective</label>
+<div class="flex flex-wrap gap-1">
+<button class="tone-pill px-2.5 py-1 rounded-md bg-primary-container text-on-primary font-label-sm text-label-sm" type="button">Breaking News</button>
+<button class="tone-pill px-2.5 py-1 rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm" type="button">Viral Hook (TikTok)</button>
+<button class="tone-pill px-2.5 py-1 rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm" type="button">Promotional B2B</button>
+<button class="tone-pill px-2.5 py-1 rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm" type="button">Editorial Analysis</button>
+</div>
+</div>
+<!-- Master Content Draft -->
+<div class="space-y-space-sm">
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Universal English Caption</span>
+<button class="text-primary font-label-sm text-label-sm hover:underline" type="button">Regenerate</button>
+</div>
+<textarea class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface resize-none focus:outline-none" id="captionEnglish" rows="3">Excited to unveil our next-generation cross-border payment gateway! Seamless transaction speeds, zero gas overhead, and banking-grade security built for high-velocity global growth. Tap below to see live benchmarks. 🚀🌐</textarea>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Secondary Multi-Channel Hook</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant">Smart Context Sync</span>
+</div>
+<textarea class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface resize-none focus:outline-none" id="captionEnglish" rows="2">Next-generation global financial network unveiled! High-velocity institutional settlements with zero-gas overhead and bank-grade security.</textarea>
+</div>
+</div>
+<!-- Hashtags & SEO Auto-generator -->
+<div class="mt-space-md pt-space-md bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">tag</span> Suggested Viral Tags
+            </span>
+<span class="font-mono-code text-mono-code text-tertiary-container font-semibold">+84% Reach Est.</span>
+</div>
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono-code text-mono-code cursor-pointer">#FinTech2025</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono-code text-mono-code cursor-pointer">#GlobalPayments</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono-code text-mono-code cursor-pointer">#NextGenBanking</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono-code text-mono-code cursor-pointer">#GlobalFinTech</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono-code text-mono-code cursor-pointer">#Innovate</span>
+</div>
+</div>
+</div>
+<!-- Brand Assets & Library Drawer Quick Strip -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Brand Asset Presets</span>
+<span class="font-label-sm text-label-sm text-primary hover:underline cursor-pointer">Open Kit</span>
+</div>
+<div class="grid grid-cols-4 gap-space-sm">
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs mb-1">SF</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate w-full">Primary Logo</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors">
+<div class="w-8 h-8 rounded-md bg-surface-container-high text-primary flex items-center justify-center font-bold text-xs mb-1">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate w-full">Watermark</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors">
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-secondary mb-1"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate w-full">Brand Duo</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors">
+<div class="w-8 h-8 rounded-md bg-surface-container-highest text-primary flex items-center justify-center font-mono-code font-bold text-xs mb-1">SF</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate w-full">Brand Typo</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CENTER PANEL: Interactive Poster Canvas & Live Platform Simulation (Col 5) -->
+<div class="xl:col-span-5 flex flex-col gap-space-md">
+<!-- Poster Visual Design Canvas Container -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+<!-- Canvas Top Bar Controls -->
+<div class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1 font-mono-code text-mono-code text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">straighten</span>
+<span id="canvasDimLabel">1080 × 1080 px</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Zoom: 85%</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface" title="Snap to grid" type="button">
+<span class="material-symbols-outlined text-[16px]">grid_4x4</span>
+</button>
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface" title="Guide lines" type="button">
+<span class="material-symbols-outlined text-[16px]">straighten</span>
+</button>
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface" title="Undo" type="button">
+<span class="material-symbols-outlined text-[16px]">undo</span>
+</button>
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface" title="Redo" type="button">
+<span class="material-symbols-outlined text-[16px]">redo</span>
+</button>
+</div>
+</div>
+<!-- THE LIVE EDITABLE POSTER CANVAS -->
+<div class="w-full flex items-center justify-center py-space-sm bg-surface-container-low rounded-xl relative overflow-hidden">
+<!-- Poster Body Mockup -->
+<div class="relative w-full max-w-[440px] aspect-square rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300" id="editablePosterCanvas">
+<!-- Background AI Image Placeholder -->
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="High quality dynamic digital artwork of glowing holographic financial chart elements intertwining with clean architectural columns against a deep indigo and silver gradient backdrop, ultra-detailed 8k resolution studio quality" id="posterBgImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvGMTtwo7ZI5BWA9DB8qW0U6FXTHL1zrQV_TWIIOLudxEwDgH2C1KWmI3tutE_w-Ku36onTxuKpCqBxaJ5v0WberRhKALC0LBtkGv_ahQBsmH6CZYhQkiRegYAXKRQ-BSr4xapxK1whMlSZ3oaG6MYorgIDl7blGTgMBwP4QreckE-sXu16YnfZix8c1XB5Ef2HV0UAnU3ufKfU92xH3h8QgrE5Ng6y6thHAglGaw"/>
+<!-- Gradient Scrim for readable Typography -->
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/40 to-transparent"></div>
+<!-- Top Canvas Ribbon: Breaking Alert & Brand Badge -->
+<div class="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-error text-on-error font-label-sm text-label-sm shadow-sm animate-pulse">
+<span class="w-2 h-2 rounded-full bg-surface-container-lowest"></span>
+<span>EXCLUSIVE LAUNCH</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
+<div class="w-4 h-4 rounded-full bg-primary flex items-center justify-center text-[9px] text-on-primary font-bold">S</div>
+<span class="font-mono-code text-mono-code text-on-surface font-semibold tracking-wider">SOCIALFLOW</span>
+</div>
+</div>
+<!-- Floating Interactive Layer 1: English Nastaliq Headline (Draggable) -->
+<div class="absolute top-20 left-4 right-4 z-20 cursor-move" id="layerEnglish">
+<div class="inline-block p-2 rounded-lg bg-surface-container-lowest/80 backdrop-blur-md shadow-md">
+<span class="font-mono-code text-mono-code text-primary font-bold block mb-0.5">EXCLUSIVE FINANCIAL REPORT</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold leading-snug">
+                  Next-Gen Banking Protocol
+                </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium mt-0.5">
+                  Instant institutional fund transfers and automated cross-border settlement rails at your fingertips.
                 </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Video Timeline & Audio Waveform (Cols 8-12) -->
-          <div class="lg:col-span-5 flex flex-col justify-between space-y-3 bg-slate-950 p-4 rounded-xl border border-slate-800">
-            <div>
-              <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 flex items-center justify-between">
-                <span>ٹائم لائن ٹریکس (CapCut Style NLE)</span>
-                <span class="text-[10px] text-indigo-400 font-mono">Zoom: 100%</span>
-              </h4>
-
-              <!-- Track V2: Overlay Subtitle -->
-              <div class="space-y-1.5">
-                <div class="flex items-center space-x-2 text-[10px] text-slate-400 font-mono">
-                  <span class="w-5 text-right font-bold text-indigo-400">V2</span>
-                  <div class="flex-1 bg-indigo-900/60 border border-indigo-500/40 rounded px-2 py-1 flex items-center justify-between text-indigo-200">
-                    <span class="truncate">Urdu Lower-Third (Auto-Nastaliq)</span>
-                    <span class="material-symbols-outlined text-xs">subtitles</span>
-                  </div>
-                </div>
-
-                <!-- Track V1: Video Master -->
-                <div class="flex items-center space-x-2 text-[10px] text-slate-400 font-mono">
-                  <span class="w-5 text-right font-bold text-blue-400">V1</span>
-                  <div class="flex-1 bg-blue-900/60 border border-blue-500/40 rounded px-2 py-1 flex items-center justify-between text-blue-200">
-                    <span class="truncate">Master_Feed_Studio_A.mp4 (4K)</span>
-                    <span class="material-symbols-outlined text-xs">videocam</span>
-                  </div>
-                </div>
-
-                <!-- Track A1: Audio Waveform -->
-                <div class="flex items-center space-x-2 text-[10px] text-slate-400 font-mono">
-                  <span class="w-5 text-right font-bold text-emerald-400">A1</span>
-                  <div class="flex-1 bg-emerald-950/60 border border-emerald-500/40 rounded px-2 py-1 flex items-center justify-between text-emerald-200">
-                    <span class="truncate">News_Voiceover_Urdu.wav</span>
-                    <!-- Animated Waveform -->
-                    <div class="flex items-center space-x-0.5 h-4 w-20 justify-end">
-                      <span class="w-0.5 bg-emerald-400 rounded waveform-bar" style="animation-delay: 0.1s;"></span>
-                      <span class="w-0.5 bg-emerald-400 rounded waveform-bar" style="animation-delay: 0.3s;"></span>
-                      <span class="w-0.5 bg-emerald-400 rounded waveform-bar" style="animation-delay: 0.5s;"></span>
-                      <span class="w-0.5 bg-emerald-400 rounded waveform-bar" style="animation-delay: 0.2s;"></span>
-                      <span class="w-0.5 bg-emerald-400 rounded waveform-bar" style="animation-delay: 0.4s;"></span>
-                      <span class="w-0.5 bg-emerald-400 rounded waveform-bar" style="animation-delay: 0.6s;"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Quick Text Input to Update Lower-Third -->
-            <div class="pt-3 border-t border-slate-800 space-y-2">
-              <label class="block text-[11px] font-bold text-slate-300 font-nastaliq">لوئر تھرڈ ہیڈ لائن تبدیل کریں:</label>
-              <div class="flex items-center space-x-2">
-                <input type="text" id="headlineInput" value="28 ویں آئینی ترمیم پر حمایت بھی ناقابل قبول ہے: اینکر غریدہ فاروقی کی خبر" class="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500 font-nastaliq"/>
-                <button onclick="updateHeadlineText()" class="px-2.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition cursor-pointer">
-                  اپڈیٹ
-                </button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Render Progress Bar (Hidden by default) -->
-        <div id="renderProgressContainer" class="hidden p-4 bg-slate-950 border-t border-slate-800">
-          <div class="flex items-center justify-between text-xs font-mono text-indigo-300 mb-1.5">
-            <span id="renderStatusText">رینڈرنگ ہو رہی ہے... (Rendering 4K 60FPS)</span>
-            <span id="renderPercent">0%</span>
-          </div>
-          <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
-            <div id="renderProgressBar" class="bg-indigo-500 h-2 rounded-full transition-all duration-200" style="width: 0%"></div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Quick Launch: South Today Poster Editor Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-        
-        <!-- Card 1: Template 2 (Multan Yellow Ribbon) -->
-        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col justify-between space-y-4">
-          <div>
-            <div class="flex items-center space-x-2">
-              <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-bold text-[10px]">ٹیمپلیٹ 2 (ملتان یلو ہیڈر)</span>
-              <span class="text-xs text-slate-400 font-mono">1400 x 1080 HD</span>
-            </div>
-            <h3 class="text-base font-bold text-slate-900 mt-2 font-nastaliq">
-              ملتان یلو ہیڈر پوسٹر ایڈیٹر (نیا ورژن)
-            </h3>
-            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
-              سفید اور پیلی سرخی، فوٹوشاپ ڈراپ شیڈو، خودکار کلپنگ ماسک، ایرس آئی ٹی سی بولڈ ربن اور فلپنگ کنٹرولز کے ساتھ۔
+</div>
+</div>
+<!-- Floating Interactive Layer 2: Center Feature Highlight Badge -->
+<div class="absolute center inset-x-8 top-1/2 -translate-y-4 z-20 cursor-move" id="layerStats">
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest/95 shadow-lg backdrop-blur-xl">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-none font-bold">0.04s</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Global Clearance Latency</span>
+</div>
+</div>
+<div class="h-6 w-px bg-surface-container-high"></div>
+<div class="flex flex-col text-right">
+<span class="font-headline-sm text-headline-sm text-primary leading-none font-bold">$0 Gas</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Zero Network Penalty</span>
+</div>
+</div>
+</div>
+<!-- Floating Interactive Layer 3: English Call To Action Footer -->
+<div class="absolute bottom-4 left-4 right-4 z-20 cursor-move" id="layerEnglish">
+<div class="p-3 rounded-xl bg-on-surface/90 text-on-primary shadow-xl backdrop-blur-md flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight">SocialFlow Studio Pro</span>
+<span class="font-body-sm text-body-sm opacity-80">Instant Multi-Engine Syndication</span>
+</div>
+<div class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm">
+<span>Explore Now</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Hover Layer Helper Overlays -->
+<div class="absolute bottom-1 right-1 z-30 pointer-events-none">
+<span class="px-1.5 py-0.5 rounded bg-black/60 text-white font-mono-code text-[9px]">Layer Stack: 3 active</span>
+</div>
+</div>
+</div>
+<!-- Canvas Quick Modification Strip -->
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">auto_fix_high</span> Inpaint AI
+            </button>
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">unfold_more</span> Outpaint 16:9
+            </button>
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">high_quality</span> 4K Upscale
+            </button>
+</div>
+<button class="text-primary font-label-sm text-label-sm flex items-center gap-1 hover:underline" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span> Export Single PNG
+          </button>
+</div>
+</div>
+<!-- Live Multi-Platform Tabbed Mockup Simulator -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">devices</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Channel Live Mockup Preview</span>
+</div>
+<span class="font-mono-code text-mono-code text-on-surface-variant">Real-Time Sync</span>
+</div>
+<!-- Platform Mockup Selector Tabs -->
+<div class="flex gap-space-xs bg-surface-container-low p-1 rounded-lg mb-space-md">
+<button class="mockup-tab flex-1 py-1.5 rounded-md bg-surface-container-lowest shadow-xs text-primary font-label-sm text-label-sm flex items-center justify-center gap-1" data-preview="fb" type="button">
+<span class="material-symbols-outlined text-secondary text-[14px]">public</span> Facebook
+          </button>
+<button class="mockup-tab flex-1 py-1.5 rounded-md hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center gap-1" data-preview="ig" type="button">
+<span class="material-symbols-outlined text-primary text-[14px]">photo_camera</span> Instagram
+          </button>
+<button class="mockup-tab flex-1 py-1.5 rounded-md hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center gap-1" data-preview="x" type="button">
+<span class="material-symbols-outlined text-[14px]">tag</span> X / Twitter
+          </button>
+<button class="mockup-tab flex-1 py-1.5 rounded-md hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center gap-1" data-preview="wp" type="button">
+<span class="material-symbols-outlined text-secondary text-[14px]">article</span> WordPress
+          </button>
+</div>
+<!-- Mockup Display Screen Area -->
+<div class="bg-surface-container-low p-space-md rounded-xl" id="mockupContainer">
+<!-- FACEBOOK PREVIEW VIEW -->
+<div class="mockup-view bg-surface-container-lowest rounded-xl p-space-md shadow-sm" id="mockupFb">
+<div class="flex items-center gap-space-sm mb-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold">S</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight font-bold">SocialFlow Enterprise Official</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">Just now · <span class="material-symbols-outlined text-[14px]">public</span></span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mb-space-sm">
+              Excited to unveil our next-generation cross-border payment gateway! Seamless transaction speeds, zero gas overhead, and banking-grade security built for high-velocity global growth.
             </p>
-          </div>
-          <a href="https://ahmhost.github.io/poster-preview/" target="_blank" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs transition flex items-center justify-center space-x-2 shadow-xs">
-            <span class="material-symbols-outlined text-base">brush</span>
-            <span>ٹیمپلیٹ 2 پوسٹر ایڈیٹر کھولیں</span>
-          </a>
-        </div>
-
-        <!-- Card 2: Template 1 (South Today Classic Broadcast) -->
-        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col justify-between space-y-4">
-          <div>
-            <div class="flex items-center space-x-2">
-              <span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-bold text-[10px]">ٹیمپلیٹ 1 (کلاسک براڈکاسٹ)</span>
-              <span class="text-xs text-slate-400 font-mono">1080 x 1350 HD 4:5</span>
-            </div>
-            <h3 class="text-base font-bold text-slate-900 mt-2 font-nastaliq">
-              ساؤتھ ٹوڈے براڈکاسٹ پوسٹر جنریٹر
-            </h3>
-            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
-              ریڈ کارنر ربن، بریکنگ نیوز بار، سنگل و ملٹی لائن آٹو فٹ، فوٹو اپ لوڈ اور این 8 این اٹومیشن سپورٹ۔
-            </p>
-          </div>
-          <a href="https://ahmhost.github.io/poster-preview/" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-black text-white font-bold text-xs transition flex items-center justify-center space-x-2 shadow-xs">
-            <span class="material-symbols-outlined text-base">auto_fix_high</span>
-            <span>کلاسک براڈکاسٹ ایڈیٹر کھولیں</span>
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-
-  </main>
-
-  <!-- Notification Toast Container -->
-  <div id="toast" class="fixed bottom-6 right-6 hidden bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl border border-slate-700 text-xs font-semibold flex items-center space-x-2 z-50">
-    <span class="material-symbols-outlined text-emerald-400 text-base" id="toastIcon">check_circle</span>
-    <span id="toastMsg">عملیہ مکمل ہوا</span>
-  </div>
-
-  <script>
-    const userProfiles = {
-      superadmin: {
-        name: "جمشید رضوانی (Super Admin)",
-        email: "rizwani@socialflow.com",
-        title: "سپر ایڈمن کنٹرول پینل - پلیٹ فارم انفراسٹرکچر و کلسٹر مینجمنٹ",
-        subtitle: "Super Administrator / Platform Owner • سیشن محفوظ اور فعال ہے",
-        badge: "SUPERADMIN WORKSPACE",
-        badgeClass: "bg-amber-400 text-amber-950",
-        avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani"
-      },
-      admin: {
-        name: "نیوز روم ایڈمنسٹریٹر",
-        email: "admin@socialflow.com",
-        title: "نیوز روم ایڈیٹوریل ایڈمن - ملٹی پوسٹنگ، شیڈولنگ اور ٹیم مانیٹرنگ",
-        subtitle: "Newsroom Editorial Lead • سیشن محفوظ اور فعال ہے",
-        badge: "ADMIN WORKSPACE",
-        badgeClass: "bg-blue-400 text-blue-950",
-        avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=AdminFlow"
-      },
-      user: {
-        name: "ساجد (Content Creator)",
-        email: "sajid@socialflow.com",
-        title: "ساجد ویڈیو و گرافکس اسٹوڈیو - AI ملٹی میڈیا اور اردو ٹائم لائن",
-        subtitle: "Digital Journalist & Video Editor • سیشن محفوظ اور فعال ہے",
-        badge: "CREATOR WORKSPACE",
-        badgeClass: "bg-emerald-400 text-emerald-950",
-        avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Sajid"
-      }
-    };
-
-    function switchRole(role) {
-      if (!userProfiles[role]) role = 'superadmin';
-
-      // Hide all views
-      document.getElementById('view-superadmin').classList.add('hidden');
-      document.getElementById('view-admin').classList.add('hidden');
-      document.getElementById('view-user').classList.add('hidden');
-
-      // Show selected view
-      document.getElementById(`view-${role}`).classList.remove('hidden');
-
-      // Update Header Profile
-      const p = userProfiles[role];
-      document.getElementById('userName').textContent = p.name;
-      document.getElementById('userEmail').textContent = p.email;
-      document.getElementById('userAvatar').src = p.avatar;
-
-      // Update Subheader Banner
-      document.getElementById('workspaceTitle').textContent = p.title;
-      document.getElementById('workspaceSub').textContent = p.subtitle;
-      const b = document.getElementById('roleBadge');
-      b.textContent = p.badge;
-      b.className = `px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider ${p.badgeClass}`;
-
-      // Update tab buttons
-      ['superadmin', 'admin', 'user'].forEach(r => {
-        const btn = document.getElementById(`tabBtn-${r}`);
-        if (btn) {
-          if (r === role) {
-            btn.className = "px-2.5 py-1 rounded-lg text-xs font-semibold transition bg-primary text-white shadow-sm";
-          } else {
-            btn.className = "px-2.5 py-1 rounded-lg text-xs font-semibold transition text-slate-600 hover:text-slate-900";
-          }
-        }
+<div class="rounded-lg overflow-hidden bg-surface-container-high h-48 relative">
+<img class="w-full h-full object-cover" data-alt="Rendered preview of the social media marketing banner displaying bold typography and financial visuals for facebook feed layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxU8Ji1W5-juCFJeDXQ__-ITr6SOGVzmgAv_wyAJYEN0PGjWZMU7WRSnzgBFYH-vGtDg7NuADO5GpDQO4IhI7aFLE9gK0QDfo7mhEgSto_IIAqdVyF4ZW-WiGpzYWQRZu25tUDND9myejTEr8XhOpf3VIIaHdb9BtFWB4qD25rp9uA7emU2NJda8sPvHvc6ymDcjcM5AjC62uK9aTAns53PEsB6FpLtj7sne-ULcI"/>
+<div class="absolute bottom-2 left-2 bg-black/60 px-2 py-0.5 rounded text-white font-mono-code text-[10px]">1080×1080 Square</div>
+</div>
+<div class="flex items-center justify-between pt-space-sm mt-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1">
+<span class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center text-white text-[10px]">👍</span>
+<span class="w-5 h-5 rounded-full bg-error flex items-center justify-center text-white text-[10px]">❤️</span>
+<span class="text-xs ml-1">1.2K</span>
+</div>
+<div class="flex gap-space-md text-xs">
+<span>142 Comments</span>
+<span>88 Shares</span>
+</div>
+</div>
+</div>
+<!-- INSTAGRAM PREVIEW VIEW (Hidden by default) -->
+<div class="mockup-view hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm" id="mockupIg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-primary p-0.5">
+<div class="w-full h-full rounded-full bg-surface-container-lowest flex items-center justify-center font-bold text-xs text-primary">SF</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">socialflow_hq</span>
+</div>
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</div>
+<div class="rounded-lg overflow-hidden bg-surface-container-high h-56 relative mb-space-sm">
+<img class="w-full h-full object-cover" data-alt="Square instagram preview of promotional visual asset showing glowing modern tech gradient background with arabic nastaliq and english badges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATKyMHEgrEj3K_ZWNc3364g2P5fEAGg_WeU_d_QhWqYuyXXm0FPmcqUePDnb7u5nkEAfu9Uy-jM9ujo8atZhq_w_wmVoDgDczcvdRsXuc5TFdXEv4M6r36beSzx2DackLcKps-KwIXyie1QtsK46mDYCtJZBYKh8-tlRNOxcCGPI4S4dXHNQ78l1DPYMGgbX8ETGcs-_PjePnKPiNWGZS2WSIzKeV6f0HKVdwS4Gk"/>
+</div>
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-error">favorite</span>
+<span class="material-symbols-outlined text-[20px]">mode_comment</span>
+<span class="material-symbols-outlined text-[20px]">send</span>
+</div>
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface"><span class="font-bold">socialflow_hq</span> Excited to unveil our next-generation cross-border payment gateway! #FinTech2025 #GlobalPayments</p>
+</div>
+<!-- X / TWITTER PREVIEW VIEW (Hidden) -->
+<div class="mockup-view hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm" id="mockupX">
+<div class="flex gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-on-surface text-on-primary flex items-center justify-center font-bold">X</div>
+<div class="flex-1">
+<div class="flex items-center gap-1">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">SocialFlow</span>
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant">@SocialFlow · 4m</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1 mb-2">
+                  Unveiling next-gen cross-border settlement rails. Zero gas friction. 0.04s global latency. 🌐⚡
+                </p>
+<div class="rounded-xl overflow-hidden bg-surface-container-high h-44 relative">
+<img class="w-full h-full object-cover" data-alt="Twitter post card preview showing high-contrast fintech visual with bilingual badges and clean tech art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeeadL-uwVM6VDwNz60QueJeZimZUWMKe6IHNfHUgg95YjRjhWzeuzQZpNnEPbpTWvE6KypLSo1pbsDabprzP0BWnzoMds37X-FevmNKfSvgdHqBMvuwBvAviP6JRm6xJcELAqm50CAFXUdQONj3cr5k3CFcn76bi3p1nNV2lDMrJ2E5ZwMPgu80jUGyY9lhxauyqT-yizKjhl9FC9QuMeYqaWe8cigwQOuPF1p8I"/>
+</div>
+</div>
+</div>
+</div>
+<!-- WORDPRESS PREVIEW VIEW (Hidden) -->
+<div class="mockup-view hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm" id="mockupWp">
+<div class="flex items-center gap-2 mb-2 pb-2 bg-surface-container-low px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[16px] text-secondary">feed</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant">https://socialflow.org/blog/cross-border-settlement-rails</span>
+</div>
+<div class="h-32 rounded-lg overflow-hidden relative mb-2">
+<img class="w-full h-full object-cover" data-alt="Hero blog banner formatted at 1200 by 630 pixels featuring editorial design and fintech typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrqQwokDGEyTzaCpv4biz-ZxR_tGIi7xB4ERFLK9do0YgrWKscXJOJwauZqYLkJVIM4ihqpkD3HQkbopjfwhEXGqTWEeykL42ptAYPb3aGSsAqnQalzfD-NxKN5uyKpjjNQx4INA-7mECjqGSplgYmeUROpB6vY-0qQs47VO74mQQSrGU94ggdR8SuUprgF9xEN6Hh341oxG5AZ6vmGDAZNhp8Ro7sPrWHLF_cXt8"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Architecting High-Speed Cross-Border Settlements: A 2025 Retrospective</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">By Sarah Jenkins in Enterprise Technology · 6 min read</p>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: Inspector, Typography, RTL Nastaliq, & Overrides (Col 3.5) -->
+<div class="xl:col-span-3 flex flex-col gap-space-md">
+<!-- Active Layer Inspector -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">layers</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Layer Inspector</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono-code text-mono-code">Layer: Headline Typography</span>
+</div>
+<!-- Typography & Language Controls -->
+<div class="space-y-space-md">
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Font Family Preset</label>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Precision Typography</span>
+</div>
+<select class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface focus:outline-none">
+<option selected="">Inter Display SemiBold (Primary Latin)</option>
+<option>JetBrains Mono Bold (SMPTE Code)</option>
+<option>Helvetica Neue / Swiss Clean</option>
+<option>Cinzel Decorative Serif</option>
+</select>
+</div>
+<!-- RTL Switcher & Text Align -->
+<div class="flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Text Alignment / Direction</span>
+<div class="flex items-center gap-1">
+<button class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-mono-code text-mono-code" type="button">LTR</button>
+<button class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-mono-code text-mono-code" type="button">RTL</button>
+</div>
+</div>
+<!-- Numerical Scrubbers: Scale, Letter Space, Leading -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant cursor-col-resize">Font Size</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-mono-code text-mono-code text-on-surface font-bold">24 px</span>
+<div class="flex gap-0.5">
+<button class="w-5 h-5 rounded bg-surface-container-lowest text-on-surface flex items-center justify-center text-xs" type="button">-</button>
+<button class="w-5 h-5 rounded bg-surface-container-lowest text-on-surface flex items-center justify-center text-xs" type="button">+</button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant cursor-col-resize">Tracking &amp; Kerning</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-mono-code text-mono-code text-on-surface font-bold">120%</span>
+<div class="flex gap-0.5">
+<button class="w-5 h-5 rounded bg-surface-container-lowest text-on-surface flex items-center justify-center text-xs" type="button">-</button>
+<button class="w-5 h-5 rounded bg-surface-container-lowest text-on-surface flex items-center justify-center text-xs" type="button">+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Color & Shadow Parameters -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Color Fill &amp; Backdrop Scrim</label>
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest shadow-inner cursor-pointer" title="White Overlay"></div>
+<div class="w-8 h-8 rounded-lg bg-primary-container shadow-inner cursor-pointer" title="Brand Indigo"></div>
+<div class="w-8 h-8 rounded-lg bg-tertiary-container shadow-inner cursor-pointer" title="Emerald Accent"></div>
+<div class="w-8 h-8 rounded-lg bg-on-surface shadow-inner cursor-pointer" title="Dark Slate"></div>
+<div class="flex-1 flex items-center bg-surface-container-low px-2 py-1.5 rounded-lg">
+<span class="font-mono-code text-mono-code text-on-surface">#131B2E (90%)</span>
+</div>
+</div>
+</div>
+<!-- Layer Positioning Z-Index -->
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Layer Arrangement</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface" title="Bring to Front" type="button">
+<span class="material-symbols-outlined text-[16px]">flip_to_front</span>
+</button>
+<button class="p-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface" title="Send to Back" type="button">
+<span class="material-symbols-outlined text-[16px]">flip_to_back</span>
+</button>
+<button class="p-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface" title="Duplicate Layer" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+<button class="p-1 rounded bg-surface-container-low hover:bg-surface-container text-error" title="Delete Layer" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Platform-Specific Publishing Overrides -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Platform Overrides</span>
+</div>
+<span class="font-mono-code text-mono-code text-tertiary-container font-semibold">Active Matrix</span>
+</div>
+<div class="space-y-space-md">
+<!-- X / Twitter 280 Character Counter Box -->
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tag</span> X/Twitter Tailored Copy
+              </span>
+<span class="font-mono-code text-mono-code text-primary font-bold" id="xCharCounter">114 / 280</span>
+</div>
+<textarea class="w-full bg-surface-container-lowest rounded p-space-xs font-body-sm text-body-sm text-on-surface resize-none focus:outline-none" id="xCustomInput" placeholder="Tailored tweet content..." rows="2">Unveiling next-gen cross-border settlement rails. Zero gas friction. 0.04s global latency. 🌐⚡ #FinTech</textarea>
+</div>
+<!-- Instagram First Comment / Tag Box -->
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">add_comment</span> IG First Comment
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auto-pin</span>
+</div>
+<input class="w-full bg-surface-container-lowest rounded px-space-sm py-1 font-body-sm text-body-sm text-on-surface focus:outline-none" type="text" value="#FinTech #FinTechNews #GlobalBanking #NextGenPayments"/>
+</div>
+<!-- WordPress Categories & Metadata -->
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold block mb-1">WordPress Publishing Taxonomies</span>
+<div class="grid grid-cols-2 gap-space-xs mb-space-xs">
+<select class="bg-surface-container-lowest rounded p-1 font-mono-code text-mono-code text-on-surface focus:outline-none">
+<option>Fintech Insights</option>
+<option>Company News</option>
+<option>Product Updates</option>
+</select>
+<select class="bg-surface-container-lowest rounded p-1 font-mono-code text-mono-code text-on-surface focus:outline-none">
+<option>Featured Image Set</option>
+<option>Article Banner Only</option>
+</select>
+</div>
+<input class="w-full bg-surface-container-lowest rounded px-space-sm py-1 font-body-sm text-body-sm text-on-surface focus:outline-none" placeholder="Target Focus Keyphrase..." type="text" value="cross-border payments 2025"/>
+</div>
+<!-- Facebook Call to Action Override -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">FB Button CTA</span>
+<select class="bg-surface-container-lowest rounded px-2 py-1 font-label-sm text-label-sm text-on-surface focus:outline-none">
+<option>Learn More</option>
+<option>Sign Up</option>
+<option>Book Demo</option>
+<option>Contact Us</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Quick Delivery Diagnostics & Metric Ring -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Estimated Audience Reach</span>
+<span class="material-symbols-outlined text-tertiary-container text-[18px]">trending_up</span>
+</div>
+<div class="flex items-center gap-space-md">
+<!-- Circular Progress SVG Chart -->
+<div class="relative w-14 h-14 flex items-center justify-center">
+<svg class="w-14 h-14 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="88, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-mono-code text-mono-code text-on-surface font-bold">88%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">482,000</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Combined multi-channel followers targeted across 6 networks</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Multi-Publish Toast Confirmation Banner (Hidden by default, triggered by Publish button) -->
+<div class="fixed bottom-6 right-6 max-w-md bg-surface-container-lowest rounded-xl shadow-2xl p-space-md transition-all duration-300 transform translate-y-32 opacity-0 pointer-events-none z-50" id="publishModalNotification">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">done_all</span>
+</div>
+<div class="flex flex-col flex-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Omnichannel Dispatch Complete</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Assets deployed to Facebook Page, Instagram Business, WordPress Blog, Twitter/X, YouTube, and TikTok simultaneously.
+        </p>
+<div class="flex items-center gap-space-sm mt-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-mono-code text-mono-code">Job ID: #SF-9841</span>
+<button class="text-primary font-label-sm text-label-sm hover:underline ml-auto" id="closeNotificationBtn" type="button">Dismiss</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Inline Client-side Script for Micro-interactions -->
+<script>
+    (function initStudioEngine() {
+      // 1. Channel Selector Pills Toggling
+      const channelPills = document.querySelectorAll('.channel-pill');
+      channelPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pill.classList.toggle('opacity-50');
+          pill.classList.toggle('grayscale');
+        });
       });
 
-      // Update URL hash without reload
-      if (history.pushState) {
-        history.pushState(null, null, `?role=${role}`);
+      // 2. Aspect Ratio Matrix Switching
+      const ratioButtons = document.querySelectorAll('.ratio-btn');
+      const canvasEl = document.getElementById('editablePosterCanvas');
+      const dimLabel = document.getElementById('canvasDimLabel');
+
+      ratioButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          ratioButtons.forEach(b => {
+            b.classList.remove('bg-primary-container', 'text-on-primary');
+            b.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+          });
+          btn.classList.add('bg-primary-container', 'text-on-primary');
+          btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+
+          const ratio = btn.getAttribute('data-ratio');
+          if (ratio === '1:1') {
+            canvasEl.className = 'relative w-full max-w-[440px] aspect-square rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
+            dimLabel.textContent = '1080 × 1080 px';
+          } else if (ratio === '4:5') {
+            canvasEl.className = 'relative w-full max-w-[380px] aspect-[4/5] rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
+            dimLabel.textContent = '1080 × 1350 px';
+          } else if (ratio === '16:9') {
+            canvasEl.className = 'relative w-full max-w-[500px] aspect-video rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
+            dimLabel.textContent = '1920 × 1080 px';
+          } else if (ratio === '9:16') {
+            canvasEl.className = 'relative w-full max-w-[280px] aspect-[9/16] rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
+            dimLabel.textContent = '1080 × 1920 px';
+          } else if (ratio === '1200:630') {
+            canvasEl.className = 'relative w-full max-w-[500px] aspect-[1200/630] rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
+            dimLabel.textContent = '1200 × 630 px';
+          }
+        });
+      });
+
+      // 3. Platform Live Mockup Tab Switching
+      const mockupTabs = document.querySelectorAll('.mockup-tab');
+      const mockupViews = {
+        fb: document.getElementById('mockupFb'),
+        ig: document.getElementById('mockupIg'),
+        x: document.getElementById('mockupX'),
+        wp: document.getElementById('mockupWp')
+      };
+
+      mockupTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          mockupTabs.forEach(t => {
+            t.classList.remove('bg-surface-container-lowest', 'shadow-xs', 'text-primary');
+            t.classList.add('text-on-surface-variant');
+          });
+          tab.classList.add('bg-surface-container-lowest', 'shadow-xs', 'text-primary');
+          tab.classList.remove('text-on-surface-variant');
+
+          const target = tab.getAttribute('data-preview');
+          Object.keys(mockupViews).forEach(key => {
+            if (key === target) {
+              mockupViews[key].classList.remove('hidden');
+            } else {
+              mockupViews[key].classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // 4. Tone Pill Selection
+      const tonePills = document.querySelectorAll('.tone-pill');
+      tonePills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          tonePills.forEach(p => {
+            p.classList.remove('bg-primary-container', 'text-on-primary');
+            p.classList.add('bg-surface-container-low', 'text-on-surface');
+          });
+          pill.classList.add('bg-primary-container', 'text-on-primary');
+          pill.classList.remove('bg-surface-container-low', 'text-on-surface');
+        });
+      });
+
+      // 5. X / Twitter Character Counter
+      const xInput = document.getElementById('xCustomInput');
+      const xCounter = document.getElementById('xCharCounter');
+      if (xInput && xCounter) {
+        xInput.addEventListener('input', () => {
+          const len = xInput.value.length;
+          xCounter.textContent = `${len} / 280`;
+          if (len > 280) {
+            xCounter.className = 'font-mono-code text-mono-code text-error font-bold';
+          } else {
+            xCounter.className = 'font-mono-code text-mono-code text-primary font-bold';
+          }
+        });
       }
-    }
 
-    // Auto-initialize from query param
-    window.addEventListener('DOMContentLoaded', () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const role = urlParams.get('role') || 'superadmin';
-      switchRole(role);
-    });
+      // 6. Multi-Publish Confirmation Toast Notification
+      const publishBtn = document.getElementById('publishAllBtn');
+      const toast = document.getElementById('publishModalNotification');
+      const dismissBtn = document.getElementById('closeNotificationBtn');
 
-    function showToast(msg, icon = 'check_circle') {
-      const toast = document.getElementById('toast');
-      const toastMsg = document.getElementById('toastMsg');
-      const toastIcon = document.getElementById('toastIcon');
-      toastMsg.textContent = msg;
-      toastIcon.textContent = icon;
-      toast.classList.remove('hidden');
-      setTimeout(() => toast.classList.add('hidden'), 3500);
-    }
-
-    function triggerClusterSync() {
-      showToast('کلسٹر نوڈز کامیابی سے سنک ہو گئے (12 Nodes in sync)', 'sync');
-    }
-
-    function showBroadcastModal() {
-      const title = prompt('براہ کرم بریکنگ نیوز کا عنوان درج کریں:');
-      if (title) {
-        showToast(`نئی براڈکاسٹ شیڈول ہو گئی: "${title}"`, 'podcasts');
-      }
-    }
-
-    function restartCluster() {
-      if (confirm('کیا آپ تمام 12 کلسٹر ورکرز ری سٹارٹ کرنا چاہتے ہیں؟')) {
-        showToast('کلسٹر ورکرز ری سٹارٹ ہو رہے ہیں...', 'restart_alt');
-        setTimeout(() => showToast('تمام سروسز کامیابی سے ری سٹارٹ ہو گئیں!', 'check_circle'), 2000);
-      }
-    }
-
-    function approveStory(id) {
-      showToast(`خبر نمبر ${id} منظور ہو کر اشاعت کے لیے تیار ہو گئی!`, 'done');
-    }
-
-    function rejectStory(id) {
-      showToast(`خبر نمبر ${id} ایڈیٹنگ کے لیے واپس بھیج دی گئی`, 'info');
-    }
-
-    function publishToAllChannels() {
-      showToast('تمام 6 منسلک نیٹ ورکس (FB, IG, WP, X, TT, YT) پر پوسٹنگ شروع ہو گئی!', 'send');
-    }
-
-    let isPlaying = false;
-    function toggleVideoPlayback() {
-      isPlaying = !isPlaying;
-      const playIcon = document.getElementById('playIcon');
-      const playText = document.getElementById('playText');
-      if (isPlaying) {
-        playIcon.textContent = 'pause';
-        playText.textContent = 'روکیں (Pause)';
-        showToast('ٹائم لائن پلے بیک شروع ہو گیا', 'play_arrow');
-      } else {
-        playIcon.textContent = 'play_arrow';
-        playText.textContent = 'چلائیں (Play)';
-      }
-    }
-
-    function updateHeadlineText() {
-      const val = document.getElementById('headlineInput').value;
-      const target = document.getElementById('previewHeadline');
-      if (target && val) {
-        target.textContent = val;
-        showToast('لوئر تھرڈ ہیڈ لائن اپڈیٹ ہو گئی!', 'edit');
-      }
-    }
-
-    function renderFinalVideo() {
-      const container = document.getElementById('renderProgressContainer');
-      const bar = document.getElementById('renderProgressBar');
-      const percent = document.getElementById('renderPercent');
-      const statusText = document.getElementById('renderStatusText');
-      
-      container.classList.remove('hidden');
-      bar.style.width = '0%';
-      percent.textContent = '0%';
-      statusText.textContent = 'ویڈیو این ایل ای رینڈرنگ شروع ہو رہی ہے...';
-
-      let progress = 0;
-      const timer = setInterval(() => {
-        progress += 10;
-        bar.style.width = progress + '%';
-        percent.textContent = progress + '%';
-
-        if (progress === 40) {
-          statusText.textContent = 'اردو نستعلیق لوئر تھرڈ کمپوزنگ...';
-        } else if (progress === 80) {
-          statusText.textContent = 'ProRes 422 4K فریمز انکوڈنگ...';
-        } else if (progress >= 100) {
-          clearInterval(timer);
-          statusText.textContent = 'رینڈر مکمل ہو گیا! ڈاؤن لوڈنگ شروع...';
-          showToast('4K 60FPS ویڈیو کامیابی سے رینڈر ہو گئی!', 'movie');
+      if (publishBtn && toast) {
+        publishBtn.addEventListener('click', () => {
+          toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+          toast.classList.add('translate-y-0', 'opacity-100');
           setTimeout(() => {
-            container.classList.add('hidden');
-          }, 3000);
-        }
-      }, 250);
-    }
-  </script>
+            toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+            toast.classList.remove('translate-y-0', 'opacity-100');
+          }, 5000);
+        });
+      }
 
-</body>
-</html>
+      if (dismissBtn && toast) {
+        dismissBtn.addEventListener('click', () => {
+          toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+          toast.classList.remove('translate-y-0', 'opacity-100');
+        });
+      }
+
+      // 7. AI Magic Prompt Expansion simulation
+      const magicBtn = document.getElementById('magicPromptBtn');
+      const promptEn = document.getElementById('promptEnglish');
+      if (magicBtn && promptEn) {
+        magicBtn.addEventListener('click', () => {
+          promptEn.value = "Cinematic 8K render of a futuristic Islamic fintech pavilion in Dubai, volumetric lighting, photorealistic gold & indigo calligraphy particles floating in air, Hasselblad color profile, Unreal Engine 5 aesthetic, flawless symmetry.";
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>
