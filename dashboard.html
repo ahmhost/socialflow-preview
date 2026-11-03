@@ -137,11 +137,11 @@
             <span class="material-symbols-outlined text-[20px]">send</span>
             <span>Publishing</span>
           </a>
-          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="#">
+          <a id="nav-analytics" onclick="switchMainView('analytics')" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="javascript:void(0);">
             <span class="material-symbols-outlined text-[20px]">insights</span>
             <span>Analytics</span>
           </a>
-          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="#">
+          <a id="nav-multi-account" onclick="switchMainView('multi-account')" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="javascript:void(0);">
             <span class="material-symbols-outlined text-[20px]">switch_account</span>
             <span>Multi-Account</span>
           </a>
@@ -2324,6 +2324,1339 @@
 
     </main>
 
+    
+    <!-- ═════════════════════════════════════════════════════════════════ -->
+    <!-- VIEW CONTAINER 5: OMNICHANNEL ANALYTICS INTELLIGENCE             -->
+    <!-- ═════════════════════════════════════════════════════════════════ -->
+    <main id="view-analytics" class="studio-view hidden relative pt-16 bg-surface min-h-screen">
+<div class="flex flex-col w-full">
+<div class="px-space-xl py-space-lg flex flex-col gap-space-lg">
+<!-- Sub-header & Controls Strip -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-md text-headline-md text-on-surface">Omnichannel Analytics &amp; Performance Intelligence</h1>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-mono-code text-[11px] font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></span>
+            Live Telemetry (Sync: 4s ago)
+          </div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time audience velocity, multi-network sentiment, and predictive editorial ROI across global broadcast handles.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Date Selector Pills -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface font-label-md text-label-md rounded transition-colors">Today</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface font-label-md text-label-md rounded transition-colors">7D</button>
+<button class="px-2.5 py-1 bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md rounded font-semibold transition-all">30D</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface font-label-md text-label-md rounded transition-colors">90D</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface font-label-md text-label-md rounded transition-colors">Custom</button>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-lg text-on-surface font-mono-code text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_month</span>
+          Oct 1 - Oct 31, 2024
+        </div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+          Export
+        </button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">neurology</span>
+          Automate Digest
+        </button>
+</div>
+</div>
+<!-- Platform Filter Pills Strip -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-[16px]">hub</span>
+        All Platforms (6)
+        <span class="px-1.5 py-0.2 bg-on-primary/20 rounded-full font-mono-code text-[10px]">100% Health</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md whitespace-nowrap shadow-sm transition-colors">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+        Facebook Page (3 Handles)
+      </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md whitespace-nowrap shadow-sm transition-colors">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-fixed-variant"></span>
+        Instagram Business
+      </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md whitespace-nowrap shadow-sm transition-colors">
+<span class="w-2 h-2 rounded-full bg-on-surface"></span>
+        X (Twitter Live)
+      </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md whitespace-nowrap shadow-sm transition-colors">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+        YouTube Main + Shorts
+      </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md whitespace-nowrap shadow-sm transition-colors">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+        TikTok Verified
+      </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md whitespace-nowrap shadow-sm transition-colors">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+        WordPress Global CMS
+      </button>
+</div>
+<!-- AI Attribution & Editorial Insights Banner -->
+<div class="relative overflow-hidden bg-gradient-to-r from-surface-container-low via-surface-container to-surface-container-low p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-3 min-w-0">
+<div class="p-2 rounded-lg bg-primary-container text-on-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[22px]">auto_awesome</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">AI Editorial Intelligence</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-tertiary font-mono-code text-[10px] font-semibold">+280% Impact Potential</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface truncate">
+            Bilingual multi-language news tickers on TikTok generate <strong class="text-on-surface font-semibold">2.8x higher comment density</strong> between 18:00 - 21:00 PKT. Recommended: Schedule evening bulletin snippet at 19:30.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 self-end md:self-auto">
+<button class="px-3 py-1 bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm rounded-lg shadow-sm transition-colors">
+          Inspect Model
+        </button>
+<button class="px-3 py-1 bg-primary text-on-primary hover:bg-primary-container font-label-sm text-label-sm rounded-lg shadow-sm transition-colors">
+          One-Click Auto Schedule
+        </button>
+</div>
+</div>
+<!-- Primary KPI Overview Ribbon -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Total Omnichannel Reach</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">18.4M</span>
+</div>
+<span class="p-2 rounded-lg bg-surface-container-low text-primary">
+<span class="material-symbols-outlined text-[20px]">radar</span>
+</span>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-tertiary font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+            +24.6% <span class="text-on-surface-variant font-normal">vs last month</span>
+</div>
+<!-- Sparkline SVG -->
+<svg class="w-20 h-7 text-primary" fill="none" viewbox="0 0 100 32">
+<path d="M0 26 Q 15 28, 30 20 T 60 14 T 85 8 T 100 2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0 26 Q 15 28, 30 20 T 60 14 T 85 8 T 100 2 L 100 32 L 0 32 Z" fill="currentColor" fill-opacity="0.08"></path>
+</svg>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Overall Engagement Rate</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">5.82%</span>
+</div>
+<span class="p-2 rounded-lg bg-surface-container-low text-secondary-container">
+<span class="material-symbols-outlined text-[20px]">thumb_up</span>
+</span>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-tertiary font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+              +1.4% <span class="text-on-surface-variant font-normal">MoM</span>
+</div>
+<span class="font-mono-code text-[10px] text-on-surface-variant">1.07M total interactions</span>
+</div>
+<svg class="w-20 h-7 text-secondary-container" fill="none" viewbox="0 0 100 32">
+<path d="M0 22 Q 20 12, 40 24 T 70 8 T 100 4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0 22 Q 20 12, 40 24 T 70 8 T 100 4 L 100 32 L 0 32 Z" fill="currentColor" fill-opacity="0.08"></path>
+</svg>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Video View Completion</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">68.4%</span>
+</div>
+<span class="p-2 rounded-lg bg-surface-container-low text-tertiary">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+</span>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-tertiary font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+              +8.2% <span class="text-on-surface-variant font-normal">MoM</span>
+</div>
+<span class="font-mono-code text-[10px] text-on-surface-variant">412.5k watch hours</span>
+</div>
+<svg class="w-20 h-7 text-tertiary" fill="none" viewbox="0 0 100 32">
+<path d="M0 25 Q 25 28, 50 16 T 80 10 T 100 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0 25 Q 25 28, 50 16 T 80 10 T 100 6 L 100 32 L 0 32 Z" fill="currentColor" fill-opacity="0.08"></path>
+</svg>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Synced Production</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">342 Posts</span>
+</div>
+<span class="p-2 rounded-lg bg-surface-container-low text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">cloud_sync</span>
+</span>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">100% SLA Sync</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant">Across all 6 networks</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Deep-Dive Analytics (2 Columns: Main Velocity Chart & Demographics/Geo) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+<!-- Velocity Multi-Line Area Chart (Span 2) -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md pb-space-md">
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Cross-Platform Audience Growth &amp; Reach Velocity</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Daily aggregates tracking viral multiplier events &amp; distribution channels</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="px-2.5 py-1 bg-surface-container-lowest text-primary font-label-sm text-label-sm rounded font-semibold shadow-sm">Impressions</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm rounded transition-colors">Engagements</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm rounded transition-colors">Link Clicks</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm rounded transition-colors">Video Views</button>
+</div>
+</div>
+<!-- Legend & Viral Spike Callout -->
+<div class="flex flex-wrap items-center justify-between gap-2 py-2">
+<div class="flex items-center gap-4 text-xs font-label-sm">
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-secondary-container"></span> Facebook</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-primary"></span> Instagram</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-error"></span> YouTube</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-on-surface"></span> X</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-tertiary"></span> TikTok</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-error-container text-on-error-container font-mono-code text-[10px]">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+            Spike: Breaking News Bulletin #104 (+420k reach)
+          </div>
+</div>
+<!-- Comprehensive Custom SVG Area Chart -->
+<div class="relative w-full h-72 mt-2">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 700 240">
+<!-- Grid Lines -->
+<line stroke="#f1f5f9" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="20" y2="20"></line>
+<line stroke="#f1f5f9" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="80" y2="80"></line>
+<line stroke="#f1f5f9" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="140" y2="140"></line>
+<line stroke="#f1f5f9" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="200" y2="200"></line>
+<!-- Area & Line 1: Primary Stream (Instagram + FB) -->
+<path d="M 0 190 C 80 180, 140 165, 220 140 C 300 115, 360 40, 420 50 C 480 60, 540 110, 620 90 C 660 80, 680 70, 700 60 L 700 220 L 0 220 Z" fill="#4F46E5" fill-opacity="0.06"></path>
+<path d="M 0 190 C 80 180, 140 165, 220 140 C 300 115, 360 40, 420 50 C 480 60, 540 110, 620 90 C 660 80, 680 70, 700 60" fill="none" stroke="#4F46E5" stroke-linecap="round" stroke-width="3"></path>
+<!-- Line 2: YouTube Longform / Shorts (Red) -->
+<path d="M 0 205 C 100 195, 180 170, 260 160 C 340 150, 400 90, 450 85 C 510 80, 570 120, 630 110 C 670 100, 690 95, 700 90" fill="none" stroke="#ba1a1a" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Line 3: TikTok Quick Viral Velocity (Green) -->
+<path d="M 0 215 C 90 210, 190 200, 280 185 C 370 170, 410 45, 430 40 C 460 35, 520 140, 600 130 C 650 125, 680 115, 700 110" fill="none" stroke="#005338" stroke-dasharray="3 3" stroke-width="2.5"></path>
+<!-- Viral Spike Indicator Pin -->
+<line stroke="#ba1a1a" stroke-dasharray="4 2" stroke-width="1.5" x1="420" x2="420" y1="30" y2="220"></line>
+<circle cx="420" cy="40" fill="#ba1a1a" r="5"></circle>
+<circle cx="420" cy="40" fill="#ba1a1a" fill-opacity="0.2" r="10"></circle>
+</svg>
+<!-- Floating Marker Tag -->
+<div class="absolute top-4 left-[58%] -translate-x-1/2 bg-surface-container-lowest shadow-md p-2 rounded-lg pointer-events-none flex flex-col gap-0.5 z-10">
+<span class="font-mono-code text-[10px] text-error font-bold uppercase tracking-wider">Viral Event Oct 18</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Breaking Broadcast Bulletin #104</span>
+<span class="font-mono-code text-[11px] text-tertiary">+420,192 Impressions in 3h</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-mono-code text-[11px] pt-3">
+<span>Oct 01</span>
+<span>Oct 07</span>
+<span>Oct 14</span>
+<span class="text-error font-bold">Oct 18 (Spike)</span>
+<span>Oct 24</span>
+<span>Oct 31</span>
+</div>
+</div>
+<!-- Regional & Linguistic Breakdown -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Audience Demographics</h2>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">public</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Top geographic markets &amp; linguistic segmentation</span>
+<!-- Linguistic Split Bar -->
+<div class="mt-4 p-space-md bg-surface-container-low rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Script / Reader Orientation</span>
+<span class="font-mono-code text-[11px] text-primary">58% Primary Language / 42% Global English</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="bg-primary h-full" style="width: 58%"></div>
+<div class="bg-secondary-container h-full" style="width: 42%"></div>
+</div>
+<div class="flex items-center justify-between font-mono-code text-[10px] text-on-surface-variant">
+<span>RTL Primary (10.6M readers)</span>
+<span>LTR Latin (7.8M readers)</span>
+</div>
+</div>
+<!-- Regional Distribution Bars -->
+<div class="mt-4 flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold uppercase tracking-wider">Top Regional Broadcast Hubs</span>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface">Pakistan (Islamabad, LHR, KHI)</span>
+<span class="font-mono-code font-semibold text-on-surface">48%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 48%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface">UAE &amp; Gulf Council</span>
+<span class="font-mono-code font-semibold text-on-surface">22%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 22%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface">United Kingdom (Diaspora)</span>
+<span class="font-mono-code font-semibold text-on-surface">14%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 14%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface">United States &amp; Canada</span>
+<span class="font-mono-code font-semibold text-on-surface">10%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 10%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md pt-1">
+<span class="text-on-surface-variant">Other Rest of World</span>
+<span class="font-mono-code text-on-surface-variant">6%</span>
+</div>
+</div>
+</div>
+<!-- Gender & Age Demographics -->
+<div class="pt-4 border-t-0 bg-surface-container-low p-space-md rounded-lg flex items-center justify-between mt-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dominant Age Bracket</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">25 - 34 yrs (44.2%)</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Gender Split</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">62% M / 38% F</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Platform Comparison & ROI Matrix Table -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Omnichannel Performance &amp; SLA Matrix</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Comparative conversion, engagement velocity, and platform health telemetry</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+            Columns
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+            Sort: Highest Reach
+          </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-4 rounded-l-lg">Channel Entity</th>
+<th class="py-3 px-4">Active Accounts</th>
+<th class="py-3 px-4">Gross Reach</th>
+<th class="py-3 px-4">Eng. Rate</th>
+<th class="py-3 px-4">Top Performing Format</th>
+<th class="py-3 px-4">CTR (Web Links)</th>
+<th class="py-3 px-4 rounded-r-lg">Platform Health</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-body-sm text-body-sm text-on-surface">
+<!-- Row 1: Facebook -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary flex items-center justify-center font-mono-code font-bold text-xs">FB</span>
+<div class="flex flex-col">
+<span>Facebook Global Broadcast Network</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant font-normal">Page ID: @sf_news_intl</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-mono-code">3 Pages</td>
+<td class="py-3.5 px-4 font-semibold font-mono-code">6.28M</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono-code font-semibold">4.8%</span>
+<span class="text-tertiary text-[11px] font-mono-code font-medium">↑ 0.8%</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-code text-[11px]">16:9 Video Broadcast</span>
+</td>
+<td class="py-3.5 px-4 font-mono-code">3.42%</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-mono-code text-[10px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> 99.9% Synced
+                </span>
+</td>
+</tr>
+<!-- Row 2: Instagram -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center font-mono-code font-bold text-xs">IG</span>
+<div class="flex flex-col">
+<span>Instagram Verified</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant font-normal">Handle: @socialflow_media</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-mono-code">2 Handles</td>
+<td class="py-3.5 px-4 font-semibold font-mono-code">4.92M</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono-code font-semibold">7.15%</span>
+<span class="text-tertiary text-[11px] font-mono-code font-medium">↑ 2.1%</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-code text-[11px]">9:16 Vertical Reels</span>
+</td>
+<td class="py-3.5 px-4 font-mono-code">4.18%</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-mono-code text-[10px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> 100% Synced
+                </span>
+</td>
+</tr>
+<!-- Row 3: YouTube -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-error text-on-error flex items-center justify-center font-mono-code font-bold text-xs">YT</span>
+<div class="flex flex-col">
+<span>YouTube Channel Network</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant font-normal">Channel: SocialFlow Studio</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-mono-code">2 Channels</td>
+<td class="py-3.5 px-4 font-semibold font-mono-code">3.81M</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono-code font-semibold">6.40%</span>
+<span class="text-tertiary text-[11px] font-mono-code font-medium">↑ 1.5%</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-code text-[11px]">4K Longform &amp; Shorts</span>
+</td>
+<td class="py-3.5 px-4 font-mono-code">5.90%</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-mono-code text-[10px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> 99.8% Synced
+                </span>
+</td>
+</tr>
+<!-- Row 4: TikTok -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center font-mono-code font-bold text-xs">TT</span>
+<div class="flex flex-col">
+<span>TikTok Creator Handle</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant font-normal">Account: @socialflow_news</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-mono-code">1 Verified</td>
+<td class="py-3.5 px-4 font-semibold font-mono-code">2.14M</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono-code font-semibold">8.92%</span>
+<span class="text-tertiary text-[11px] font-mono-code font-medium">↑ 3.4%</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-code text-[11px]">9:16 Fast Ticker Clip</span>
+</td>
+<td class="py-3.5 px-4 font-mono-code">1.82%</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-mono-code text-[10px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> 100% Synced
+                </span>
+</td>
+</tr>
+<!-- Row 5: X (Twitter) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-on-surface text-surface flex items-center justify-center font-mono-code font-bold text-xs">X</span>
+<div class="flex flex-col">
+<span>X Premium Live Feed</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant font-normal">Org: @SocialFlowLive</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-mono-code">2 Accounts</td>
+<td class="py-3.5 px-4 font-semibold font-mono-code">1.25M</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="font-mono-code font-semibold">3.12%</span>
+<span class="text-on-surface-variant text-[11px] font-mono-code font-medium">→ 0.1%</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-code text-[11px]">Breaking Ticker + Video</span>
+</td>
+<td class="py-3.5 px-4 font-mono-code">6.74%</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-mono-code text-[10px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> 99.9% Synced
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Top Performing Content Leaderboard -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Top Performing Content Leaderboard</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ranked viral reach across broadcast and social video assets this month</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Filter by format:</span>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">All (342)</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-colors">9:16 Shorts</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-colors">16:9 Broadcast</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Ranked Card #1 -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-2">
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="High tech television studio broadcast control room showing digital live displays with breaking news chyron and news anchor presenting with dynamic motion graphic infographics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXXxs7Sfsey8ZqF_-IqhkAOi_1_NzLShyzUmTqdCubATDT8kqMPxEn17TU_OkSqbTwZl8QyExRlu2MpnV_WTEnmrVx16ySBBjadOAhDyvQqtRP1oY3W1dzc417eACSEUEqzG-4xtltHOKjrV68Z04t5Qo4iTQk4kq9V060YobQdM_dI6xTHOk6xRhHC3XGdViR7uCIrfghWPdZ3wohUnCo28sbVyQaZEirEjerWAU"/>
+<div class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary text-on-primary font-mono-code text-[11px] font-bold">
+                RANK #1
+              </div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-mono-code text-[10px]">
+                04:12 • 4K
+              </div>
+<div class="absolute bottom-2 left-2 flex items-center gap-1">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary font-mono-code text-[10px]">FB</span>
+<span class="px-1.5 py-0.5 rounded bg-error text-on-error font-mono-code text-[10px]">YT</span>
+<span class="px-1.5 py-0.5 rounded bg-on-surface text-surface font-mono-code text-[10px]">X</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono-code text-[10px] font-semibold">16:9 Broadcast</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-tertiary font-mono-code text-[10px] font-semibold">96% Positive Sentiment</span>
+</div>
+<h3 class="font-headline-sm text-base text-on-surface font-semibold line-clamp-2">
+              Special Report: Digital Trade Corridors in South Asia &amp; Regional Economic Shift
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Comprehensive investigative broadcast covering trade infrastructure updates, featuring live expert interviews and real-time multi-language translated tickers.
+            </p>
+</div>
+<div class="pt-4 flex flex-col gap-3">
+<div class="flex items-center justify-between font-mono-code text-xs bg-surface-container-lowest p-2 rounded-lg">
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px]">TOTAL VIEWS</span>
+<span class="font-bold text-on-surface">1,842,900</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px]">ENGAGEMENT</span>
+<span class="font-bold text-tertiary">9.24%</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px]">SHARES</span>
+<span class="font-bold text-on-surface">48.2k</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">rocket_launch</span>
+                Boost Reach
+              </button>
+<button class="py-1.5 px-2.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">content_cut</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Ranked Card #2 -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-2">
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="Vertical mobile 9 by 16 screen showing bold broadcast typography news banner over fast paced aerial drone footage of Islamabad capital city at dusk." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRuqdjNA6MoxSeIjs3y0GQDrO1BsxB5IEZTt799VFutdcqReeuwiEAR_xILLLEHKzXd5nrrxSv6onm7w1gD-h64_du7lVK9k3QQmHjiMsKR2iPbUdEa2FJQoZVzuBbM2Q16ynBnuUkHqvWdBCSWYUhHj8841LlQuyfEjCz6yQ-CMwPB09jrgxExvgrQ5FY0qc5UbBQPcvjiRFOZjpiWBHmEvMwWCjtaR8BtPEeX4k"/>
+<div class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary text-on-primary font-mono-code text-[11px] font-bold">
+                RANK #2
+              </div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-mono-code text-[10px]">
+                00:45 • Vertical
+              </div>
+<div class="absolute bottom-2 left-2 flex items-center gap-1">
+<span class="px-1.5 py-0.5 rounded bg-tertiary text-on-tertiary font-mono-code text-[10px]">TT</span>
+<span class="px-1.5 py-0.5 rounded bg-primary text-on-primary font-mono-code text-[10px]">IG</span>
+<span class="px-1.5 py-0.5 rounded bg-error text-on-error font-mono-code text-[10px]">YT</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono-code text-[10px] font-semibold">9:16 Reel / Short</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-tertiary font-mono-code text-[10px] font-semibold">91% Positive Sentiment</span>
+</div>
+<h3 class="font-headline-sm text-base text-on-surface font-semibold line-clamp-2">
+              Breaking Flash: 60-Second Regional Weather &amp; Tech Policy Update
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Rapid-fire visual summary optimized for mobile attention spans with synchronized bilingual captions and high tempo beat sync.
+            </p>
+</div>
+<div class="pt-4 flex flex-col gap-3">
+<div class="flex items-center justify-between font-mono-code text-xs bg-surface-container-lowest p-2 rounded-lg">
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px]">TOTAL VIEWS</span>
+<span class="font-bold text-on-surface">1,418,300</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px]">ENGAGEMENT</span>
+<span class="font-bold text-tertiary">11.4%</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px]">SHARES</span>
+<span class="font-bold text-on-surface">82.1k</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">rocket_launch</span>
+                Boost Reach
+              </button>
+<button class="py-1.5 px-2.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">content_cut</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Ranked Card #3 -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-2">
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="High tech financial journalism desk with trading monitors displaying global stock charts and economic indicators with crisp typography overlays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNKbKMAdnPTN5SgXKpvpm8mWyKIBpTSfpd8323HtndActzg4WNcs0yc3FiZkGiltagBfR58pZwbsAfOITwVYxCxx9e5IM9dKRTYrVoo9_7DPreVfA_5zY-Vskja72hlMWPaNPZ0IAAO4XwdlPx1so5AMXl-Tms2Cg-cpOnmtZIa8zukiZWqsRy-bexajd1FgtTnjWvf7vYNzt4LEw01mj-Aw2Rt9iE_SuySLuEuVI"/>
+<div class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary text-on-primary font-mono-code text-[11px] font-bold">
+                RANK #3
+              </div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-mono-code text-[10px]">
+                08:30 • Full HD
+              </div>
+<div class="absolute bottom-2 left-2 flex items-center gap-1">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary font-mono-code text-[10px]">FB</span>
+<span class="px-1.5 py-0.5 rounded bg-outline text-on-secondary font-mono-code text-[10px]">WP</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono-code text-[10px] font-semibold">1:1 Square + Web</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-code text-[10px] font-semibold">88% Neutral / Pos</span>
+</div>
+<h3 class="font-headline-sm text-base text-on-surface font-semibold line-clamp-2">
+              Weekly Market Digest: Exchange Rate Dynamics &amp; Overseas Remittances
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              In-depth fiscal review syndicated across WordPress editorial portal and Meta video feeds with downloadable infographic PDFs.
+            </p>
+</div>
+<div class="pt-4 flex flex-col gap-3">
+<div class="flex items-center justify-between font-mono-code text-xs bg-surface-container-lowest p-2 rounded-lg">
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px]">TOTAL VIEWS</span>
+<span class="font-bold text-on-surface">982,400</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px]">ENGAGEMENT</span>
+<span class="font-bold text-tertiary">5.61%</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px]">SHARES</span>
+<span class="font-bold text-on-surface">19.4k</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">rocket_launch</span>
+                Boost Reach
+              </button>
+<button class="py-1.5 px-2.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">content_cut</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </main>
+
+    
+    <!-- ═════════════════════════════════════════════════════════════════ -->
+    <!-- VIEW CONTAINER 6: MULTI-ACCOUNT & WORKSPACE MANAGEMENT           -->
+    <!-- ═════════════════════════════════════════════════════════════════ -->
+    <main id="view-multi-account" class="studio-view hidden relative pt-16 bg-surface min-h-screen">
+<div class="flex flex-col w-full">
+<!-- Security, OAuth Token Health & Compliance Banner -->
+<div class="px-space-xl pt-space-lg pb-space-sm">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-lowest text-tertiary-container shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-mono-code text-mono-code font-semibold">23/24 Tokens Healthy</span>
+</div>
+<div class="h-4 w-px bg-surface-container-high hidden sm:block"></div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px] text-primary">lock_clock</span>
+<span>AES-256 GCM Encrypted Vault • Auto-rotation in <strong class="font-mono-code text-on-surface">12 days</strong></span>
+</div>
+<div class="h-4 w-px bg-surface-container-high hidden sm:block"></div>
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Okta SAML 2.0 Synced</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end lg:self-auto">
+<span class="font-mono-code text-label-sm text-on-surface-variant uppercase">Global Security Score</span>
+<div class="w-24 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 96%"></div>
+</div>
+<span class="font-mono-code text-label-sm font-bold text-on-surface">96%</span>
+</div>
+</div>
+</div>
+<!-- Header Sub-bar & Primary Controls -->
+<div class="px-space-xl py-space-md flex flex-col gap-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-md text-headline-md text-on-surface">Multi-Account &amp; Workspace Management</h1>
+<span class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-mono-code text-[10px] uppercase font-bold tracking-wider">Enterprise Pro</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Manage enterprise social channels, client workspaces, OAuth credentials, and role-based permissions.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg hover:bg-surface-container transition-colors shadow-sm flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>+ Create Workspace</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg hover:opacity-95 transition-opacity shadow-sm flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">add_link</span>
+<span>+ Connect New Account</span>
+</button>
+</div>
+</div>
+<!-- Search, Filters and Toggles Bar -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 md:pb-0" id="filterTabs">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg font-semibold shadow-sm whitespace-nowrap" type="button">
+          All Connected <span class="ml-1 px-1.5 py-0.2 rounded-full bg-surface-container-lowest font-mono-code text-[11px] text-primary">24</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low transition-colors whitespace-nowrap" type="button">
+          Workspaces / Brands <span class="ml-1 text-on-surface-variant font-mono-code text-[11px]">4</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg text-error font-label-lg text-label-lg hover:bg-error-container/40 transition-colors whitespace-nowrap flex items-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+          Requires Re-auth <span class="ml-1 px-1 rounded bg-error-container text-on-error-container font-mono-code text-[11px] font-bold">1</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low transition-colors whitespace-nowrap" type="button">
+          Pending Approvals <span class="ml-1 px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant font-mono-code text-[11px]">3</span>
+</button>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-md text-[18px] text-on-surface-variant pointer-events-none">search</span>
+<input class="w-full md:w-80 pl-9 pr-4 py-1.5 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest shadow-sm" placeholder="Search by handle, brand, or token ID..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Workspace / Brand Cluster Selector Bar -->
+<div class="px-space-xl py-space-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Active Workspace Clusters</span>
+<span class="font-mono-code text-[11px] text-primary cursor-pointer hover:underline">Manage All 4 Clusters →</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Cluster 1: Active -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between cursor-pointer relative overflow-hidden bg-gradient-to-br from-surface-container-lowest to-surface-container-low">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary-container"></div>
+<div class="flex items-start justify-between gap-space-xs mb-space-sm pt-1">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold text-sm shadow-sm">
+              GN
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Global News &amp; Media</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Active Selection
+              </span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-mono-code text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">10</span> Accounts</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">14</span> Members</span>
+</div>
+</div>
+<!-- Cluster 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-start justify-between gap-space-xs mb-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-sm">
+              ID
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Indus Digital Ent.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Regional Hub</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-mono-code text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">6</span> Accounts</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">8</span> Members</span>
+</div>
+</div>
+<!-- Cluster 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-start justify-between gap-space-xs mb-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-sm">
+              FT
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">FinTech Daily News</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">B2B Vertical</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-mono-code text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">5</span> Accounts</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">5</span> Members</span>
+</div>
+</div>
+<!-- Cluster 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-start justify-between gap-space-xs mb-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-sm">
+              SP
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Sports Pulse 24/7</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Live Production</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-mono-code text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">3</span> Accounts</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">4</span> Members</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Split Layout: Connected Accounts Table & RBAC Control Drawer -->
+<div class="px-space-xl py-space-md grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Connected Accounts (Span 8) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Section Header -->
+<div class="flex items-center justify-between bg-surface-container-low p-space-md rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">hub</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Connected Accounts (Global News Cluster)</span>
+</div>
+<div class="flex items-center gap-space-xs font-mono-code text-label-sm text-on-surface-variant">
+<span>Sort: By Platform</span>
+<span class="material-symbols-outlined text-[16px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Platform Group: Facebook Pages -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm px-space-xs pt-space-xs">
+<span class="px-1.5 py-0.5 rounded font-mono-code text-[10px] font-bold bg-primary text-on-primary">FB</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Facebook Pages (2)</span>
+<div class="flex-1 h-px bg-surface-container-high ml-space-sm"></div>
+</div>
+<!-- Account Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm shrink-0" data-alt="High quality corporate emblem for SocialFlow Global Newsroom with deep blue background and minimalist white geometric monogram, studio lit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeSSniOtwFWBbDm2U23fCPaJSY2-iE-FOAbKTEYrLtk9tbKzX1t610DWYrj-2cGNpMYU80bH47Bq13WLUeoV_iOMZlb-p9WBAqQiMwDHEUkji71cH-u81dwHJ_QoDK0QzHtTw-7HzJ_Zd3tRtphDOCyz9rvNXAsz3FKLPIu_AVQhpD_MuhXfAInuW2vjv0rb6dANUnIoq0Pgx7SIHxNJPskB49IUfE_f3RZMFWEI0"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">SocialFlow Global Official</span>
+<span class="material-symbols-outlined text-[16px] text-primary" title="Verified">verified</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-0.5 text-on-surface-variant font-label-md text-label-md">
+<span class="font-mono-code text-[12px] text-on-surface">@socialflowglobal</span>
+<span>•</span>
+<span class="font-mono-code">2.1M Followers</span>
+<span>•</span>
+<span class="text-tertiary font-mono-code text-[11px]">Token Valid: 84d</span>
+<span>•</span>
+<span class="text-on-surface-variant">Auto-Sync: <span class="text-primary font-semibold">ON</span></span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
+<span class="px-2 py-0.5 rounded bg-surface-container-low font-mono-code text-[11px] text-on-surface-variant">Full Admin</span>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors flex items-center gap-1" title="Test Connection" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">sync</span> Test
+            </button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant transition-colors" title="Account Settings" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Account Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm shrink-0" data-alt="News broadcasting studio badge in crimson and navy blue with stylized broadcast headline typography, modern media aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu6Tg3s7sizbH-SFE5aTTUrHwWj3P65KtDXMYBTkiio8XaRhDplicemvlTqbtJysqYqixUgaklA4tO1l5nQ6T7tfwNWX5BJH-iyxZr1HEBnmfhCtFqM2L97hYtx1wSBSAU8pakY3irrDIdhgGxqYRvbp5dQUcyI_JYPWvo8MQLy_Axq4nDuCkOM28Px1_kGA2HQOXts_f9Xj2zGJGZQGJSXS8VaBsfkHcnrPW41IU"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Breaking News Global TV</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-0.5 text-on-surface-variant font-label-md text-label-md">
+<span class="font-mono-code text-[12px] text-on-surface">@breakingnews.global</span>
+<span>•</span>
+<span class="font-mono-code">650k Followers</span>
+<span>•</span>
+<span class="text-tertiary font-mono-code text-[11px]">Token Valid: 56d</span>
+<span>•</span>
+<span class="text-on-surface-variant">Auto-Sync: <span class="text-primary font-semibold">ON</span></span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
+<span class="px-2 py-0.5 rounded bg-surface-container-low font-mono-code text-[11px] text-on-surface-variant">Editor Tier</span>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">sync</span> Test
+            </button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Platform Group: Instagram Business -->
+<div class="flex flex-col gap-space-xs mt-space-sm">
+<div class="flex items-center gap-space-sm px-space-xs pt-space-xs">
+<span class="px-1.5 py-0.5 rounded font-mono-code text-[10px] font-bold bg-secondary-container text-on-secondary">IG</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Instagram Business (2)</span>
+<div class="flex-1 h-px bg-surface-container-high ml-space-sm"></div>
+</div>
+<!-- Account Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-11 h-11 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary font-bold text-base shrink-0 shadow-sm">
+              @SF
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">@socialflow.media</span>
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
+                </span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-low font-mono-code text-[10px] text-secondary">2FA Active</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-0.5 text-on-surface-variant font-label-md text-label-md">
+<span class="font-mono-code text-[12px] text-on-surface">182k Followers</span>
+<span>•</span>
+<span class="font-mono-code text-[11px] text-on-surface-variant">Reels API V20.0</span>
+<span>•</span>
+<span class="text-tertiary font-mono-code text-[11px]">Synced 14m ago</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
+<span class="px-2 py-0.5 rounded bg-surface-container-low font-mono-code text-[11px] text-on-surface-variant">Creator Pro</span>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">sync</span> Test
+            </button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Account Card 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-bold text-base shrink-0">
+              UB
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">@daily.broadcast.intl</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-0.5 text-on-surface-variant font-label-md text-label-md">
+<span class="font-mono-code text-[12px] text-on-surface">94k Followers</span>
+<span>•</span>
+<span class="text-tertiary font-mono-code text-[11px]">Synced 1h ago</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
+<span class="px-2 py-0.5 rounded bg-surface-container-low font-mono-code text-[11px] text-on-surface-variant">Publish Only</span>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">sync</span> Test
+            </button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Platform Group: X Enterprise -->
+<div class="flex flex-col gap-space-xs mt-space-sm">
+<div class="flex items-center gap-space-sm px-space-xs pt-space-xs">
+<span class="px-1.5 py-0.5 rounded font-mono-code text-[10px] font-bold bg-inverse-surface text-inverse-on-surface">X</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">X (Twitter) Enterprise (2)</span>
+<div class="flex-1 h-px bg-surface-container-high ml-space-sm"></div>
+</div>
+<!-- Account Card 5: X Official -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-11 h-11 rounded-full bg-inverse-surface flex items-center justify-center text-inverse-on-surface font-mono-code font-bold text-sm shrink-0">
+              𝕏
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">@SocialFlowHQ</span>
+<span class="px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 font-label-sm text-[10px] font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px] text-amber-600">verified</span> Gold Org
+                </span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-0.5 text-on-surface-variant font-label-md text-label-md">
+<span class="font-mono-code text-[12px] text-on-surface">Rate Limit Tier: Enterprise v2</span>
+<span>•</span>
+<span class="font-mono-code">50k req/min</span>
+<span>•</span>
+<span class="text-tertiary font-mono-code text-[11px]">Synced 3m ago</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
+<span class="px-2 py-0.5 rounded bg-surface-container-low font-mono-code text-[11px] text-on-surface-variant">Full Admin</span>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">sync</span> Test
+            </button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Account Card 6: X Requires Re-auth (CRITICAL ATTENTION) -->
+<div class="bg-error-container/20 p-space-md rounded-xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-11 h-11 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-bold text-sm shrink-0">
+              PK
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">@NewsBulletinPK</span>
+<span class="px-1.5 py-0.2 rounded-full bg-error-container text-on-error-container font-label-sm text-[10px] font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span> Re-auth Needed
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-0.5 text-on-surface-variant font-label-md text-label-md">
+<span class="font-mono-code text-[12px] text-error">OAuth2 Refresh Token Revoked / Expired</span>
+<span>•</span>
+<span class="font-mono-code text-[11px]">Last active: 2d ago</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
+<button class="px-space-md py-1.5 rounded-lg bg-error text-on-error hover:opacity-90 font-label-sm text-label-sm font-semibold transition-opacity flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_reset</span> Re-authenticate
+            </button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Platform Group: YouTube, TikTok, CMS Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mt-space-sm">
+<!-- YouTube Channel -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-1.5 py-0.5 rounded font-mono-code text-[10px] font-bold bg-error text-on-error">YT</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
+              </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm shrink-0" data-alt="High tech digital television broadcast logo with vibrant red circular gradient accent, modern streaming media design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOp-bYDR1WDkfoBXhZVZW8X969M9_Vnblv8bQ9lJoqMga6y3dCuwP-x5bjDB53Nm4LXTxxdHF9zWShzTZS7C7JSyR8uSwldZZ_xrXQm835B6_6FawR5lYoBsjCgvsArYpRlnq2LMvmU5gMgMja_AZPiNuv2sF8ZV0SqFm3dPtF8HBDD75TlR14rYOFE9nakxpzp4dh5v2cWiXKq7BIsPCIdCvi2B12HRlg82e9r3Q"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">SocialFlow Prime News</span>
+<span class="font-mono-code text-label-sm text-on-surface-variant">1.4M Subscribers • 4K Upload API</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-mono-code text-[11px] text-on-surface-variant">
+<span>Video Content Manager API</span>
+<button class="text-primary font-semibold hover:underline" type="button">Config →</button>
+</div>
+</div>
+<!-- TikTok For Business -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-1.5 py-0.5 rounded font-mono-code text-[10px] font-bold bg-inverse-surface text-inverse-on-surface">TT</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
+              </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface shrink-0">
+                TT
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">@socialflow_shorts</span>
+<span class="font-mono-code text-label-sm text-on-surface-variant">840k Followers • Audio Library: OK</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-mono-code text-[11px] text-on-surface-variant">
+<span>Direct Commercial Publishing</span>
+<button class="text-primary font-semibold hover:underline" type="button">Config →</button>
+</div>
+</div>
+<!-- WordPress & Headless CMS -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md md:col-span-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-secondary flex items-center justify-center font-bold font-mono-code shrink-0">
+                WP
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Indus Media CMS Network</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> REST API Active
+                  </span>
+</div>
+<span class="font-mono-code text-label-sm text-on-surface-variant">
+                  Application Passwords Verified • Auto-featured Image Generation Enabled
+                </span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold transition-colors" type="button">
+                Sync Schema
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: RBAC Team Members, Approvals & Token Health Drawer (Span 4) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Panel 1: Team & Access Permissions (RBAC) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary">group</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Newsroom Team (RBAC)</span>
+</div>
+<span class="font-mono-code text-label-sm font-semibold text-primary">18 / 25 Seats</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Assign role-based access for the <strong class="text-on-surface">Global News &amp; Media</strong> workspace cluster.
+        </p>
+<!-- Seat usage progress -->
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 72%"></div>
+</div>
+<!-- Members list -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Member 1 -->
+<div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<img alt="Sarah Jenkins" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMOZdF5GQj01sMvahYTyba9EnFDTO_P96Pm284IrgP8FR0VQHtHL23dwLFyzvSYiILd_5DbcqBSzsUxGeK0gdaCXIrCW4kZBfZLeU6N08IwtQfXCahrW4XPqa89-SgH0M9s7LoJFrGPU7DbiMmhqxafNei8qlBgnDcZR5pRYVRc8B4Cko6B2nEbPbJJUWcWu-dcpo9J-G5WqodFGyQMhDGxSufmf_dCoFRxPpt2GM"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Sarah Jenkins</span>
+<span class="font-label-sm text-[10px] text-primary">Lead Producer • Super Admin</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">shield_person</span>
+</div>
+<!-- Member 2 -->
+<div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold font-mono-code text-[11px] shrink-0">
+                TA
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Tariq Al-Hussein</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">Sr. Typography &amp; Motion Editor</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">edit_note</span>
+</div>
+<!-- Member 3 -->
+<div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center font-bold font-mono-code text-[11px] shrink-0">
+                MC
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Maria Chen</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">Social Media Manager</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule_send</span>
+</div>
+<!-- Member 4 -->
+<div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-bold font-mono-code text-[11px] shrink-0">
+                ZA
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Zainab Abbas</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">Compliance Auditor</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">rule</span>
+</div>
+</div>
+<div class="pt-space-xs">
+<button class="w-full py-2 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-lg text-label-lg text-on-surface font-semibold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span> + Invite New Seat
+          </button>
+</div>
+</div>
+<!-- Panel 2: Governance & Publishing Guardrails -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary">gavel</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Publishing Guardrails</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-[10px] font-bold uppercase">Enforced</span>
+</div>
+<!-- Toggle Item 1 -->
+<div class="flex items-start justify-between gap-space-sm pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Approval Workflow Enforcement</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
+              Require Lead Producer sign-off for accounts with &gt;100k audience.
+            </span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Toggle Item 2 -->
+<div class="flex items-start justify-between gap-space-sm pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Auto-Revoke on Inactivity</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
+              Suspend credentials if no dispatch within 30 days.
+            </span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Toggle Item 3 -->
+<div class="flex items-start justify-between gap-space-sm pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Dual-Language Compliance Audit</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
+              Enforce automated multi-language content safety &amp; typography font render validation.
+            </span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+<!-- Panel 3: Live Audit Log Snippet -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Workspace Audit Trail</span>
+<span class="font-mono-code text-[10px] text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span> Streaming
+          </span>
+</div>
+<div class="flex flex-col gap-space-xs font-mono-code text-[11px] text-on-surface-variant pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="truncate">• Sarah J. updated token @socialflowglobal</span>
+<span class="text-[10px] shrink-0">12m ago</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="truncate">• OAuth expired for @NewsBulletinPK</span>
+<span class="text-[10px] text-error shrink-0">2d ago</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="truncate">• Added 14 new YouTube 4K upload scopes</span>
+<span class="text-[10px] shrink-0">3d ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    </main>
+
     <!-- ═════════════════════════════════════════════════════════════════ -->
     <!-- VIEW CONTAINER 2: CREATIVE POST COMPOSER                         -->
     <!-- ═════════════════════════════════════════════════════════════════ -->
@@ -3139,87 +4472,85 @@
 
   </div>
 
-      <!-- Unified Navigation & Interactive Scripts -->
+        <!-- Unified Navigation & Interactive Scripts -->
   <script>
     function switchMainView(view) {
       const vidDashView = document.getElementById('view-video-dashboard');
       const compView = document.getElementById('view-composer');
       const tmplView = document.getElementById('view-video-templates');
       const createVidView = document.getElementById('view-create-video');
+      const analyticsView = document.getElementById('view-analytics');
+      const multiAccountView = document.getElementById('view-multi-account');
+
       const vidHdr = document.getElementById('header-video');
       const compHdr = document.getElementById('header-composer');
+
       const navPub = document.getElementById('nav-publishing');
+      const navAnalytics = document.getElementById('nav-analytics');
+      const navMultiAccount = document.getElementById('nav-multi-account');
       const navVidDash = document.getElementById('nav-video-dashboard');
       const navTmpl = document.getElementById('nav-video-templates');
       const navCreateVid = document.getElementById('nav-create-video');
+
       const videoSub = document.getElementById('videoSubmenu');
       const videoChev = document.getElementById('videoChevron');
 
       const activeClass = "flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-surface-container-high text-primary font-semibold rounded-lg cursor-pointer";
       const inactiveClass = "flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer";
 
-      // Hide all main containers first
-      if (vidDashView) vidDashView.classList.add('hidden');
-      if (tmplView) tmplView.classList.add('hidden');
-      if (createVidView) createVidView.classList.add('hidden');
-      if (compView) compView.classList.add('hidden');
+      // Hide all main containers
+      [vidDashView, tmplView, createVidView, compView, analyticsView, multiAccountView].forEach(v => {
+        if (v) v.classList.add('hidden');
+      });
 
       // Reset all nav highlights
-      if (navPub) navPub.className = inactiveClass;
-      if (navVidDash) navVidDash.className = inactiveClass;
-      if (navTmpl) navTmpl.className = inactiveClass;
-      if (navCreateVid) navCreateVid.className = inactiveClass;
+      [navPub, navAnalytics, navMultiAccount, navVidDash, navTmpl, navCreateVid].forEach(n => {
+        if (n) n.className = inactiveClass;
+      });
 
-      if (view === 'create-video' || view === 'create' || view === 'editor') {
+      // Standard header for non-composer views
+      if (compHdr) compHdr.classList.add('hidden');
+      if (vidHdr) vidHdr.classList.remove('hidden');
+
+      if (view === 'analytics') {
+        if (analyticsView) analyticsView.classList.remove('hidden');
+        if (navAnalytics) navAnalytics.className = activeClass;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (history.pushState) history.pushState(null, null, '?view=analytics');
+      } else if (view === 'multi-account' || view === 'accounts') {
+        if (multiAccountView) multiAccountView.classList.remove('hidden');
+        if (navMultiAccount) navMultiAccount.className = activeClass;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (history.pushState) history.pushState(null, null, '?view=accounts');
+      } else if (view === 'create-video' || view === 'create' || view === 'editor') {
         if (createVidView) createVidView.classList.remove('hidden');
-        if (vidHdr) vidHdr.classList.remove('hidden');
-        if (compHdr) compHdr.classList.add('hidden');
         if (navCreateVid) navCreateVid.className = activeClass;
-
         if (videoSub) videoSub.classList.remove('hidden');
         if (videoChev) videoChev.style.transform = 'rotate(180deg)';
-
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        if (history.pushState) {
-          history.pushState(null, null, '?view=create');
-        }
+        if (history.pushState) history.pushState(null, null, '?view=create');
       } else if (view === 'video-templates' || view === 'templates') {
         if (tmplView) tmplView.classList.remove('hidden');
-        if (vidHdr) vidHdr.classList.remove('hidden');
-        if (compHdr) compHdr.classList.add('hidden');
         if (navTmpl) navTmpl.className = activeClass;
-
         if (videoSub) videoSub.classList.remove('hidden');
         if (videoChev) videoChev.style.transform = 'rotate(180deg)';
-
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        if (history.pushState) {
-          history.pushState(null, null, '?view=templates');
-        }
+        if (history.pushState) history.pushState(null, null, '?view=templates');
       } else if (view === 'video-dashboard' || view === 'video') {
         if (vidDashView) vidDashView.classList.remove('hidden');
-        if (vidHdr) vidHdr.classList.remove('hidden');
-        if (compHdr) compHdr.classList.add('hidden');
         if (navVidDash) navVidDash.className = activeClass;
-
         if (videoSub) videoSub.classList.remove('hidden');
         if (videoChev) videoChev.style.transform = 'rotate(180deg)';
-
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        if (history.pushState) {
-          history.pushState(null, null, '?view=video');
-        }
+        if (history.pushState) history.pushState(null, null, '?view=video');
       } else {
         // Creative Post Composer
         if (compView) compView.classList.remove('hidden');
         if (compHdr) compHdr.classList.remove('hidden');
         if (vidHdr) vidHdr.classList.add('hidden');
         if (navPub) navPub.className = activeClass;
-
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        if (history.pushState) {
-          history.pushState(null, null, '?view=composer');
-        }
+        if (history.pushState) history.pushState(null, null, '?view=composer');
       }
     }
 
@@ -3335,6 +4666,41 @@
       }
     }
 
+    // Analytics Interactivity
+    function initAnalyticsEngine() {
+      // Time range pills
+      const timeBtns = document.querySelectorAll('#view-analytics button');
+      timeBtns.forEach(btn => {
+        if (['Today', '7D', '30D', '90D', 'Custom'].includes(btn.textContent.trim())) {
+          btn.addEventListener('click', () => {
+            timeBtns.forEach(b => {
+              if (['Today', '7D', '30D', '90D', 'Custom'].includes(b.textContent.trim())) {
+                b.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+                b.classList.add('text-on-surface-variant');
+              }
+            });
+            btn.classList.add('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+            btn.classList.remove('text-on-surface-variant');
+          });
+        }
+      });
+    }
+
+    // Multi-Account Interactivity
+    function initMultiAccountEngine() {
+      const filterButtons = document.querySelectorAll('#filterTabs button');
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(b => {
+            b.classList.remove('bg-surface-container-high', 'font-semibold');
+            b.classList.add('text-on-surface-variant');
+          });
+          button.classList.add('bg-surface-container-high', 'font-semibold');
+          button.classList.remove('text-on-surface-variant');
+        });
+      });
+    }
+
     // Keyboard shortcut for closing preview (Esc)
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closePreviewModal();
@@ -3344,9 +4710,16 @@
     window.addEventListener('DOMContentLoaded', () => {
       initTemplatesEngine();
       initVideoEditorEngine();
+      initAnalyticsEngine();
+      initMultiAccountEngine();
+
       const params = new URLSearchParams(window.location.search);
       const view = params.get('view');
-      if (view === 'create-video' || view === 'create' || view === 'editor') {
+      if (view === 'analytics') {
+        switchMainView('analytics');
+      } else if (view === 'multi-account' || view === 'accounts') {
+        switchMainView('multi-account');
+      } else if (view === 'create-video' || view === 'create' || view === 'editor') {
         switchMainView('create-video');
       } else if (view === 'templates' || view === 'video-templates') {
         switchMainView('video-templates');
@@ -3439,7 +4812,7 @@
             p.classList.add('bg-surface-container-low', 'text-on-surface');
           });
           pill.classList.add('bg-primary-container', 'text-on-primary');
-          pill.classList.remove('bg-surface-container-low', 'text-on-surface');
+          pill.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
         });
       });
 
