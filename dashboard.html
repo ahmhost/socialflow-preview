@@ -166,7 +166,7 @@
             <span class="material-symbols-outlined text-[18px]">space_dashboard</span>
             <span>Video Dashboard</span>
           </a>
-          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="#">
+          <a id="nav-video-templates" onclick="switchMainView('video-templates')" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="javascript:void(0);">
             <span class="material-symbols-outlined text-[18px]">video_library</span>
             <span>Video Templates</span>
           </a>
@@ -347,7 +347,7 @@
 <span class="material-symbols-outlined text-[20px]">add_circle</span>
             + Create New Video
           </button>
-<button class="inline-flex items-center gap-space-sm px-space-md py-space-md rounded-lg bg-white/15 backdrop-blur-md text-white font-label-lg text-label-lg hover:bg-white/25 transition-all">
+<button onclick="switchMainView('video-templates')" class="inline-flex items-center gap-space-sm px-space-md py-space-md rounded-lg bg-white/15 backdrop-blur-md text-white font-label-lg text-label-lg hover:bg-white/25 transition-all cursor-pointer">
 <span class="material-symbols-outlined text-[20px]">auto_awesome_motion</span>
             Browse Templates
             <span class="px-space-xs py-0.5 rounded bg-white/20 font-mono-code text-label-sm">120+</span>
@@ -441,7 +441,7 @@
 <h2 class="font-headline-sm text-headline-sm text-on-surface">Quick Start Templates</h2>
 <span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Top Velocity</span>
 </div>
-<button class="inline-flex items-center gap-1 font-label-lg text-label-lg text-primary hover:underline">
+<button onclick="switchMainView('video-templates')" class="inline-flex items-center gap-1 font-label-lg text-label-lg text-primary hover:underline cursor-pointer">
           View All Templates (124)
           <span class="material-symbols-outlined text-[16px]">chevron_right</span>
 </button>
@@ -915,6 +915,588 @@
 </div>
 </div>
 </div>
+    </main>
+
+    
+    <!-- ═════════════════════════════════════════════════════════════════ -->
+    <!-- VIEW CONTAINER 3: VIDEO TEMPLATES MARKETPLACE                    -->
+    <!-- ═════════════════════════════════════════════════════════════════ -->
+    <main id="view-video-templates" class="studio-view hidden relative pt-16 bg-surface min-h-screen">
+<div class="flex flex-col w-full">
+<div class="p-space-xl flex flex-col gap-space-xl">
+<!-- Top Control Console -->
+<div class="flex flex-col gap-space-lg bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Search & Metric Indicator -->
+<div class="flex flex-1 items-center gap-space-md max-w-2xl">
+<div class="relative flex-1 flex items-center">
+<span class="material-symbols-outlined absolute left-space-md text-[20px] text-on-surface-variant pointer-events-none">search</span>
+<input class="w-full pl-10 pr-space-md py-space-sm bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_rgba(79,70,229,0.3)] transition-all" id="templateSearchInput" placeholder="Search 200+ broadcast &amp; viral video templates..." type="text"/>
+</div>
+<div class="hidden sm:flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container rounded-lg font-mono-code text-mono-code text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary">bolt</span>
+<span>204 LIVE PRESETS</span>
+</div>
+</div>
+<!-- Aspect Ratio & Sorting Controls -->
+<div class="flex flex-wrap items-center gap-space-md">
+<!-- Sort Dropdown -->
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-xs rounded-lg text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">swap_vert</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sort:</span>
+<select class="bg-transparent font-label-lg text-label-lg text-on-surface focus:outline-none cursor-pointer">
+<option selected="">Most Popular</option>
+<option>Trending</option>
+<option>Recently Added</option>
+<option>Staff Picks</option>
+</select>
+</div>
+<!-- Aspect Ratio Toggle Pills -->
+<div class="flex items-center gap-space-xs bg-surface-container-low p-space-xs rounded-lg" id="aspectFilterGroup">
+<button class="px-space-md py-space-xs rounded-lg font-label-lg text-label-lg bg-surface-container-lowest text-primary font-bold shadow-sm aspect-btn active" data-ratio="all">
+              All
+            </button>
+<button class="px-space-md py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors aspect-btn" data-ratio="16:9">
+              16:9 Landscape
+            </button>
+<button class="px-space-md py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors aspect-btn" data-ratio="9:16">
+              9:16 Vertical Reels/Shorts
+            </button>
+<button class="px-space-md py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors aspect-btn" data-ratio="1:1">
+              1:1 Square
+            </button>
+<button class="px-space-md py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors aspect-btn" data-ratio="4:5">
+              4:5 Feed
+            </button>
+</div>
+</div>
+</div>
+<!-- Category Filter Pills Bar (Horizontal Scrollable) -->
+<div class="flex items-center gap-space-sm overflow-x-auto pb-1" id="categoryScrollPills">
+<button class="whitespace-nowrap px-space-md py-space-xs rounded-full font-label-lg text-label-lg bg-primary-container text-on-primary font-semibold shadow-sm category-pill active">
+          All Templates (184)
+        </button>
+<button class="whitespace-nowrap px-space-md py-space-xs rounded-full font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors category-pill">
+          Breaking News (24)
+        </button>
+<button class="whitespace-nowrap px-space-md py-space-xs rounded-full font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors category-pill">
+          News Intro &amp; Openers (18)
+        </button>
+<button class="whitespace-nowrap px-space-md py-space-xs rounded-full font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors category-pill">
+          News Headlines (15)
+        </button>
+<button class="whitespace-nowrap px-space-md py-space-xs rounded-full font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors category-pill">
+          Reporter Lower Thirds (12)
+        </button>
+<button class="whitespace-nowrap px-space-md py-space-xs rounded-full font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors category-pill">
+          Social Media Reels (35)
+        </button>
+<button class="whitespace-nowrap px-space-md py-space-xs rounded-full font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors category-pill">
+          YouTube Shorts (28)
+        </button>
+<button class="whitespace-nowrap px-space-md py-space-xs rounded-full font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors category-pill">
+          TikTok Trending (22)
+        </button>
+<button class="whitespace-nowrap px-space-md py-space-xs rounded-full font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors category-pill">
+          Promotional &amp; Ads (16)
+        </button>
+<button class="whitespace-nowrap px-space-md py-space-xs rounded-full font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors category-pill">
+          Documentary &amp; Story (14)
+        </button>
+<button class="whitespace-nowrap px-space-md py-space-xs rounded-full font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors category-pill">
+          Text Animation &amp; Tickers (19)
+        </button>
+<button class="whitespace-nowrap px-space-md py-space-xs rounded-full font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors category-pill">
+          Logo &amp; Outro (11)
+        </button>
+</div>
+</div>
+<!-- Featured Template Hero Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-highest shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/90 to-transparent z-10 w-full lg:w-3/5"></div>
+<!-- Ambient Visual Background -->
+<div class="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 bg-cover bg-center opacity-90" data-alt="Modern television broadcast studio background with ultra-wide curved LED video walls displaying energetic deep blue, crimson alert bars, and crisp financial stock charts. Ultra sharp 8K television camera equipment in cinematic focus with subtle volumetric light beams in indigo and cool slate." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBoKmUy9qclypwfBWrLQrfc0mHySv0j4SHF2pOmbYQAGDyxxPwB6e06h2mCr7GJL1pKa-CP8XrTtj0W68AMHPptxLH-pJfAo7ahoZrdS3Dy13Qhn1rYPlqqZrrXKqcl9QDL3o6S5f0fnxsT4xSHHMM2QtHaZvp_pD6EdqAgqdwsFknpr5GTYjt5j_cBFP4P4Z-SESKdbRK1DhmOLzpKWoqx15DwPzM9K6WG50lXW_0')"></div>
+<div class="relative z-20 p-space-xl lg:p-10 flex flex-col justify-between max-w-2xl gap-space-lg">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-md py-space-xs rounded-full bg-error text-on-error font-label-sm text-label-sm uppercase tracking-wider font-bold animate-pulse">
+              HOT RELEASE
+            </span>
+<span class="px-space-md py-space-xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+              Broadcast Edition 2025
+            </span>
+<span class="font-mono-code text-mono-code text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span> 4K 60FPS Ready
+            </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight leading-tight mt-1">
+            Broadcast Newsroom 2025 Multi-Layer Package
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            Complete high-velocity newsroom setup with modular breaking alert lower thirds, split-screen interview anchors, bilingual multi-language headline crawlers, and automated animated stingers.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<button class="flex items-center gap-space-sm px-space-xl py-space-md bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg hover:opacity-95 transition-all shadow-md group">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">rocket_launch</span>
+<span>1-Click Start Project</span>
+</button>
+<button class="flex items-center gap-space-sm px-space-lg py-space-md bg-surface-container-lowest text-on-surface rounded-lg font-label-lg text-label-lg hover:bg-surface-container transition-all shadow-sm" onclick="openPreviewModal('Broadcast Newsroom 2025 Multi-Layer Package', '16:9 Landscape', '0:45', 'Breaking News')">
+<span class="material-symbols-outlined text-[20px] text-primary">play_circle</span>
+<span>Watch Live Demo</span>
+</button>
+<div class="flex items-center gap-space-md text-on-surface-variant font-mono-code text-mono-code pl-space-sm">
+<span>Includes: 14 Modular Scenes</span>
+<span>•</span>
+<span>12 Studio Font Presets</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Production Workflow Indicator Strip -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">tune</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-none">Instant NLE Engine</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Zero render waiting time in browser</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md w-full md:w-auto md:flex-1 md:max-w-4xl">
+<!-- Step 1 -->
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary font-mono-code text-mono-code flex items-center justify-center font-bold">1</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Choose Template</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Pick your narrative style</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface font-mono-code text-mono-code flex items-center justify-center font-bold">2</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Swap Media</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Drag clips &amp; logos</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface font-mono-code text-mono-code flex items-center justify-center font-bold">3</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Edit Bilingual Text</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">LTR & RTL Typography</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container font-mono-code text-mono-code flex items-center justify-center font-bold">4</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">1-Click Export</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Direct to all socials</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Template Marketplace Grid -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Curated Templates</span>
+<span class="px-space-sm py-0.5 bg-surface-container-high text-on-surface-variant font-mono-code text-label-sm rounded-full">Showing 9 of 184</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-tertiary">offline_bolt</span>
+<span>GPU Accelerated HTML5 Previews</span>
+</div>
+</div>
+<!-- Bento Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="templateGrid">
+<!-- Card 1: Geo-Style Breaking News Prime -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200">
+<div class="relative w-full aspect-video bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Realistic television news set with red ticker banners, bold animated lower-third headlines along the lower screen, live studio lighting in high-key white, digital world map graphics on background screens, and sharp broadcast typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJJr09_BeWIkgvWVkt8CN07uEsKZeGzyHWPO_WWd9W71Bfl7QEgWKI-tkJgOFnk_n2RTWS9XPnhQ7JNEZd0lGml_4FzoAVeFyQ4oYaUEMVtOCSH4fraOBkvxBYkxid46D7At3crsVGEH9mEk8ARRco_UjKmjP_NFW60j0R-nrPozE9TfKT3ILHfaW1qScqJEW4lrEDFnQAhzuHTBRAVe5wbSYac3BEAyiNosZ-PQg"/>
+<div class="absolute inset-0 bg-on-background/20 group-hover:bg-on-background/40 transition-colors flex items-center justify-center">
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform" onclick="openPreviewModal('Geo-Style Breaking News Prime', '16:9', '0:30', 'Breaking News')">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Duration Badge -->
+<span class="absolute bottom-2 right-2 px-space-sm py-0.5 bg-on-background/80 text-surface font-mono-code text-mono-code rounded">0:30</span>
+<!-- Ratio Pill -->
+<span class="absolute top-2 left-2 px-space-sm py-0.5 bg-surface-container-lowest/90 text-on-surface font-mono-code text-mono-code rounded shadow-sm">16:9</span>
+<!-- Favorite Toggle -->
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors fav-btn" onclick="toggleFavorite(this)">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-space-sm py-0.5 bg-error-container text-error font-label-sm text-label-sm rounded uppercase font-semibold">Breaking News</span>
+<span class="font-mono-code text-label-sm text-on-surface-variant">1.4k Uses</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Geo-Style Breaking News Prime</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">High energy breaking news package with urgent siren soundscape, dual-language lower-third tickers, and red anchor straps.</p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs shadow-[0_-1px_0_rgba(199,196,216,0.2)]">
+<button class="flex-1 py-space-xs px-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg rounded-lg text-center transition-colors" onclick="openPreviewModal('Geo-Style Breaking News Prime', '16:9', '0:30', 'Breaking News')">
+                Preview
+              </button>
+<button class="flex-1 py-space-xs px-space-sm bg-primary-container text-on-primary hover:opacity-95 font-label-lg text-label-lg rounded-lg text-center transition-opacity shadow-sm">
+                Use Template
+              </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Viral TikTok Hook with Dynamic Captions -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200">
+<div class="relative w-full aspect-video bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vertical TikTok style creator studio video mockup with neon yellow and bright cyan kinetic text captions popping in center frame, vibrant ring light illumination, modern content creator talking to smartphone camera." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3agJ-Xd7K9cMpXjUkkhekN05LF0kL4Xo8sZ0IRr31B-i8_lNYziPC_Xto0A91st5Ty4nliD9I6_Zs0E1yMFGSRNCSM1xwbr1e5BnVRjL-nTcF0Vn_ZOf0eS5dOdkH4PEOuYQHHN1vHbnpAqaj56TbcbH2HjmPIyq1gfqlvFiQD5mg3IH6XVU-N5iJedurTJC1bGYt2VZNek4InBG5PrOW9kZBqFghRaDh5l7BLXU"/>
+<div class="absolute inset-0 bg-on-background/20 group-hover:bg-on-background/40 transition-colors flex items-center justify-center">
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform" onclick="openPreviewModal('Viral TikTok Hook Captions', '9:16', '0:15', 'TikTok Trending')">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<span class="absolute bottom-2 right-2 px-space-sm py-0.5 bg-on-background/80 text-surface font-mono-code text-mono-code rounded">0:15</span>
+<span class="absolute top-2 left-2 px-space-sm py-0.5 bg-secondary-fixed text-on-secondary-fixed font-mono-code text-mono-code rounded font-semibold shadow-sm">9:16 Vertical</span>
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors fav-btn" onclick="toggleFavorite(this)">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-space-sm py-0.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm rounded uppercase font-semibold">TikTok Trending</span>
+<span class="font-mono-code text-label-sm text-on-surface-variant">3.8k Uses</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Viral TikTok Hook with Dynamic Captions</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">High retention word-by-word animated captions, auto-emojis, screen zoom punch-ins, and viral audio cues.</p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs shadow-[0_-1px_0_rgba(199,196,216,0.2)]">
+<button class="flex-1 py-space-xs px-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg rounded-lg text-center transition-colors" onclick="openPreviewModal('Viral TikTok Hook Captions', '9:16', '0:15', 'TikTok Trending')">
+                Preview
+              </button>
+<button class="flex-1 py-space-xs px-space-sm bg-primary-container text-on-primary hover:opacity-95 font-label-lg text-label-lg rounded-lg text-center transition-opacity shadow-sm">
+                Use Template
+              </button>
+</div>
+</div>
+</div>
+<!-- Card 3: Global Multi-Channel Headline Broadcast -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200">
+<div class="relative w-full aspect-video bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Editorial South Asian newsroom desk presentation featuring elegant broadcast typography beside crisp multi-language subtitle banner, dual color gradient in royal blue and golden amber, broadcast quality finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUIT7C7VsQSwe76cnOqhzGL82CYkw9o5AihYSIOGKVcliuMPO1SoipzeDpdfboL2VUBEEWP9LQbDManeBqnhOth3xCRqsYo4xYPmZnuP_h-JEr5I20nQMozDrHxZjVTmxYWJMc5G8cRKIC7kW0IcfyoQc4_SLj8KgDQMMc05SzrvJuTLNPqg_h1yfV1qHgi76GnHd4XbPeMtobDTpGPa0H5qvzWo9fHMVhTpjUUak"/>
+<div class="absolute inset-0 bg-on-background/20 group-hover:bg-on-background/40 transition-colors flex items-center justify-center">
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform" onclick="openPreviewModal('Global Multi-Channel Headline Broadcast', '16:9', '1:00', 'News Headlines')">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<span class="absolute bottom-2 right-2 px-space-sm py-0.5 bg-on-background/80 text-surface font-mono-code text-mono-code rounded">1:00</span>
+<span class="absolute top-2 left-2 px-space-sm py-0.5 bg-surface-container-lowest/90 text-on-surface font-mono-code text-mono-code rounded shadow-sm">16:9</span>
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors fav-btn" onclick="toggleFavorite(this)">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-space-sm py-0.5 bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm rounded uppercase font-semibold">News Headlines</span>
+<span class="font-mono-code text-label-sm text-on-surface-variant">920 Uses</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Global Multi-Channel Headline Broadcast</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Symmetric broadcast headlines with auto-synchronized multi-platform subtitles and live newsroom ticker loop.</p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs shadow-[0_-1px_0_rgba(199,196,216,0.2)]">
+<button class="flex-1 py-space-xs px-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg rounded-lg text-center transition-colors" onclick="openPreviewModal('Global Multi-Channel Headline Broadcast', '16:9', '1:00', 'News Headlines')">
+                Preview
+              </button>
+<button class="flex-1 py-space-xs px-space-sm bg-primary-container text-on-primary hover:opacity-95 font-label-lg text-label-lg rounded-lg text-center transition-opacity shadow-sm">
+                Use Template
+              </button>
+</div>
+</div>
+</div>
+<!-- Card 4: SaaS Product Feature Reel -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200">
+<div class="relative w-full aspect-video bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern 3D isometric software mockups showing web dashboard interfaces floating on clean minimalist gradient background, soft drop shadows, polished geometric UI cards, and smooth cursor movement trail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtsYJjtxBS82j2eCvbIbqmN9fMUSlcpP0xSVKyhsbFKulhdwYYP8x3xnOi_uYB1LxvNLBdetdw08qYiQP3wz0MDui1RMeD5kamelbuT1sBAgCbnJ0p73_4x7mV5J1atXLzvwN3cwh-LXBJlCZZOiMcCv-cpzuTN7iVrxrpRW-iBgtc-b4b7baYqUQUR_mONZuU8joGbJVHtzvEX3jPgymo6LLIovOzty_cZAKBnRA"/>
+<div class="absolute inset-0 bg-on-background/20 group-hover:bg-on-background/40 transition-colors flex items-center justify-center">
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform" onclick="openPreviewModal('SaaS Product Feature Reel', '9:16', '0:30', 'Promotional &amp; Ads')">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<span class="absolute bottom-2 right-2 px-space-sm py-0.5 bg-on-background/80 text-surface font-mono-code text-mono-code rounded">0:30</span>
+<span class="absolute top-2 left-2 px-space-sm py-0.5 bg-secondary-fixed text-on-secondary-fixed font-mono-code text-mono-code rounded font-semibold shadow-sm">9:16 Vertical</span>
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors fav-btn" onclick="toggleFavorite(this)">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-space-sm py-0.5 bg-secondary-fixed text-secondary font-label-sm text-label-sm rounded uppercase font-semibold">Promotional &amp; Ads</span>
+<span class="font-mono-code text-label-sm text-on-surface-variant">2.1k Uses</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors">SaaS Product Feature Reel</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Crisp UI walkthrough transitions, floating device frames, and key metric callout badges designed for LinkedIn and X.</p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs shadow-[0_-1px_0_rgba(199,196,216,0.2)]">
+<button class="flex-1 py-space-xs px-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg rounded-lg text-center transition-colors" onclick="openPreviewModal('SaaS Product Feature Reel', '9:16', '0:30', 'Promotional &amp; Ads')">
+                Preview
+              </button>
+<button class="flex-1 py-space-xs px-space-sm bg-primary-container text-on-primary hover:opacity-95 font-label-lg text-label-lg rounded-lg text-center transition-opacity shadow-sm">
+                Use Template
+              </button>
+</div>
+</div>
+</div>
+<!-- Card 5: Corporate Executive Interview Lower-Third -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200">
+<div class="relative w-full aspect-video bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Professional boardroom interview footage with cinematic shallow depth of field, elegant frosted glass lower third identifying chief executive with typography in deep navy and silver." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_TND3yj4Dbql_-GqHLde99TC7LWA8wKlbPXMpiSXUP4GOVG4yYxrzv7WrysiRSpgRAKzB_VjZe6f6Gg0vMz3d9z2nBq4Tks7a_NQXtvWw-NleE790ipybAqfJ87NCU31L_kPfsSzMYU2Dvq0u3_iPakXW5Q7f3jOpdIms7BZMdh9hu167m-AyFXBxMEPbtDAJNcfTgjSmXuvdyKWKqNMh-SvlTBNAtjVsga8M9Gc"/>
+<div class="absolute inset-0 bg-on-background/20 group-hover:bg-on-background/40 transition-colors flex items-center justify-center">
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform" onclick="openPreviewModal('Corporate Executive Lower-Third', '16:9', '0:15', 'Reporter Lower Thirds')">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<span class="absolute bottom-2 right-2 px-space-sm py-0.5 bg-on-background/80 text-surface font-mono-code text-mono-code rounded">0:15</span>
+<span class="absolute top-2 left-2 px-space-sm py-0.5 bg-surface-container-lowest/90 text-on-surface font-mono-code text-mono-code rounded shadow-sm">16:9</span>
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors fav-btn" onclick="toggleFavorite(this)">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-space-sm py-0.5 bg-surface-container-high text-on-surface font-label-sm text-label-sm rounded uppercase font-semibold">Reporter Lower Thirds</span>
+<span class="font-mono-code text-label-sm text-on-surface-variant">780 Uses</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Corporate Executive Interview Lower-Third</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Sleek, unobtrusive typographic overlays with animated verified checkmark and company logo corner badge.</p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs shadow-[0_-1px_0_rgba(199,196,216,0.2)]">
+<button class="flex-1 py-space-xs px-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg rounded-lg text-center transition-colors" onclick="openPreviewModal('Corporate Executive Lower-Third', '16:9', '0:15', 'Reporter Lower Thirds')">
+                Preview
+              </button>
+<button class="flex-1 py-space-xs px-space-sm bg-primary-container text-on-primary hover:opacity-95 font-label-lg text-label-lg rounded-lg text-center transition-opacity shadow-sm">
+                Use Template
+              </button>
+</div>
+</div>
+</div>
+<!-- Card 6: Daily Express News Ticker & Intro -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200">
+<div class="relative w-full aspect-video bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Dramatic 3D globe animation revolving with digital fiber optic grid lines, explosive news intro countdown timer, high-contrast dark indigo and neon red broadcasting aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxUXbMw94hy79V6-VxRoB-nuwwQvjqQYv1q_lV8BPdEubq-S1gGYK2i_ZyjqjkSQKiFbmS_d0GJdNiOBPaYgj1p8Wbkhu_cKyRiPj2L1Ohr_b6cnyc6AX6j0_JmnlyiPGdDPxeV4PH7V657eL9TH5gVSO3kGqiOclECPujfcKT4-_kkxUN4EuwywueOjsrvSoGFsTJXuaMB2zDVn7pgzI3WSS3AhM_ccm47-WdDmg"/>
+<div class="absolute inset-0 bg-on-background/20 group-hover:bg-on-background/40 transition-colors flex items-center justify-center">
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform" onclick="openPreviewModal('Daily Express News Ticker &amp; Intro', '16:9', '0:20', 'News Intro &amp; Openers')">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<span class="absolute bottom-2 right-2 px-space-sm py-0.5 bg-on-background/80 text-surface font-mono-code text-mono-code rounded">0:20</span>
+<span class="absolute top-2 left-2 px-space-sm py-0.5 bg-surface-container-lowest/90 text-on-surface font-mono-code text-mono-code rounded shadow-sm">16:9</span>
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors fav-btn" onclick="toggleFavorite(this)">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-space-sm py-0.5 bg-primary-fixed text-primary font-label-sm text-label-sm rounded uppercase font-semibold">News Intro &amp; Openers</span>
+<span class="font-mono-code text-label-sm text-on-surface-variant">1.7k Uses</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Daily Express News Ticker &amp; Intro</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Broadcast opener sequence with countdown sting, rotating multi-segment ticker bar, and news bulletin chime.</p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs shadow-[0_-1px_0_rgba(199,196,216,0.2)]">
+<button class="flex-1 py-space-xs px-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg rounded-lg text-center transition-colors" onclick="openPreviewModal('Daily Express News Ticker &amp; Intro', '16:9', '0:20', 'News Intro &amp; Openers')">
+                Preview
+              </button>
+<button class="flex-1 py-space-xs px-space-sm bg-primary-container text-on-primary hover:opacity-95 font-label-lg text-label-lg rounded-lg text-center transition-opacity shadow-sm">
+                Use Template
+              </button>
+</div>
+</div>
+</div>
+<!-- Card 7: Documentary Split-Screen Story -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200">
+<div class="relative w-full aspect-video bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artistic multi-panel split screen showing historical documentary archival photographs alongside high-resolution aerial landscape drone footage, warm film grain and sepia grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxzLxSSosPDWiKeKhOor3uGb8cNH1ObXLTOYFUaZOpO5w_SRwfCxk85wO956C092srqQUyBd8bkWofrwI0VhHiatrgNR6j62qYbcSHYiWGk48tCR-IRZ-ZacHL4x3_1LnOEy3AF_4lzQ97TmE--BFKcu2lzQJDYBo28ZwL7PJ3M7ZMrxa0STuvXQkoud3ZutLz9l0SfDOSM12lFtOU3scl7gpVnlGe42Ge1k5fGwk"/>
+<div class="absolute inset-0 bg-on-background/20 group-hover:bg-on-background/40 transition-colors flex items-center justify-center">
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform" onclick="openPreviewModal('Documentary Split-Screen Story', '16:9', '1:00', 'Documentary &amp; Story')">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<span class="absolute bottom-2 right-2 px-space-sm py-0.5 bg-on-background/80 text-surface font-mono-code text-mono-code rounded">1:00</span>
+<span class="absolute top-2 left-2 px-space-sm py-0.5 bg-surface-container-lowest/90 text-on-surface font-mono-code text-mono-code rounded shadow-sm">16:9</span>
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors fav-btn" onclick="toggleFavorite(this)">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-space-sm py-0.5 bg-surface-container-high text-on-surface font-label-sm text-label-sm rounded uppercase font-semibold">Documentary &amp; Story</span>
+<span class="font-mono-code text-label-sm text-on-surface-variant">540 Uses</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Documentary Split-Screen Story</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Paced storytelling layout with dual comparison panels, cinematic film burn transitions, and quote overlays.</p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs shadow-[0_-1px_0_rgba(199,196,216,0.2)]">
+<button class="flex-1 py-space-xs px-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg rounded-lg text-center transition-colors" onclick="openPreviewModal('Documentary Split-Screen Story', '16:9', '1:00', 'Documentary &amp; Story')">
+                Preview
+              </button>
+<button class="flex-1 py-space-xs px-space-sm bg-primary-container text-on-primary hover:opacity-95 font-label-lg text-label-lg rounded-lg text-center transition-opacity shadow-sm">
+                Use Template
+              </button>
+</div>
+</div>
+</div>
+<!-- Card 8: YouTube Shorts Tech Fast Review -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200">
+<div class="relative w-full aspect-video bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vertical gadget tech product unboxing setup with sleek matte black smartphone on acrylic turntable, neon rim lights, snappy floating specs badge overlay, 4k ultra-crisp studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr7FLdpiM1ivBn2Tkfze2PqUOgSl0fVlVOAkhkve7dtiVnrbDVamreB8vrPE1UhUR2nxN10wkeJUepaAk9jICCS8EHtqQ-aPMeWiaOnkDylC2i3vwsES1rS6a9ezapGmglEkz8U-r6IcPOWUkCju7ZFJL20i3cLqkePsYytqJx-5rjp48OkJJBDTgFjn9ArIv8cm5951DspkDJgLxE8OYXeewIFpnDiEw7K0krJI4"/>
+<div class="absolute inset-0 bg-on-background/20 group-hover:bg-on-background/40 transition-colors flex items-center justify-center">
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform" onclick="openPreviewModal('YouTube Shorts Tech Fast Review', '9:16', '0:30', 'YouTube Shorts')">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<span class="absolute bottom-2 right-2 px-space-sm py-0.5 bg-on-background/80 text-surface font-mono-code text-mono-code rounded">0:30</span>
+<span class="absolute top-2 left-2 px-space-sm py-0.5 bg-secondary-fixed text-on-secondary-fixed font-mono-code text-mono-code rounded font-semibold shadow-sm">9:16 Vertical</span>
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors fav-btn" onclick="toggleFavorite(this)">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-space-sm py-0.5 bg-error-container text-error font-label-sm text-label-sm rounded uppercase font-semibold">YouTube Shorts</span>
+<span class="font-mono-code text-label-sm text-on-surface-variant">2.9k Uses</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors">YouTube Shorts Tech Fast Review</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Fast cut hardware specs breakdown with animated benchmark graphs and snappy sound effects embedded.</p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs shadow-[0_-1px_0_rgba(199,196,216,0.2)]">
+<button class="flex-1 py-space-xs px-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg rounded-lg text-center transition-colors" onclick="openPreviewModal('YouTube Shorts Tech Fast Review', '9:16', '0:30', 'YouTube Shorts')">
+                Preview
+              </button>
+<button class="flex-1 py-space-xs px-space-sm bg-primary-container text-on-primary hover:opacity-95 font-label-lg text-label-lg rounded-lg text-center transition-opacity shadow-sm">
+                Use Template
+              </button>
+</div>
+</div>
+</div>
+<!-- Card 9: Dynamic 3D Broadcast Logo Sting Outro -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200">
+<div class="relative w-full aspect-video bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Metallic 3D logo reveal with reflective chrome surface, animated prism lens flare, sound wave particle burst in electric violet and sapphire blue, crisp broadcast sign-off animation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK3kIA4fAFbWCPnIn6P3LZOxRxOh_Txsnjk1A5_qk1fSgcQ1-a-O1_x510Nbdo9cB9Zq-fEvKd1_UtbwEuU7hItD_RwRlm9i4L1gx_1tcJTTdFs1CfNEu0ibTqEtAUeeiG6LvJGnTcxFhaTtRgDSm9DvldaDAQnCuGqHrZDd7aPhXaE1HPi4G5EQ--00T0HtgC4NULLWVyskQusTuyE11NwF9VW60h5tnZIRXKkF8"/>
+<div class="absolute inset-0 bg-on-background/20 group-hover:bg-on-background/40 transition-colors flex items-center justify-center">
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform" onclick="openPreviewModal('Dynamic Broadcast Logo Sting', '16:9', '0:08', 'Logo &amp; Outro')">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<span class="absolute bottom-2 right-2 px-space-sm py-0.5 bg-on-background/80 text-surface font-mono-code text-mono-code rounded">0:08</span>
+<span class="absolute top-2 left-2 px-space-sm py-0.5 bg-surface-container-lowest/90 text-on-surface font-mono-code text-mono-code rounded shadow-sm">16:9</span>
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors fav-btn" onclick="toggleFavorite(this)">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-space-sm py-0.5 bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm rounded uppercase font-semibold">Logo &amp; Outro</span>
+<span class="font-mono-code text-label-sm text-on-surface-variant">1.1k Uses</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Dynamic Broadcast Logo Sting Outro</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">High impact 8-second end card with auto-adapting social handle handles, subscribe button pop, and audio swoosh.</p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs shadow-[0_-1px_0_rgba(199,196,216,0.2)]">
+<button class="flex-1 py-space-xs px-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg rounded-lg text-center transition-colors" onclick="openPreviewModal('Dynamic Broadcast Logo Sting', '16:9', '0:08', 'Logo &amp; Outro')">
+                Preview
+              </button>
+<button class="flex-1 py-space-xs px-space-sm bg-primary-container text-on-primary hover:opacity-95 font-label-lg text-label-lg rounded-lg text-center transition-opacity shadow-sm">
+                Use Template
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Quick Preview Modal Drawer -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-on-background/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" id="previewModal">
+<div class="bg-surface-container-lowest w-11/12 max-w-4xl rounded-xl shadow-2xl overflow-hidden flex flex-col transform scale-95 transition-transform duration-200" id="previewModalContent">
+<!-- Modal Header -->
+<div class="flex items-center justify-between px-space-lg py-space-md bg-surface-container-low">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-primary text-[22px]">play_circle</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface" id="modalTemplateTitle">Template Preview</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="modalTemplateMeta">16:9 Broadcast Format</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant flex items-center justify-center transition-colors" onclick="closePreviewModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Modal Body (Canvas & Live Timeline Mockup) -->
+<div class="p-space-lg flex flex-col lg:flex-row gap-space-lg">
+<!-- Live Video Mockup Monitor -->
+<div class="flex-1 bg-surface-container-highest rounded-lg overflow-hidden flex flex-col items-center justify-center relative min-h-[300px]">
+<img class="w-full h-full object-cover" data-alt="High resolution broadcast news video timeline preview monitor in live playback state showing dynamic text overlays and lower thirds in bright crisp studio colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3SkhS5-WttB4MoybRrT-xU-XnF1ersa1hq1bauY0wIskbP0Nk2mGHH0-TUJW6ZvNqNV-rPM92ak7Tvd0ECEk7KIKCnDh6LRf1tAKnsMl2oLdBcJ3nffI-QGpz5qLdx-ERDkfgWh8Z5ffuJH6XG1Wm3BG-blyFYLxmNKpefLL77RfyKC8ChlzhwOhrYXxa7vv0a6oOu0vW8bPdYNYHF3ERpMBmtASe8Ol5iYKTtRQ"/>
+<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md px-space-md py-space-xs rounded-lg flex items-center justify-between shadow-md">
+<div class="flex items-center gap-space-sm text-on-surface">
+<button class="material-symbols-outlined text-[20px] text-primary" id="modalPlayToggle">play_arrow</button>
+<span class="font-mono-code text-mono-code">00:08:14</span>
+<span class="text-on-surface-variant font-mono-code text-mono-code">/ 00:30:00</span>
+</div>
+<div class="flex-1 mx-space-md h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="w-1/3 h-full bg-primary-container rounded-full"></div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</div>
+</div>
+</div>
+<!-- Template Specs & Layer Inspector -->
+<div class="w-full lg:w-80 flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Key Properties</span>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between"><span class="text-on-surface-variant">Resolution</span><span class="font-mono-code text-on-surface font-semibold">3840 x 2160 (4K)</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Frame Rate</span><span class="font-mono-code text-on-surface font-semibold">60 FPS</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Color Space</span><span class="font-mono-code text-on-surface font-semibold">Rec. 709</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Audio Track</span><span class="font-mono-code text-tertiary font-semibold">Stereo 48kHz Included</span></div>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Included Layers</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-space-xs py-0.5 bg-surface-container text-on-surface font-mono-code text-label-sm rounded">4x Video Tracks</span>
+<span class="px-space-xs py-0.5 bg-surface-container text-on-surface font-mono-code text-label-sm rounded">3x Lower-Thirds</span>
+<span class="px-space-xs py-0.5 bg-surface-container text-on-surface font-mono-code text-label-sm rounded">Multi-Track Typography</span>
+<span class="px-space-xs py-0.5 bg-surface-container text-on-surface font-mono-code text-label-sm rounded">Audio Master</span>
+</div>
+</div>
+</div>
+<!-- Bottom Actions -->
+<div class="flex flex-col gap-space-xs">
+<button class="w-full py-space-sm bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg hover:opacity-95 transition-opacity flex items-center justify-center gap-space-xs shadow-md">
+<span class="material-symbols-outlined text-[18px]">movie_edit</span>
+<span>Open in Video Studio</span>
+</button>
+<button class="w-full py-space-xs bg-surface-container-low text-on-surface-variant hover:text-on-surface rounded-lg font-label-lg text-label-lg transition-colors" onclick="closePreviewModal()">
+              Cancel
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
     </main>
 
     <!-- ═════════════════════════════════════════════════════════════════ -->
@@ -1732,45 +2314,71 @@
 
   </div>
 
-  <!-- Unified Navigation & Interactive Scripts -->
+    <!-- Unified Navigation & Interactive Scripts -->
   <script>
     function switchMainView(view) {
-      const vidView = document.getElementById('view-video-dashboard');
+      const vidDashView = document.getElementById('view-video-dashboard');
       const compView = document.getElementById('view-composer');
+      const tmplView = document.getElementById('view-video-templates');
       const vidHdr = document.getElementById('header-video');
       const compHdr = document.getElementById('header-composer');
       const navPub = document.getElementById('nav-publishing');
       const navVidDash = document.getElementById('nav-video-dashboard');
+      const navTmpl = document.getElementById('nav-video-templates');
       const videoSub = document.getElementById('videoSubmenu');
       const videoChev = document.getElementById('videoChevron');
 
-      if (view === 'video-dashboard') {
-        vidView.classList.remove('hidden');
-        compView.classList.add('hidden');
-        vidHdr.classList.remove('hidden');
-        compHdr.classList.add('hidden');
+      const activeClass = "flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-surface-container-high text-primary font-semibold rounded-lg cursor-pointer";
+      const inactiveClass = "flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer";
 
-        // Style Nav
-        navVidDash.className = "flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-surface-container-high text-primary font-semibold rounded-lg cursor-pointer";
-        navPub.className = "flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer";
+      if (view === 'video-templates' || view === 'templates') {
+        if (tmplView) tmplView.classList.remove('hidden');
+        if (vidDashView) vidDashView.classList.add('hidden');
+        if (compView) compView.classList.add('hidden');
+        if (vidHdr) vidHdr.classList.remove('hidden');
+        if (compHdr) compHdr.classList.add('hidden');
 
-        // Expand submenu
-        videoSub.classList.remove('hidden');
-        videoChev.style.transform = 'rotate(180deg)';
+        if (navTmpl) navTmpl.className = activeClass;
+        if (navVidDash) navVidDash.className = inactiveClass;
+        if (navPub) navPub.className = inactiveClass;
 
+        if (videoSub) videoSub.classList.remove('hidden');
+        if (videoChev) videoChev.style.transform = 'rotate(180deg)';
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (history.pushState) {
+          history.pushState(null, null, '?view=templates');
+        }
+      } else if (view === 'video-dashboard' || view === 'video') {
+        if (vidDashView) vidDashView.classList.remove('hidden');
+        if (tmplView) tmplView.classList.add('hidden');
+        if (compView) compView.classList.add('hidden');
+        if (vidHdr) vidHdr.classList.remove('hidden');
+        if (compHdr) compHdr.classList.add('hidden');
+
+        if (navVidDash) navVidDash.className = activeClass;
+        if (navTmpl) navTmpl.className = inactiveClass;
+        if (navPub) navPub.className = inactiveClass;
+
+        if (videoSub) videoSub.classList.remove('hidden');
+        if (videoChev) videoChev.style.transform = 'rotate(180deg)';
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         if (history.pushState) {
           history.pushState(null, null, '?view=video');
         }
       } else {
-        compView.classList.remove('hidden');
-        vidView.classList.add('hidden');
-        compHdr.classList.remove('hidden');
-        vidHdr.classList.add('hidden');
+        if (compView) compView.classList.remove('hidden');
+        if (vidDashView) vidDashView.classList.add('hidden');
+        if (tmplView) tmplView.classList.add('hidden');
+        if (compHdr) compHdr.classList.remove('hidden');
+        if (vidHdr) vidHdr.classList.add('hidden');
 
-        // Style Nav
-        navPub.className = "flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-surface-container-high text-primary font-semibold rounded-lg cursor-pointer";
-        navVidDash.className = "flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer";
+        if (navPub) navPub.className = activeClass;
+        if (navVidDash) navVidDash.className = inactiveClass;
+        if (navTmpl) navTmpl.className = inactiveClass;
 
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         if (history.pushState) {
           history.pushState(null, null, '?view=composer');
         }
@@ -1787,23 +2395,95 @@
         videoChev.style.transform = 'rotate(180deg)';
         switchMainView('video-dashboard');
       } else {
-        // Even when toggling, switch to video dashboard as requested
         switchMainView('video-dashboard');
       }
     }
 
+    // Template Market Interactivity Functions
+    function initTemplatesEngine() {
+      // Filter Interactive States
+      document.querySelectorAll('.aspect-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.aspect-btn').forEach(b => {
+            b.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm', 'active');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm', 'active');
+          btn.classList.remove('text-on-surface-variant');
+        });
+      });
+
+      document.querySelectorAll('.category-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          document.querySelectorAll('.category-pill').forEach(p => {
+            p.classList.remove('bg-primary-container', 'text-on-primary', 'font-semibold', 'shadow-sm', 'active');
+            p.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          });
+          pill.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold', 'shadow-sm', 'active');
+          pill.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+        });
+      });
+    }
+
+    // Favorite Heart Toggle
+    function toggleFavorite(btn) {
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon.style.fontVariationSettings && icon.style.fontVariationSettings.includes("'FILL' 1")) {
+        icon.style.fontVariationSettings = "'FILL' 0";
+        btn.classList.remove('text-error');
+        btn.classList.add('text-on-surface-variant');
+      } else {
+        icon.style.fontVariationSettings = "'FILL' 1";
+        btn.classList.remove('text-on-surface-variant');
+        btn.classList.add('text-error');
+      }
+    }
+
+    // Quick Preview Modal Handler
+    function openPreviewModal(title, ratio, duration, category) {
+      const modal = document.getElementById('previewModal');
+      const content = document.getElementById('previewModalContent');
+      const titleEl = document.getElementById('modalTemplateTitle');
+      const metaEl = document.getElementById('modalTemplateMeta');
+      if (titleEl) titleEl.innerText = title;
+      if (metaEl) metaEl.innerText = `${ratio} • ${duration} duration • ${category}`;
+      
+      if (modal && content) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        content.classList.remove('scale-95');
+        content.classList.add('scale-100');
+      }
+    }
+
+    function closePreviewModal() {
+      const modal = document.getElementById('previewModal');
+      const content = document.getElementById('previewModalContent');
+      if (modal && content) {
+        content.classList.remove('scale-100');
+        content.classList.add('scale-95');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+      }
+    }
+
+    // Keyboard shortcut for closing preview (Esc)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePreviewModal();
+    });
+
     // Auto-initialize view based on URL query param
     window.addEventListener('DOMContentLoaded', () => {
+      initTemplatesEngine();
       const params = new URLSearchParams(window.location.search);
       const view = params.get('view');
-      if (view === 'composer' || view === 'publishing') {
+      if (view === 'templates' || view === 'video-templates') {
+        switchMainView('video-templates');
+      } else if (view === 'composer' || view === 'publishing') {
         switchMainView('composer');
       } else {
         switchMainView('video-dashboard');
       }
     });
 
-    
     (function initStudioEngine() {
       // 1. Channel Selector Pills Toggling
       const channelPills = document.querySelectorAll('.channel-pill');
@@ -1937,8 +2617,6 @@
         });
       }
     })();
-  
   </script>
-
 </body>
 </html>
