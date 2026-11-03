@@ -170,7 +170,7 @@
             <span class="material-symbols-outlined text-[18px]">video_library</span>
             <span>Video Templates</span>
           </a>
-          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="#">
+          <a id="nav-create-video" onclick="switchMainView('create-video')" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="javascript:void(0);">
             <span class="material-symbols-outlined text-[18px]">movie_edit</span>
             <span>Create New Video</span>
           </a>
@@ -1499,6 +1499,831 @@
 
     </main>
 
+    
+    <!-- ═════════════════════════════════════════════════════════════════ -->
+    <!-- VIEW CONTAINER 4: CREATE NEW VIDEO (STUDIO NLE WORKSPACE)       -->
+    <!-- ═════════════════════════════════════════════════════════════════ -->
+    <main id="view-create-video" class="studio-view hidden relative pt-16 bg-surface min-h-screen">
+<div class="flex flex-col w-full text-on-surface select-none font-body-md">
+<!-- Workbench Header Sub-Navigation (Contextual to Project) -->
+<div class="flex items-center justify-between px-space-lg py-space-sm bg-surface-container-lowest shadow-sm z-30">
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-space-sm">
+<a class="p-space-xs rounded-lg hover:bg-surface-container-low transition-colors text-on-surface-variant flex items-center justify-center" href="#">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</a>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight font-semibold">Evening Prime Bulletin - Ep. 104</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-mono-code text-label-sm">4K Broadcast</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span>
+<span>Cloud sync saved 12s ago</span>
+<span class="text-outline-variant">•</span>
+<span>Multi-Channel Audio & Subtitles</span>
+</div>
+</div>
+</div>
+<div class="h-6 w-px bg-surface-container-highest"></div>
+<div class="flex items-center gap-space-xs">
+<button class="p-space-xs rounded hover:bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors flex items-center" id="btn-undo" title="Undo (Cmd+Z)">
+<span class="material-symbols-outlined text-[18px]">undo</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors flex items-center" id="btn-redo" title="Redo (Cmd+Shift+Z)">
+<span class="material-symbols-outlined text-[18px]">redo</span>
+</button>
+<div class="h-4 w-px bg-surface-container-highest mx-space-xs"></div>
+<button class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">auto_fix_high</span>
+          Auto-Caption AI
+        </button>
+<button class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-secondary">translate</span>
+          Smart Script Sync
+        </button>
+</div>
+</div>
+<!-- Right Action Group -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded-lg">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="font-mono-code text-mono-code text-on-surface font-semibold">REC PROXY: ON</span>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">share</span>
+        Collaborate
+      </button>
+<div class="flex items-center">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-l-lg bg-primary-container text-on-primary font-label-lg text-label-lg hover:opacity-95 transition-opacity shadow-sm">
+<span class="material-symbols-outlined text-[18px]">movie_filter</span>
+          Export Video
+        </button>
+<button class="px-space-xs py-1.5 rounded-r-lg bg-primary text-on-primary hover:opacity-90 transition-opacity" title="Quick Publish Targets">
+<span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Non-Linear Workspace (Top 3 Columns + Bottom Timeline) -->
+<div class="grid grid-cols-12 gap-1 p-1 bg-surface-container min-h-[calc(100vh-8.5rem)]">
+<!-- ========================================================================= -->
+<!-- 1. LEFT PANEL: Asset & Resource Browser (~280px equivalent: 3 cols) -->
+<!-- ========================================================================= -->
+<div class="col-span-3 flex bg-surface-container-lowest rounded shadow-sm overflow-hidden h-[540px]">
+<!-- Micro Side Rail (Vertical Tabs) -->
+<div class="w-14 bg-surface-container-low flex flex-col items-center py-space-sm gap-space-xs flex-shrink-0">
+<button class="w-10 h-10 rounded flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Media">
+<span class="material-symbols-outlined text-[20px]">video_library</span>
+<span class="text-[9px] font-label-sm leading-none mt-0.5">Media</span>
+</button>
+<button class="w-10 h-10 rounded flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Templates">
+<span class="material-symbols-outlined text-[20px]">dashboard_customize</span>
+<span class="text-[9px] font-label-sm leading-none mt-0.5">Templates</span>
+</button>
+<button class="w-10 h-10 rounded flex flex-col items-center justify-center bg-surface-container-highest text-primary font-semibold shadow-sm" title="News Graphics">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">live_tv</span>
+<span class="text-[9px] font-label-sm leading-none mt-0.5">Graphics</span>
+</button>
+<button class="w-10 h-10 rounded flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Text">
+<span class="material-symbols-outlined text-[20px]">title</span>
+<span class="text-[9px] font-label-sm leading-none mt-0.5">Text</span>
+</button>
+<button class="w-10 h-10 rounded flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Audio">
+<span class="material-symbols-outlined text-[20px]">graphic_eq</span>
+<span class="text-[9px] font-label-sm leading-none mt-0.5">Audio</span>
+</button>
+<button class="w-10 h-10 rounded flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Subtitles">
+<span class="material-symbols-outlined text-[20px]">closed_caption</span>
+<span class="text-[9px] font-label-sm leading-none mt-0.5">Subtitles</span>
+</button>
+<button class="w-10 h-10 rounded flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Effects">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span class="text-[9px] font-label-sm leading-none mt-0.5">FX</span>
+</button>
+<button class="w-10 h-10 rounded flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Transitions">
+<span class="material-symbols-outlined text-[20px]">swap_horiz</span>
+<span class="text-[9px] font-label-sm leading-none mt-0.5">Transitions</span>
+</button>
+<button class="w-10 h-10 rounded flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors mt-auto" title="Brand Assets">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="text-[9px] font-label-sm leading-none mt-0.5">Brand</span>
+</button>
+</div>
+<!-- Asset Explorer Content (Active: News Graphics & Text) -->
+<div class="flex-1 flex flex-col overflow-hidden bg-surface-container-lowest">
+<!-- Panel Header & Filter Strip -->
+<div class="p-space-sm bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-label-lg font-bold text-on-surface tracking-tight">Newsroom Graphics</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container-low text-on-surface-variant" title="Import Asset">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-low text-on-surface-variant" title="Filter Assets">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</div>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2 top-2 text-[15px] text-on-surface-variant">search</span>
+<input class="w-full pl-7 pr-2 py-1 bg-surface-container-low rounded text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest" placeholder="Search lower thirds, tickers, bugs..." type="text"/>
+</div>
+<!-- Filter Tags -->
+<div class="flex gap-1 overflow-x-auto pb-0.5">
+<button class="px-2 py-0.5 rounded text-[11px] font-label-md bg-primary-container text-on-primary whitespace-nowrap">Breaking News</button>
+<button class="px-2 py-0.5 rounded text-[11px] font-label-md bg-surface-container text-on-surface-variant hover:text-on-surface whitespace-nowrap">Lower Thirds</button>
+<button class="px-2 py-0.5 rounded text-[11px] font-label-md bg-surface-container text-on-surface-variant hover:text-on-surface whitespace-nowrap">Tickers</button>
+<button class="px-2 py-0.5 rounded text-[11px] font-label-md bg-surface-container text-on-surface-variant hover:text-on-surface whitespace-nowrap">B-Roll</button>
+</div>
+</div>
+<!-- Asset Grid / List -->
+<div class="flex-1 overflow-y-auto p-space-sm space-y-space-md">
+<!-- Section 1: Breaking Alert Strips -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm font-semibold uppercase text-error tracking-wider">Live Breaking Headers</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant">4 Presets</span>
+</div>
+<div class="space-y-2">
+<!-- Item 1: Active In-Use Banner -->
+<div class="group relative rounded-lg bg-surface-container-low hover:bg-surface-container p-2 cursor-grab transition-all shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="px-1.5 py-0.5 rounded bg-error text-on-error font-mono-code text-[9px] font-bold uppercase tracking-wider">LIVE BREAKING</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant">00:08 Intro</span>
+</div>
+<div class="w-full h-11 bg-gradient-to-r from-error via-error-container to-surface-container-highest rounded flex items-center px-2 justify-between overflow-hidden">
+<div class="flex flex-col text-left">
+<span class="font-bold text-[10px] text-on-error tracking-wide">FEDERAL BUDGET UPDATE</span>
+<span class="text-[9px] text-on-error font-medium">National Assembly Budget Session</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-error">chevron_right</span>
+</div>
+<div class="mt-1 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span>Multi-Track Audio Sync</span>
+<button class="text-primary font-semibold hover:underline text-[10px]">Add Track</button>
+</div>
+</div>
+<!-- Item 2: Reporter Lower Third with Badge -->
+<div class="group relative rounded-lg bg-surface-container-low hover:bg-surface-container p-2 cursor-grab transition-all shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary font-mono-code text-[9px] font-bold">REPORTER TAG</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant">Dual-Line</span>
+</div>
+<div class="w-full h-10 bg-surface-container-lowest rounded flex items-center px-2 gap-2 shadow-sm">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[10px] font-bold">ID</div>
+<div class="flex flex-col">
+<span class="font-bold text-[10px] text-on-surface leading-tight">Kamran Shahid | Islamabad</span>
+<span class="text-[9px] text-on-surface-variant leading-tight">Senior Parliamentary Analyst</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Scrolling Tickers -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm font-semibold uppercase text-on-surface-variant tracking-wider">Broadcast News Tickers</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant">Infinite Loop</span>
+</div>
+<div class="rounded-lg bg-surface-container-low hover:bg-surface-container p-2 cursor-grab transition-all shadow-sm">
+<div class="w-full h-8 bg-surface-container-highest rounded flex items-center px-2 overflow-hidden text-right justify-end">
+<span class="font-body-md text-label-md text-on-surface font-semibold truncate tracking-normal">Breaking News: Energy Prices Stability Announced</span>
+</div>
+<div class="mt-1 flex items-center justify-between text-[10px] text-on-surface-variant">
+<span>Speed: 120 px/sec</span>
+<span class="text-tertiary font-semibold">RTL Engine</span>
+</div>
+</div>
+</div>
+<!-- Section 3: Project Media & Channel B-Roll -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm font-semibold uppercase text-on-surface-variant tracking-wider">Current B-Roll Library</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant">8 Clips</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="group relative rounded overflow-hidden bg-surface-container-highest aspect-video flex flex-col justify-end p-1 shadow-sm">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Television broadcast control room monitor bank displaying news anchor studio multicam feeds in crisp blue and daylight studio lighting with professional broadcast studio teleprompter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEZSvuzM9yc0ikeJHoWEK89XIGlx7Ay7cCSLAQd7-M5Mg0R561RDz_U6DDXiuObG6mXpS6sHSUtXu9u0XtcbHvxNkjXHpmWSBhgzZroxd5romTXTmr3Du5mBS7Xyyxujb47F8HO5qC9xcRUDzKSDOda3knM1B715QIFpcHt324cujDvpepVTGkEU3A4gGMWmIyFrNrdz2U-huPWGBonmAH6AvDw-KiYUiUclyWI9U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent"></div>
+<span class="relative z-10 font-mono-code text-[9px] text-inverse-on-surface">PARLIAMENT_EXT.mp4</span>
+<span class="absolute top-1 right-1 z-10 px-1 rounded bg-inverse-surface/80 text-[8px] font-mono-code text-inverse-on-surface">00:42</span>
+</div>
+<div class="group relative rounded overflow-hidden bg-surface-container-highest aspect-video flex flex-col justify-end p-1 shadow-sm">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="News television camera lens with red tally light illuminated in a modern television newsroom setting with blurred journalists at high tech editing workstations." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKrr2asRXe9-aUL3lklBKZdVOz00MpO_kQkvmjTC1QdpS7bx0fUh9fRLJUTtcOqDZUgA1UA4JeCOexrVC7TZ2BryhlyB6CGR1uBhNgWWfYcY_I-2gVU9_y0V73rhYENaOelHafVI2LSrOy6AKpP43DctwQsKL4HZnkvB0e40BL_iUD-PTKOqYcavYcNUQSkhwPgRslILHnsT6h4BV-PDBPu33a8wiwJgoUuBk1ZI8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent"></div>
+<span class="relative z-10 font-mono-code text-[9px] text-inverse-on-surface">STUDIO_CAM_B.mov</span>
+<span class="absolute top-1 right-1 z-10 px-1 rounded bg-inverse-surface/80 text-[8px] font-mono-code text-inverse-on-surface">01:15</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- 2. CENTER PANEL: Video Preview Canvas & Transport Monitor (6 cols) -->
+<!-- ========================================================================= -->
+<div class="col-span-6 flex flex-col bg-surface-container-lowest rounded shadow-sm overflow-hidden h-[540px]">
+<!-- Canvas Control Bar (Top Bar) -->
+<div class="flex items-center justify-between px-space-md py-space-xs bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded text-label-md font-label-md text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-primary">aspect_ratio</span>
+<select class="bg-transparent text-on-surface font-semibold focus:outline-none cursor-pointer">
+<option>16:9 Broadcast (1920x1080)</option>
+<option>9:16 Shorts / Reels (1080x1920)</option>
+<option>1:1 Square Feed (1080x1080)</option>
+<option>4:5 Social Portrait</option>
+</select>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded text-label-md font-label-md text-on-surface">
+<span class="font-mono-code font-semibold text-[11px]">4K (3840×2160)</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">expand_more</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded text-label-md font-label-md text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">zoom_in</span>
+<span class="font-mono-code text-[11px]">Fit (64%)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="p-1.5 rounded bg-surface-container text-primary hover:bg-surface-container-high transition-colors" title="Broadcast Safe Margins Guide (Active)">
+<span class="material-symbols-outlined text-[16px]">grid_goldenratio</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-low text-on-surface-variant" title="Color Scopes / Vectorscope">
+<span class="material-symbols-outlined text-[16px]">graphic_eq</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-low text-on-surface-variant" title="Split Screen Comparison">
+<span class="material-symbols-outlined text-[16px]">splitscreen</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-low text-on-surface-variant" title="Snapshot Frame to Media Bin">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+</button>
+</div>
+</div>
+<!-- Main Video Canvas Stage -->
+<div class="relative flex-1 bg-surface-dim flex items-center justify-center overflow-hidden p-space-md">
+<!-- Canvas Frame Container (16:9 constraint with shadow) -->
+<div class="relative w-full max-w-[700px] aspect-video bg-inverse-surface rounded shadow-xl overflow-hidden flex items-center justify-center">
+<!-- Layer 0: Main Video Footage Asset -->
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="High quality news broadcast anchor in elegant navy blue blazer speaking directly to camera in an ultra modern pristine lit TV news desk studio with subtle LED video walls in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGd_ufwzBiuCzAKzKBMA67l80zYSqy1-H3Bbnj1O-PjxAuMA7YzX3MieFJthQpR7vCzc60D5JSdIepGcLCcbN3ihMxSpFCez3X8I_u82cFa2cgQ2YS3ttIzhYRv4OkKTcsmw3UrJjxYTZ1b7bWhknUmVwYsBuOO9OQan21TNOaWvCF_XSmqiI5n0lPoHxPRvfMq4jBblg98ZgQ8YO83C0ETTHNaEUxAwcXdt1Ir30"/>
+<!-- Layer 1: Broadcast Safe Margin Guidelines Overlay (Subtle White Dotted Frame) -->
+<div class="absolute inset-6 pointer-events-none rounded opacity-30 flex flex-col justify-between">
+<div class="flex justify-between p-1">
+<span class="font-mono-code text-[8px] text-surface-container-lowest">TITLE SAFE 90%</span>
+<span class="font-mono-code text-[8px] text-surface-container-lowest">+</span>
+</div>
+<div class="flex justify-between p-1">
+<span class="font-mono-code text-[8px] text-surface-container-lowest">+</span>
+<span class="font-mono-code text-[8px] text-surface-container-lowest">ACTION SAFE 93%</span>
+</div>
+</div>
+<!-- Layer 2: Station Watermark Bug (Top Right) -->
+<div class="absolute top-4 right-5 z-20 flex items-center gap-1.5 bg-inverse-surface/60 backdrop-blur-md px-2 py-1 rounded">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span class="font-headline-sm text-[11px] font-bold text-inverse-on-surface tracking-wider">SF NEWS HD</span>
+<span class="px-1 py-0.2 rounded bg-error text-on-error font-mono-code text-[8px] font-bold">LIVE</span>
+</div>
+<!-- Layer 3: Picture-in-Picture (PIP) Inset Clip (Top Left) -->
+<div class="absolute top-4 left-5 z-20 w-36 aspect-video bg-inverse-surface rounded overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Exterior high angle wide shot of federal parliament building with government official motorcade arriving under daylight sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcY4rxJ0xvvw6bSmP_fGC5FVgBDVoxwiGJ7lXCmtE8_a-hT4flZ25tusRVc86d6i_Rq5LPql7pEtBN6RGzmZWlBnzekM4fRrRdXUMPw7_o7Gd8sPoDtxoSo_TslwZb55mJMTk-aBbdZzi3bFWfZY06BaD6uYKtHAEBSCrWZlpjkE1X_4a-bAltvQ-1X4yf-O80W1QWcEr1zUWVVodL5NiTJDgKyXkMVQvBf9N9QKc"/>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 px-1 py-0.5 flex justify-between items-center">
+<span class="font-mono-code text-[8px] text-inverse-on-surface">PARLIAMENT HILL</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+</div>
+</div>
+<!-- Layer 4: Interactive Selection Box around Active Breaking News Banner -->
+<div class="absolute bottom-4 inset-x-6 z-20 flex flex-col gap-1 cursor-move">
+<!-- Selection Highlight Rings -->
+<div class="relative bg-surface-container-lowest/10 backdrop-blur-xs rounded p-0.5">
+<!-- Reporter Identification Strip -->
+<div class="flex items-center">
+<div class="bg-secondary px-3 py-1 text-on-secondary font-headline-sm text-[11px] font-bold uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-error-container"></span>
+                  ISLAMABAD - LIVE
+                </div>
+<div class="bg-surface-container-lowest text-on-surface px-3 py-1 font-label-lg text-[11px] font-semibold flex items-center gap-2 shadow-sm">
+<span>Kamran Shahid</span>
+<span class="text-on-surface-variant font-normal">| Special Correspondent</span>
+</div>
+</div>
+<!-- Main Bilingual Breaking News Crimson Banner -->
+<div class="bg-error text-on-error p-2 shadow-lg flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-error font-mono-code text-[10px] font-black uppercase">BREAKING</span>
+<span class="font-headline-sm text-[13px] font-bold uppercase tracking-wide text-on-error">FEDERAL CABINET APPROVES ANNUAL BUDGET DRAFT</span>
+</div>
+<span class="font-mono-code text-[10px] opacity-80">14:24 PKT</span>
+</div>
+<!-- Secondary Broadcast Sub-Line -->
+<div class="mt-1 pt-1 bg-error-container/20 px-2 py-0.5 rounded text-right">
+<span class="font-headline-md text-[14px] font-bold text-on-error leading-normal tracking-wide">
+                    BREAKING: Federal Cabinet Officially Approves Annual Fiscal Budget
+                  </span>
+</div>
+</div>
+<!-- Live Scrolling News Ticker -->
+<div class="bg-inverse-surface text-inverse-on-surface px-2 py-0.5 flex items-center justify-between text-[10px] font-mono-code">
+<div class="flex items-center gap-2">
+<span class="text-tertiary-fixed font-bold">KSE-100 ▲ +412.30</span>
+<span class="text-outline-variant">|</span>
+<span class="text-surface-container-high">GOLD: 10g Rs 218,400</span>
+<span class="text-outline-variant">|</span>
+<span class="text-inverse-on-surface truncate max-w-[240px]">Budget Speech Will Be Broadcast Live at 5:00 PM EST</span>
+</div>
+<span class="text-primary-fixed-dim font-bold">SF24</span>
+</div>
+<!-- Transform Gizmo / Anchor points -->
+<div class="absolute -top-1 -left-1 w-2.5 h-2.5 bg-primary rounded-full shadow-sm"></div>
+<div class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-primary rounded-full shadow-sm"></div>
+<div class="absolute -bottom-1 -left-1 w-2.5 h-2.5 bg-primary rounded-full shadow-sm"></div>
+<div class="absolute -bottom-1 -right-1 w-2.5 h-2.5 bg-primary rounded-full shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Playback Transport Controls (Bottom Canvas Toolbar) -->
+<div class="flex items-center justify-between px-space-md py-space-sm bg-surface-container-lowest shadow-sm">
+<!-- Timecode Display -->
+<div class="flex items-center gap-space-sm">
+<span class="font-mono-code text-headline-sm font-bold text-primary tracking-tight">00:01:24:18</span>
+<span class="text-outline-variant font-mono-code">/</span>
+<span class="font-mono-code text-body-sm text-on-surface-variant">00:03:00:00</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-mono-code text-[10px]">59.94 FPS</span>
+</div>
+<!-- Center Player Transport Buttons -->
+<div class="flex items-center gap-space-xs">
+<button class="w-7 h-7 rounded hover:bg-surface-container-low text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" title="Jump to Start (Home)">
+<span class="material-symbols-outlined text-[18px]">first_page</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-surface-container-low text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" title="Frame Backward (Left Arrow)">
+<span class="material-symbols-outlined text-[18px]">fast_rewind</span>
+</button>
+<button class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center hover:opacity-95 transition-transform active:scale-95 shadow-md" id="main-play-btn" title="Play/Pause (Space)">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-surface-container-low text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" title="Frame Forward (Right Arrow)">
+<span class="material-symbols-outlined text-[18px]">fast_forward</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-surface-container-low text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" title="Jump to End (End)">
+<span class="material-symbols-outlined text-[18px]">last_page</span>
+</button>
+<button class="w-7 h-7 rounded bg-surface-container text-primary flex items-center justify-center ml-1" title="Loop Playback Active">
+<span class="material-symbols-outlined text-[16px]">repeat</span>
+</button>
+</div>
+<!-- Audio Volume Scrubber & Fullscreen Expansion -->
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">volume_up</span>
+<input class="w-16 h-1 bg-surface-container-highest rounded-lg accent-primary cursor-pointer" type="range" value="82"/>
+<span class="font-mono-code text-[10px] text-on-surface-variant w-7">-3.2dB</span>
+</div>
+<button class="p-1 rounded hover:bg-surface-container-low text-on-surface-variant" title="Pop-out Window">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-low text-on-surface-variant" title="Fullscreen Preview (F)">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- 3. RIGHT PANEL: Inspector & Element Properties (~300px equivalent: 3 cols) -->
+<!-- ========================================================================= -->
+<div class="col-span-3 flex flex-col bg-surface-container-lowest rounded shadow-sm overflow-hidden h-[540px]">
+<!-- Inspector Tabs -->
+<div class="flex items-center bg-surface-container-low shadow-sm">
+<button class="flex-1 py-2 text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Video</button>
+<button class="flex-1 py-2 text-center font-label-md text-label-md bg-surface-container-lowest text-primary font-bold shadow-sm">Text &amp; Graphics</button>
+<button class="flex-1 py-2 text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Motion FX</button>
+<button class="flex-1 py-2 text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Color / LUT</button>
+</div>
+<!-- Inspector Property Fields -->
+<div class="flex-1 overflow-y-auto p-space-sm space-y-space-md">
+<!-- Element Header Badge -->
+<div class="flex items-center justify-between pb-space-xs shadow-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded bg-error"></span>
+<span class="font-headline-sm text-body-md font-bold text-on-surface">Red Breaking News Banner</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-container text-on-tertiary font-mono-code text-[10px]">Active #T2</span>
+</div>
+<!-- Typography & Bilingual Inputs -->
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider">Dual Headlines</span>
+<!-- English Input -->
+<div>
+<label class="block text-[11px] font-medium text-on-surface-variant mb-1">Primary English Title</label>
+<input class="w-full px-2.5 py-1.5 bg-surface-container-low rounded text-body-sm font-semibold text-on-surface focus:outline-none focus:ring-1 focus:ring-primary-container" type="text" value="FEDERAL CABINET APPROVES ANNUAL BUDGET DRAFT"/>
+</div>
+<!-- Secondary Broadcast Headline Input -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="block text-[11px] font-medium text-on-surface-variant">Secondary Headline / Subtitle Banner</label>
+<span class="text-[10px] text-tertiary font-medium">Jameel Noori Engaged</span>
+</div>
+<textarea class="w-full px-2.5 py-1.5 bg-surface-container-low rounded text-left font-body-md text-label-lg text-on-surface focus:outline-none focus:ring-1 focus:ring-primary-container leading-relaxed" rows="2">BREAKING: Federal Cabinet Officially Approves Annual Fiscal Budget</textarea>
+</div>
+</div>
+<!-- Typography Styling Grid -->
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider">Font &amp; Layout</span>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<label class="text-[10px] text-on-surface-variant block mb-1">Primary Font</label>
+<select class="w-full px-2 py-1 bg-surface-container-low rounded text-label-md font-medium text-on-surface">
+<option>Inter Display</option>
+<option>Montserrat</option>
+<option>Helvetica Neue</option>
+</select>
+</div>
+<div>
+<label class="text-[10px] text-on-surface-variant block mb-1">Secondary Font</label>
+<select class="w-full px-2 py-1 bg-surface-container-low rounded text-label-md font-medium text-on-surface">
+<option>Roboto Flex</option>
+<option>Inter Display</option>
+<option>AlQalam Taj</option>
+</select>
+</div>
+</div>
+<!-- Size, Weight, Alignment -->
+<div class="flex items-center justify-between gap-2 pt-1">
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded flex-1">
+<span class="text-[11px] text-on-surface-variant">Size</span>
+<input class="w-10 bg-transparent text-right font-mono-code text-[11px] font-bold" type="text" value="36px"/>
+</div>
+<div class="flex items-center bg-surface-container-low rounded p-0.5">
+<button class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface shadow-xs font-bold text-[11px]">B</button>
+<button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface text-[11px]">I</button>
+<button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface text-[11px]">U</button>
+</div>
+<div class="flex items-center bg-surface-container-low rounded p-0.5">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">format_align_left</span></button>
+<button class="p-1 rounded bg-surface-container-lowest text-primary shadow-xs"><span class="material-symbols-outlined text-[15px]">format_align_center</span></button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">format_align_right</span></button>
+</div>
+</div>
+<!-- Color Swatches -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="flex items-center justify-between p-1.5 bg-surface-container-low rounded">
+<span class="text-[11px] text-on-surface-variant">Text Fill</span>
+<div class="flex items-center gap-1">
+<span class="w-4 h-4 rounded bg-surface-container-lowest shadow-sm"></span>
+<span class="font-mono-code text-[10px]">#FFFFFF</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-1.5 bg-surface-container-low rounded">
+<span class="text-[11px] text-on-surface-variant">Banner Red</span>
+<div class="flex items-center gap-1">
+<span class="w-4 h-4 rounded bg-error shadow-sm"></span>
+<span class="font-mono-code text-[10px]">#BA1A1A</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Position & Transform Scrubbers -->
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider">Coordinates &amp; Scale</span>
+<div class="grid grid-cols-2 gap-2">
+<!-- X Position -->
+<div class="flex items-center justify-between bg-surface-container-low px-2 py-1 rounded cursor-col-resize">
+<span class="font-mono-code text-[11px] text-on-surface-variant">Pos X</span>
+<span class="font-mono-code text-[11px] font-bold text-on-surface">0 px</span>
+</div>
+<!-- Y Position -->
+<div class="flex items-center justify-between bg-surface-container-low px-2 py-1 rounded cursor-col-resize">
+<span class="font-mono-code text-[11px] text-on-surface-variant">Pos Y</span>
+<span class="font-mono-code text-[11px] font-bold text-on-surface">420 px</span>
+</div>
+<!-- Scale -->
+<div class="flex items-center justify-between bg-surface-container-low px-2 py-1 rounded cursor-col-resize">
+<span class="font-mono-code text-[11px] text-on-surface-variant">Scale</span>
+<span class="font-mono-code text-[11px] font-bold text-on-surface">100.0%</span>
+</div>
+<!-- Rotation -->
+<div class="flex items-center justify-between bg-surface-container-low px-2 py-1 rounded cursor-col-resize">
+<span class="font-mono-code text-[11px] text-on-surface-variant">Rotate</span>
+<span class="font-mono-code text-[11px] font-bold text-on-surface">0.0°</span>
+</div>
+</div>
+</div>
+<!-- Motion Animation Presets -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider">In/Out Animation</span>
+<span class="text-[10px] text-primary font-semibold">Keyframes (2)</span>
+</div>
+<div class="space-y-1.5">
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-high text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">vertical_align_top</span>
+<span class="text-label-md font-semibold text-[11px]">Smooth News Slide Up</span>
+</div>
+<span class="font-mono-code text-[10px] text-on-surface-variant">0.35s In</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-[10px] text-on-surface-variant">Motion Blur</span>
+<input checked="" class="accent-primary cursor-pointer" type="checkbox"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action Footer for Inspector -->
+<div class="p-space-sm bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<button class="px-space-sm py-1 rounded hover:bg-surface-container-low text-on-surface-variant text-[11px] font-label-md">Reset Values</button>
+<button class="px-space-md py-1 rounded bg-surface-container-highest text-primary hover:bg-surface-container font-label-md text-label-md font-semibold">Save Graphic Preset</button>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- 4. BOTTOM PANEL: Multi-Track Timeline Editor (Spans 100% width) -->
+<!-- ========================================================================= -->
+<div class="w-full bg-surface-container-lowest shadow-sm flex flex-col h-[380px] overflow-hidden mt-1">
+<!-- Timeline Global Toolbar -->
+<div class="flex items-center justify-between px-space-lg py-space-xs bg-surface-container-low shadow-sm">
+<!-- Edit Tools Strip -->
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded bg-surface-container-lowest text-primary shadow-xs" id="tool-select" title="Selection Arrow (V)">
+<span class="material-symbols-outlined text-[17px]">near_me</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface" id="tool-razor" title="Split / Razor Tool (C)">
+<span class="material-symbols-outlined text-[17px]">content_cut</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface" title="Trim / Ripple In (B)">
+<span class="material-symbols-outlined text-[17px]">vertical_split</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface" title="Delete Selected Clip (Del)">
+<span class="material-symbols-outlined text-[17px]">delete</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface" title="Duplicate Clip (Alt+Drag / Cmd+D)">
+<span class="material-symbols-outlined text-[17px]">content_copy</span>
+</button>
+<div class="h-4 w-px bg-surface-container-highest mx-1"></div>
+<button class="flex items-center gap-1 px-2 py-1 rounded bg-surface-container text-primary font-label-md text-[11px] font-semibold" title="Magnetic Snap Active (N)">
+<span class="material-symbols-outlined text-[15px]">qr_code_2</span>
+          Snap
+        </button>
+<button class="flex items-center gap-1 px-2 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-md text-[11px]" title="Ripple Delete Mode">
+<span class="material-symbols-outlined text-[15px]">sync_alt</span>
+          Ripple
+        </button>
+<button class="flex items-center gap-1 px-2 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-md text-[11px]" title="Marker Add (M)">
+<span class="material-symbols-outlined text-[15px]">bookmark</span>
+          Marker
+        </button>
+</div>
+<!-- Center Playhead Indicator -->
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant font-mono-code text-[11px]">Playhead:</span>
+<span class="font-mono-code text-label-lg font-bold text-error bg-error-container/30 px-2 py-0.5 rounded">00:01:24:18</span>
+</div>
+<!-- Zoom Level Scrubber -->
+<div class="flex items-center gap-2">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Zoom Out (-)">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<input class="w-24 h-1 bg-surface-container-highest rounded-lg accent-primary cursor-pointer" type="range" value="55"/>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Zoom In (+)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant ml-1" title="Fit Sequence to Window (Shift+Z)">
+<span class="material-symbols-outlined text-[16px]">fit_screen</span>
+</button>
+</div>
+</div>
+<!-- Timeline Workspace (Tracks Headers + Ruler + Tracks Canvas) -->
+<div class="flex-1 flex overflow-hidden relative">
+<!-- Track Control Headers (Fixed Left, 220px) -->
+<div class="w-56 bg-surface-container-low shadow-sm flex flex-col flex-shrink-0 z-20">
+<!-- Ruler Header Corner Offset -->
+<div class="h-7 bg-surface-container flex items-center justify-between px-space-sm shadow-sm">
+<span class="font-label-sm text-[10px] font-bold text-on-surface-variant uppercase">TRACKS (7)</span>
+<button class="text-primary hover:text-on-primary-fixed text-[11px] font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">add</span> Track
+          </button>
+</div>
+<!-- Track 1 Header: Text / Subtitles -->
+<div class="h-10 px-2 flex items-center justify-between bg-surface-container-low shadow-sm hover:bg-surface-container">
+<div class="flex items-center gap-1.5 truncate">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-mono-code text-[11px] font-bold text-on-surface truncate">T1 Subtitles</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[14px]">lock</span></button>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[14px]">visibility</span></button>
+</div>
+</div>
+<!-- Track 2 Header: Graphics & Lower Thirds (Active) -->
+<div class="h-11 px-2 flex items-center justify-between bg-error-container/20 shadow-sm">
+<div class="flex items-center gap-1.5 truncate">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-mono-code text-[11px] font-bold text-error truncate">T2 News GFX</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="text-error"><span class="material-symbols-outlined text-[14px]">lock_open</span></button>
+<button class="text-error"><span class="material-symbols-outlined text-[14px]">visibility</span></button>
+</div>
+</div>
+<!-- Track 3 Header: PIP Video -->
+<div class="h-10 px-2 flex items-center justify-between bg-surface-container-low shadow-sm hover:bg-surface-container">
+<div class="flex items-center gap-1.5 truncate">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-mono-code text-[11px] font-bold text-on-surface truncate">V2 PIP / Inset</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[14px]">lock</span></button>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[14px]">visibility</span></button>
+</div>
+</div>
+<!-- Track 4 Header: Main Broadcast Video -->
+<div class="h-12 px-2 flex items-center justify-between bg-surface-container-low shadow-sm hover:bg-surface-container">
+<div class="flex items-center gap-1.5 truncate">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-mono-code text-[11px] font-bold text-on-surface truncate">V1 Master Cam</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[14px]">lock</span></button>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[14px]">visibility</span></button>
+</div>
+</div>
+<!-- Track 5 Header: Logo Bug / Watermark -->
+<div class="h-9 px-2 flex items-center justify-between bg-surface-container-low shadow-sm hover:bg-surface-container">
+<div class="flex items-center gap-1.5 truncate">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-mono-code text-[11px] font-bold text-on-surface truncate">V0 Watermark</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="text-on-surface-variant"><span class="material-symbols-outlined text-[14px]">lock</span></button>
+<button class="text-on-surface-variant"><span class="material-symbols-outlined text-[14px]">visibility</span></button>
+</div>
+</div>
+<!-- Track 6 Header: Audio 1 (Dialogue / Mic) -->
+<div class="h-11 px-2 flex items-center justify-between bg-surface-container-low shadow-sm hover:bg-surface-container">
+<div class="flex items-center gap-1.5 truncate">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-mono-code text-[11px] font-bold text-on-surface truncate">A1 Mic Anchor</span>
+</div>
+<div class="flex items-center gap-1 text-[10px] font-mono-code">
+<button class="px-1 rounded bg-surface-container text-on-surface font-bold">M</button>
+<button class="px-1 rounded bg-surface-container text-on-surface font-bold">S</button>
+</div>
+</div>
+<!-- Track 7 Header: Audio 2 (News Theme Music) -->
+<div class="h-11 px-2 flex items-center justify-between bg-surface-container-low shadow-sm hover:bg-surface-container">
+<div class="flex items-center gap-1.5 truncate">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="font-mono-code text-[11px] font-bold text-on-surface truncate">A2 Theme BGM</span>
+</div>
+<div class="flex items-center gap-1 text-[10px] font-mono-code">
+<button class="px-1 rounded bg-surface-container text-on-surface font-bold">M</button>
+<button class="px-1 rounded bg-surface-container text-on-surface font-bold">S</button>
+</div>
+</div>
+</div>
+<!-- Tracks Sequence Canvas & Timecode Ruler -->
+<div class="flex-1 flex flex-col overflow-x-auto relative bg-surface-container-low">
+<!-- Timecode Ruler Bar (Height: 28px) -->
+<div class="h-7 bg-surface-container flex items-end shadow-sm relative min-w-[1200px]">
+<div class="absolute inset-0 flex items-center justify-between px-2 font-mono-code text-[10px] text-on-surface-variant">
+<span>00:00:00:00</span>
+<span>00:00:30:00</span>
+<span>00:01:00:00</span>
+<span class="font-bold text-error">00:01:24:18 (Current)</span>
+<span>00:01:30:00</span>
+<span>00:02:00:00</span>
+<span>00:02:30:00</span>
+<span>00:03:00:00</span>
+</div>
+<!-- Fine Ruler Hash Marks Generator -->
+<div class="w-full flex justify-between px-2 pb-0.5">
+<div class="h-1 w-px bg-outline-variant"></div>
+<div class="h-2 w-px bg-outline-variant"></div>
+<div class="h-1 w-px bg-outline-variant"></div>
+<div class="h-2 w-px bg-outline-variant"></div>
+<div class="h-3 w-px bg-outline"></div>
+<div class="h-1 w-px bg-outline-variant"></div>
+<div class="h-2 w-px bg-outline-variant"></div>
+<div class="h-1 w-px bg-outline-variant"></div>
+<div class="h-3 w-px bg-outline"></div>
+<div class="h-1 w-px bg-outline-variant"></div>
+<div class="h-2 w-px bg-outline-variant"></div>
+<div class="h-1 w-px bg-outline-variant"></div>
+<div class="h-3 w-px bg-outline"></div>
+<div class="h-1 w-px bg-outline-variant"></div>
+<div class="h-2 w-px bg-outline-variant"></div>
+<div class="h-1 w-px bg-outline-variant"></div>
+<div class="h-3 w-px bg-outline"></div>
+<div class="h-1 w-px bg-outline-variant"></div>
+<div class="h-2 w-px bg-outline-variant"></div>
+<div class="h-1 w-px bg-outline-variant"></div>
+<div class="h-3 w-px bg-outline"></div>
+</div>
+</div>
+<!-- Clips Multi-Track Lane Container -->
+<div class="relative flex-1 min-w-[1200px] flex flex-col divide-y-0">
+<!-- Track 1 Lane: Subtitles -->
+<div class="h-10 relative bg-surface-container-lowest/40 flex items-center shadow-xs">
+<div class="absolute left-16 w-64 h-7 rounded bg-primary-fixed text-on-primary-fixed px-2 flex items-center justify-between text-body-sm shadow-xs cursor-pointer hover:brightness-105">
+<span class="truncate font-semibold text-[11px]">Sub_English_01 (00:00:15 - 00:00:58)</span>
+<span class="font-mono-code text-[9px] opacity-75">43s</span>
+</div>
+<div class="absolute left-[360px] w-80 h-7 rounded bg-primary-fixed-dim text-on-primary-fixed px-2 flex items-center justify-between text-body-sm shadow-xs cursor-pointer hover:brightness-105 ring-1 ring-primary">
+<span class="truncate font-bold text-[11px]">Federal Budget Approval (00:01:10 - 00:01:45)</span>
+<span class="font-mono-code text-[9px] opacity-75">35s</span>
+</div>
+</div>
+<!-- Track 2 Lane: Graphics & Lower Thirds (ACTIVE) -->
+<div class="h-11 relative bg-error-container/5 flex items-center shadow-xs">
+<div class="absolute left-2 w-52 h-8 rounded bg-error-container text-on-error-container px-2 flex items-center justify-between text-body-sm shadow-xs">
+<span class="truncate font-bold text-[11px]">Intro Sting 3D GFX</span>
+<span class="font-mono-code text-[9px]">08s</span>
+</div>
+<!-- Focused Active Clip on Timeline -->
+<div class="absolute left-[340px] w-96 h-8 rounded bg-error text-on-error px-2.5 flex items-center justify-between text-body-sm shadow-md cursor-pointer ring-2 ring-primary">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[14px]">label</span>
+<span class="font-bold text-[11px] truncate">Red Breaking News Banner + Reporter ID Strip</span>
+</div>
+<span class="font-mono-code text-[10px] bg-surface-container-lowest/20 px-1 rounded">01:05 - 02:10</span>
+</div>
+</div>
+<!-- Track 3 Lane: PIP Video -->
+<div class="h-10 relative bg-surface-container-lowest/40 flex items-center shadow-xs">
+<div class="absolute left-[280px] w-80 h-7 rounded bg-secondary-fixed text-on-secondary-fixed px-2 flex items-center justify-between text-body-sm shadow-xs cursor-pointer">
+<span class="truncate font-semibold text-[11px]">Studio Camera B (Parliament Exterior Inset)</span>
+<span class="font-mono-code text-[9px]">40s</span>
+</div>
+</div>
+<!-- Track 4 Lane: Main Video (Primary Anchor Footage) -->
+<div class="h-12 relative bg-surface-container-lowest/60 flex items-center shadow-xs">
+<!-- Continuous Anchor Clip with Mini Thumbnail Filmstrip Mock -->
+<div class="absolute left-0 w-[1000px] h-9 rounded bg-surface-container-high overflow-hidden shadow-xs flex items-center ring-1 ring-outline-variant">
+<div class="h-full w-24 bg-surface-variant flex items-center justify-center font-mono-code text-[10px] text-on-surface-variant flex-shrink-0">Take_01_A</div>
+<div class="h-full w-24 bg-surface-container flex items-center justify-center font-mono-code text-[10px] text-on-surface-variant flex-shrink-0">Take_01_B</div>
+<div class="h-full w-24 bg-surface-variant flex items-center justify-center font-mono-code text-[10px] text-on-surface-variant flex-shrink-0">Take_01_C</div>
+<div class="h-full w-24 bg-surface-container flex items-center justify-center font-mono-code text-[10px] text-on-surface-variant flex-shrink-0">Take_01_D</div>
+<div class="h-full w-24 bg-surface-variant flex items-center justify-center font-mono-code text-[10px] text-on-surface-variant flex-shrink-0">Take_01_E</div>
+<div class="h-full w-24 bg-surface-container flex items-center justify-center font-mono-code text-[10px] text-on-surface-variant flex-shrink-0">Take_01_F</div>
+<div class="h-full w-24 bg-surface-variant flex items-center justify-center font-mono-code text-[10px] text-on-surface-variant flex-shrink-0">Take_01_G</div>
+<div class="h-full w-24 bg-surface-container flex items-center justify-center font-mono-code text-[10px] text-on-surface-variant flex-shrink-0">Take_01_H</div>
+<span class="ml-4 font-mono-code text-[11px] font-bold text-on-surface truncate">Anchor_Studio_Master_4K_60FPS.mov</span>
+</div>
+</div>
+<!-- Track 5 Lane: Watermark Logo Bug -->
+<div class="h-9 relative bg-surface-container-lowest/40 flex items-center shadow-xs">
+<div class="absolute left-0 w-[1100px] h-6 rounded bg-surface-container text-on-surface-variant px-3 flex items-center justify-between text-body-sm shadow-xs opacity-90">
+<span class="font-mono-code text-[10px] font-semibold">SocialFlow HD Watermark Bug (Locked Overlay)</span>
+<span class="font-mono-code text-[9px]">Pinned Full Length</span>
+</div>
+</div>
+<!-- Track 6 Lane: Audio 1 (Dialogue Waveform) -->
+<div class="h-11 relative bg-tertiary-fixed/10 flex items-center shadow-xs">
+<div class="absolute left-0 w-[950px] h-8 rounded bg-tertiary-container text-on-tertiary px-2 flex items-center justify-between overflow-hidden shadow-xs">
+<div class="flex items-center gap-2">
+<span class="font-mono-code text-[10px] font-bold">MIC_ANCHOR_LAV.wav</span>
+<!-- Monochromatic Slate Audio Waveform Inline Graphic -->
+<svg class="w-96 h-6 text-on-tertiary opacity-70" fill="currentColor" viewbox="0 0 380 24">
+<path d="M0,12 L5,8 L10,16 L15,4 L20,20 L25,10 L30,14 L35,6 L40,18 L45,12 L50,4 L55,20 L60,11 L65,13 L70,2 L75,22 L80,10 L85,14 L90,6 L95,18 L100,12 L105,4 L110,20 L115,11 L120,13 L125,2 L130,22 L135,10 L140,14 L145,6 L150,18 L155,12 L160,4 L165,20 L170,11 L175,13 L180,2 L185,22 L190,10 L195,14 L200,6 L205,18 L210,12 L215,4 L220,20 L225,11 L230,13 L235,2 L240,22 L245,10 L250,14 L255,6 L260,18 L265,12 L270,4 L275,20 L280,11 L285,13 L290,2 L295,22 L300,10 L305,14 L310,6 L315,18 L320,12 L325,4 L330,20 L335,11 L340,13 L345,2 L350,22 L355,10 L360,14 L365,6 L370,18 L375,12 L380,12 Z"></path>
+</svg>
+</div>
+<span class="font-mono-code text-[9px] opacity-80">48kHz 24-bit</span>
+</div>
+</div>
+<!-- Track 7 Lane: Audio 2 (News Theme Music) -->
+<div class="h-11 relative bg-tertiary-fixed/15 flex items-center shadow-xs">
+<div class="absolute left-0 w-[1100px] h-8 rounded bg-tertiary text-on-tertiary px-2 flex items-center justify-between overflow-hidden shadow-xs">
+<div class="flex items-center gap-2">
+<span class="font-mono-code text-[10px] font-bold">News_Pulse_Theme_Bed.mp3</span>
+<svg class="w-80 h-5 text-on-tertiary opacity-60" fill="currentColor" viewbox="0 0 320 20">
+<path d="M0,10 L8,6 L16,14 L24,4 L32,16 L40,8 L48,12 L56,6 L64,14 L72,10 L80,4 L88,16 L96,8 L104,12 L112,2 L120,18 L128,8 L136,12 L144,6 L152,14 L160,10 L168,4 L176,16 L184,8 L192,12 L200,2 L208,18 L216,8 L224,12 L232,6 L240,14 L248,10 L256,4 L264,16 L272,8 L280,12 L288,2 L296,18 L304,8 L312,12 L320,10 Z"></path>
+</svg>
+</div>
+<!-- Keyframe Gain Automation Nodes -->
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed shadow-xs" title="Keyframe -6dB"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed shadow-xs" title="Keyframe -12dB Under Dialogue"></span>
+<span class="font-mono-code text-[9px] opacity-80">-12.0 dB Bed</span>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- SCRUBBER PLAYHEAD: Prominent Red Playhead Line at 00:01:24 (Offset ~480px) -->
+<!-- ========================================================================= -->
+<div class="absolute top-0 bottom-0 left-[480px] w-0.5 bg-error z-30 pointer-events-none flex flex-col items-center">
+<!-- Playhead Draggable Handle / Cursor Cap -->
+<div class="-top-1 absolute w-3.5 h-4 bg-error text-on-error flex items-center justify-center rounded-b-sm shadow-md pointer-events-auto cursor-ew-resize">
+<div class="w-1 h-2 bg-on-error rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    </main>
+
     <!-- ═════════════════════════════════════════════════════════════════ -->
     <!-- VIEW CONTAINER 2: CREATIVE POST COMPOSER                         -->
     <!-- ═════════════════════════════════════════════════════════════════ -->
@@ -2314,33 +3139,55 @@
 
   </div>
 
-    <!-- Unified Navigation & Interactive Scripts -->
+      <!-- Unified Navigation & Interactive Scripts -->
   <script>
     function switchMainView(view) {
       const vidDashView = document.getElementById('view-video-dashboard');
       const compView = document.getElementById('view-composer');
       const tmplView = document.getElementById('view-video-templates');
+      const createVidView = document.getElementById('view-create-video');
       const vidHdr = document.getElementById('header-video');
       const compHdr = document.getElementById('header-composer');
       const navPub = document.getElementById('nav-publishing');
       const navVidDash = document.getElementById('nav-video-dashboard');
       const navTmpl = document.getElementById('nav-video-templates');
+      const navCreateVid = document.getElementById('nav-create-video');
       const videoSub = document.getElementById('videoSubmenu');
       const videoChev = document.getElementById('videoChevron');
 
       const activeClass = "flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-surface-container-high text-primary font-semibold rounded-lg cursor-pointer";
       const inactiveClass = "flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer";
 
-      if (view === 'video-templates' || view === 'templates') {
-        if (tmplView) tmplView.classList.remove('hidden');
-        if (vidDashView) vidDashView.classList.add('hidden');
-        if (compView) compView.classList.add('hidden');
+      // Hide all main containers first
+      if (vidDashView) vidDashView.classList.add('hidden');
+      if (tmplView) tmplView.classList.add('hidden');
+      if (createVidView) createVidView.classList.add('hidden');
+      if (compView) compView.classList.add('hidden');
+
+      // Reset all nav highlights
+      if (navPub) navPub.className = inactiveClass;
+      if (navVidDash) navVidDash.className = inactiveClass;
+      if (navTmpl) navTmpl.className = inactiveClass;
+      if (navCreateVid) navCreateVid.className = inactiveClass;
+
+      if (view === 'create-video' || view === 'create' || view === 'editor') {
+        if (createVidView) createVidView.classList.remove('hidden');
         if (vidHdr) vidHdr.classList.remove('hidden');
         if (compHdr) compHdr.classList.add('hidden');
+        if (navCreateVid) navCreateVid.className = activeClass;
 
+        if (videoSub) videoSub.classList.remove('hidden');
+        if (videoChev) videoChev.style.transform = 'rotate(180deg)';
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (history.pushState) {
+          history.pushState(null, null, '?view=create');
+        }
+      } else if (view === 'video-templates' || view === 'templates') {
+        if (tmplView) tmplView.classList.remove('hidden');
+        if (vidHdr) vidHdr.classList.remove('hidden');
+        if (compHdr) compHdr.classList.add('hidden');
         if (navTmpl) navTmpl.className = activeClass;
-        if (navVidDash) navVidDash.className = inactiveClass;
-        if (navPub) navPub.className = inactiveClass;
 
         if (videoSub) videoSub.classList.remove('hidden');
         if (videoChev) videoChev.style.transform = 'rotate(180deg)';
@@ -2351,14 +3198,9 @@
         }
       } else if (view === 'video-dashboard' || view === 'video') {
         if (vidDashView) vidDashView.classList.remove('hidden');
-        if (tmplView) tmplView.classList.add('hidden');
-        if (compView) compView.classList.add('hidden');
         if (vidHdr) vidHdr.classList.remove('hidden');
         if (compHdr) compHdr.classList.add('hidden');
-
         if (navVidDash) navVidDash.className = activeClass;
-        if (navTmpl) navTmpl.className = inactiveClass;
-        if (navPub) navPub.className = inactiveClass;
 
         if (videoSub) videoSub.classList.remove('hidden');
         if (videoChev) videoChev.style.transform = 'rotate(180deg)';
@@ -2368,15 +3210,11 @@
           history.pushState(null, null, '?view=video');
         }
       } else {
+        // Creative Post Composer
         if (compView) compView.classList.remove('hidden');
-        if (vidDashView) vidDashView.classList.add('hidden');
-        if (tmplView) tmplView.classList.add('hidden');
         if (compHdr) compHdr.classList.remove('hidden');
         if (vidHdr) vidHdr.classList.add('hidden');
-
         if (navPub) navPub.className = activeClass;
-        if (navVidDash) navVidDash.className = inactiveClass;
-        if (navTmpl) navTmpl.className = inactiveClass;
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
         if (history.pushState) {
@@ -2401,7 +3239,6 @@
 
     // Template Market Interactivity Functions
     function initTemplatesEngine() {
-      // Filter Interactive States
       document.querySelectorAll('.aspect-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           document.querySelectorAll('.aspect-btn').forEach(b => {
@@ -2465,6 +3302,39 @@
       }
     }
 
+    // NLE Editor Engine Interactivity
+    function initVideoEditorEngine() {
+      const playBtn = document.getElementById('main-play-btn');
+      if (playBtn) {
+        let isPlaying = false;
+        playBtn.addEventListener('click', () => {
+          isPlaying = !isPlaying;
+          const icon = playBtn.querySelector('.material-symbols-outlined');
+          if (icon) {
+            icon.textContent = isPlaying ? 'pause' : 'play_arrow';
+          }
+        });
+      }
+
+      const razorTool = document.getElementById('tool-razor');
+      const selectTool = document.getElementById('tool-select');
+      if (razorTool && selectTool) {
+        razorTool.addEventListener('click', () => {
+          razorTool.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+          razorTool.classList.remove('text-on-surface-variant');
+          selectTool.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+          selectTool.classList.add('text-on-surface-variant');
+        });
+
+        selectTool.addEventListener('click', () => {
+          selectTool.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+          selectTool.classList.remove('text-on-surface-variant');
+          razorTool.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+          razorTool.classList.add('text-on-surface-variant');
+        });
+      }
+    }
+
     // Keyboard shortcut for closing preview (Esc)
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closePreviewModal();
@@ -2473,9 +3343,12 @@
     // Auto-initialize view based on URL query param
     window.addEventListener('DOMContentLoaded', () => {
       initTemplatesEngine();
+      initVideoEditorEngine();
       const params = new URLSearchParams(window.location.search);
       const view = params.get('view');
-      if (view === 'templates' || view === 'video-templates') {
+      if (view === 'create-video' || view === 'create' || view === 'editor') {
+        switchMainView('create-video');
+      } else if (view === 'templates' || view === 'video-templates') {
         switchMainView('video-templates');
       } else if (view === 'composer' || view === 'publishing') {
         switchMainView('composer');
