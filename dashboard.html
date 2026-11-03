@@ -129,21 +129,26 @@
         </div>
       </div>
 
-      <!-- Core Suite -->
-      <div class="flex flex-col gap-space-xs">
-        <div class="px-space-md pt-space-sm pb-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase">Core Suite</div>
-        <nav class="flex flex-col gap-space-xs">
-          <a id="nav-publishing" onclick="switchMainView('composer')" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="javascript:void(0);">
-            <span class="material-symbols-outlined text-[20px]">send</span>
-            <span>Publishing</span>
+                  <!-- Design Studio (Image Posting & Media) -->
+      <div class="flex flex-col gap-space-xs pt-space-xs">
+        <div onclick="toggleDesignSubmenu()" class="flex items-center justify-between px-space-md pt-space-xs pb-space-xs cursor-pointer select-none group">
+          <span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[18px]">palette</span>
+            <span>Design Studio</span>
+          </span>
+          <div class="flex items-center gap-1">
+            <span id="designChevron" class="material-symbols-outlined text-[18px] text-primary transition-transform" style="transform: rotate(180deg);">expand_more</span>
+          </div>
+        </div>
+
+        <nav id="designSubmenu" class="flex flex-col gap-space-xs pl-space-xs transition-all duration-200">
+          <a id="nav-design-posts" onclick="switchMainView('composer')" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="javascript:void(0);">
+            <span class="material-symbols-outlined text-[18px]">space_dashboard</span>
+            <span>Posts </span>
           </a>
-          <a id="nav-analytics" onclick="switchMainView('analytics')" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="javascript:void(0);">
-            <span class="material-symbols-outlined text-[20px]">insights</span>
-            <span>Analytics</span>
-          </a>
-          <a id="nav-multi-account" onclick="switchMainView('multi-account')" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="javascript:void(0);">
-            <span class="material-symbols-outlined text-[20px]">switch_account</span>
-            <span>Multi-Account</span>
+          <a id="nav-design-media" onclick="switchMainView('media-library')" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="javascript:void(0);">
+            <span class="material-symbols-outlined text-[18px]">video_library</span>
+            <span>Media Library</span>
           </a>
         </nav>
       </div>
@@ -4485,7 +4490,8 @@
       const vidHdr = document.getElementById('header-video');
       const compHdr = document.getElementById('header-composer');
 
-      const navPub = document.getElementById('nav-publishing');
+      const navDesignPosts = document.getElementById('nav-design-posts') || document.getElementById('nav-publishing');
+      const navDesignMedia = document.getElementById('nav-design-media');
       const navAnalytics = document.getElementById('nav-analytics');
       const navMultiAccount = document.getElementById('nav-multi-account');
       const navVidDash = document.getElementById('nav-video-dashboard');
@@ -4494,6 +4500,8 @@
 
       const videoSub = document.getElementById('videoSubmenu');
       const videoChev = document.getElementById('videoChevron');
+      const designSub = document.getElementById('designSubmenu');
+      const designChev = document.getElementById('designChevron');
 
       const activeClass = "flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-surface-container-high text-primary font-semibold rounded-lg cursor-pointer";
       const inactiveClass = "flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer";
@@ -4504,7 +4512,7 @@
       });
 
       // Reset all nav highlights
-      [navPub, navAnalytics, navMultiAccount, navVidDash, navTmpl, navCreateVid].forEach(n => {
+      [navDesignPosts, navDesignMedia, navAnalytics, navMultiAccount, navVidDash, navTmpl, navCreateVid].forEach(n => {
         if (n) n.className = inactiveClass;
       });
 
@@ -4529,6 +4537,14 @@
         if (videoChev) videoChev.style.transform = 'rotate(180deg)';
         window.scrollTo({ top: 0, behavior: 'smooth' });
         if (history.pushState) history.pushState(null, null, '?view=create');
+      } else if (view === 'media-library' || view === 'media') {
+        // Media Library view
+        if (tmplView) tmplView.classList.remove('hidden');
+        if (navDesignMedia) navDesignMedia.className = activeClass;
+        if (designSub) designSub.classList.remove('hidden');
+        if (designChev) designChev.style.transform = 'rotate(180deg)';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (history.pushState) history.pushState(null, null, '?view=media-library');
       } else if (view === 'video-templates' || view === 'templates') {
         if (tmplView) tmplView.classList.remove('hidden');
         if (navTmpl) navTmpl.className = activeClass;
@@ -4544,27 +4560,47 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
         if (history.pushState) history.pushState(null, null, '?view=video');
       } else {
-        // Creative Post Composer
+        // Creative Post Composer (Design Studio: Posts)
         if (compView) compView.classList.remove('hidden');
         if (compHdr) compHdr.classList.remove('hidden');
         if (vidHdr) vidHdr.classList.add('hidden');
-        if (navPub) navPub.className = activeClass;
+        if (navDesignPosts) navDesignPosts.className = activeClass;
+        if (designSub) designSub.classList.remove('hidden');
+        if (designChev) designChev.style.transform = 'rotate(180deg)';
         window.scrollTo({ top: 0, behavior: 'smooth' });
         if (history.pushState) history.pushState(null, null, '?view=composer');
+      }
+    }
+
+    function toggleDesignSubmenu() {
+      const designSub = document.getElementById('designSubmenu');
+      const designChev = document.getElementById('designChevron');
+      if (!designSub) return;
+      const isHidden = designSub.classList.contains('hidden');
+      
+      if (isHidden) {
+        designSub.classList.remove('hidden');
+        if (designChev) designChev.style.transform = 'rotate(180deg)';
+        switchMainView('composer');
+      } else {
+        designSub.classList.add('hidden');
+        if (designChev) designChev.style.transform = 'rotate(0deg)';
       }
     }
 
     function toggleVideoSubmenu() {
       const videoSub = document.getElementById('videoSubmenu');
       const videoChev = document.getElementById('videoChevron');
+      if (!videoSub) return;
       const isHidden = videoSub.classList.contains('hidden');
       
       if (isHidden) {
         videoSub.classList.remove('hidden');
-        videoChev.style.transform = 'rotate(180deg)';
+        if (videoChev) videoChev.style.transform = 'rotate(180deg)';
         switchMainView('video-dashboard');
       } else {
-        switchMainView('video-dashboard');
+        videoSub.classList.add('hidden');
+        if (videoChev) videoChev.style.transform = 'rotate(0deg)';
       }
     }
 
@@ -4721,9 +4757,11 @@
         switchMainView('multi-account');
       } else if (view === 'create-video' || view === 'create' || view === 'editor') {
         switchMainView('create-video');
+      } else if (view === 'media-library' || view === 'media') {
+        switchMainView('media-library');
       } else if (view === 'templates' || view === 'video-templates') {
         switchMainView('video-templates');
-      } else if (view === 'composer' || view === 'publishing') {
+      } else if (view === 'composer' || view === 'publishing' || view === 'posts') {
         switchMainView('composer');
       } else {
         switchMainView('video-dashboard');
