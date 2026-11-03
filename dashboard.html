@@ -3050,6 +3050,9 @@
         <!-- ═════════════════════════════════════════════════════════════════ -->
     <!-- VIEW CONTAINER 6: MULTI-ACCOUNT & WORKSPACE MANAGEMENT           -->
     <!-- ═════════════════════════════════════════════════════════════════ -->
+        <!-- ═════════════════════════════════════════════════════════════════ -->
+    <!-- VIEW CONTAINER 6: MULTI-ACCOUNT & WORKSPACE MANAGEMENT           -->
+    <!-- ═════════════════════════════════════════════════════════════════ -->
     <main id="view-multi-account" class="studio-view hidden relative pt-16 bg-surface min-h-screen">
       <div class="px-space-xl py-space-lg flex flex-col gap-space-lg max-w-7xl mx-auto w-full">
 
@@ -3065,8 +3068,8 @@
                 <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span> AES-256 Vault Synced
               </span>
             </div>
-            <p class="font-body-sm text-body-sm text-on-surface-variant font-urdu" style="direction: rtl;">
-              پوسٹر جنریٹر اے پی آئیز، سوشل میڈیا اکاؤنٹس، ٹویٹر کوکیز، یوٹیوب، ورڈپریس اور کلاؤڈ آٹومیشن ویب ہکس ترتیبات
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              Manage Poster Generation APIs, Social Media Accounts, Twitter OAuth, YouTube Community, WordPress REST API &amp; Cloud Automation Webhooks.
             </p>
           </div>
           <div class="flex items-center gap-space-sm self-start md:self-auto">
@@ -3096,7 +3099,7 @@
             <div class="flex items-center gap-1 min-w-max" id="accountConfigTabs">
               <button type="button" onclick="switchAccountTab('tab-poster')" id="tab-btn-poster" class="account-tab-btn active flex items-center gap-2 px-4 py-3 text-sm font-semibold border-b-2 border-primary text-primary transition-all">
                 <span class="material-symbols-outlined text-[18px] text-amber-400">palette</span>
-                <span>Poster APIs (پوسٹر اے پی آئی)</span>
+                <span>Poster APIs</span>
               </button>
               <button type="button" onclick="switchAccountTab('tab-meta')" id="tab-btn-meta" class="account-tab-btn flex items-center gap-2 px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all">
                 <span class="material-symbols-outlined text-[18px] text-blue-400">share</span>
@@ -3144,8 +3147,8 @@
                     Active: Template 1 (Jamshed Rizwani API)
                   </span>
                 </div>
-                <p class="font-body-sm text-body-sm text-on-surface-variant font-urdu" style="direction: rtl;">
-                  یہاں سے آپ فیس بک اور سوشل میڈیا 1080x1080 پوسٹر جنریشن کی اے پی آئی کنٹرول کر سکتے ہیں۔
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Control high-resolution 1080x1080 news banner generation endpoints and default branding options.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
@@ -3161,7 +3164,7 @@
                   <div class="md:col-span-4 flex flex-col gap-1.5">
                     <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Default Website Branding</label>
                     <input type="text" name="default_branding_website" value="www.southtoday.live" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
-                    <span class="font-label-xs text-label-xs text-on-surface-variant font-urdu" style="direction: rtl;">پوسٹر کے نیچے ظاہر ہونے والا برانڈنگ یو آر ایل</span>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant">Branding URL shown in the footer of generated posters.</span>
                   </div>
 
                   <div class="md:col-span-8 flex flex-col gap-1.5">
@@ -3170,13 +3173,13 @@
                       <span class="px-3 text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">dns</span></span>
                       <input type="url" name="js_server_api_url" value="" placeholder="https://your-node-server.com/api/render" class="w-full py-2.5 pr-3 bg-transparent text-on-surface font-mono-code text-sm focus:outline-none"/>
                     </div>
-                    <span class="font-label-xs text-label-xs text-on-surface-variant font-urdu" style="direction: rtl;">جب آپ نوڈ جے ایس سرور کی اے پی آئی فراہم کریں گے تو وہ یہاں سیو ہو گی</span>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant">Custom Node.js canvas rendering server for alternative poster layouts.</span>
                   </div>
 
                   <div class="md:col-span-4 flex flex-col gap-1.5">
-                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Default Tag / Category (In-Box Text)</label>
-                    <input type="text" name="default_category_tag" value="بریکنگ نیوز" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-urdu text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" style="direction: rtl;"/>
-                    <span class="font-label-xs text-label-xs text-on-surface-variant font-urdu" style="direction: rtl;">جیسے: بریکنگ نیوز، اہم خبر، پریس کانفرنس</span>
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Default Category Tag (In-Box Text)</label>
+                    <input type="text" name="default_category_tag" value="Breaking News" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant">e.g., Breaking News, Special Bulletin, Exclusive</span>
                   </div>
                 </div>
               </div>
@@ -3198,7 +3201,7 @@
                     Connected / v19+ Graph Ready
                   </span>
                 </div>
-                <p class="font-body-sm text-body-sm text-on-surface-variant">Facebook Graph API v19+ &amp; Instagram Professional Account Credentials for Auto Publishing</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Facebook Graph API v19+ &amp; Instagram Professional Account Credentials for Auto-Publishing.</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
                   <div class="flex flex-col gap-1.5">
@@ -3210,7 +3213,7 @@
                     <input type="text" name="fb_page_id" value="" placeholder="e.g. 110657041281786" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
                   </div>
                   <div class="md:col-span-2 flex flex-col gap-1.5">
-                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Page Access Token (Never Expiring Permanent Token)</label>
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Page Access Token (Permanent / Never-Expiring Token)</label>
                     <textarea name="fb_access_token" rows="2" placeholder="EAAG..." class="w-full p-3 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-xs focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"></textarea>
                   </div>
                   <div class="flex flex-col gap-1.5">
@@ -3226,14 +3229,14 @@
                     <input type="text" name="ig_account_id" value="" placeholder="e.g. 17841400000000000" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
                   </div>
                   <div class="flex flex-col gap-1.5">
-                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Instagram Access Token (if separate)</label>
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Instagram Access Token (Optional if inherited)</label>
                     <input type="text" name="ig_access_token" value="" placeholder="Leave empty to inherit Page Token" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
                   </div>
                 </div>
               </div>
 
               <!-- ════════════════════════════════════════════════════════════ -->
-              <!-- TAB 3: X / Twitter (API & Cookies) - Image 5               -->
+              <!-- TAB 3: X / Twitter (API & Cookies)                         -->
               <!-- ════════════════════════════════════════════════════════════ -->
               <div id="tab-twitter" class="account-tab-pane hidden flex flex-col gap-space-lg">
                 <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 flex-wrap gap-2">
@@ -3252,12 +3255,12 @@
                   <div class="flex items-center justify-between flex-wrap gap-2">
                     <div class="flex items-center gap-2">
                       <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                      <span class="font-label-md text-label-md text-emerald-400 font-bold font-urdu" style="direction: rtl;">
-                        طریقہ نمبر 1: Official Twitter API v2 (تجویز کردہ - 100% مستقل حل)
+                      <span class="font-label-md text-label-md text-emerald-400 font-bold">
+                        Method 1: Official Twitter API v2 (Recommended - Permanent Solution)
                       </span>
                     </div>
                     <span class="px-2.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 font-mono-code text-xs font-bold border border-emerald-500/40">
-                      1500 Posts / Month Free
+                      1,500 Free Posts / Month
                     </span>
                   </div>
                   
@@ -3297,10 +3300,10 @@
                   <div class="flex items-center justify-between flex-wrap gap-2">
                     <span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
                       <span class="material-symbols-outlined text-[18px] text-amber-400">cookie</span>
-                      Browser Session Cookies (Extension or Manual)
+                      Method 2: Browser Session Cookies (Chrome Extension)
                     </span>
                     <a href="../downloads/newsy_social_sync.zip" download class="px-3 py-1 rounded-lg bg-amber-500/15 text-amber-300 border border-amber-500/30 text-xs font-semibold hover:bg-amber-500/25 transition-colors flex items-center gap-1">
-                      <span class="material-symbols-outlined text-[15px]">download</span> Extension v1.4
+                      <span class="material-symbols-outlined text-[15px]">download</span> Extension v1.4 (.zip)
                     </a>
                   </div>
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-2">
@@ -3317,7 +3320,7 @@
               </div>
 
               <!-- ════════════════════════════════════════════════════════════ -->
-              <!-- TAB 4: YouTube Community - Image 4                         -->
+              <!-- TAB 4: YouTube Community                                   -->
               <!-- ════════════════════════════════════════════════════════════ -->
               <div id="tab-youtube" class="account-tab-pane hidden flex flex-col gap-space-lg">
                 <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 flex-wrap gap-2">
@@ -3330,8 +3333,8 @@
                     Session Linked &amp; Ready
                   </span>
                 </div>
-                <p class="font-body-sm text-body-sm text-on-surface-variant font-urdu" style="direction: rtl;">
-                  یوٹیوب کمیونٹی ٹیب (Community Post) میں تصویر اور کیپشن پوسٹ کرنے کی ترتیبات (کروم ایکسٹینشن سے 1-کلک پر سنک کریں)
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Publish rich images, infographics &amp; captions directly to YouTube Community Tab via direct session tokens.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
@@ -3350,13 +3353,13 @@
                   <div class="md:col-span-2 flex flex-col gap-1.5">
                     <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">YouTube Session Cookies (For Direct Community Tab Posting)</label>
                     <textarea name="yt_session_cookie" rows="3" placeholder="LOGIN_INFO, SID, HSID, SSID, SAPISID cookies..." class="w-full p-3 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-xs focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"></textarea>
-                    <span class="font-label-xs text-label-xs text-on-surface-variant font-urdu" style="direction: rtl;">کروم ایکسٹینشن کے ذریعے 'مکمل کوکیز کاپی کریں' کا بٹن دبا کر یہاں چسپاں کر سکتے ہیں یا ایکسٹینشن سے ڈائریکٹ محفوظ کریں۔</span>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant">Export session cookies from Chrome Extension or paste raw cookie string here.</span>
                   </div>
                 </div>
               </div>
 
               <!-- ════════════════════════════════════════════════════════════ -->
-              <!-- TAB 5: WordPress & SEO - Image 3                           -->
+              <!-- TAB 5: WordPress & SEO                                     -->
               <!-- ════════════════════════════════════════════════════════════ -->
               <div id="tab-wp" class="account-tab-pane hidden flex flex-col gap-space-lg">
                 <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 flex-wrap gap-2">
@@ -3369,8 +3372,8 @@
                     Native Host Connected
                   </span>
                 </div>
-                <p class="font-body-sm text-body-sm text-on-surface-variant font-urdu" style="direction: rtl;">
-                  ساؤتھ ٹوڈے ورڈپریس ویب سائٹ پر بلاگ / نیوز اسٹوری پبلش کرنے کی ترتیبات مع RankMath 100% SEO
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Publish blog posts and news stories to WordPress via REST API with automated RankMath 100% SEO optimization.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
@@ -3401,18 +3404,18 @@
                   <div class="md:col-span-12 flex flex-col gap-1.5 pt-3 border-t border-outline-variant/20">
                     <label class="font-label-sm text-label-sm text-amber-400 font-semibold flex items-center gap-1.5">
                       <span class="material-symbols-outlined text-[16px]">smart_toy</span>
-                      Google AI Studio Free API Key (اختیاری - گوگل سرچ گراؤنڈنگ کے لیے)
+                      Google AI Studio API Key (Optional - for Real-Time Search Grounding)
                     </label>
                     <input type="password" name="gemini_api_key" value="" placeholder="AIzaSy..." class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
-                    <span class="font-label-xs text-label-xs text-on-surface-variant font-urdu" style="direction: rtl;">
-                      نوٹ: یہ 100% مفت ہے (کریڈٹ کارڈ کی ضرورت نہیں)۔ اگر خالی چھوڑیں گے تو سسٹم بغیر کسی کی کے ہمارے اندرونی گوگل نیوز و فیکٹ چیکنگ انجن کے ذریعے مکمل مفت کام کرے گا۔
+                    <span class="font-label-xs text-label-xs text-on-surface-variant">
+                      Note: Free tier key. If left empty, the engine uses our internal news aggregation and fact-checking service.
                     </span>
                   </div>
                 </div>
               </div>
 
               <!-- ════════════════════════════════════════════════════════════ -->
-              <!-- TAB 6: Video & Cloud Storage (HF) - Image 2                -->
+              <!-- TAB 6: Video & Cloud Storage (HF)                          -->
               <!-- ════════════════════════════════════════════════════════════ -->
               <div id="tab-video" class="account-tab-pane hidden flex flex-col gap-space-lg">
                 <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 flex-wrap gap-2">
@@ -3424,43 +3427,43 @@
                     TBs Free Cloud Storage
                   </span>
                 </div>
-                <p class="font-body-sm text-body-sm text-on-surface-variant font-urdu" style="direction: rtl;">
-                  ہوسٹنگ سرور کی ڈسک سپیس اور بینڈوتھ بچانے کے لیے ویڈیوز کو Hugging Face کے فری سپیس / ڈیٹاسیٹ ریپو میں مفت سٹور کیا جا سکتا ہے۔
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Save server disk space and bandwidth by storing multi-GB video assets in Hugging Face cloud repositories.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
                   <div class="flex flex-col gap-1.5">
                     <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Hugging Face Access Token (Write Permission)</label>
                     <input type="password" name="hf_token" value="" placeholder="hf_xxxxxxxxxxxxxxxxxxxx" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
-                    <span class="font-label-xs text-label-xs text-on-surface-variant">مفت Hugging Face ٹوکن حاصل کرنے کے لیے: <a href="https://huggingface.co/settings/tokens" target="_blank" class="text-primary hover:underline">huggingface.co/settings/tokens</a></span>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant">Get your free Hugging Face write token at: <a href="https://huggingface.co/settings/tokens" target="_blank" class="text-primary hover:underline">huggingface.co/settings/tokens</a></span>
                   </div>
 
                   <div class="flex flex-col gap-1.5">
                     <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Hugging Face Repository ID (Dataset / Space)</label>
                     <input type="text" name="hf_repo_id" value="southtoday/newsy-media" placeholder="southtoday/newsy-media" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
-                    <span class="font-label-xs text-label-xs text-on-surface-variant">مثال: <code class="text-primary">username/repository-name</code> (Free Datasets allow multi-GB videos)</span>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant">Example: <code class="text-primary">username/repository-name</code> (Free Datasets allow multi-GB videos)</span>
                   </div>
 
                   <div class="flex flex-col gap-1.5">
                     <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Cloud Storage Status</label>
                     <select name="hf_storage_enabled" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all">
-                      <option value="1" >فعال (Enabled - Auto Upload to Hugging Face Cloud)</option>
-                      <option value="0" selected>(Disabled - Local Server Chunk Storage Only) غیر فعال</option>
+                      <option value="1" >Enabled (Auto-upload to Hugging Face Cloud)</option>
+                      <option value="0" selected>Disabled (Local Server Chunk Storage Only)</option>
                     </select>
                   </div>
 
                   <div class="flex flex-col gap-1.5">
                     <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Auto-Cleanup Local Temporary Video Files</label>
                     <select name="auto_cleanup_local" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all">
-                      <option value="1" >ہاں (Yes - کلاؤڈ اور سوشل میڈیا پر پبلش کے بعد لوکل فائل خودکار ڈیلیٹ کریں)</option>
-                      <option value="0" selected>(سرور پر بیک اپ محفوظ رکھیں - No) نہیں</option>
+                      <option value="1" >Yes (Auto-delete local video after cloud &amp; social sync)</option>
+                      <option value="0" selected>No (Keep backup copy on local server)</option>
                     </select>
                   </div>
                 </div>
               </div>
 
               <!-- ════════════════════════════════════════════════════════════ -->
-              <!-- TAB 7: Automation (n8n Webhook) - Image 1                  -->
+              <!-- TAB 7: Automation (n8n Webhook)                            -->
               <!-- ════════════════════════════════════════════════════════════ -->
               <div id="tab-n8n" class="account-tab-pane hidden flex flex-col gap-space-lg">
                 <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 flex-wrap gap-2">
@@ -3469,8 +3472,8 @@
                     <h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">n8n Automation &amp; Webhook URLs</h2>
                   </div>
                 </div>
-                <p class="font-body-sm text-body-sm text-on-surface-variant font-urdu" style="direction: rtl;">
-                  n8n کلاؤڈ آٹومیشن کے ذریعے فیس بک، ٹیلیگرام، اور سوشل میڈیا ورک فلو
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Automate multichannel syndication, Telegram webhooks, and editorial approval flows via n8n cloud instances.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
@@ -3492,13 +3495,13 @@
 
             <!-- Card Bottom Bar: Encryption Notice & Save Button -->
             <div class="px-space-xl py-space-md bg-surface-container-low/70 border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-md">
-              <span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1.5 font-urdu" style="direction: rtl;">
+              <span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1.5">
                 <span class="material-symbols-outlined text-[18px] text-tertiary">lock_clock</span>
-                <span>کریڈینشلز محفوظ انکرپٹڈ فارمیٹ میں محفوظ کیے جاتے ہیں۔</span>
+                <span>All credentials &amp; API keys are securely stored in AES-256 encrypted vault format.</span>
               </span>
               <button type="submit" id="saveSettingsBtn" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-label-lg text-label-lg font-bold shadow-lg shadow-primary/20 flex items-center justify-center gap-2 cursor-pointer transition-all">
                 <span class="material-symbols-outlined text-[20px]" id="saveSettingsIcon">save</span>
-                <span id="saveSettingsLabel">Save All Settings (محفوظ کریں)</span>
+                <span id="saveSettingsLabel">Save All Settings</span>
               </button>
             </div>
           </form>
@@ -4481,6 +4484,8 @@
         // ─────────────────────────────────────────────────────────────────
     // Configuration & Social Accounts Tab & Save Engine
     // ─────────────────────────────────────────────────────────────────
+    // Configuration & Social Accounts Tab & Save Engine (100% English)
+    // ─────────────────────────────────────────────────────────────────
     function switchAccountTab(tabId) {
       document.querySelectorAll('.account-tab-btn').forEach(btn => {
         btn.classList.remove('active', 'border-primary', 'text-primary');
@@ -4514,7 +4519,7 @@
       const alertMsg = document.getElementById('settingsAlertMsg');
 
       if (btn) btn.disabled = true;
-      if (label) label.textContent = 'Saving Settings (محفوظ کیا جا رہا ہے)...';
+      if (label) label.textContent = 'Saving Settings...';
       if (icon) icon.textContent = 'hourglass_empty';
 
       const formData = new FormData(form);
@@ -4529,28 +4534,28 @@
           if (alertBox) {
             alertBox.className = 'rounded-xl p-space-md flex items-center justify-between gap-space-md transition-all bg-emerald-500/15 border border-emerald-500/30 text-emerald-400';
             if (alertIcon) alertIcon.textContent = 'check_circle';
-            if (alertMsg) alertMsg.innerHTML = '<strong>کامیابی!</strong> ' + (data.message || 'تمام ترتیبات اور اے پی آئی کیز کامیابی کے ساتھ محفوظ ہو گئی ہیں۔');
+            if (alertMsg) alertMsg.innerHTML = '<strong>Success!</strong> ' + (data.message || 'All API keys and account settings have been saved successfully.');
             alertBox.classList.remove('hidden');
           }
-          if (label) label.textContent = 'Saved Successfully! (محفوظ ہو گیا)';
+          if (label) label.textContent = 'Settings Saved Successfully!';
           if (icon) icon.textContent = 'done_all';
           setTimeout(() => {
-            if (label) label.textContent = 'Save All Settings (محفوظ کریں)';
+            if (label) label.textContent = 'Save All Settings';
             if (icon) icon.textContent = 'save';
             if (btn) btn.disabled = false;
           }, 2500);
         } else {
-          throw new Error(data.message || 'ترتیبات محفوظ نہیں ہو سکیں۔');
+          throw new Error(data.message || 'Failed to save settings.');
         }
       })
       .catch(err => {
         if (alertBox) {
           alertBox.className = 'rounded-xl p-space-md flex items-center justify-between gap-space-md transition-all bg-red-500/15 border border-red-500/30 text-red-400';
           if (alertIcon) alertIcon.textContent = 'error';
-          if (alertMsg) alertMsg.innerHTML = '<strong>خرابی!</strong> ' + err.message;
+          if (alertMsg) alertMsg.innerHTML = '<strong>Error!</strong> ' + err.message;
           alertBox.classList.remove('hidden');
         }
-        if (label) label.textContent = 'Save Failed (دوبارہ کوشش کریں)';
+        if (label) label.textContent = 'Save Failed (Try Again)';
         if (icon) icon.textContent = 'error';
         if (btn) btn.disabled = false;
       });
