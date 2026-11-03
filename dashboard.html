@@ -1,201 +1,259 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_dashboard" name="shell-type"/>
+  <title>SocialFlow Studio Enterprise - Production Workspace</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
 
-<html lang="en"><head><title>SocialFlow Studio Enterprise - Creative Post Composer</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-          "surface-container-high": "#e2e7ff",
-          "inverse-on-surface": "#eef0ff",
-          "inverse-primary": "#c3c0ff",
-          "secondary-fixed-dim": "#adc6ff",
-          "surface-container-low": "#f2f3ff",
-          "outline-variant": "#c7c4d8",
-          "surface-container": "#eaedff",
-          "on-surface": "#131b2e",
-          "primary-fixed-dim": "#c3c0ff",
-          "on-secondary-fixed-variant": "#004395",
-          "on-background": "#131b2e",
-          "on-surface-variant": "#464555",
-          "tertiary-fixed-dim": "#4edea3",
-          "on-tertiary-fixed-variant": "#005236",
-          "tertiary-fixed": "#6ffbbe",
-          "on-secondary-container": "#fefcff",
-          "on-secondary-fixed": "#001a42",
-          "tertiary": "#005338",
-          "surface-tint": "#4d44e3",
-          "tertiary-container": "#006e4b",
-          "surface-container-lowest": "#ffffff",
-          "on-tertiary-container": "#67f4b7",
-          "on-primary": "#ffffff",
-          "on-primary-fixed-variant": "#3323cc",
-          "error-container": "#ffdad6",
-          "on-primary-container": "#dad7ff",
-          "surface-variant": "#dae2fd",
-          "secondary-fixed": "#d8e2ff",
-          "secondary-container": "#2170e4",
-          "on-tertiary": "#ffffff",
-          "surface-container-highest": "#dae2fd",
-          "on-primary-fixed": "#0f0069",
-          "background": "#faf8ff",
-          "surface": "#faf8ff",
-          "surface-dim": "#d2d9f4",
-          "on-error-container": "#93000a",
-          "secondary": "#0058be",
-          "primary": "#3525cd",
-          "on-tertiary-fixed": "#002113",
-          "outline": "#777587",
-          "inverse-surface": "#283044",
-          "error": "#ba1a1a",
-          "surface-bright": "#faf8ff",
-          "primary-container": "#4f46e5",
-          "primary-fixed": "#e2dfff",
-          "on-error": "#ffffff",
-          "on-secondary": "#ffffff"
-        },
-        "borderRadius": {
-          "DEFAULT": "0.125rem",
-          "lg": "0.25rem",
-          "xl": "0.5rem",
-          "full": "0.75rem"
-        },
-        "spacing": {
-          "space-sm": "0.25rem",
-          "space-xl": "1rem",
-          "gutter-loose": "1rem",
-          "margin": "0.75rem",
-          "space-xs": "0.125rem",
-          "space-md": "0.5rem",
-          "gutter": "0.5rem",
-          "space-lg": "0.75rem",
-          "margin-mobile": "0.5rem"
-        },
-        "fontFamily": {
-          "label-sm": [
-            "Inter"
-          ],
-          "mono-code": [
-            "JetBrains Mono"
-          ],
-          "headline-sm": [
-            "Inter"
-          ],
-          "body-md": [
-            "Inter"
-          ],
-          "headline-lg-mobile": [
-            "Inter"
-          ],
-          "label-md": [
-            "Inter"
-          ],
-          "headline-lg": [
-            "Inter"
-          ],
-          "body-lg": [
-            "Inter"
-          ],
-          "label-lg": [
-            "Inter"
-          ],
-          "headline-md": [
-            "Inter"
-          ],
-          "body-sm": [
-            "Inter"
-          ]
-        },
-        "fontSize": {
-          "label-sm": [
-            "10px",
-            {
-              "lineHeight": "12px",
-              "letterSpacing": "0.04em",
-              "fontWeight": "600"
-            }
-          ],
-          "mono-code": [
-            "11px",
-            {
-              "lineHeight": "14px",
-              "letterSpacing": "-0.01em",
-              "fontWeight": "500"
-            }
-          ],
-          "headline-sm": [
-            "18px",
-            {
-              "lineHeight": "24px",
-              "letterSpacing": "-0.01em",
-              "fontWeight": "600"
-            }
-          ],
-          "body-md": [
-            "14px",
-            {
-              "lineHeight": "20px",
-              "fontWeight": "400"
-            }
-          ],
-          "headline-lg-mobile": [
-            "24px",
-            {
-              "lineHeight": "32px",
-              "letterSpacing": "-0.01em",
-              "fontWeight": "700"
-            }
-          ],
-          "label-md": [
-            "11px",
-            {
-              "lineHeight": "14px",
-              "letterSpacing": "0.02em",
-              "fontWeight": "500"
-            }
-          ],
-          "headline-lg": [
-            "32px",
-            {
-              "lineHeight": "40px",
-              "letterSpacing": "-0.02em",
-              "fontWeight": "700"
-            }
-          ],
-          "body-lg": [
-            "16px",
-            {
-              "lineHeight": "24px",
-              "fontWeight": "400"
-            }
-          ],
-          "label-lg": [
-            "13px",
-            {
-              "lineHeight": "18px",
-              "letterSpacing": "0.01em",
-              "fontWeight": "600"
-            }
-          ],
-          "headline-md": [
-            "24px",
-            {
-              "lineHeight": "32px",
-              "letterSpacing": "-0.015em",
-              "fontWeight": "600"
-            }
-          ],
-          "body-sm": [
-            "12px",
-            {
-              "lineHeight": "16px",
-              "fontWeight": "400"
-            }
-          ]
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-high": "#e2e7ff",
+            "inverse-on-surface": "#eef0ff",
+            "inverse-primary": "#c3c0ff",
+            "secondary-fixed-dim": "#adc6ff",
+            "surface-container-low": "#f2f3ff",
+            "outline-variant": "#c7c4d8",
+            "surface-container": "#eaedff",
+            "on-surface": "#131b2e",
+            "primary-fixed-dim": "#c3c0ff",
+            "on-secondary-fixed-variant": "#004395",
+            "on-background": "#131b2e",
+            "on-surface-variant": "#464555",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-tertiary-fixed-variant": "#005236",
+            "tertiary-fixed": "#6ffbbe",
+            "on-secondary-container": "#fefcff",
+            "on-secondary-fixed": "#001a42",
+            "tertiary": "#005338",
+            "surface-tint": "#4d44e3",
+            "tertiary-container": "#006e4b",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#67f4b7",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#3323cc",
+            "error-container": "#ffdad6",
+            "on-primary-container": "#dad7ff",
+            "surface-variant": "#dae2fd",
+            "secondary-fixed": "#d8e2ff",
+            "secondary-container": "#2170e4",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "on-primary-fixed": "#0f0069",
+            "background": "#faf8ff",
+            "surface": "#faf8ff",
+            "surface-dim": "#d2d9f4",
+            "on-error-container": "#93000a",
+            "secondary": "#0058be",
+            "primary": "#3525cd",
+            "on-tertiary-fixed": "#002113",
+            "outline": "#777587",
+            "inverse-surface": "#283044",
+            "error": "#ba1a1a",
+            "surface-bright": "#faf8ff",
+            "primary-container": "#4f46e5",
+            "primary-fixed": "#e2dfff",
+            "on-error": "#ffffff",
+            "on-secondary": "#ffffff"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "space-sm": "0.25rem",
+            "space-xl": "1rem",
+            "gutter-loose": "1rem",
+            "margin": "0.75rem",
+            "space-xs": "0.125rem",
+            "space-md": "0.5rem",
+            "gutter": "0.5rem",
+            "space-lg": "0.75rem",
+            "margin-mobile": "0.5rem"
+          },
+          fontFamily: {
+            "headline-lg": ["Inter", "sans-serif"],
+            "headline-md": ["Inter", "sans-serif"],
+            "headline-sm": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "label-lg": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "mono-code": ["JetBrains Mono", "monospace"]
+          }
         }
-      },
-    },
-  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-xl flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-md"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">S</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-none">SocialFlow</span><span class="font-label-sm text-label-sm text-primary tracking-wider uppercase mt-space-xs">Studio Enterprise</span></div></div></div><div class="px-space-md py-space-sm"><div class="px-space-md py-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Core Suite</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="publishing" href="#"><span class="material-symbols-outlined text-[18px]">send</span><span>Publishing</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="multi-platform-scheduler" href="#"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span>Multi-Platform Scheduler</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="analytics" href="#"><span class="material-symbols-outlined text-[18px]">monitoring</span><span>Analytics</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="multi-account" href="#"><span class="material-symbols-outlined text-[18px]">supervisor_account</span><span>Multi-Account</span></a></nav></div><div class="px-space-md py-space-sm"><div class="px-space-md py-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Creative Suite</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="video-studio" href="#"><span class="material-symbols-outlined text-[18px]">movie_edit</span><span>Video Studio</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ai-image-and-graphic-studio" href="#"><span class="material-symbols-outlined text-[18px]">photo_spark</span><span>AI Image &amp; Graphic</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="text-and-ai-writer" href="#"><span class="material-symbols-outlined text-[18px]">edit_note</span><span>Text &amp; AI Writer</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="brand-assets" href="#"><span class="material-symbols-outlined text-[18px]">folder_special</span><span>Brand Assets</span></a><a class="flex items-center gap-space-md px-space-md py-space-md rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="poster-studio" href="../poster-editor/index.html" target="_blank"><span class="material-symbols-outlined text-[18px] text-amber-500">palette</span><span>Poster Studio</span></a></nav></div></div><div class="p-space-md bg-surface-container-low"><div class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Render Queue</span><span class="font-mono-code text-mono-code text-on-surface">2 Jobs Active</span></div><span class="material-symbols-outlined text-tertiary-container text-[18px]">sync</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-lg cursor-pointer"><span class="material-symbols-outlined text-on-surface-variant text-[18px]">workspaces</span><span class="font-label-md text-label-md text-on-surface font-semibold">Global Marketing EMEA</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span></div><div class="flex items-center bg-surface-container-low px-space-md py-space-sm rounded-lg w-72"><span class="material-symbols-outlined text-on-surface-variant text-[18px] mr-space-sm">search</span><input class="bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none w-full" placeholder="Search campaigns, clips, media..." type="text"/></div></div><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-low rounded-lg" title="Connected Platform Statuses"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="Facebook: Connected"><span class="material-symbols-outlined text-[16px] text-secondary">public</span><span class="font-label-sm text-label-sm">FB</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="Instagram: Connected"><span class="material-symbols-outlined text-[16px] text-primary">photo_camera</span><span class="font-label-sm text-label-sm">IG</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="WordPress: Connected"><span class="material-symbols-outlined text-[16px] text-secondary">article</span><span class="font-label-sm text-label-sm">WP</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="X: Connected"><span class="material-symbols-outlined text-[16px] text-on-surface">tag</span><span class="font-label-sm text-label-sm">X</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="YouTube: Connected"><span class="material-symbols-outlined text-[16px] text-error">play_circle</span><span class="font-label-sm text-label-sm">YT</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="TikTok: Synced"><span class="material-symbols-outlined text-[16px] text-on-surface">music_note</span><span class="font-label-sm text-label-sm">TT</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span></div></div><div class="flex items-center gap-space-md"><button class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span></button><div class="flex items-center gap-space-sm pl-space-sm">
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- UNIFIED DESKTOP SIDEBAR (w-72)                                     -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+    <div class="p-space-lg flex flex-col gap-space-md">
+      
+      <!-- Brand Anchor -->
+      <div class="flex items-center gap-space-md pb-space-md shadow-[0_1px_0_rgba(199,196,216,0.25)]">
+        <div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-bold text-sm shadow-sm">
+          S
+        </div>
+        <div class="flex flex-col">
+          <span class="font-headline-sm text-headline-sm text-on-surface leading-none font-bold">SocialFlow</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Enterprise Studio</span>
+        </div>
+      </div>
+
+      <!-- Core Suite -->
+      <div class="flex flex-col gap-space-xs">
+        <div class="px-space-md pt-space-sm pb-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase">Core Suite</div>
+        <nav class="flex flex-col gap-space-xs">
+          <a id="nav-publishing" onclick="switchMainView('composer')" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="javascript:void(0);">
+            <span class="material-symbols-outlined text-[20px]">send</span>
+            <span>Publishing</span>
+          </a>
+          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="#">
+            <span class="material-symbols-outlined text-[20px]">insights</span>
+            <span>Analytics</span>
+          </a>
+          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="#">
+            <span class="material-symbols-outlined text-[20px]">switch_account</span>
+            <span>Multi-Account</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Video Studio [PRO] Navigation & Sub-Items -->
+      <div class="flex flex-col gap-space-xs pt-space-xs">
+        <div onclick="toggleVideoSubmenu()" class="flex items-center justify-between px-space-md pt-space-xs pb-space-xs cursor-pointer select-none group">
+          <span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[18px]">movie_edit</span>
+            <span>Video Studio</span>
+          </span>
+          <div class="flex items-center gap-1">
+            <span class="px-space-sm py-space-xs bg-primary-container text-on-primary font-label-sm text-label-sm rounded-full">PRO</span>
+            <span id="videoChevron" class="material-symbols-outlined text-[18px] text-primary transition-transform" style="transform: rotate(180deg);">expand_more</span>
+          </div>
+        </div>
+
+        <nav id="videoSubmenu" class="flex flex-col gap-space-xs pl-space-xs transition-all duration-200">
+          <a id="nav-video-dashboard" onclick="switchMainView('video-dashboard')" class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-surface-container-high text-primary font-semibold rounded-lg cursor-pointer" href="javascript:void(0);">
+            <span class="material-symbols-outlined text-[18px]">space_dashboard</span>
+            <span>Video Dashboard</span>
+          </a>
+          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="#">
+            <span class="material-symbols-outlined text-[18px]">video_library</span>
+            <span>Video Templates</span>
+          </a>
+          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="#">
+            <span class="material-symbols-outlined text-[18px]">movie_edit</span>
+            <span>Create New Video</span>
+          </a>
+          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="#">
+            <span class="material-symbols-outlined text-[18px]">folder_special</span>
+            <span>My Projects</span>
+          </a>
+          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="#">
+            <span class="material-symbols-outlined text-[18px]">download_done</span>
+            <span>Exported Videos</span>
+          </a>
+          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="#">
+            <span class="material-symbols-outlined text-[18px]">branding_watermark</span>
+            <span>Brand Assets</span>
+          </a>
+          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="#">
+            <span class="material-symbols-outlined text-[18px]">audiotrack</span>
+            <span>Audio Library</span>
+          </a>
+          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="#">
+            <span class="material-symbols-outlined text-[18px]">subtitles</span>
+            <span>Subtitle Library</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Extra Creative Suite Items -->
+      <div class="flex flex-col gap-space-xs pt-space-xs border-t border-slate-200/50">
+        <div class="px-space-md pt-space-xs pb-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase">Design Studio</div>
+        <nav class="flex flex-col gap-space-xs">
+          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="../poster-editor/index.html" target="_blank">
+            <span class="material-symbols-outlined text-[20px] text-amber-500">palette</span>
+            <span>Poster Studio</span>
+          </a>
+        </nav>
+      </div>
+
+    </div>
+
+    <!-- Bottom Cloud Storage Meter -->
+    <div class="p-space-lg bg-surface-container-low mx-space-md mb-space-md rounded-xl flex flex-col gap-space-xs">
+      <div class="flex items-center justify-between">
+        <span class="font-label-sm text-label-sm text-on-surface-variant">Cloud Storage</span>
+        <span class="font-mono-code text-mono-code text-on-surface font-semibold">84.2 GB / 1 TB</span>
+      </div>
+      <div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+        <div class="h-full bg-primary-container rounded-full" style="width: 8.4%"></div>
+      </div>
+      <span class="font-label-sm text-label-sm text-tertiary font-medium">8.4% used of ultra-speed SSD</span>
+    </div>
+  </aside>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- MAIN WORKSPACE CONTAINER (pl-72)                                   -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <div class="pl-72 min-h-screen flex flex-col">
+
+    <!-- HEADER 1: VIDEO STUDIO HEADER (Visible on Video Dashboard) -->
+    <header id="header-video" class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl">
+      <div class="flex items-center gap-space-lg">
+        <div class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+          <span class="material-symbols-outlined text-[20px] text-primary">corporate_fare</span>
+          <span class="font-label-lg text-label-lg text-on-surface font-semibold">Global News &amp; Media Network</span>
+          <span class="material-symbols-outlined text-[18px] text-on-surface-variant">unfold_more</span>
+        </div>
+        <div class="relative flex items-center">
+          <span class="material-symbols-outlined absolute left-space-md text-[18px] text-on-surface-variant pointer-events-none">search</span>
+          <input class="w-72 pl-9 pr-14 py-space-xs bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary-container" placeholder="Search clips, audio, projects..." type="text"/>
+          <kbd class="absolute right-space-sm px-space-xs py-0.5 bg-surface-container text-on-surface-variant font-mono-code text-label-sm rounded">Cmd+K</kbd>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-space-md">
+        <button onclick="alert('Launch video creation wizard')" class="flex items-center gap-space-xs px-space-md py-space-xs bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg hover:opacity-95 transition-opacity shadow-[0_1px_2px_0_rgba(15,23,42,0.04)]" type="button">
+          <span class="material-symbols-outlined text-[18px]">add</span>
+          <span>Create New Video</span>
+        </button>
+        <div class="relative flex items-center justify-center w-9 h-9 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+          <span class="material-symbols-outlined text-[20px] text-on-surface-variant">notifications</span>
+          <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span>
+        </div>
+        <!-- USER PROFILE INJECTION POINT -->
+        <div class="flex items-center gap-space-sm pl-space-sm">
   <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani" alt="Avatar" class="w-8 h-8 rounded-full border border-primary/30 bg-surface-container-low shadow-xs"/>
   <div class="hidden xl:flex flex-col">
     <span class="font-label-md text-label-md text-on-surface font-semibold leading-none">Jamshed Rizwani</span>
@@ -204,7 +262,666 @@
   <a href="index.html" title="Sign Out" class="ml-2 w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors">
     <span class="material-symbols-outlined text-[18px]">logout</span>
   </a>
-</div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+</div>
+      </div>
+    </header>
+
+    <!-- HEADER 2: COMPOSER HEADER (Visible on Creative Post Composer) -->
+    <header id="header-composer" class="hidden fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl">
+      <div class="flex items-center gap-space-xl">
+        <div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-lg cursor-pointer">
+          <span class="material-symbols-outlined text-on-surface-variant text-[18px]">workspaces</span>
+          <span class="font-label-md text-label-md text-on-surface font-semibold">Global Marketing EMEA</span>
+          <span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span>
+        </div>
+        <div class="flex items-center bg-surface-container-low px-space-md py-space-sm rounded-lg w-72">
+          <span class="material-symbols-outlined text-on-surface-variant text-[18px] mr-space-sm">search</span>
+          <input class="bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none w-full" placeholder="Search campaigns, clips, media..." type="text"/>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-space-xl">
+        <div class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-low rounded-lg" title="Connected Platform Statuses">
+          <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="Facebook: Connected">
+            <span class="material-symbols-outlined text-[16px] text-secondary">public</span><span class="font-label-sm text-label-sm font-bold">FB</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+          </div>
+          <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="Instagram: Connected">
+            <span class="material-symbols-outlined text-[16px] text-primary">photo_camera</span><span class="font-label-sm text-label-sm font-bold">IG</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+          </div>
+          <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="WordPress: Connected">
+            <span class="material-symbols-outlined text-[16px] text-secondary">article</span><span class="font-label-sm text-label-sm font-bold">WP</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+          </div>
+          <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="X: Connected">
+            <span class="material-symbols-outlined text-[16px] text-on-surface">tag</span><span class="font-label-sm text-label-sm font-bold">X</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+          </div>
+          <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="YouTube: Connected">
+            <span class="material-symbols-outlined text-[16px] text-error">play_circle</span><span class="font-label-sm text-label-sm font-bold">YT</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+          </div>
+          <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface" title="TikTok: Synced">
+            <span class="material-symbols-outlined text-[16px] text-on-surface">music_note</span><span class="font-label-sm text-label-sm font-bold">TT</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+          </div>
+        </div>
+
+        <!-- USER PROFILE INJECTION POINT 2 -->
+        <div class="flex items-center gap-space-sm pl-space-sm">
+  <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani" alt="Avatar" class="w-8 h-8 rounded-full border border-primary/30 bg-surface-container-low shadow-xs"/>
+  <div class="hidden xl:flex flex-col">
+    <span class="font-label-md text-label-md text-on-surface font-semibold leading-none">Jamshed Rizwani</span>
+    <span class="font-label-sm text-label-sm text-primary font-mono-code">Super Administrator</span>
+  </div>
+  <a href="index.html" title="Sign Out" class="ml-2 w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors">
+    <span class="material-symbols-outlined text-[18px]">logout</span>
+  </a>
+</div>
+      </div>
+    </header>
+
+    <!-- ═════════════════════════════════════════════════════════════════ -->
+    <!-- VIEW CONTAINER 1: VIDEO STUDIO DASHBOARD (DEFAULT ACTIVE VIEW)   -->
+    <!-- ═════════════════════════════════════════════════════════════════ -->
+    <main id="view-video-dashboard" class="studio-view relative pt-16 bg-surface min-h-screen">
+      <div class="flex flex-col w-full">
+<div class="p-space-xl flex flex-col gap-space-xl">
+<!-- Hero Banner with Soft Gradient & Studio CTAs -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary-container via-primary to-secondary p-space-xl shadow-md text-on-primary">
+<div class="absolute -right-12 -top-16 w-72 h-72 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
+<div class="absolute right-48 -bottom-10 w-48 h-48 rounded-full bg-tertiary-fixed/20 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-white/15 backdrop-blur-md font-mono-code text-mono-code text-on-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-pulse"></span>
+              RENDER CLUSTER: ONLINE (NVENC 4K ACCEL)
+            </span>
+<span class="font-label-sm text-label-sm text-on-primary/80 uppercase tracking-wider">v3.8 Multi-Track NLE</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg tracking-tight text-white mt-1">
+            Studio Production Suite
+          </h1>
+<p class="font-body-md text-body-md text-on-primary-container max-w-xl">
+            Produce broadcast-grade news packages, localized bi-directional reels, and multi-channel social snippets with instantaneous hardware-accelerated rendering.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="inline-flex items-center gap-space-sm px-space-lg py-space-md rounded-lg bg-surface-container-lowest text-primary font-label-lg text-label-lg shadow-sm hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+            + Create New Video
+          </button>
+<button class="inline-flex items-center gap-space-sm px-space-md py-space-md rounded-lg bg-white/15 backdrop-blur-md text-white font-label-lg text-label-lg hover:bg-white/25 transition-all">
+<span class="material-symbols-outlined text-[20px]">auto_awesome_motion</span>
+            Browse Templates
+            <span class="px-space-xs py-0.5 rounded bg-white/20 font-mono-code text-label-sm">120+</span>
+</button>
+<button class="inline-flex items-center gap-space-sm px-space-md py-space-md rounded-lg bg-white/15 backdrop-blur-md text-white font-label-lg text-label-lg hover:bg-white/25 transition-all">
+<span class="material-symbols-outlined text-[20px]">cloud_upload</span>
+            Upload Media Clips
+          </button>
+</div>
+</div>
+</div>
+<!-- Production Statistics Row (4 KPI Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Produced This Month</span>
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">movie</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-space-md">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">42</span>
+<span class="inline-flex items-center gap-0.5 px-space-xs py-0.5 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+            +18% MoM
+          </span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full mt-space-sm overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 70%"></div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Avg. Render Speed</span>
+<div class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-space-md">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold font-mono-code">1m 24s</span>
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-mono-code">
+            4K Accelerated
+          </span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full mt-space-sm overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Social Views Reached</span>
+<div class="w-8 h-8 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-space-md">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold font-mono-code">2.4M</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">
+            YT • TT • FB • IG
+          </span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full mt-space-sm overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 84%"></div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Cloud Media Vault</span>
+<div class="w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">cloud_sync</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-space-md">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold font-mono-code">142.6 GB</span>
+<span class="font-mono-code text-label-sm text-on-surface-variant">/ 1,000 GB</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full mt-space-sm overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 14.2%"></div>
+</div>
+</div>
+</div>
+<!-- Quick Start Templates Row -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">space_dashboard</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Quick Start Templates</h2>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Top Velocity</span>
+</div>
+<button class="inline-flex items-center gap-1 font-label-lg text-label-lg text-primary hover:underline">
+          View All Templates (124)
+          <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Template 1 -->
+<div class="group relative flex flex-col rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="relative h-44 w-full overflow-hidden bg-surface-container">
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="High-tech television newsroom studio broadcast set with dynamic LED lower third tickers, glowing blue backdrops, crisp typography elements, and broadcast control room ambient monitors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL89L6uGlbDSMwDRRxb8cEmhTddV4-i5RqOIFoYl1K36kGg8fDeTwbjYcZjQT8t5vVcgPhuaxpK-c0fCkFS_pPtTfj6Vsml4ueWBVxgeQP8Rxy0ZNcAqPq4ShYHRvZpxZDz9uy3C_9f8vOgXPQ8DQAa3ypFJVTML0HypO5NcAYCJJ7Nk8Jnkq69dLunD3jmHsejLFz-BjO04mN08PyjrdLEJYmZy9Zrqk25nSrX4o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm flex items-center gap-1">
+<span class="px-space-xs py-0.5 rounded bg-error text-white font-label-sm text-label-sm uppercase tracking-wider font-semibold">Live Alert</span>
+<span class="px-space-xs py-0.5 rounded bg-black/60 backdrop-blur-md text-white font-mono-code text-label-sm">16:9</span>
+</div>
+<span class="absolute bottom-space-sm right-space-sm px-space-xs py-0.5 rounded bg-black/70 font-mono-code text-label-sm text-white">00:30 Preset</span>
+</div>
+<div class="p-space-md flex flex-col gap-1">
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors truncate">Breaking News Intro</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Dual-language headline banner, ticker scroll &amp; audio stingers.</p>
+</div>
+</div>
+<!-- Template 2 -->
+<div class="group relative flex flex-col rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="relative h-44 w-full overflow-hidden bg-surface-container">
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Vertical TikTok style mobile smartphone video composition with punchy bold kinetic typography subtitles, neon gradient overlays, modern creator talking head aesthetics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9qdvNRDLm4oA3PnPIGQ8nTN90GZaZssZzHuMno7NUpZvqiT2D3MXs4sWBhSxSQoMhQCEIBS7GC6J_lBF_L_GEtg5BR8eWqZ7CiifD1e1324pi6bANPAvI8bRDGJIxg7nF4138TTDp-bTEH39JxtL9UOjClMSth9Iri7I8bDvFD7RQZw1hm1b2TythtBAW7LZgROaJso6dKFH04FqRtLSwJzHASSgWybx-q4OgJzI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm flex items-center gap-1">
+<span class="px-space-xs py-0.5 rounded bg-secondary-container text-white font-label-sm text-label-sm font-semibold">TikTok / Reels</span>
+<span class="px-space-xs py-0.5 rounded bg-black/60 backdrop-blur-md text-white font-mono-code text-label-sm">9:16</span>
+</div>
+<span class="absolute bottom-space-sm right-space-sm px-space-xs py-0.5 rounded bg-black/70 font-mono-code text-label-sm text-white">00:15 Hook</span>
+</div>
+<div class="p-space-md flex flex-col gap-1">
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors truncate">TikTok 9:16 Viral Hook</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Aggressive zoom transitions, auto-synced word highlight subtitles.</p>
+</div>
+</div>
+<!-- Template 3 -->
+<div class="group relative flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden hover:shadow-md transition-all cursor-pointer">
+<div class="relative h-44 w-full overflow-hidden bg-surface-container">
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Modern YouTube documentary style explainer visual frame with sleek infographic charts, data callouts, minimalist typography on a clean textured matte background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-okbcWKY-Ne4NneMGQtygSZUZwneE37DWaaODPuJ9WIKB5yqZvoqa9qjcA6H41N2ljy0GSZ4UjFjyroYBxwDbCYPNDzOmRIz_FRGvGkZ262B40rIJRovQqxi5TZZc6wcTTvBUM2beOtVMMNzhzgQHk2A6eLFPuwLZjwMaN0Hd5QLB0LnX58fewn3Kx17yi4h8-fN2om-QzC2AWq1hz6482AeZWeu16ABWtIDqGYc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm flex items-center gap-1">
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-white font-label-sm text-label-sm font-semibold">Longform</span>
+<span class="px-space-xs py-0.5 rounded bg-black/60 backdrop-blur-md text-white font-mono-code text-label-sm">16:9</span>
+</div>
+<span class="absolute bottom-space-sm right-space-sm px-space-xs py-0.5 rounded bg-black/70 font-mono-code text-label-sm text-white">05:00 Intro</span>
+</div>
+<div class="p-space-md flex flex-col gap-1">
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors truncate">YouTube 16:9 Explainer</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Chapter cards, lower third bio ribbons, and B-roll split screen slots.</p>
+</div>
+</div>
+<!-- Template 4 -->
+<div class="group relative flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden hover:shadow-md transition-all cursor-pointer">
+<div class="relative h-44 w-full overflow-hidden bg-surface-container">
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="High quality product video commercial showcasing minimalist electronic hardware with studio softbox specular reflections, glossy reflections, motion graphics price callout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa3jIuqoRWDSr8DzY0zW_ntwz0VurAD3yh4QvSudWv2UQXYsGtyWj3edR7xPSSmx8mN3sB36WI6Tzu6gNmUlJADnfMKaJSC7RhJRagyIfqDPGlZO0ln1gaiHTtKs1wzi2hb6m5vmYBye1H1gTTx1sEqOD69wbVBle2x4SqG9DQkuhcorHHtVUsjylwLs5q0aWMQzwfBY1f0hPBxV-C48WM1FtIhFVU8EeEn4lIzYk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm flex items-center gap-1">
+<span class="px-space-xs py-0.5 rounded bg-tertiary-container text-white font-label-sm text-label-sm font-semibold">Commerce</span>
+<span class="px-space-xs py-0.5 rounded bg-black/60 backdrop-blur-md text-white font-mono-code text-label-sm">9:16</span>
+</div>
+<span class="absolute bottom-space-sm right-space-sm px-space-xs py-0.5 rounded bg-black/70 font-mono-code text-label-sm text-white">00:20 Spot</span>
+</div>
+<div class="p-space-md flex flex-col gap-1">
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors truncate">IG Reel Product Showcase</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Smooth orbital camera sweep presets, specs badge &amp; CTA sticker.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Projects Grid -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">folder_special</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Recent Projects</h2>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-mono-code text-label-sm">4 Active</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm hover:bg-surface-container-highest">All Formats</button>
+<button class="px-space-sm py-1 rounded bg-transparent text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container">Drafts (2)</button>
+<button class="px-space-sm py-1 rounded bg-transparent text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container">Ready to Export (1)</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Project Card 1 -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow overflow-hidden group">
+<div class="relative h-44 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="News presenter sitting at digital news anchor desk with multi-language graphics on screen, sharp television studio key lights, and audio frequency waveforms" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeS5kq_H7DIdzuz73OXsYJcENy88dYvQR2W4Ybi93WSSK1ASRw1QlJPj1zSPPciSY9eL8Vl5SKSO2huEggHxohvxyfo2bAtBAc_d7qb2fH_ORBBgYFZXqFsT25oPrSdmq5AfW0T6yxDlCeQ4iRy3RtTc2me10SKPtpsMrGLC0juuvzYlpPELPlPI9a2JC3r_uk7dl5KGOdI84I_7E-VjyIAJk4e3GTPzxw1Lr4g88"/>
+<div class="absolute top-2 left-2 flex items-center gap-1">
+<span class="px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-md text-white font-mono-code text-label-sm">16:9</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-white font-label-sm text-label-sm">Global/Eng</span>
+</div>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-black/75 text-white font-mono-code text-label-sm">00:02:15</span>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1 gap-space-md">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors line-clamp-2">
+                  Daily Evening News Prime - Global/Eng Broadcast
+                </h3>
+<div class="relative">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 top-6 z-20 w-36 rounded-lg bg-surface-container-lowest shadow-lg py-1 flex flex-col text-on-surface">
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">content_copy</span>Duplicate</button>
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">drive_file_rename_outline</span>Rename</button>
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">file_download</span>Export</button>
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-error-container text-error flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">delete</span>Delete</button>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Edited 12 mins ago</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Ready to Export
+              </span>
+<button class="px-space-md py-1 rounded bg-primary-container text-white font-label-sm text-label-sm hover:opacity-90 transition-opacity">
+                Open Editor
+              </button>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow overflow-hidden group">
+<div class="relative h-44 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Vertical smartphone frame capturing a modern gadget unboxing with mechanical keyboard and futuristic smartwatch under crisp ambient purple studio lamps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByaEFYJD3Sqg_DYm4_4i1S_BXDpoev9tZ5P5kf7FgdVyzUZyGUarovhauYzCcYUECqkIMk-sIFRMAtLvCs8TI2Ztrk6OmKxeJAHm-tOpPt4mrynsG2Q3M1IHd2zgod6t0fic2A1ncHu6PpnBR5t79ADc2UdRO9tBluGmLf9HYMvtjB-qfD-Z_D3M_CDHSkGlOzaxc-3d9X7JrxvovxMUbFUVkmGk9z0Bq-HCtJq3Y"/>
+<div class="absolute top-2 left-2 flex items-center gap-1">
+<span class="px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-md text-white font-mono-code text-label-sm">9:16</span>
+<span class="px-1.5 py-0.5 rounded bg-primary text-white font-label-sm text-label-sm">Reels</span>
+</div>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-black/75 text-white font-mono-code text-label-sm">00:00:45</span>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1 gap-space-md">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors line-clamp-2">
+                  Tech Review Reel #48
+                </h3>
+<div class="relative">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 top-6 z-20 w-36 rounded-lg bg-surface-container-lowest shadow-lg py-1 flex flex-col text-on-surface">
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">content_copy</span>Duplicate</button>
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">drive_file_rename_outline</span>Rename</button>
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">file_download</span>Export</button>
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-error-container text-error flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">delete</span>Delete</button>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Edited 2 hours ago</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                Draft
+              </span>
+<button class="px-space-md py-1 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors">
+                Resume
+              </button>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow overflow-hidden group">
+<div class="relative h-44 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="High-speed modern urban rapid transit train arriving at an elevated station terminal with cinematic lens flare, architectural steel beams, and clear sunny daytime sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLAFgC9pT9Db0HR9htlYYizac57YhWtPhsKWJOIJBDDKEaphh5vh23odHQWCaYwpCxGOOtp8UwNlsTFz2D73wIUs1P3awrvorQPxxiPyg6v7C7HQKwVB0h2XRUKn7pjm_3tm8gNyrSmE3-UO1-bTGbfA0DI1IHzctiBIrGzyMRAASYR7xbtS6etAJfolAnLTa8EabuUD_zha4c_aRAy81MNzdEVHnCe-1CcjeXm_M"/>
+<div class="absolute top-2 left-2 flex items-center gap-1">
+<span class="px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-md text-white font-mono-code text-label-sm">16:9</span>
+<span class="px-1.5 py-0.5 rounded bg-error text-white font-label-sm text-label-sm">Breaking</span>
+</div>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-black/75 text-white font-mono-code text-label-sm">00:01:10</span>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1 gap-space-md">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors line-clamp-2">
+                  Breaking Alert: Capital City Metro Opening
+                </h3>
+<div class="relative">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 top-6 z-20 w-36 rounded-lg bg-surface-container-lowest shadow-lg py-1 flex flex-col text-on-surface">
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">content_copy</span>Duplicate</button>
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">drive_file_rename_outline</span>Rename</button>
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">file_download</span>Export</button>
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-error-container text-error flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">delete</span>Delete</button>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Edited 4 hours ago</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+                Published
+              </span>
+<button class="px-space-md py-1 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors">
+                View Log
+              </button>
+</div>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow overflow-hidden group">
+<div class="relative h-44 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Dynamic split screen media montage featuring viral social trends, influencer content clips, colorful graphic text overlays and energetic neon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwSAjR8sF0zOIT0M7ixHW84bEfT1mVHkGgnPg7btGrLrRFrYDYj3f0bU8RrDbI_rSg8qN-Gnm164G74wks8oJ9qSqBhkONbu2jXtrA9vU4o5tn9iCjV5SI02FCl3QLwZKw7O7DFVSVhLjBfhTYJjpc740s2FujgH_3XMtWPM8UipSrcncp2_nnkTx16AvVXFLV2U1xhMeuaHC5ksQ_Hfetb0nHHbgVVh8ooDoanNk"/>
+<div class="absolute top-2 left-2 flex items-center gap-1">
+<span class="px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-md text-white font-mono-code text-label-sm">9:16</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">Shorts</span>
+</div>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-black/75 text-white font-mono-code text-label-sm">00:00:58</span>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1 gap-space-md">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors line-clamp-2">
+                  Social Trend Weekly Round-up
+                </h3>
+<div class="relative">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 top-6 z-20 w-36 rounded-lg bg-surface-container-lowest shadow-lg py-1 flex flex-col text-on-surface">
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">content_copy</span>Duplicate</button>
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">drive_file_rename_outline</span>Rename</button>
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">file_download</span>Export</button>
+<button class="px-3 py-1.5 text-left font-label-sm text-label-sm hover:bg-error-container text-error flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">delete</span>Delete</button>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Edited Yesterday</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                Draft
+              </span>
+<button class="px-space-md py-1 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors">
+                Resume
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Asymmetric Split Section: Recently Exported & Cloud Media Drawer -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Recently Exported Videos (7 Columns) -->
+<div class="lg:col-span-7 flex flex-col rounded-xl bg-surface-container-lowest p-space-lg shadow-sm gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">download_done</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Recently Exported Videos</h2>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-ping"></span>
+            Render Queue Clean
+          </span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Row 1 -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors gap-space-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-16 h-10 rounded bg-black/80 flex items-center justify-center shrink-0 relative overflow-hidden">
+<span class="material-symbols-outlined text-white/60 text-[20px]">videocam</span>
+<span class="absolute bottom-0 right-0 px-1 bg-primary font-mono-code text-[8px] text-white">4K</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Prime_Bulletin_Segment_04_Master.mp4</span>
+<div class="flex items-center gap-space-sm font-mono-code text-label-sm text-on-surface-variant">
+<span>342.8 MB</span>
+<span>•</span>
+<span>4K 60fps</span>
+<span>•</span>
+<span>10 mins ago</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<!-- Direct Social Publish Suite -->
+<div class="flex items-center gap-1 bg-surface-container-lowest px-space-xs py-1 rounded-lg shadow-xs">
+<button class="w-7 h-7 rounded hover:bg-surface-container flex items-center justify-center text-red-600 transition-colors" title="Publish to YouTube">
+<span class="material-symbols-outlined text-[18px]">smart_display</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-surface-container flex items-center justify-center text-on-surface transition-colors" title="Publish to TikTok">
+<span class="material-symbols-outlined text-[18px]">music_video</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-surface-container flex items-center justify-center text-pink-600 transition-colors" title="Publish to Instagram">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-surface-container flex items-center justify-center text-blue-600 transition-colors" title="Publish to Facebook">
+<span class="material-symbols-outlined text-[18px]">public</span>
+</button>
+</div>
+<button class="inline-flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-primary-container text-white font-label-sm text-label-sm hover:opacity-95 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">send</span>
+                Publish
+              </button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant" title="Direct Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors gap-space-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-16 h-10 rounded bg-black/80 flex items-center justify-center shrink-0 relative overflow-hidden">
+<span class="material-symbols-outlined text-white/60 text-[20px]">videocam</span>
+<span class="absolute bottom-0 right-0 px-1 bg-secondary font-mono-code text-[8px] text-white">1080p</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Media_Digest_Promo_Mobile_v2.mp4</span>
+<div class="flex items-center gap-space-sm font-mono-code text-label-sm text-on-surface-variant">
+<span>88.4 MB</span>
+<span>•</span>
+<span>1080x1920 (9:16)</span>
+<span>•</span>
+<span>45 mins ago</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex items-center gap-1 bg-surface-container-lowest px-space-xs py-1 rounded-lg shadow-xs">
+<button class="w-7 h-7 rounded hover:bg-surface-container flex items-center justify-center text-on-surface transition-colors" title="Publish to TikTok">
+<span class="material-symbols-outlined text-[18px]">music_video</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-surface-container flex items-center justify-center text-pink-600 transition-colors" title="Publish to Instagram">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</button>
+</div>
+<button class="inline-flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-primary-container text-white font-label-sm text-label-sm hover:opacity-95 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">send</span>
+                Publish
+              </button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant" title="Direct Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors gap-space-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-16 h-10 rounded bg-black/80 flex items-center justify-center shrink-0 relative overflow-hidden">
+<span class="material-symbols-outlined text-white/60 text-[20px]">videocam</span>
+<span class="absolute bottom-0 right-0 px-1 bg-primary font-mono-code text-[8px] text-white">4K</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Sports_HighImpact_Teaser_Final.mov</span>
+<div class="flex items-center gap-space-sm font-mono-code text-label-sm text-on-surface-variant">
+<span>612.1 MB</span>
+<span>•</span>
+<span>ProRes 4K</span>
+<span>•</span>
+<span>3 hours ago</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex items-center gap-1 bg-surface-container-lowest px-space-xs py-1 rounded-lg shadow-xs">
+<button class="w-7 h-7 rounded hover:bg-surface-container flex items-center justify-center text-red-600 transition-colors" title="Publish to YouTube">
+<span class="material-symbols-outlined text-[18px]">smart_display</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-surface-container flex items-center justify-center text-blue-600 transition-colors" title="Publish to Facebook">
+<span class="material-symbols-outlined text-[18px]">public</span>
+</button>
+</div>
+<button class="inline-flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-primary-container text-white font-label-sm text-label-sm hover:opacity-95 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">send</span>
+                Publish
+              </button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant" title="Direct Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Saved Drafts & Quick Access Cloud Media Assets (5 Columns) -->
+<div class="lg:col-span-5 flex flex-col rounded-xl bg-surface-container-lowest p-space-lg shadow-sm gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">perm_media</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Cloud Media Assets</h2>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-0.5">
+            Open Vault
+            <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+<!-- Filter tabs for assets -->
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Recent B-Roll</button>
+<button class="px-space-sm py-1 rounded bg-transparent text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm">Audio &amp; SFX</button>
+<button class="px-space-sm py-1 rounded bg-transparent text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm">Overlays</button>
+<button class="px-space-sm py-1 rounded bg-transparent text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm">Subtitles</button>
+</div>
+<!-- Media Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Asset 1 -->
+<div class="group flex flex-col rounded-lg bg-surface-container-low overflow-hidden hover:bg-surface-container transition-colors">
+<div class="relative h-24 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Stock footage video clip frame of bustling modern city pedestrian walkway traffic at sunset with warm lens glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDposRnmEl2eIAUU5E2UZqOIO_1rdhNU119cCOEffhSiq3ynge9OAkF4uFcz-JR69ZtH7pzbvqdOx46AzVaUX4PsCEihvLZ6E4NVDRU3-aJDqb_wmfAg-4QlkXNcDVIZGc4G4P98IlnJsrB9FM5sb-sMUkKa5ry0MXq3SLVEecBiolyl2mBHJevlezw23gyP4hVUIiV_O-PmSB9X9fVuo2cCxxbvZoH6gh1rzBMzyw"/>
+<span class="absolute bottom-1 right-1 px-1 rounded bg-black/75 text-white font-mono-code text-[10px]">00:14</span>
+<button class="absolute top-1 right-1 w-6 h-6 rounded-full bg-black/60 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+<div class="p-space-xs flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface truncate">City_B-Roll_4K.mov</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant">ProRes • 42 MB</span>
+</div>
+</div>
+<!-- Asset 2 -->
+<div class="group flex flex-col rounded-lg bg-surface-container-low overflow-hidden hover:bg-surface-container transition-colors">
+<div class="relative h-24 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Dynamic animated graphic title lower third banner template with clean typography and blue accent bar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApR2jzotJJKTNEuy0dL6QOTXwvYiUl5loteV8F_YYbbKgylgaikn8qDw9ve93Br6JsY9n5chQWIx6QbE8bUZ4wlSWxYtf0zcnpG2bck5Vduo1ZKjbklqe-1CawGFWhhpmf3HzdUQtuUUmrnGniAGqr6cAnP8ntwFIEz-wj4NyYGsikoGEirnKGKolOoiVVIuJ_l3QplNvumq0woh1b3QkgvRqId__LIySGrq0gQaA"/>
+<span class="absolute bottom-1 right-1 px-1 rounded bg-black/75 text-white font-mono-code text-[10px]">ALPHA</span>
+<button class="absolute top-1 right-1 w-6 h-6 rounded-full bg-black/60 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+<div class="p-space-xs flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface truncate">LowerThird_News_Ticker.json</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant">Lottie • 1.2 MB</span>
+</div>
+</div>
+<!-- Asset 3 -->
+<div class="group flex flex-col rounded-lg bg-surface-container-low overflow-hidden hover:bg-surface-container transition-colors">
+<div class="relative h-24 bg-surface-container-highest flex items-center justify-center bg-gradient-to-tr from-surface-container-high to-surface-container-highest">
+<span class="material-symbols-outlined text-primary text-[32px]">graphic_eq</span>
+<span class="absolute bottom-1 right-1 px-1 rounded bg-black/75 text-white font-mono-code text-[10px]">02:40</span>
+<button class="absolute top-1 right-1 w-6 h-6 rounded-full bg-black/60 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[14px]">play_arrow</span>
+</button>
+</div>
+<div class="p-space-xs flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface truncate">Studio_Podcast_Ambience.wav</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant">WAV 48kHz • 28 MB</span>
+</div>
+</div>
+<!-- Asset 4 -->
+<div class="group flex flex-col rounded-lg bg-surface-container-low overflow-hidden hover:bg-surface-container transition-colors">
+<div class="relative h-24 bg-surface-container-highest flex items-center justify-center bg-gradient-to-tr from-surface-container-high to-surface-container-highest">
+<span class="material-symbols-outlined text-secondary text-[32px]">subtitles</span>
+<span class="absolute bottom-1 right-1 px-1 rounded bg-black/75 text-white font-mono-code text-[10px]">VTT</span>
+<button class="absolute top-1 right-1 w-6 h-6 rounded-full bg-black/60 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+<div class="p-space-xs flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface truncate">Evening_Broadcast_Captions.srt</span>
+<span class="font-mono-code text-[10px] text-on-surface-variant">Bi-directional • 340 KB</span>
+</div>
+</div>
+</div>
+<!-- Quick Upload Drop Zone -->
+<div class="flex items-center justify-center p-space-md rounded-lg bg-surface-container-low border-dashed border-2 border-outline-variant hover:bg-surface-container transition-colors cursor-pointer text-center">
+<div class="flex items-center gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">upload_file</span>
+<span class="font-label-sm text-label-sm">Drop video, audio, or LUT files here to auto-import</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </main>
+
+    <!-- ═════════════════════════════════════════════════════════════════ -->
+    <!-- VIEW CONTAINER 2: CREATIVE POST COMPOSER                         -->
+    <!-- ═════════════════════════════════════════════════════════════════ -->
+    <main id="view-composer" class="studio-view hidden w-full pt-16 bg-background min-h-screen">
+      <div class="flex flex-col w-full">
 <!-- Studio Header Context Bar -->
 <div class="bg-surface-container-lowest shadow-sm px-space-xl py-space-md mb-space-md">
 <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
@@ -219,7 +936,7 @@
 <span class="px-space-sm py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-mono-code text-mono-code">v4.2 Live Engine</span>
 <span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-mono-code text-mono-code">Global Studio Engine</span>
 </div>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Omnichannel AI asset generation, dynamic typography &amp; multi-platform distribution</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Omnichannel asset generation, dynamic typography &amp; platform-optimized distributions</span>
 </div>
 </div>
 <!-- Center & Right: Channel Selector Pills & Action Pipeline -->
@@ -327,7 +1044,7 @@
 <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Headline &amp; Banner Context</label>
 <span class="font-mono-code text-mono-code text-secondary font-semibold">Headline Subtitle</span>
 </div>
-<textarea class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-0 focus:bg-surface-container resize-none " id="promptEnglish" placeholder="Autonomous cross-border financial rails — Next-gen institutional liquidity protocol." rows="2"></textarea>
+<textarea class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-0 focus:bg-surface-container resize-none " id="promptHeadline" placeholder="Autonomous cross-border financial rails — Next-gen institutional liquidity protocol." rows="2"></textarea>
 </div>
 </div>
 <!-- Style Archetypes Picker -->
@@ -412,7 +1129,7 @@
 <span class="font-label-sm text-label-sm text-on-surface-variant">Secondary Multi-Channel Hook</span>
 <span class="font-mono-code text-mono-code text-on-surface-variant">Smart Context Sync</span>
 </div>
-<textarea class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface resize-none focus:outline-none" id="captionEnglish" rows="2">Next-generation global financial network unveiled! High-velocity institutional settlements with zero-gas overhead and bank-grade security.</textarea>
+<textarea class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface resize-none focus:outline-none" id="captionHeadline" rows="2">Next-generation global financial network unveiled! High-velocity institutional settlements with zero-gas overhead and bank-grade security.</textarea>
 </div>
 </div>
 <!-- Hashtags & SEO Auto-generator -->
@@ -507,8 +1224,8 @@
 <span class="font-mono-code text-mono-code text-on-surface font-semibold tracking-wider">SOCIALFLOW</span>
 </div>
 </div>
-<!-- Floating Interactive Layer 1: English Nastaliq Headline (Draggable) -->
-<div class="absolute top-20 left-4 right-4 z-20 cursor-move" id="layerEnglish">
+<!-- Floating Interactive Layer 1: Headline Typography (Draggable) -->
+<div class="absolute top-20 left-4 right-4 z-20 cursor-move" id="layerHeadline">
 <div class="inline-block p-2 rounded-lg bg-surface-container-lowest/80 backdrop-blur-md shadow-md">
 <span class="font-mono-code text-mono-code text-primary font-bold block mb-0.5">EXCLUSIVE FINANCIAL REPORT</span>
 <h2 class="font-headline-md text-headline-md text-on-surface font-bold leading-snug">
@@ -707,12 +1424,7 @@
 <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Font Family Preset</label>
 <span class="font-label-sm text-label-sm text-secondary font-semibold">Precision Typography</span>
 </div>
-<select class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface focus:outline-none">
-<option selected="">Inter Display SemiBold (Primary Latin)</option>
-<option>JetBrains Mono Bold (SMPTE Code)</option>
-<option>Helvetica Neue / Swiss Clean</option>
-<option>Cinzel Decorative Serif</option>
-</select>
+<select class="w-full bg-surface-container-low rounded-lg p-space-sm font-body-sm text-body-sm text-on-surface focus:outline-none"><option selected="">Inter Display SemiBold (Primary Latin)</option><option>JetBrains Mono Bold (SMPTE Code)</option><option>Helvetica Neue / Swiss Clean</option><option>Cinzel Decorative Serif</option></select>
 </div>
 <!-- RTL Switcher & Text Align -->
 <div class="flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
@@ -1015,4 +1727,218 @@
       }
     })();
   </script>
-</div></main></div></body></html>
+</div>
+    </main>
+
+  </div>
+
+  <!-- Unified Navigation & Interactive Scripts -->
+  <script>
+    function switchMainView(view) {
+      const vidView = document.getElementById('view-video-dashboard');
+      const compView = document.getElementById('view-composer');
+      const vidHdr = document.getElementById('header-video');
+      const compHdr = document.getElementById('header-composer');
+      const navPub = document.getElementById('nav-publishing');
+      const navVidDash = document.getElementById('nav-video-dashboard');
+      const videoSub = document.getElementById('videoSubmenu');
+      const videoChev = document.getElementById('videoChevron');
+
+      if (view === 'video-dashboard') {
+        vidView.classList.remove('hidden');
+        compView.classList.add('hidden');
+        vidHdr.classList.remove('hidden');
+        compHdr.classList.add('hidden');
+
+        // Style Nav
+        navVidDash.className = "flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-surface-container-high text-primary font-semibold rounded-lg cursor-pointer";
+        navPub.className = "flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer";
+
+        // Expand submenu
+        videoSub.classList.remove('hidden');
+        videoChev.style.transform = 'rotate(180deg)';
+
+        if (history.pushState) {
+          history.pushState(null, null, '?view=video');
+        }
+      } else {
+        compView.classList.remove('hidden');
+        vidView.classList.add('hidden');
+        compHdr.classList.remove('hidden');
+        vidHdr.classList.add('hidden');
+
+        // Style Nav
+        navPub.className = "flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-surface-container-high text-primary font-semibold rounded-lg cursor-pointer";
+        navVidDash.className = "flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer";
+
+        if (history.pushState) {
+          history.pushState(null, null, '?view=composer');
+        }
+      }
+    }
+
+    function toggleVideoSubmenu() {
+      const videoSub = document.getElementById('videoSubmenu');
+      const videoChev = document.getElementById('videoChevron');
+      const isHidden = videoSub.classList.contains('hidden');
+      
+      if (isHidden) {
+        videoSub.classList.remove('hidden');
+        videoChev.style.transform = 'rotate(180deg)';
+        switchMainView('video-dashboard');
+      } else {
+        // Even when toggling, switch to video dashboard as requested
+        switchMainView('video-dashboard');
+      }
+    }
+
+    // Auto-initialize view based on URL query param
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const view = params.get('view');
+      if (view === 'composer' || view === 'publishing') {
+        switchMainView('composer');
+      } else {
+        switchMainView('video-dashboard');
+      }
+    });
+
+    
+    (function initStudioEngine() {
+      // 1. Channel Selector Pills Toggling
+      const channelPills = document.querySelectorAll('.channel-pill');
+      channelPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pill.classList.toggle('opacity-50');
+          pill.classList.toggle('grayscale');
+        });
+      });
+
+      // 2. Aspect Ratio Matrix Switching
+      const ratioButtons = document.querySelectorAll('.ratio-btn');
+      const canvasEl = document.getElementById('editablePosterCanvas');
+      const dimLabel = document.getElementById('canvasDimLabel');
+
+      ratioButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          ratioButtons.forEach(b => {
+            b.classList.remove('bg-primary-container', 'text-on-primary');
+            b.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+          });
+          btn.classList.add('bg-primary-container', 'text-on-primary');
+          btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+
+          const ratio = btn.getAttribute('data-ratio');
+          if (ratio === '1:1') {
+            canvasEl.className = 'relative w-full max-w-[440px] aspect-square rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
+            dimLabel.textContent = '1080 × 1080 px';
+          } else if (ratio === '4:5') {
+            canvasEl.className = 'relative w-full max-w-[380px] aspect-[4/5] rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
+            dimLabel.textContent = '1080 × 1350 px';
+          } else if (ratio === '16:9') {
+            canvasEl.className = 'relative w-full max-w-[500px] aspect-video rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
+            dimLabel.textContent = '1920 × 1080 px';
+          } else if (ratio === '9:16') {
+            canvasEl.className = 'relative w-full max-w-[280px] aspect-[9/16] rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
+            dimLabel.textContent = '1080 × 1920 px';
+          } else if (ratio === '1200:630') {
+            canvasEl.className = 'relative w-full max-w-[500px] aspect-[1200/630] rounded-lg shadow-xl overflow-hidden select-none bg-surface-container-highest transition-all duration-300';
+            dimLabel.textContent = '1200 × 630 px';
+          }
+        });
+      });
+
+      // 3. Platform Live Mockup Tab Switching
+      const mockupTabs = document.querySelectorAll('.mockup-tab');
+      const mockupViews = {
+        fb: document.getElementById('mockupFb'),
+        ig: document.getElementById('mockupIg'),
+        x: document.getElementById('mockupX'),
+        wp: document.getElementById('mockupWp')
+      };
+
+      mockupTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          mockupTabs.forEach(t => {
+            t.classList.remove('bg-surface-container-lowest', 'shadow-xs', 'text-primary');
+            t.classList.add('text-on-surface-variant');
+          });
+          tab.classList.add('bg-surface-container-lowest', 'shadow-xs', 'text-primary');
+          tab.classList.remove('text-on-surface-variant');
+
+          const target = tab.getAttribute('data-preview');
+          Object.keys(mockupViews).forEach(key => {
+            if (key === target) {
+              mockupViews[key].classList.remove('hidden');
+            } else {
+              mockupViews[key].classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // 4. Tone Pill Selection
+      const tonePills = document.querySelectorAll('.tone-pill');
+      tonePills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          tonePills.forEach(p => {
+            p.classList.remove('bg-primary-container', 'text-on-primary');
+            p.classList.add('bg-surface-container-low', 'text-on-surface');
+          });
+          pill.classList.add('bg-primary-container', 'text-on-primary');
+          pill.classList.remove('bg-surface-container-low', 'text-on-surface');
+        });
+      });
+
+      // 5. X / Twitter Character Counter
+      const xInput = document.getElementById('xCustomInput');
+      const xCounter = document.getElementById('xCharCounter');
+      if (xInput && xCounter) {
+        xInput.addEventListener('input', () => {
+          const len = xInput.value.length;
+          xCounter.textContent = `${len} / 280`;
+          if (len > 280) {
+            xCounter.className = 'font-mono-code text-mono-code text-error font-bold';
+          } else {
+            xCounter.className = 'font-mono-code text-mono-code text-primary font-bold';
+          }
+        });
+      }
+
+      // 6. Multi-Publish Confirmation Toast Notification
+      const publishBtn = document.getElementById('publishAllBtn');
+      const toast = document.getElementById('publishModalNotification');
+      const dismissBtn = document.getElementById('closeNotificationBtn');
+
+      if (publishBtn && toast) {
+        publishBtn.addEventListener('click', () => {
+          toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+          toast.classList.add('translate-y-0', 'opacity-100');
+          setTimeout(() => {
+            toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+            toast.classList.remove('translate-y-0', 'opacity-100');
+          }, 5000);
+        });
+      }
+
+      if (dismissBtn && toast) {
+        dismissBtn.addEventListener('click', () => {
+          toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+          toast.classList.remove('translate-y-0', 'opacity-100');
+        });
+      }
+
+      // 7. AI Magic Prompt Expansion simulation
+      const magicBtn = document.getElementById('magicPromptBtn');
+      const promptEn = document.getElementById('promptEnglish');
+      if (magicBtn && promptEn) {
+        magicBtn.addEventListener('click', () => {
+          promptEn.value = "Cinematic 8K render of a futuristic Islamic fintech pavilion in Dubai, volumetric lighting, photorealistic gold & indigo calligraphy particles floating in air, Hasselblad color profile, Unreal Engine 5 aesthetic, flawless symmetry.";
+        });
+      }
+    })();
+  
+  </script>
+
+</body>
+</html>
