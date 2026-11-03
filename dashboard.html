@@ -202,13 +202,26 @@
         </nav>
       </div>
 
-      <!-- Extra Creative Suite Items -->
+            <!-- Configuration Submenu -->
       <div class="flex flex-col gap-space-xs pt-space-xs border-t border-slate-200/50">
-        <div class="px-space-md pt-space-xs pb-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase">Design Studio</div>
-        <nav class="flex flex-col gap-space-xs">
-          <a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="../poster-editor/index.html" target="_blank">
-            <span class="material-symbols-outlined text-[20px] text-amber-500">palette</span>
-            <span>Poster Studio</span>
+        <div onclick="toggleConfigSubmenu()" class="flex items-center justify-between px-space-md pt-space-xs pb-space-xs cursor-pointer select-none group">
+          <span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[18px]">settings</span>
+            <span>Configuration</span>
+          </span>
+          <div class="flex items-center gap-1">
+            <span id="configChevron" class="material-symbols-outlined text-[18px] text-primary transition-transform" style="transform: rotate(180deg);">expand_more</span>
+          </div>
+        </div>
+
+        <nav id="configSubmenu" class="flex flex-col gap-space-xs pl-space-xs transition-all duration-200">
+          <a id="nav-config-accounts" onclick="switchMainView('accounts')" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="javascript:void(0);">
+            <span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+            <span>Accounts </span>
+          </a>
+          <a id="nav-config-webhooks" onclick="switchMainView('webhooks')" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer" href="javascript:void(0);">
+            <span class="material-symbols-outlined text-[18px]">webhook</span>
+            <span>Webhooks</span>
           </a>
         </nav>
       </div>
@@ -4493,7 +4506,8 @@
       const navDesignPosts = document.getElementById('nav-design-posts') || document.getElementById('nav-publishing');
       const navDesignMedia = document.getElementById('nav-design-media');
       const navAnalytics = document.getElementById('nav-analytics');
-      const navMultiAccount = document.getElementById('nav-multi-account');
+      const navConfigAccounts = document.getElementById('nav-config-accounts') || document.getElementById('nav-multi-account');
+      const navConfigWebhooks = document.getElementById('nav-config-webhooks');
       const navVidDash = document.getElementById('nav-video-dashboard');
       const navTmpl = document.getElementById('nav-video-templates');
       const navCreateVid = document.getElementById('nav-create-video');
@@ -4502,6 +4516,8 @@
       const videoChev = document.getElementById('videoChevron');
       const designSub = document.getElementById('designSubmenu');
       const designChev = document.getElementById('designChevron');
+      const configSub = document.getElementById('configSubmenu');
+      const configChev = document.getElementById('configChevron');
 
       const activeClass = "flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-surface-container-high text-primary font-semibold rounded-lg cursor-pointer";
       const inactiveClass = "flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors cursor-pointer";
@@ -4512,7 +4528,7 @@
       });
 
       // Reset all nav highlights
-      [navDesignPosts, navDesignMedia, navAnalytics, navMultiAccount, navVidDash, navTmpl, navCreateVid].forEach(n => {
+      [navDesignPosts, navDesignMedia, navAnalytics, navConfigAccounts, navConfigWebhooks, navVidDash, navTmpl, navCreateVid].forEach(n => {
         if (n) n.className = inactiveClass;
       });
 
@@ -4527,9 +4543,18 @@
         if (history.pushState) history.pushState(null, null, '?view=analytics');
       } else if (view === 'multi-account' || view === 'accounts') {
         if (multiAccountView) multiAccountView.classList.remove('hidden');
-        if (navMultiAccount) navMultiAccount.className = activeClass;
+        if (navConfigAccounts) navConfigAccounts.className = activeClass;
+        if (configSub) configSub.classList.remove('hidden');
+        if (configChev) configChev.style.transform = 'rotate(180deg)';
         window.scrollTo({ top: 0, behavior: 'smooth' });
         if (history.pushState) history.pushState(null, null, '?view=accounts');
+      } else if (view === 'webhooks') {
+        if (multiAccountView) multiAccountView.classList.remove('hidden');
+        if (navConfigWebhooks) navConfigWebhooks.className = activeClass;
+        if (configSub) configSub.classList.remove('hidden');
+        if (configChev) configChev.style.transform = 'rotate(180deg)';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (history.pushState) history.pushState(null, null, '?view=webhooks');
       } else if (view === 'create-video' || view === 'create' || view === 'editor') {
         if (createVidView) createVidView.classList.remove('hidden');
         if (navCreateVid) navCreateVid.className = activeClass;
@@ -4601,6 +4626,22 @@
       } else {
         videoSub.classList.add('hidden');
         if (videoChev) videoChev.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    function toggleConfigSubmenu() {
+      const configSub = document.getElementById('configSubmenu');
+      const configChev = document.getElementById('configChevron');
+      if (!configSub) return;
+      const isHidden = configSub.classList.contains('hidden');
+      
+      if (isHidden) {
+        configSub.classList.remove('hidden');
+        if (configChev) configChev.style.transform = 'rotate(180deg)';
+        switchMainView('accounts');
+      } else {
+        configSub.classList.add('hidden');
+        if (configChev) configChev.style.transform = 'rotate(0deg)';
       }
     }
 
@@ -4754,7 +4795,9 @@
       if (view === 'analytics') {
         switchMainView('analytics');
       } else if (view === 'multi-account' || view === 'accounts') {
-        switchMainView('multi-account');
+        switchMainView('accounts');
+      } else if (view === 'webhooks') {
+        switchMainView('webhooks');
       } else if (view === 'create-video' || view === 'create' || view === 'editor') {
         switchMainView('create-video');
       } else if (view === 'media-library' || view === 'media') {
