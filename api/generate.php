@@ -29,12 +29,19 @@ $payload['template'] = 'jr';
 // Node.js backend URL
 $backendUrl = 'http://127.0.0.1:3333/api/generate';
 
+$clientHost = $_SERVER['HTTP_HOST'] ?? 'editor.jamshedrizwani.com';
+
 $ch = curl_init($backendUrl);
 curl_setopt_array($ch, [
     CURLOPT_POST           => true,
     CURLOPT_POSTFIELDS     => json_encode($payload),
     CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+    CURLOPT_HTTPHEADER     => [
+        'Content-Type: application/json',
+        'Host: ' . $clientHost,
+        'X-Forwarded-Host: ' . $clientHost,
+        'X-Forwarded-Proto: https'
+    ],
     CURLOPT_TIMEOUT        => 60
 ]);
 
@@ -52,6 +59,13 @@ if ($error) {
     exit;
 }
 
+// Ensure no 127.0.0.1:3333 or localhost:3333 URLs leak to client
+$cleanResponse = str_replace(
+    ['http://127.0.0.1:3333', 'https://127.0.0.1:3333', 'http://localhost:3333', 'https://localhost:3333'],
+    'https://' . $clientHost,
+    $response
+);
+
 http_response_code($httpCode ?: 200);
 header('Content-Type: application/json; charset=utf-8');
-echo $response;
+echo $cleanResponse;

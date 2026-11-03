@@ -133,7 +133,7 @@
   <!-- ═══════════════════════════════════════════════════════════════════ -->
   <!-- UNIFIED DESKTOP SIDEBAR (w-72)                                     -->
   <!-- ═══════════════════════════════════════════════════════════════════ -->
-  <aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+  <aside id="app-sidebar" class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out">
     <div class="p-space-lg flex flex-col gap-space-md">
       
       <!-- Brand Anchor -->
@@ -258,15 +258,21 @@
       <span class="font-label-sm text-label-sm text-tertiary font-medium">8.4% used of ultra-speed SSD</span>
     </div>
   </aside>
+<!-- Mobile Sidebar Backdrop Overlay -->
+<div id="mobile-sidebar-backdrop" onclick="closeMobileSidebar()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden lg:hidden transition-opacity"></div>
+
 
   <!-- ═══════════════════════════════════════════════════════════════════ -->
   <!-- MAIN WORKSPACE CONTAINER (pl-72)                                   -->
   <!-- ═══════════════════════════════════════════════════════════════════ -->
-  <div class="pl-72 min-h-screen flex flex-col">
+  <div class="w-full lg:pl-72 min-h-screen flex flex-col overflow-x-hidden transition-all">
 
     <!-- HEADER 1: VIDEO STUDIO HEADER (Visible on Video Dashboard) -->
-    <header id="header-video" class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl">
-      <div class="flex items-center gap-space-lg">
+    <header id="header-video" class="fixed top-0 left-0 lg:left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-30 flex items-center justify-between px-3 sm:px-6">
+      <div class="flex items-center gap-2 sm:gap-space-lg">
+        <button onclick="toggleMobileSidebar()" class="lg:hidden p-2 rounded-lg text-on-surface hover:bg-surface-container-high transition-colors" type="button" aria-label="Open Navigation">
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
         <div class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
           <span class="material-symbols-outlined text-[20px] text-primary">corporate_fare</span>
           <span class="font-label-lg text-label-lg text-on-surface font-semibold">Global News &amp; Media Network</span>
@@ -304,55 +310,58 @@
 
     <!-- HEADER 2: COMPOSER HEADER (Visible on Creative Post Composer) -->
         <!-- HEADER 2: JR EDITORIAL STUDIO COMMAND BAR (Visible on Design Studio: Posts) -->
-    <header id="header-composer" class="hidden fixed top-0 left-72 right-0 h-16 bg-[#070e1b] border-b border-[#232a38] z-40 flex items-center justify-between px-6">
-      <div class="flex items-center gap-3">
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded bg-[#d99b26] text-[#070e1b] flex items-center justify-center font-bold text-xs tracking-wider shadow-sm">JR</div>
-          <span class="font-bold text-sm text-[#ffc664] tracking-wide hidden sm:inline">JR EDITORIAL STUDIO</span>
-          <span class="text-xs px-2.5 py-0.5 rounded-full bg-[#d99b26]/15 text-[#fabc48] border border-[#d99b26]/30 hidden md:inline font-mono">API v1.0 Live</span>
+        <!-- HEADER 2: JR EDITORIAL STUDIO COMMAND BAR (Responsive) -->
+        <!-- HEADER 2: JR EDITORIAL STUDIO COMMAND BAR (Responsive) -->
+    <header id="header-composer" class="hidden fixed top-0 left-0 lg:left-72 right-0 h-16 bg-[#070e1b] border-b border-[#232a38] z-30 flex items-center justify-between px-2.5 sm:px-6">
+      <div class="flex items-center gap-1.5 sm:gap-3">
+        <button onclick="toggleMobileSidebar()" class="lg:hidden p-1.5 sm:p-2 rounded-lg text-[#dce2f5] hover:bg-[#141c29] transition-colors" type="button" aria-label="Open Navigation">
+          <span class="material-symbols-outlined text-[22px]">menu</span>
+        </button>
+        <div class="flex items-center gap-1.5 sm:gap-2">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded bg-[#d99b26] text-[#070e1b] flex items-center justify-center font-bold text-xs tracking-wider shadow-sm shrink-0">JR</div>
+          <span class="font-bold text-xs sm:text-sm text-[#ffc664] tracking-wide truncate max-w-[90px] sm:max-w-none">JR STUDIO</span>
+          <span class="text-[10px] sm:text-xs px-1.5 sm:px-2.5 py-0.5 rounded-full bg-[#d99b26]/15 text-[#fabc48] border border-[#d99b26]/30 hidden sm:inline font-mono">API v1.0</span>
         </div>
         <div class="h-4 w-px bg-[#232a38] hidden md:block"></div>
-        <div class="hidden lg:flex items-center gap-1.5 text-xs text-[#d4c4af] font-mono">
+        <div class="hidden xl:flex items-center gap-1.5 text-xs text-[#d4c4af] font-mono">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           <span>Puppeteer Engine Active (Port 3333)</span>
         </div>
       </div>
 
       <!-- Ratio Pills & Actions -->
-      <div class="flex items-center gap-3">
-        <div class="flex items-center gap-1 bg-[#0c1321] p-1 rounded-lg border border-[#232a38]">
-          <button id="btn-ratio-45" class="px-3 py-1 rounded bg-[#232a38] text-[#ffc664] font-semibold flex items-center gap-1 shadow-sm border border-[#d99b26]/30 text-xs">
-            <span class="material-symbols-outlined text-[15px]">crop_portrait</span>
-            <span>4:5 Feed</span>
+      <div class="flex items-center gap-1.5 sm:gap-3">
+        <div class="flex items-center gap-0.5 sm:gap-1 bg-[#0c1321] p-0.5 sm:p-1 rounded-lg border border-[#232a38]">
+          <button id="btn-ratio-45" class="px-2 sm:px-3 py-1 rounded bg-[#232a38] text-[#ffc664] font-semibold flex items-center gap-1 shadow-sm border border-[#d99b26]/30 text-xs">
+            <span class="material-symbols-outlined text-[14px] sm:text-[15px]">crop_portrait</span>
+            <span class="hidden sm:inline">4:5 Feed</span>
           </button>
-          <button id="btn-ratio-11" class="px-3 py-1 rounded bg-[#141c29] hover:bg-[#232a38] text-[#d4c4af] font-semibold flex items-center gap-1 transition-colors text-xs">
-            <span class="material-symbols-outlined text-[15px]">crop_square</span>
-            <span>1:1 Square</span>
+          <button id="btn-ratio-11" class="px-2 sm:px-3 py-1 rounded bg-[#141c29] hover:bg-[#232a38] text-[#d4c4af] font-semibold flex items-center gap-1 transition-colors text-xs">
+            <span class="material-symbols-outlined text-[14px] sm:text-[15px]">crop_square</span>
+            <span class="hidden sm:inline">1:1 Square</span>
           </button>
-          <button id="btn-ratio-916" class="px-3 py-1 rounded bg-[#141c29] hover:bg-[#232a38] text-[#d4c4af] font-semibold flex items-center gap-1 transition-colors text-xs">
-            <span class="material-symbols-outlined text-[15px]">smartphone</span>
-            <span>9:16 Story</span>
+          <button id="btn-ratio-916" class="px-2 sm:px-3 py-1 rounded bg-[#141c29] hover:bg-[#232a38] text-[#d4c4af] font-semibold flex items-center gap-1 transition-colors text-xs">
+            <span class="material-symbols-outlined text-[14px] sm:text-[15px]">smartphone</span>
+            <span class="hidden sm:inline">9:16 Story</span>
           </button>
         </div>
 
-        <button onclick="handleQuickCopy()" class="px-3 py-1.5 rounded bg-[#141c29] hover:bg-[#d99b26]/20 text-[#ffc664] border border-[#d99b26]/30 font-semibold flex items-center gap-1 transition-colors text-xs">
-          <span class="material-symbols-outlined text-[15px]">content_copy</span>
-          <span class="hidden sm:inline">Copy Text</span>
+        <button onclick="handleQuickCopy()" title="Copy Text" class="px-2 sm:px-3 py-1.5 rounded bg-[#141c29] hover:bg-[#d99b26]/20 text-[#ffc664] border border-[#d99b26]/30 font-semibold flex items-center gap-1 transition-colors text-xs">
+          <span class="material-symbols-outlined text-[14px] sm:text-[15px]">content_copy</span>
+          <span class="hidden md:inline">Copy Text</span>
         </button>
 
-        <button onclick="openApiModal()" class="px-3 py-1.5 rounded bg-[#141c29] hover:bg-[#d99b26]/20 text-[#fabc48] border border-[#d99b26]/30 font-semibold flex items-center gap-1 transition-colors text-xs">
-          <span class="material-symbols-outlined text-[15px]">code</span>
-          <span class="hidden sm:inline">API Docs</span>
+        <button onclick="openApiModal()" title="API Docs" class="px-2 sm:px-3 py-1.5 rounded bg-[#141c29] hover:bg-[#d99b26]/20 text-[#fabc48] border border-[#d99b26]/30 font-semibold flex items-center gap-1 transition-colors text-xs">
+          <span class="material-symbols-outlined text-[14px] sm:text-[15px]">code</span>
+          <span class="hidden md:inline">API Docs</span>
         </button>
 
-        <div class="h-4 w-px bg-[#232a38] hidden sm:block"></div>
-
-        <!-- User profile -->
-        <div class="flex items-center gap-2 pl-2">
-          <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani" alt="Avatar" class="w-8 h-8 rounded-full border border-[#d99b26]/40 bg-[#141c29] shadow-xs"/>
+        <!-- User Profile (Desktop only) -->
+        <div class="hidden lg:flex items-center gap-2 pl-1 border-l border-[#232a38]">
+          <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Rizwani" alt="Avatar" class="w-7 h-7 rounded-full border border-[#d99b26]/40 bg-[#141c29] shadow-xs"/>
           <div class="hidden xl:flex flex-col text-left">
             <span class="text-xs text-[#dce2f5] font-semibold leading-none">Jamshed Rizwani</span>
-            <span class="text-[10px] text-[#ffc664] font-mono leading-none mt-1">Super Admin</span>
+            <span class="text-[9px] text-[#ffc664] font-mono leading-none mt-1">Super Admin</span>
           </div>
         </div>
       </div>
@@ -363,7 +372,7 @@
     <!-- ═════════════════════════════════════════════════════════════════ -->
     <main id="view-video-dashboard" class="studio-view relative pt-16 bg-surface min-h-screen">
       <div class="flex flex-col w-full">
-<div class="p-space-xl flex flex-col gap-space-xl">
+<div class="p-3 sm:p-space-xl flex flex-col gap-3 sm:gap-space-xl">
 <!-- Hero Banner with Soft Gradient & Studio CTAs -->
 <div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary-container via-primary to-secondary p-space-xl shadow-md text-on-primary">
 <div class="absolute -right-12 -top-16 w-72 h-72 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
@@ -965,7 +974,7 @@
     <!-- ═════════════════════════════════════════════════════════════════ -->
     <main id="view-video-templates" class="studio-view hidden relative pt-16 bg-surface min-h-screen">
 <div class="flex flex-col w-full">
-<div class="p-space-xl flex flex-col gap-space-xl">
+<div class="p-3 sm:p-space-xl flex flex-col gap-3 sm:gap-space-xl">
 <!-- Top Control Console -->
 <div class="flex flex-col gap-space-lg bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
 <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
@@ -4257,7 +4266,28 @@ $res = json_decode(curl_exec($ch), true);
 
         <!-- Unified Navigation & Interactive Scripts -->
   <script>
+    
+    function closeMobileSidebar() {
+      const sidebar = document.getElementById('app-sidebar');
+      const backdrop = document.getElementById('mobile-sidebar-backdrop');
+      if (sidebar) sidebar.classList.add('-translate-x-full');
+      if (backdrop) backdrop.classList.add('hidden');
+    }
+    function toggleMobileSidebar() {
+      const sidebar = document.getElementById('app-sidebar');
+      const backdrop = document.getElementById('mobile-sidebar-backdrop');
+      if (!sidebar) return;
+      const isClosed = sidebar.classList.contains('-translate-x-full');
+      if (isClosed) {
+        sidebar.classList.remove('-translate-x-full');
+        if (backdrop) backdrop.classList.remove('hidden');
+      } else {
+        closeMobileSidebar();
+      }
+    }
+
     function switchMainView(view) {
+      closeMobileSidebar();
       const vidDashView = document.getElementById('view-video-dashboard');
       const compView = document.getElementById('view-composer');
       const tmplView = document.getElementById('view-video-templates');
