@@ -3047,632 +3047,465 @@
     <!-- ═════════════════════════════════════════════════════════════════ -->
     <!-- VIEW CONTAINER 6: MULTI-ACCOUNT & WORKSPACE MANAGEMENT           -->
     <!-- ═════════════════════════════════════════════════════════════════ -->
+        <!-- ═════════════════════════════════════════════════════════════════ -->
+    <!-- VIEW CONTAINER 6: MULTI-ACCOUNT & WORKSPACE MANAGEMENT           -->
+    <!-- ═════════════════════════════════════════════════════════════════ -->
     <main id="view-multi-account" class="studio-view hidden relative pt-16 bg-surface min-h-screen">
-<div class="flex flex-col w-full">
-<!-- Security, OAuth Token Health & Compliance Banner -->
-<div class="px-space-xl pt-space-lg pb-space-sm">
-<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
-<div class="flex flex-wrap items-center gap-space-md">
-<div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-lowest text-tertiary-container shadow-sm">
-<span class="w-2 h-2 rounded-full bg-tertiary"></span>
-<span class="font-mono-code text-mono-code font-semibold">23/24 Tokens Healthy</span>
-</div>
-<div class="h-4 w-px bg-surface-container-high hidden sm:block"></div>
-<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
-<span class="material-symbols-outlined text-[15px] text-primary">lock_clock</span>
-<span>AES-256 GCM Encrypted Vault • Auto-rotation in <strong class="font-mono-code text-on-surface">12 days</strong></span>
-</div>
-<div class="h-4 w-px bg-surface-container-high hidden sm:block"></div>
-<div class="flex items-center gap-space-xs font-label-md text-label-md text-secondary">
-<span class="material-symbols-outlined text-[16px]">verified_user</span>
-<span>Okta SAML 2.0 Synced</span>
-</div>
-</div>
-<div class="flex items-center gap-space-sm self-end lg:self-auto">
-<span class="font-mono-code text-label-sm text-on-surface-variant uppercase">Global Security Score</span>
-<div class="w-24 h-2 bg-surface-container-high rounded-full overflow-hidden">
-<div class="h-full bg-tertiary rounded-full" style="width: 96%"></div>
-</div>
-<span class="font-mono-code text-label-sm font-bold text-on-surface">96%</span>
-</div>
-</div>
-</div>
-<!-- Header Sub-bar & Primary Controls -->
-<div class="px-space-xl py-space-md flex flex-col gap-space-lg">
-<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
-<div class="flex flex-col gap-1">
-<div class="flex items-center gap-space-sm">
-<h1 class="font-headline-md text-headline-md text-on-surface">Multi-Account &amp; Workspace Management</h1>
-<span class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-mono-code text-[10px] uppercase font-bold tracking-wider">Enterprise Pro</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant">
-          Manage enterprise social channels, client workspaces, OAuth credentials, and role-based permissions.
-        </p>
-</div>
-<div class="flex items-center gap-space-sm">
-<button class="px-space-md py-2 rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg hover:bg-surface-container transition-colors shadow-sm flex items-center gap-space-xs" type="button">
-<span class="material-symbols-outlined text-[18px]">add_box</span>
-<span>+ Create Workspace</span>
-</button>
-<button class="px-space-md py-2 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg hover:opacity-95 transition-opacity shadow-sm flex items-center gap-space-xs" type="button">
-<span class="material-symbols-outlined text-[18px]">add_link</span>
-<span>+ Connect New Account</span>
-</button>
-</div>
-</div>
-<!-- Search, Filters and Toggles Bar -->
-<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md pt-space-xs">
-<div class="flex items-center gap-space-xs overflow-x-auto pb-1 md:pb-0" id="filterTabs">
-<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg font-semibold shadow-sm whitespace-nowrap" type="button">
-          All Connected <span class="ml-1 px-1.5 py-0.2 rounded-full bg-surface-container-lowest font-mono-code text-[11px] text-primary">24</span>
-</button>
-<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low transition-colors whitespace-nowrap" type="button">
-          Workspaces / Brands <span class="ml-1 text-on-surface-variant font-mono-code text-[11px]">4</span>
-</button>
-<button class="px-space-md py-1.5 rounded-lg text-error font-label-lg text-label-lg hover:bg-error-container/40 transition-colors whitespace-nowrap flex items-center gap-1" type="button">
-<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
-          Requires Re-auth <span class="ml-1 px-1 rounded bg-error-container text-on-error-container font-mono-code text-[11px] font-bold">1</span>
-</button>
-<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low transition-colors whitespace-nowrap" type="button">
-          Pending Approvals <span class="ml-1 px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant font-mono-code text-[11px]">3</span>
-</button>
-</div>
-<div class="relative flex items-center">
-<span class="material-symbols-outlined absolute left-space-md text-[18px] text-on-surface-variant pointer-events-none">search</span>
-<input class="w-full md:w-80 pl-9 pr-4 py-1.5 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest shadow-sm" placeholder="Search by handle, brand, or token ID..." type="text"/>
-</div>
-</div>
-</div>
-<!-- Workspace / Brand Cluster Selector Bar -->
-<div class="px-space-xl py-space-sm">
-<div class="flex items-center justify-between mb-space-xs">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Active Workspace Clusters</span>
-<span class="font-mono-code text-[11px] text-primary cursor-pointer hover:underline">Manage All 4 Clusters →</span>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
-<!-- Cluster 1: Active -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between cursor-pointer relative overflow-hidden bg-gradient-to-br from-surface-container-lowest to-surface-container-low">
-<div class="absolute top-0 left-0 right-0 h-1 bg-primary-container"></div>
-<div class="flex items-start justify-between gap-space-xs mb-space-sm pt-1">
-<div class="flex items-center gap-space-sm min-w-0">
-<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold text-sm shadow-sm">
-              GN
-            </div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Global News &amp; Media</span>
-<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Active Selection
-              </span>
-</div>
-</div>
-<span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
-</div>
-<div class="flex items-center justify-between pt-space-xs font-mono-code text-label-sm text-on-surface-variant">
-<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">10</span> Accounts</span>
-<span>•</span>
-<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">14</span> Members</span>
-</div>
-</div>
-<!-- Cluster 2 -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
-<div class="flex items-start justify-between gap-space-xs mb-space-sm">
-<div class="flex items-center gap-space-sm min-w-0">
-<div class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-sm">
-              ID
-            </div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Indus Digital Ent.</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Regional Hub</span>
-</div>
-</div>
-</div>
-<div class="flex items-center justify-between pt-space-xs font-mono-code text-label-sm text-on-surface-variant">
-<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">6</span> Accounts</span>
-<span>•</span>
-<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">8</span> Members</span>
-</div>
-</div>
-<!-- Cluster 3 -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
-<div class="flex items-start justify-between gap-space-xs mb-space-sm">
-<div class="flex items-center gap-space-sm min-w-0">
-<div class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-sm">
-              FT
-            </div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">FinTech Daily News</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">B2B Vertical</span>
-</div>
-</div>
-</div>
-<div class="flex items-center justify-between pt-space-xs font-mono-code text-label-sm text-on-surface-variant">
-<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">5</span> Accounts</span>
-<span>•</span>
-<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">5</span> Members</span>
-</div>
-</div>
-<!-- Cluster 4 -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
-<div class="flex items-start justify-between gap-space-xs mb-space-sm">
-<div class="flex items-center gap-space-sm min-w-0">
-<div class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-sm">
-              SP
-            </div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Sports Pulse 24/7</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Live Production</span>
-</div>
-</div>
-</div>
-<div class="flex items-center justify-between pt-space-xs font-mono-code text-label-sm text-on-surface-variant">
-<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">3</span> Accounts</span>
-<span>•</span>
-<span class="flex items-center gap-1"><span class="font-semibold text-on-surface">4</span> Members</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Main Split Layout: Connected Accounts Table & RBAC Control Drawer -->
-<div class="px-space-xl py-space-md grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
-<!-- Left Column: Connected Accounts (Span 8) -->
-<div class="lg:col-span-8 flex flex-col gap-space-md">
-<!-- Section Header -->
-<div class="flex items-center justify-between bg-surface-container-low p-space-md rounded-lg">
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-[20px] text-primary">hub</span>
-<span class="font-headline-sm text-headline-sm text-on-surface">Connected Accounts (Global News Cluster)</span>
-</div>
-<div class="flex items-center gap-space-xs font-mono-code text-label-sm text-on-surface-variant">
-<span>Sort: By Platform</span>
-<span class="material-symbols-outlined text-[16px]">arrow_drop_down</span>
-</div>
-</div>
-<!-- Platform Group: Facebook Pages -->
-<div class="flex flex-col gap-space-xs">
-<div class="flex items-center gap-space-sm px-space-xs pt-space-xs">
-<span class="px-1.5 py-0.5 rounded font-mono-code text-[10px] font-bold bg-primary text-on-primary">FB</span>
-<span class="font-label-lg text-label-lg text-on-surface font-semibold">Facebook Pages (2)</span>
-<div class="flex-1 h-px bg-surface-container-high ml-space-sm"></div>
-</div>
-<!-- Account Card 1 -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
-<div class="flex items-center gap-space-md min-w-0">
-<img class="w-11 h-11 rounded-full object-cover shadow-sm shrink-0" data-alt="High quality corporate emblem for SocialFlow Global Newsroom with deep blue background and minimalist white geometric monogram, studio lit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeSSniOtwFWBbDm2U23fCPaJSY2-iE-FOAbKTEYrLtk9tbKzX1t610DWYrj-2cGNpMYU80bH47Bq13WLUeoV_iOMZlb-p9WBAqQiMwDHEUkji71cH-u81dwHJ_QoDK0QzHtTw-7HzJ_Zd3tRtphDOCyz9rvNXAsz3FKLPIu_AVQhpD_MuhXfAInuW2vjv0rb6dANUnIoq0Pgx7SIHxNJPskB49IUfE_f3RZMFWEI0"/>
-<div class="flex flex-col min-w-0">
-<div class="flex items-center gap-1.5">
-<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">SocialFlow Global Official</span>
-<span class="material-symbols-outlined text-[16px] text-primary" title="Verified">verified</span>
-<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
-                </span>
-</div>
-<div class="flex flex-wrap items-center gap-x-space-md gap-y-0.5 text-on-surface-variant font-label-md text-label-md">
-<span class="font-mono-code text-[12px] text-on-surface">@socialflowglobal</span>
-<span>•</span>
-<span class="font-mono-code">2.1M Followers</span>
-<span>•</span>
-<span class="text-tertiary font-mono-code text-[11px]">Token Valid: 84d</span>
-<span>•</span>
-<span class="text-on-surface-variant">Auto-Sync: <span class="text-primary font-semibold">ON</span></span>
-</div>
-</div>
-</div>
-<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
-<span class="px-2 py-0.5 rounded bg-surface-container-low font-mono-code text-[11px] text-on-surface-variant">Full Admin</span>
-<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors flex items-center gap-1" title="Test Connection" type="button">
-<span class="material-symbols-outlined text-[16px] text-tertiary">sync</span> Test
-            </button>
-<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant transition-colors" title="Account Settings" type="button">
-<span class="material-symbols-outlined text-[18px]">more_vert</span>
-</button>
-</div>
-</div>
-<!-- Account Card 2 -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
-<div class="flex items-center gap-space-md min-w-0">
-<img class="w-11 h-11 rounded-full object-cover shadow-sm shrink-0" data-alt="News broadcasting studio badge in crimson and navy blue with stylized broadcast headline typography, modern media aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu6Tg3s7sizbH-SFE5aTTUrHwWj3P65KtDXMYBTkiio8XaRhDplicemvlTqbtJysqYqixUgaklA4tO1l5nQ6T7tfwNWX5BJH-iyxZr1HEBnmfhCtFqM2L97hYtx1wSBSAU8pakY3irrDIdhgGxqYRvbp5dQUcyI_JYPWvo8MQLy_Axq4nDuCkOM28Px1_kGA2HQOXts_f9Xj2zGJGZQGJSXS8VaBsfkHcnrPW41IU"/>
-<div class="flex flex-col min-w-0">
-<div class="flex items-center gap-1.5">
-<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Breaking News Global TV</span>
-<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
-                </span>
-</div>
-<div class="flex flex-wrap items-center gap-x-space-md gap-y-0.5 text-on-surface-variant font-label-md text-label-md">
-<span class="font-mono-code text-[12px] text-on-surface">@breakingnews.global</span>
-<span>•</span>
-<span class="font-mono-code">650k Followers</span>
-<span>•</span>
-<span class="text-tertiary font-mono-code text-[11px]">Token Valid: 56d</span>
-<span>•</span>
-<span class="text-on-surface-variant">Auto-Sync: <span class="text-primary font-semibold">ON</span></span>
-</div>
-</div>
-</div>
-<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
-<span class="px-2 py-0.5 rounded bg-surface-container-low font-mono-code text-[11px] text-on-surface-variant">Editor Tier</span>
-<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors flex items-center gap-1" type="button">
-<span class="material-symbols-outlined text-[16px] text-tertiary">sync</span> Test
-            </button>
-<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant transition-colors" type="button">
-<span class="material-symbols-outlined text-[18px]">more_vert</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Platform Group: Instagram Business -->
-<div class="flex flex-col gap-space-xs mt-space-sm">
-<div class="flex items-center gap-space-sm px-space-xs pt-space-xs">
-<span class="px-1.5 py-0.5 rounded font-mono-code text-[10px] font-bold bg-secondary-container text-on-secondary">IG</span>
-<span class="font-label-lg text-label-lg text-on-surface font-semibold">Instagram Business (2)</span>
-<div class="flex-1 h-px bg-surface-container-high ml-space-sm"></div>
-</div>
-<!-- Account Card 3 -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
-<div class="flex items-center gap-space-md min-w-0">
-<div class="w-11 h-11 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary font-bold text-base shrink-0 shadow-sm">
-              @SF
-            </div>
-<div class="flex flex-col min-w-0">
-<div class="flex items-center gap-1.5">
-<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">@socialflow.media</span>
-<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
-<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
-                </span>
-<span class="px-1.5 py-0.2 rounded bg-surface-container-low font-mono-code text-[10px] text-secondary">2FA Active</span>
-</div>
-<div class="flex flex-wrap items-center gap-x-space-md gap-y-0.5 text-on-surface-variant font-label-md text-label-md">
-<span class="font-mono-code text-[12px] text-on-surface">182k Followers</span>
-<span>•</span>
-<span class="font-mono-code text-[11px] text-on-surface-variant">Reels API V20.0</span>
-<span>•</span>
-<span class="text-tertiary font-mono-code text-[11px]">Synced 14m ago</span>
-</div>
-</div>
-</div>
-<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
-<span class="px-2 py-0.5 rounded bg-surface-container-low font-mono-code text-[11px] text-on-surface-variant">Creator Pro</span>
-<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors flex items-center gap-1" type="button">
-<span class="material-symbols-outlined text-[16px] text-tertiary">sync</span> Test
-            </button>
-<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant transition-colors" type="button">
-<span class="material-symbols-outlined text-[18px]">more_vert</span>
-</button>
-</div>
-</div>
-<!-- Account Card 4 -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
-<div class="flex items-center gap-space-md min-w-0">
-<div class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-bold text-base shrink-0">
-              UB
-            </div>
-<div class="flex flex-col min-w-0">
-<div class="flex items-center gap-1.5">
-<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">@daily.broadcast.intl</span>
-<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
-                </span>
-</div>
-<div class="flex flex-wrap items-center gap-x-space-md gap-y-0.5 text-on-surface-variant font-label-md text-label-md">
-<span class="font-mono-code text-[12px] text-on-surface">94k Followers</span>
-<span>•</span>
-<span class="text-tertiary font-mono-code text-[11px]">Synced 1h ago</span>
-</div>
-</div>
-</div>
-<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
-<span class="px-2 py-0.5 rounded bg-surface-container-low font-mono-code text-[11px] text-on-surface-variant">Publish Only</span>
-<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors flex items-center gap-1" type="button">
-<span class="material-symbols-outlined text-[16px] text-tertiary">sync</span> Test
-            </button>
-<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant transition-colors" type="button">
-<span class="material-symbols-outlined text-[18px]">more_vert</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Platform Group: X Enterprise -->
-<div class="flex flex-col gap-space-xs mt-space-sm">
-<div class="flex items-center gap-space-sm px-space-xs pt-space-xs">
-<span class="px-1.5 py-0.5 rounded font-mono-code text-[10px] font-bold bg-inverse-surface text-inverse-on-surface">X</span>
-<span class="font-label-lg text-label-lg text-on-surface font-semibold">X (Twitter) Enterprise (2)</span>
-<div class="flex-1 h-px bg-surface-container-high ml-space-sm"></div>
-</div>
-<!-- Account Card 5: X Official -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
-<div class="flex items-center gap-space-md min-w-0">
-<div class="w-11 h-11 rounded-full bg-inverse-surface flex items-center justify-center text-inverse-on-surface font-mono-code font-bold text-sm shrink-0">
-              𝕏
-            </div>
-<div class="flex flex-col min-w-0">
-<div class="flex items-center gap-1.5">
-<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">@SocialFlowHQ</span>
-<span class="px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 font-label-sm text-[10px] font-semibold flex items-center gap-0.5">
-<span class="material-symbols-outlined text-[13px] text-amber-600">verified</span> Gold Org
-                </span>
-<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
-                </span>
-</div>
-<div class="flex flex-wrap items-center gap-x-space-md gap-y-0.5 text-on-surface-variant font-label-md text-label-md">
-<span class="font-mono-code text-[12px] text-on-surface">Rate Limit Tier: Enterprise v2</span>
-<span>•</span>
-<span class="font-mono-code">50k req/min</span>
-<span>•</span>
-<span class="text-tertiary font-mono-code text-[11px]">Synced 3m ago</span>
-</div>
-</div>
-</div>
-<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
-<span class="px-2 py-0.5 rounded bg-surface-container-low font-mono-code text-[11px] text-on-surface-variant">Full Admin</span>
-<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-colors flex items-center gap-1" type="button">
-<span class="material-symbols-outlined text-[16px] text-tertiary">sync</span> Test
-            </button>
-<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant transition-colors" type="button">
-<span class="material-symbols-outlined text-[18px]">more_vert</span>
-</button>
-</div>
-</div>
-<!-- Account Card 6: X Requires Re-auth (CRITICAL ATTENTION) -->
-<div class="bg-error-container/20 p-space-md rounded-xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
-<div class="flex items-center gap-space-md min-w-0">
-<div class="w-11 h-11 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-bold text-sm shrink-0">
-              PK
-            </div>
-<div class="flex flex-col min-w-0">
-<div class="flex items-center gap-1.5">
-<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">@NewsBulletinPK</span>
-<span class="px-1.5 py-0.2 rounded-full bg-error-container text-on-error-container font-label-sm text-[10px] font-bold flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span> Re-auth Needed
-                </span>
-</div>
-<div class="flex flex-wrap items-center gap-x-space-md gap-y-0.5 text-on-surface-variant font-label-md text-label-md">
-<span class="font-mono-code text-[12px] text-error">OAuth2 Refresh Token Revoked / Expired</span>
-<span>•</span>
-<span class="font-mono-code text-[11px]">Last active: 2d ago</span>
-</div>
-</div>
-</div>
-<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
-<button class="px-space-md py-1.5 rounded-lg bg-error text-on-error hover:opacity-90 font-label-sm text-label-sm font-semibold transition-opacity flex items-center gap-1 shadow-sm" type="button">
-<span class="material-symbols-outlined text-[16px]">lock_reset</span> Re-authenticate
-            </button>
-<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant transition-colors" type="button">
-<span class="material-symbols-outlined text-[18px]">more_vert</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Platform Group: YouTube, TikTok, CMS Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mt-space-sm">
-<!-- YouTube Channel -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md">
-<div>
-<div class="flex items-center justify-between mb-space-sm">
-<span class="px-1.5 py-0.5 rounded font-mono-code text-[10px] font-bold bg-error text-on-error">YT</span>
-<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
-              </span>
-</div>
-<div class="flex items-center gap-space-sm">
-<img class="w-10 h-10 rounded-full object-cover shadow-sm shrink-0" data-alt="High tech digital television broadcast logo with vibrant red circular gradient accent, modern streaming media design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOp-bYDR1WDkfoBXhZVZW8X969M9_Vnblv8bQ9lJoqMga6y3dCuwP-x5bjDB53Nm4LXTxxdHF9zWShzTZS7C7JSyR8uSwldZZ_xrXQm835B6_6FawR5lYoBsjCgvsArYpRlnq2LMvmU5gMgMja_AZPiNuv2sF8ZV0SqFm3dPtF8HBDD75TlR14rYOFE9nakxpzp4dh5v2cWiXKq7BIsPCIdCvi2B12HRlg82e9r3Q"/>
-<div class="flex flex-col min-w-0">
-<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">SocialFlow Prime News</span>
-<span class="font-mono-code text-label-sm text-on-surface-variant">1.4M Subscribers • 4K Upload API</span>
-</div>
-</div>
-</div>
-<div class="flex items-center justify-between pt-space-xs font-mono-code text-[11px] text-on-surface-variant">
-<span>Video Content Manager API</span>
-<button class="text-primary font-semibold hover:underline" type="button">Config →</button>
-</div>
-</div>
-<!-- TikTok For Business -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md">
-<div>
-<div class="flex items-center justify-between mb-space-sm">
-<span class="px-1.5 py-0.5 rounded font-mono-code text-[10px] font-bold bg-inverse-surface text-inverse-on-surface">TT</span>
-<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Connected
-              </span>
-</div>
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface shrink-0">
-                TT
-              </div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">@socialflow_shorts</span>
-<span class="font-mono-code text-label-sm text-on-surface-variant">840k Followers • Audio Library: OK</span>
-</div>
-</div>
-</div>
-<div class="flex items-center justify-between pt-space-xs font-mono-code text-[11px] text-on-surface-variant">
-<span>Direct Commercial Publishing</span>
-<button class="text-primary font-semibold hover:underline" type="button">Config →</button>
-</div>
-</div>
-<!-- WordPress & Headless CMS -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md md:col-span-2">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-space-md">
-<div class="w-10 h-10 rounded-lg bg-surface-container-low text-secondary flex items-center justify-center font-bold font-mono-code shrink-0">
-                WP
-              </div>
-<div class="flex flex-col">
-<div class="flex items-center gap-2">
-<span class="font-label-lg text-label-lg text-on-surface font-bold">Indus Media CMS Network</span>
-<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-tertiary-container font-label-sm text-[10px] font-semibold flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> REST API Active
-                  </span>
-</div>
-<span class="font-mono-code text-label-sm text-on-surface-variant">
-                  Application Passwords Verified • Auto-featured Image Generation Enabled
-                </span>
-</div>
-</div>
-<div class="flex items-center gap-space-sm">
-<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold transition-colors" type="button">
-                Sync Schema
-              </button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Right Column: RBAC Team Members, Approvals & Token Health Drawer (Span 4) -->
-<div class="lg:col-span-4 flex flex-col gap-space-md">
-<!-- Panel 1: Team & Access Permissions (RBAC) -->
-<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[20px] text-primary">group</span>
-<span class="font-headline-sm text-headline-sm text-on-surface">Newsroom Team (RBAC)</span>
-</div>
-<span class="font-mono-code text-label-sm font-semibold text-primary">18 / 25 Seats</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-          Assign role-based access for the <strong class="text-on-surface">Global News &amp; Media</strong> workspace cluster.
-        </p>
-<!-- Seat usage progress -->
-<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
-<div class="h-full bg-primary-container rounded-full" style="width: 72%"></div>
-</div>
-<!-- Members list -->
-<div class="flex flex-col gap-space-sm pt-space-xs">
-<!-- Member 1 -->
-<div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
-<div class="flex items-center gap-space-sm min-w-0">
-<img alt="Sarah Jenkins" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMOZdF5GQj01sMvahYTyba9EnFDTO_P96Pm284IrgP8FR0VQHtHL23dwLFyzvSYiILd_5DbcqBSzsUxGeK0gdaCXIrCW4kZBfZLeU6N08IwtQfXCahrW4XPqa89-SgH0M9s7LoJFrGPU7DbiMmhqxafNei8qlBgnDcZR5pRYVRc8B4Cko6B2nEbPbJJUWcWu-dcpo9J-G5WqodFGyQMhDGxSufmf_dCoFRxPpt2GM"/>
-<div class="flex flex-col min-w-0">
-<span class="font-label-md text-label-md font-bold text-on-surface truncate">Sarah Jenkins</span>
-<span class="font-label-sm text-[10px] text-primary">Lead Producer • Super Admin</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-[16px] text-on-surface-variant">shield_person</span>
-</div>
-<!-- Member 2 -->
-<div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
-<div class="flex items-center gap-space-sm min-w-0">
-<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold font-mono-code text-[11px] shrink-0">
-                TA
-              </div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-md text-label-md font-bold text-on-surface truncate">Tariq Al-Hussein</span>
-<span class="font-label-sm text-[10px] text-on-surface-variant">Sr. Typography &amp; Motion Editor</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-[16px] text-on-surface-variant">edit_note</span>
-</div>
-<!-- Member 3 -->
-<div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
-<div class="flex items-center gap-space-sm min-w-0">
-<div class="w-8 h-8 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center font-bold font-mono-code text-[11px] shrink-0">
-                MC
-              </div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-md text-label-md font-bold text-on-surface truncate">Maria Chen</span>
-<span class="font-label-sm text-[10px] text-on-surface-variant">Social Media Manager</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule_send</span>
-</div>
-<!-- Member 4 -->
-<div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
-<div class="flex items-center gap-space-sm min-w-0">
-<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-bold font-mono-code text-[11px] shrink-0">
-                ZA
-              </div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-md text-label-md font-bold text-on-surface truncate">Zainab Abbas</span>
-<span class="font-label-sm text-[10px] text-on-surface-variant">Compliance Auditor</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-[16px] text-on-surface-variant">rule</span>
-</div>
-</div>
-<div class="pt-space-xs">
-<button class="w-full py-2 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-lg text-label-lg text-on-surface font-semibold transition-colors flex items-center justify-center gap-1" type="button">
-<span class="material-symbols-outlined text-[18px]">person_add</span> + Invite New Seat
-          </button>
-</div>
-</div>
-<!-- Panel 2: Governance & Publishing Guardrails -->
-<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[20px] text-primary">gavel</span>
-<span class="font-headline-sm text-headline-sm text-on-surface">Publishing Guardrails</span>
-</div>
-<span class="px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-[10px] font-bold uppercase">Enforced</span>
-</div>
-<!-- Toggle Item 1 -->
-<div class="flex items-start justify-between gap-space-sm pt-space-xs">
-<div class="flex flex-col">
-<span class="font-label-md text-label-md font-bold text-on-surface">Approval Workflow Enforcement</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
-              Require Lead Producer sign-off for accounts with &gt;100k audience.
-            </span>
-</div>
-<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
-<input checked="" class="sr-only peer" type="checkbox"/>
-<div class="w-9 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
-</label>
-</div>
-<!-- Toggle Item 2 -->
-<div class="flex items-start justify-between gap-space-sm pt-space-xs">
-<div class="flex flex-col">
-<span class="font-label-md text-label-md font-bold text-on-surface">Auto-Revoke on Inactivity</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
-              Suspend credentials if no dispatch within 30 days.
-            </span>
-</div>
-<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
-<input checked="" class="sr-only peer" type="checkbox"/>
-<div class="w-9 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
-</label>
-</div>
-<!-- Toggle Item 3 -->
-<div class="flex items-start justify-between gap-space-sm pt-space-xs">
-<div class="flex flex-col">
-<span class="font-label-md text-label-md font-bold text-on-surface">Dual-Language Compliance Audit</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
-              Enforce automated multi-language content safety &amp; typography font render validation.
-            </span>
-</div>
-<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
-<input checked="" class="sr-only peer" type="checkbox"/>
-<div class="w-9 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
-</label>
-</div>
-</div>
-<!-- Panel 3: Live Audit Log Snippet -->
-<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-sm">
-<div class="flex items-center justify-between">
-<span class="font-label-lg text-label-lg text-on-surface font-bold">Workspace Audit Trail</span>
-<span class="font-mono-code text-[10px] text-tertiary flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span> Streaming
-          </span>
-</div>
-<div class="flex flex-col gap-space-xs font-mono-code text-[11px] text-on-surface-variant pt-space-xs">
-<div class="flex items-center justify-between">
-<span class="truncate">• Sarah J. updated token @socialflowglobal</span>
-<span class="text-[10px] shrink-0">12m ago</span>
-</div>
-<div class="flex items-center justify-between">
-<span class="truncate">• OAuth expired for @NewsBulletinPK</span>
-<span class="text-[10px] text-error shrink-0">2d ago</span>
-</div>
-<div class="flex items-center justify-between">
-<span class="truncate">• Added 14 new YouTube 4K upload scopes</span>
-<span class="text-[10px] shrink-0">3d ago</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+      <div class="px-space-xl py-space-lg flex flex-col gap-space-lg max-w-7xl mx-auto w-full">
 
+        <!-- Top Header & Context Strip -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-low p-space-lg rounded-2xl border border-outline-variant/30 shadow-sm">
+          <div class="flex flex-col gap-1">
+            <div class="flex items-center gap-space-sm flex-wrap">
+              <span class="p-2 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                <span class="material-symbols-outlined text-[24px]">manage_accounts</span>
+              </span>
+              <h1 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Configuration &amp; Social Accounts</h1>
+              <span class="px-2.5 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-mono-code text-[11px] font-semibold border border-tertiary/30 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span> AES-256 Vault Synced
+              </span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant font-urdu" style="direction: rtl;">
+              پوسٹر جنریٹر اے پی آئیز، سوشل میڈیا اکاؤنٹس، ٹویٹر کوکیز، یوٹیوب، ورڈپریس اور کلاؤڈ آٹومیشن ویب ہکس ترتیبات
+            </p>
+          </div>
+          <div class="flex items-center gap-space-sm self-start md:self-auto">
+            <span class="px-3 py-1.5 rounded-xl bg-surface-container text-on-surface-variant font-mono-code text-xs flex items-center gap-1.5 border border-outline-variant/20">
+              <span class="material-symbols-outlined text-[16px] text-emerald-400">check_circle</span>
+              <span>Live Engine Ready</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Success/Error Live Toast Alert -->
+        <div id="settingsAlertBox" class="hidden rounded-xl p-space-md flex items-center justify-between gap-space-md transition-all">
+          <div class="flex items-center gap-space-sm">
+            <span id="settingsAlertIcon" class="material-symbols-outlined text-[22px]"></span>
+            <span id="settingsAlertMsg" class="font-label-lg text-label-lg font-medium"></span>
+          </div>
+          <button type="button" onclick="document.getElementById('settingsAlertBox').classList.add('hidden')" class="text-on-surface-variant hover:text-on-surface">
+            <span class="material-symbols-outlined text-[18px]">close</span>
+          </button>
+        </div>
+
+        <!-- Master Settings Card -->
+        <div class="rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-xl overflow-hidden flex flex-col">
+          
+          <!-- Top Horizontal Tab Bar -->
+          <div class="border-b border-outline-variant/30 bg-surface-container-low/50 px-space-md pt-2 overflow-x-auto">
+            <div class="flex items-center gap-1 min-w-max" id="accountConfigTabs">
+              <button type="button" onclick="switchAccountTab('tab-poster')" id="tab-btn-poster" class="account-tab-btn active flex items-center gap-2 px-4 py-3 text-sm font-semibold border-b-2 border-primary text-primary transition-all">
+                <span class="material-symbols-outlined text-[18px] text-amber-400">palette</span>
+                <span>Poster APIs (پوسٹر اے پی آئی)</span>
+              </button>
+              <button type="button" onclick="switchAccountTab('tab-meta')" id="tab-btn-meta" class="account-tab-btn flex items-center gap-2 px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all">
+                <span class="material-symbols-outlined text-[18px] text-blue-400">share</span>
+                <span>Facebook &amp; Instagram</span>
+              </button>
+              <button type="button" onclick="switchAccountTab('tab-twitter')" id="tab-btn-twitter" class="account-tab-btn flex items-center gap-2 px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all">
+                <span class="font-bold text-sm">𝕏</span>
+                <span>X / Twitter (API &amp; Cookies)</span>
+              </button>
+              <button type="button" onclick="switchAccountTab('tab-youtube')" id="tab-btn-youtube" class="account-tab-btn flex items-center gap-2 px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all">
+                <span class="material-symbols-outlined text-[18px] text-red-500">smart_display</span>
+                <span>YouTube Community</span>
+              </button>
+              <button type="button" onclick="switchAccountTab('tab-wp')" id="tab-btn-wp" class="account-tab-btn flex items-center gap-2 px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all">
+                <span class="material-symbols-outlined text-[18px] text-sky-400">language</span>
+                <span>WordPress &amp; SEO</span>
+              </button>
+              <button type="button" onclick="switchAccountTab('tab-video')" id="tab-btn-video" class="account-tab-btn flex items-center gap-2 px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all">
+                <span class="material-symbols-outlined text-[18px] text-amber-400">cloud_upload</span>
+                <span>Video &amp; Cloud Storage (HF)</span>
+              </button>
+              <button type="button" onclick="switchAccountTab('tab-n8n')" id="tab-btn-n8n" class="account-tab-btn flex items-center gap-2 px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all">
+                <span class="material-symbols-outlined text-[18px] text-emerald-400">account_tree</span>
+                <span>Automation (n8n Webhook)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Master Settings Form -->
+          <form id="socialAccountsSettingsForm" onsubmit="saveSocialFlowSettings(event)" class="flex flex-col">
+            <input type="hidden" name="action" value="save_settings"/>
+
+            <div class="p-space-xl">
+              
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <!-- TAB 1: Poster APIs                                         -->
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <div id="tab-poster" class="account-tab-pane flex flex-col gap-space-lg">
+                <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-amber-400 text-[22px]">palette</span>
+                    <h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Poster Generator Engine Settings</h2>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 font-mono-code text-xs font-semibold border border-emerald-500/30">
+                    Active: Template 1 (Jamshed Rizwani API)
+                  </span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant font-urdu" style="direction: rtl;">
+                  یہاں سے آپ فیس بک اور سوشل میڈیا 1080x1080 پوسٹر جنریشن کی اے پی آئی کنٹرول کر سکتے ہیں۔
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+                  <div class="md:col-span-8 flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Primary Poster API URL (Template 1)</label>
+                    <div class="flex items-center rounded-xl bg-surface-container border border-outline-variant/40 overflow-hidden focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+                      <span class="px-3 text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">link</span></span>
+                      <input type="url" name="poster_api_url" value="https://editor.jamshedrizwani.com/api/generate" required class="w-full py-2.5 pr-3 bg-transparent text-on-surface font-mono-code text-sm focus:outline-none"/>
+                    </div>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant">Default: <code class="text-primary font-mono-code">https://editor.jamshedrizwani.com/api/generate</code></span>
+                  </div>
+
+                  <div class="md:col-span-4 flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Default Website Branding</label>
+                    <input type="text" name="default_branding_website" value="www.southtoday.live" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant font-urdu" style="direction: rtl;">پوسٹر کے نیچے ظاہر ہونے والا برانڈنگ یو آر ایل</span>
+                  </div>
+
+                  <div class="md:col-span-8 flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Node.js Server API URL (Template 2, 3, 5, 6)</label>
+                    <div class="flex items-center rounded-xl bg-surface-container border border-outline-variant/40 overflow-hidden focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+                      <span class="px-3 text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">dns</span></span>
+                      <input type="url" name="js_server_api_url" value="" placeholder="https://your-node-server.com/api/render" class="w-full py-2.5 pr-3 bg-transparent text-on-surface font-mono-code text-sm focus:outline-none"/>
+                    </div>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant font-urdu" style="direction: rtl;">جب آپ نوڈ جے ایس سرور کی اے پی آئی فراہم کریں گے تو وہ یہاں سیو ہو گی</span>
+                  </div>
+
+                  <div class="md:col-span-4 flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Default Tag / Category (In-Box Text)</label>
+                    <input type="text" name="default_category_tag" value="بریکنگ نیوز" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-urdu text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" style="direction: rtl;"/>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant font-urdu" style="direction: rtl;">جیسے: بریکنگ نیوز، اہم خبر، پریس کانفرنس</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <!-- TAB 2: Facebook & Instagram                                -->
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <div id="tab-meta" class="account-tab-pane hidden flex flex-col gap-space-lg">
+                <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 rounded-lg bg-blue-500/15 text-blue-400 font-bold text-xs border border-blue-500/30 flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[16px]">public</span> Facebook
+                    </span>
+                    <span class="px-3 py-1 rounded-lg bg-pink-500/15 text-pink-400 font-bold text-xs border border-pink-500/30 flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[16px]">photo_camera</span> Instagram
+                    </span>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 font-mono-code text-xs font-semibold border border-emerald-500/30">
+                    Connected / v19+ Graph Ready
+                  </span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Facebook Graph API v19+ &amp; Instagram Professional Account Credentials for Auto Publishing</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Facebook Page Name</label>
+                    <input type="text" name="fb_page_name" value="South Today" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Facebook Page ID</label>
+                    <input type="text" name="fb_page_id" value="" placeholder="e.g. 110657041281786" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                  </div>
+                  <div class="md:col-span-2 flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Page Access Token (Never Expiring Permanent Token)</label>
+                    <textarea name="fb_access_token" rows="2" placeholder="EAAG..." class="w-full p-3 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-xs focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"></textarea>
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Meta App ID</label>
+                    <input type="text" name="fb_app_id" value="" placeholder="Meta App ID" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Meta App Secret</label>
+                    <input type="password" name="fb_app_secret" value="" placeholder="Meta App Secret" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Instagram Business Account ID</label>
+                    <input type="text" name="ig_account_id" value="" placeholder="e.g. 17841400000000000" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Instagram Access Token (if separate)</label>
+                    <input type="text" name="ig_access_token" value="" placeholder="Leave empty to inherit Page Token" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <!-- TAB 3: X / Twitter (API & Cookies) - Image 5               -->
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <div id="tab-twitter" class="account-tab-pane hidden flex flex-col gap-space-lg">
+                <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface font-bold text-xs border border-outline-variant/40 flex items-center gap-1.5">
+                      <span class="font-bold text-sm">𝕏</span> X / Twitter Integration
+                    </span>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 font-mono-code text-xs font-semibold border border-emerald-500/30">
+                    Official API v2 Active
+                  </span>
+                </div>
+
+                <!-- Option 1: Official Twitter API v2 -->
+                <div class="rounded-xl bg-surface-container/60 border border-emerald-500/30 p-space-md flex flex-col gap-space-md">
+                  <div class="flex items-center justify-between flex-wrap gap-2">
+                    <div class="flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                      <span class="font-label-md text-label-md text-emerald-400 font-bold font-urdu" style="direction: rtl;">
+                        طریقہ نمبر 1: Official Twitter API v2 (تجویز کردہ - 100% مستقل حل)
+                      </span>
+                    </div>
+                    <span class="px-2.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 font-mono-code text-xs font-bold border border-emerald-500/40">
+                      1500 Posts / Month Free
+                    </span>
+                  </div>
+                  
+                  <div class="text-center py-1">
+                    <a href="https://developer.x.com" target="_blank" class="text-primary hover:underline font-mono-code text-sm">developer.x.com</a>
+                  </div>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                    <div class="flex flex-col gap-1.5">
+                      <label class="font-label-sm text-label-sm text-emerald-300 font-semibold">API Key (Consumer Key)</label>
+                      <input type="text" name="x_api_key" value="" placeholder="API Key" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all"/>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                      <label class="font-label-sm text-label-sm text-emerald-300 font-semibold">API Key Secret (Consumer Secret)</label>
+                      <input type="password" name="x_api_secret" value="" placeholder="API Secret" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all"/>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                      <label class="font-label-sm text-label-sm text-emerald-300 font-semibold">Access Token</label>
+                      <input type="text" name="x_access_token" value="" placeholder="Access Token" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all"/>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                      <label class="font-label-sm text-label-sm text-emerald-300 font-semibold">Access Token Secret</label>
+                      <input type="password" name="x_access_secret" value="" placeholder="Access Token Secret" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all"/>
+                    </div>
+                    <div class="md:col-span-2 flex flex-col gap-1.5">
+                      <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Twitter Handle @</label>
+                      <div class="flex items-center rounded-xl bg-surface-container border border-outline-variant/40 overflow-hidden focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+                        <span class="px-4 py-2.5 bg-surface-container-high text-on-surface-variant font-bold border-r border-outline-variant/30">@</span>
+                        <input type="text" name="x_handle" value="southtodaylive" placeholder="southtodaylive" class="w-full py-2.5 px-3 bg-transparent text-on-surface font-mono-code text-sm focus:outline-none"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Option 2: Browser Session Cookies -->
+                <div class="rounded-xl bg-surface-container-low border border-outline-variant/30 p-space-md flex flex-col gap-space-sm">
+                  <div class="flex items-center justify-between flex-wrap gap-2">
+                    <span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[18px] text-amber-400">cookie</span>
+                      Browser Session Cookies (Extension or Manual)
+                    </span>
+                    <a href="../downloads/newsy_social_sync.zip" download class="px-3 py-1 rounded-lg bg-amber-500/15 text-amber-300 border border-amber-500/30 text-xs font-semibold hover:bg-amber-500/25 transition-colors flex items-center gap-1">
+                      <span class="material-symbols-outlined text-[15px]">download</span> Extension v1.4
+                    </a>
+                  </div>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-2">
+                    <div class="flex flex-col gap-1.5">
+                      <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold"><code>auth_token</code> (Cookie)</label>
+                      <input type="password" name="x_auth_token_cookie" value="" placeholder="64-character token" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                      <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold"><code>ct0</code> (CSRF Cookie)</label>
+                      <input type="password" name="x_ct0_cookie" value="" placeholder="CSRF token" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <!-- TAB 4: YouTube Community - Image 4                         -->
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <div id="tab-youtube" class="account-tab-pane hidden flex flex-col gap-space-lg">
+                <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 rounded-lg bg-red-600/15 text-red-400 font-bold text-xs border border-red-500/30 flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[16px]">smart_display</span> YouTube Community Posts
+                    </span>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 font-mono-code text-xs font-semibold border border-emerald-500/30">
+                    Session Linked &amp; Ready
+                  </span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant font-urdu" style="direction: rtl;">
+                  یوٹیوب کمیونٹی ٹیب (Community Post) میں تصویر اور کیپشن پوسٹ کرنے کی ترتیبات (کروم ایکسٹینشن سے 1-کلک پر سنک کریں)
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">YouTube Channel Name</label>
+                    <input type="text" name="yt_channel_name" value="South Today Official" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">YouTube Channel ID</label>
+                    <input type="text" name="yt_channel_id" value="UCP2sRUA0JrkIfcTCO2zMU4D" placeholder="UC..." class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                  </div>
+                  <div class="md:col-span-2 flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">YouTube / Google API Key (Optional)</label>
+                    <input type="text" name="yt_api_key" value="" placeholder="AIzaSy..." class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                  </div>
+                  <div class="md:col-span-2 flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">YouTube Session Cookies (For Direct Community Tab Posting)</label>
+                    <textarea name="yt_session_cookie" rows="3" placeholder="LOGIN_INFO, SID, HSID, SSID, SAPISID cookies..." class="w-full p-3 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-xs focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"></textarea>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant font-urdu" style="direction: rtl;">کروم ایکسٹینشن کے ذریعے 'مکمل کوکیز کاپی کریں' کا بٹن دبا کر یہاں چسپاں کر سکتے ہیں یا ایکسٹینشن سے ڈائریکٹ محفوظ کریں۔</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <!-- TAB 5: WordPress & SEO - Image 3                           -->
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <div id="tab-wp" class="account-tab-pane hidden flex flex-col gap-space-lg">
+                <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 rounded-lg bg-sky-500/15 text-sky-400 font-bold text-xs border border-sky-500/30 flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[16px]">language</span> South Today WordPress Website
+                    </span>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 font-mono-code text-xs font-semibold border border-emerald-500/30">
+                    Native Host Connected
+                  </span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant font-urdu" style="direction: rtl;">
+                  ساؤتھ ٹوڈے ورڈپریس ویب سائٹ پر بلاگ / نیوز اسٹوری پبلش کرنے کی ترتیبات مع RankMath 100% SEO
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+                  <div class="md:col-span-8 flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">WordPress REST API Endpoint</label>
+                    <input type="url" name="wp_api_endpoint" value="https://southtoday.live/wp-json/wp/v2/posts" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                  </div>
+                  <div class="md:col-span-4 flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Default Category ID</label>
+                    <input type="text" name="wp_default_category" value="1" placeholder="1" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                  </div>
+                  <div class="md:col-span-6 flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">WordPress Application Username</label>
+                    <input type="text" name="wp_username" value="" placeholder="admin" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                  </div>
+                  <div class="md:col-span-6 flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Application Password</label>
+                    <input type="password" name="wp_app_password" value="" placeholder="xxxx xxxx xxxx xxxx" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                  </div>
+                  <div class="md:col-span-12 flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">SEO Target Score (RankMath / Yoast)</label>
+                    <select name="wp_auto_seo_target" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all">
+                      <option value="100" selected>100% Green Score (Recommended)</option>
+                      <option value="80" >80%+ Good</option>
+                    </select>
+                  </div>
+
+                  <div class="md:col-span-12 flex flex-col gap-1.5 pt-3 border-t border-outline-variant/20">
+                    <label class="font-label-sm text-label-sm text-amber-400 font-semibold flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[16px]">smart_toy</span>
+                      Google AI Studio Free API Key (اختیاری - گوگل سرچ گراؤنڈنگ کے لیے)
+                    </label>
+                    <input type="password" name="gemini_api_key" value="" placeholder="AIzaSy..." class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant font-urdu" style="direction: rtl;">
+                      نوٹ: یہ 100% مفت ہے (کریڈٹ کارڈ کی ضرورت نہیں)۔ اگر خالی چھوڑیں گے تو سسٹم بغیر کسی کی کے ہمارے اندرونی گوگل نیوز و فیکٹ چیکنگ انجن کے ذریعے مکمل مفت کام کرے گا۔
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <!-- TAB 6: Video & Cloud Storage (HF) - Image 2                -->
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <div id="tab-video" class="account-tab-pane hidden flex flex-col gap-space-lg">
+                <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-amber-400 text-[22px]">cloud_upload</span>
+                    <h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Hugging Face &amp; Video Cloud Storage (100% Free TBs)</h2>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 font-mono-code text-xs font-semibold border border-emerald-500/30">
+                    TBs Free Cloud Storage
+                  </span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant font-urdu" style="direction: rtl;">
+                  ہوسٹنگ سرور کی ڈسک سپیس اور بینڈوتھ بچانے کے لیے ویڈیوز کو Hugging Face کے فری سپیس / ڈیٹاسیٹ ریپو میں مفت سٹور کیا جا سکتا ہے۔
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Hugging Face Access Token (Write Permission)</label>
+                    <input type="password" name="hf_token" value="" placeholder="hf_xxxxxxxxxxxxxxxxxxxx" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant">مفت Hugging Face ٹوکن حاصل کرنے کے لیے: <a href="https://huggingface.co/settings/tokens" target="_blank" class="text-primary hover:underline">huggingface.co/settings/tokens</a></span>
+                  </div>
+
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Hugging Face Repository ID (Dataset / Space)</label>
+                    <input type="text" name="hf_repo_id" value="southtoday/newsy-media" placeholder="southtoday/newsy-media" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant">مثال: <code class="text-primary">username/repository-name</code> (Free Datasets allow multi-GB videos)</span>
+                  </div>
+
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Cloud Storage Status</label>
+                    <select name="hf_storage_enabled" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all">
+                      <option value="1" >فعال (Enabled - Auto Upload to Hugging Face Cloud)</option>
+                      <option value="0" selected>(Disabled - Local Server Chunk Storage Only) غیر فعال</option>
+                    </select>
+                  </div>
+
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Auto-Cleanup Local Temporary Video Files</label>
+                    <select name="auto_cleanup_local" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all">
+                      <option value="1" >ہاں (Yes - کلاؤڈ اور سوشل میڈیا پر پبلش کے بعد لوکل فائل خودکار ڈیلیٹ کریں)</option>
+                      <option value="0" selected>(سرور پر بیک اپ محفوظ رکھیں - No) نہیں</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <!-- TAB 7: Automation (n8n Webhook) - Image 1                  -->
+              <!-- ════════════════════════════════════════════════════════════ -->
+              <div id="tab-n8n" class="account-tab-pane hidden flex flex-col gap-space-lg">
+                <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-400 text-[22px]">account_tree</span>
+                    <h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">n8n Automation &amp; Webhook URLs</h2>
+                  </div>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant font-urdu" style="direction: rtl;">
+                  n8n کلاؤڈ آٹومیشن کے ذریعے فیس بک، ٹیلیگرام، اور سوشل میڈیا ورک فلو
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">File Processing Webhook URL</label>
+                    <input type="url" name="n8n_file_webhook" value="https://rizwani.app.n8n.cloud/webhook/st-file" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant">Default: <code class="text-primary font-mono-code">https://rizwani.app.n8n.cloud/webhook/st-file</code></span>
+                  </div>
+
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Approval Notification Webhook URL</label>
+                    <input type="url" name="n8n_approve_webhook" value="https://rizwani.app.n8n.cloud/webhook/st-approve" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface font-mono-code text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"/>
+                    <span class="font-label-xs text-label-xs text-on-surface-variant">Default: <code class="text-primary font-mono-code">https://rizwani.app.n8n.cloud/webhook/st-approve</code></span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Card Bottom Bar: Encryption Notice & Save Button -->
+            <div class="px-space-xl py-space-md bg-surface-container-low/70 border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-md">
+              <span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1.5 font-urdu" style="direction: rtl;">
+                <span class="material-symbols-outlined text-[18px] text-tertiary">lock_clock</span>
+                <span>کریڈینشلز محفوظ انکرپٹڈ فارمیٹ میں محفوظ کیے جاتے ہیں۔</span>
+              </span>
+              <button type="submit" id="saveSettingsBtn" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-label-lg text-label-lg font-bold shadow-lg shadow-primary/20 flex items-center justify-center gap-2 cursor-pointer transition-all">
+                <span class="material-symbols-outlined text-[20px]" id="saveSettingsIcon">save</span>
+                <span id="saveSettingsLabel">Save All Settings (محفوظ کریں)</span>
+              </button>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
     </main>
 
     <!-- ═════════════════════════════════════════════════════════════════ -->
@@ -4645,6 +4478,110 @@
       }
     }
 
+        // ─────────────────────────────────────────────────────────────────
+    // Configuration & Social Accounts Tab & Save Engine
+    // ─────────────────────────────────────────────────────────────────
+    function switchAccountTab(tabId) {
+      document.querySelectorAll('.account-tab-btn').forEach(btn => {
+        btn.classList.remove('active', 'border-primary', 'text-primary');
+        btn.classList.add('border-transparent', 'text-on-surface-variant');
+      });
+      const activeBtn = document.getElementById('tab-btn-' + tabId.replace('tab-', ''));
+      if (activeBtn) {
+        activeBtn.classList.add('active', 'border-primary', 'text-primary');
+        activeBtn.classList.remove('border-transparent', 'text-on-surface-variant');
+      }
+
+      document.querySelectorAll('.account-tab-pane').forEach(pane => {
+        pane.classList.add('hidden');
+      });
+      const targetPane = document.getElementById(tabId);
+      if (targetPane) {
+        targetPane.classList.remove('hidden');
+      }
+    }
+
+    function saveSocialFlowSettings(e) {
+      if (e) e.preventDefault();
+      const form = document.getElementById('socialAccountsSettingsForm');
+      if (!form) return;
+
+      const btn = document.getElementById('saveSettingsBtn');
+      const icon = document.getElementById('saveSettingsIcon');
+      const label = document.getElementById('saveSettingsLabel');
+      const alertBox = document.getElementById('settingsAlertBox');
+      const alertIcon = document.getElementById('settingsAlertIcon');
+      const alertMsg = document.getElementById('settingsAlertMsg');
+
+      if (btn) btn.disabled = true;
+      if (label) label.textContent = 'Saving Settings (محفوظ کیا جا رہا ہے)...';
+      if (icon) icon.textContent = 'hourglass_empty';
+
+      const formData = new FormData(form);
+
+      fetch('api/settings.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          if (alertBox) {
+            alertBox.className = 'rounded-xl p-space-md flex items-center justify-between gap-space-md transition-all bg-emerald-500/15 border border-emerald-500/30 text-emerald-400';
+            if (alertIcon) alertIcon.textContent = 'check_circle';
+            if (alertMsg) alertMsg.innerHTML = '<strong>کامیابی!</strong> ' + (data.message || 'تمام ترتیبات اور اے پی آئی کیز کامیابی کے ساتھ محفوظ ہو گئی ہیں۔');
+            alertBox.classList.remove('hidden');
+          }
+          if (label) label.textContent = 'Saved Successfully! (محفوظ ہو گیا)';
+          if (icon) icon.textContent = 'done_all';
+          setTimeout(() => {
+            if (label) label.textContent = 'Save All Settings (محفوظ کریں)';
+            if (icon) icon.textContent = 'save';
+            if (btn) btn.disabled = false;
+          }, 2500);
+        } else {
+          throw new Error(data.message || 'ترتیبات محفوظ نہیں ہو سکیں۔');
+        }
+      })
+      .catch(err => {
+        if (alertBox) {
+          alertBox.className = 'rounded-xl p-space-md flex items-center justify-between gap-space-md transition-all bg-red-500/15 border border-red-500/30 text-red-400';
+          if (alertIcon) alertIcon.textContent = 'error';
+          if (alertMsg) alertMsg.innerHTML = '<strong>خرابی!</strong> ' + err.message;
+          alertBox.classList.remove('hidden');
+        }
+        if (label) label.textContent = 'Save Failed (دوبارہ کوشش کریں)';
+        if (icon) icon.textContent = 'error';
+        if (btn) btn.disabled = false;
+      });
+    }
+
+    function initSocialAccountsSettings() {
+      fetch('api/settings.php')
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.success && data.data) {
+            const s = data.data;
+            const form = document.getElementById('socialAccountsSettingsForm');
+            if (!form) return;
+            for (const key in s) {
+              const el = form.elements[key];
+              if (el) {
+                if (el.tagName === 'SELECT') {
+                  el.value = s[key];
+                } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                  if (el.type !== 'password' || !el.value) {
+                    el.value = s[key];
+                  }
+                }
+              }
+            }
+          }
+        })
+        .catch(e => console.warn('Settings auto-sync note:', e));
+    }
+
+
     // Template Market Interactivity Functions
     function initTemplatesEngine() {
       document.querySelectorAll('.aspect-btn').forEach(btn => {
@@ -4785,6 +4722,7 @@
 
     // Auto-initialize view based on URL query param
     window.addEventListener('DOMContentLoaded', () => {
+      initSocialAccountsSettings();
       initTemplatesEngine();
       initVideoEditorEngine();
       initAnalyticsEngine();
